@@ -1,0 +1,1 @@
+alert("probando la vinculación de un archivo independiente de JS a otro archivo de tipo .html");

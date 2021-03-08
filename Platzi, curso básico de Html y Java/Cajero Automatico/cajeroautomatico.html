@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Cajero Automatico</title>
+  </head>
+  <body>
+      <p>
+        <img src = "cajero.gif" /> <!-- forma de insertar una imagen en HTML -->
+      </p>
+      <p> <!-- abrimos otro parrafo para hacer un salto de linea y abrir dos formularios: uno de boton y uno de texto -->
+        <input type= "number" id = "dinero" /> <!-- similar a: type ="text", sólo que, en vez de texto, sólo nos permite poner números en el recuadro -->
+        <input type= "button" value= "Extraer" id = "Extraer"/> <!-- tipo de formulario "Botón" de HTML -->
+      </p>
+      <p id= "resultado"></p> <!-- parrafo diseñado para pasarlo a JS y escribir sin necesidad de usar "document.write" -->
+      <script src ="cajero.js">
+      </script>
+  </body>
+</html>
