@@ -1,12 +1,17 @@
 /* En esta ocasión pretendemos crear un programa que cifre o encripte un texto, texto plano o sin formato
    (el que resulta ser entendible para el lenguaje humano);
    de tal manera que lo pasemos a texto cifrado (ocultarlo de manera reversible; es decir, que pueda ser "descifrado" luego).
-   Para encriptarlo partiremos de la siguiente formula: ci = (pi + k) % 26. Donde, pi...
+   Para encriptarlo partiremos de la siguiente formula: ci = (pi + k) % 26.
+   Donde, pi equivale al texto plano, sin formato (el texto medio comprensible al entendimiento humano); y, la "i" de "pi",
+   equivale a cada caracter de ese texto; entonces, por ejemplo: "p0" sería el primer caracter, "p1" el segundo,
+   "p2" el tercero,... y así sucesivamente.
 
    k es la clave "key" necesaria para poder encriptar el texto plano, el elemento necesario para lograr ese cometido.
    Equivale a un número entero no negativo pasado por tecla por el usuario que ejecuta el programa.
 
-   y ci es ...
+   y ci equivale al texto ya cifrado, texto encriptado (el texto "ininteligible" que puede ser descifrado con una clave);
+   y, la "i" de "ci", equivale a cada caracter de dicho texto cifrado. Donde "c0" es el primer caracter del texto cifrado,
+   "c1" sería el segundo, "c2" el tercero,... y así sucesivamente.
 
    A lo sumo tenga en cuenta lo siguiente: los únicos caracteres que sufrirán alteraciones (o bien serán encriptados)
    son los caracteres de tipo alfabeticos, solamente esos. Eso sí, también importante, la formula no discrimina entre
@@ -166,7 +171,6 @@ int main(int num_argumentos_linea_de_comandos, string ci[])
                     if (cifrado[i] > 'Z')
                     {
                         int aux = '[' - texto_plano[i];
-
                         cifrado[i] = 'A' + (key - aux);
 
                         if ((key - aux) > 26)
@@ -186,13 +190,13 @@ int main(int num_argumentos_linea_de_comandos, string ci[])
 
             }
             printf("\n");
-
             return 0;
+
         }
+        
         else
         {
             printf("Usage: ./caesar key\n");
-
             return 1;
         }
     }
@@ -200,7 +204,6 @@ int main(int num_argumentos_linea_de_comandos, string ci[])
     else
     {
         printf("Usage: ./caesar key\n");
-
         return 1;
     }
 }
