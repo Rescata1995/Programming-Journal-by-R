@@ -87,15 +87,21 @@ float index(string parametro_texto)
        la longitud de "num"; es decir, no llega hasta la última palabra. Qué sucede entonces?
 
        Lo que sucede es que, si usted recuerda la ley de las sentencias anidadas... primero se ejecuta la sentencia interna, la que está
-       siendo contenida por la primera sentencia. En ese caso, la sentencia if siempre va a ejecutarse primero que el bucle for,
+       siendo contenida por la primera. Por eso, en este caso, la sentencia if siempre va a ejecutarse primero que el bucle for,
        porque es el bucle for quien contiene a la sentencia if, por lo cual siempre se ejecutará primero el dominio de if antes que el contador
-       aumente en una unidad si resulta ser valida su condición en for. Esto le da ventaja a "letras++" de incrementar primero en una unidad antes que
-       el contador del bucle aumente en uno (i++). Es por esta misma razón que era necesario la creación de otra variable que se encargará
-       de contar los caracteres alfabeticos (y se inicializará en 0 por obvias razones) porque, si usabamos al mismo contador "i",
+       aumente en una unidad (i++) si ha resultado ser valida la condición en for. De fondo, la lógica realmente de esto es más o menos así:
+       como la primera sentencia contiene dentro de su dominio a una segunda; quiere decir entonces que, de comprobarse la validez de la primera,
+       lo que va a correr dentro de ella consiste en ejecutar, justamente, a esa segunda sentencia. Lo anterior, repetimos, en caso que
+       la primera sentencia haya validado correctamente las condiciones estipuladas dentro de ella.
+
+       Es decir, si la sentencia 1 es válida lo que hará el programa es ejecutar la 2 y así iterativamente hasta que las condiciones de los bucles
+       dejen de ser válidos. Esto le da ventaja a "letras++" de incrementar primero en una unidad antes que el contador del bucle aumente en uno (i++).
+       Es por esta misma razón que era necesario la creación de otra variable que se encargará de contar los caracteres alfabeticos
+       (y se inicializará en 0 por obvias razones) porque, si usabamos al mismo contador "i",
        "i" en el primer paso por la sentencia if se mantendría igual a 0 (pues replicaría su valor dentro del bucle, el cual es 0 aún); deja de ser 0
        hasta que el mismo bucle incrementará en una unidad a "i"; es decir, "i" en if sólo aumentaría a la par que lo hiciera en el bucle for
-       (valiendose del bucle for primero): No serviría, se presentaría, si no me equivoco, lo que se llama: referencia circular y se estaría expuesto
-       a errores incluso de contabilización. Esta es la misma lógica para las palabras y para las oraciones,
+       (valiendose del bucle for primero, depende de él): No serviría, se presentaría, si no me equivoco, lo que se llama: referencia circular, 
+       y se estaría expuesto a errores incluso de contabilización. Esta es la misma lógica para las palabras y para las oraciones,
        sólo busque la manera lógica para tratar de contar cuántas palabras y oraciones hay. Descubralo.
     */
 
