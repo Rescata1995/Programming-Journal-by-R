@@ -20,7 +20,7 @@ int main(int parametros, string name[])
 {
     if (parametros == 2)
     {
-        for (int i = 0; i < 8; i++)
+        for (int i = 0; i < 8; i++) // no es posible llamar a la función "strlen", porque "strlen" no tiene la facultad de medir la longitud de matrices, sino solo de strings.
         {
             if (strcmp(NAMES[i], name[1]) == 0)
             {
