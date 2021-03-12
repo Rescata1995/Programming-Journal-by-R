@@ -51,7 +51,17 @@ int main(int parametros, string name[])
                 return 0;
             }
             /* Explicado todo lo anterior,
-            esté muy pendiente de ahora en adelante cómo se plantea trabajar ante condiciones de tipo "if/else" que estén dentro de dominios de bucles
+            esté muy pendiente de ahora en adelante cómo se plantea trabajar ante condiciones de tipo "if/else" que estén dentro de dominios de bucles.
+
+            La otra realidad es que, esta vez nos fue útil hacerlo de esta forma porque solo se evaluo un nombre; pero en caso que hubieran sido más
+            de 1 ó 2 nombres evaluados, se imprimiría la frase: "Too bad, your name is not in our database yet" toda vez que la condición sea valida;
+            es decir, cada vez que el bucle revisara, nombre por nombre en cada iteración, que el nombre pasado por tecla
+            no es equivalente a ninguno de los nombres de la base de dato, se ejecutaría su dominio; y su dominio es la sentencia if que imprime la frase:
+            "Too bad, your name is not in our database yet", y eso no nos interesaría. En este caso, no querriamos imprimir eso en cada paso del bucle.
+            Como resultado, haríamos de nuestro código, un código defectuoso. Para los casos donde se evaluan mas de un dato (o nombre),
+            con condiciones de este tipo, donde potencialmente se podría ejecutar el mismo dominio en cada iteración o paso del bucle,...
+            sería viable hacer precisamente un bucle? Esa es nuestra gran pregunta.
+            Cómo le daría solución a su problema sin necesidad de imprimir repetitivamente un mensaje? Revise la resolución del posterior ejercicio.
             */
         }
     }
