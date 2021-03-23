@@ -17,7 +17,7 @@ candidate; // definición de tipo de dato nuevo llamado: "candidate".
 // Al valerse de tipos de datos personalizados (estructuras) para declarar posteriormente variables, estas variables se definen como matrices.
 // Y recuerde que las matrices trabajan muy bien con bucles (para ser definidos sus elementos de forma iterativa con un incrementador)
 candidate candidates[MAX];
-// declaración de la matriz "candidates[MAX]" con nuestro tipo de dato creado (estructura): "candidate".
+// declaración de la matriz "candidates[MAX]" con nuestro tipo de dato creado (estructura): "candidate". (que entre otras cosas ha sido declarada como variable global)
 
 // Number of candidates
 int candidate_count;
@@ -128,11 +128,14 @@ bool vote(string name)
             candidates[i].votes++;
 
             // como estamos ante una función personalizable de tipo "booleana"... return devuelve dos valores: "true" o "false".
-            return true; // se devuelve "true" para que no entre en la declaración de "voto invalido" de la línea código 88. (donde llamamos a esta función)
+            return true; // se devuelve "true" para que no entre en la declaración de "voto invalido" de la línea código 87. (donde llamamos a esta función)
             // Es decir, sería verdad (true) que algún nombre pasado por tecla (name) sí coincidió con cualquiera de los nombres de los candidatos postulados
-            // (candidates[i].name). Aquella sentencia de la línea 88 se cumple si esto no es "true", si no es verdadera la coincidencia...
+            // (candidates[i].name). Aquella sentencia de la línea 87 se cumple si esto no es "true", si no es verdadera la coincidencia...
             // porque así lo definimos allá también. Para que se cumpla la sentencia de allá, "name" debe ser diferente a "candidates[i].name".
-            // (!vote(name)) en ese caso, más adelante devolvemos falso (false) en esta función si no hay coincidencia alguna. Observe la línea de código 124.
+            // (!vote(name)) en ese caso, más adelante devolvemos falso (false) en esta función si no hay coincidencia alguna. Observe la línea de código 142.
+            // Para que quede más claro: "!" es = NOT (el resultado invierte la condición de la expresión), lo que quiere decir que la condición sería así:
+            // "if (strcmp(name, candidates[i].name) != 0)",... cuando ningún nombre pasado por tecla sea igual a ninguno de los candidatos registrados,
+            // quiero que pase o ejecutes lo que está dentro de la sentencia if de la línea de código 87. "if (!vote(name))... ".
         }
     }
 
