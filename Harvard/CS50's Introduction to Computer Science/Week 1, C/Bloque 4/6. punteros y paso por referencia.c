@@ -3,28 +3,29 @@
 /* Antes de introducir el concepto de "punteros" y "paso por referencia" necesitamos saber dos conceptos puntuales:
 Qué es el "parametro de dirección" y qué es el "parametro de indirección o puntero". */
 
-/* Parametro de dirección: tienen la función de indicar la dirección donde vamos a guardar o almacenar cierto valor.
+/* Parametro de dirección: tienen la función de indicar la dirección (o identificador) donde se guarda o almacena cierto valor o dato (dentro de la memoria de la pc).
 El simbolo de Ampersand "&" que usamos en "scanf" es un buen ejemplo:
-lo que hace es, justamente, decirle al valor de entrada que se guarde o almacene en una dirección: esa dirección sería la variable seleccionada con ampersand "&".
+lo que hace, justamente, decirle al valor de entrada que se guarde o almacene en una dirección: esa dirección sería la dirección de la variable seleccionada con ampersand "&".
 
-Parametro de indirección: Este, contrario al "parametro de dirección" que se representa con un ampersand "&", es representado por un asterisco "*" llamado en C Puntero.
-Básicamente lo que hace un puntero es señalar el valor del que tenga la dirección; es decir, el ampersand "&". Ya lo veremos mejor con un ejemplo:
+Parametro de indirección: Este, contrario al "parametro de dirección" que se representa con un ampersand "&", es representado por un asterisco "*" llamado en C: "Puntero".
+Básicamente lo que hace un puntero es señalar el valor del que tenga o guarda la dirección; es decir, el que tenga el ampersand "&". Ya lo veremos mejor con un ejemplo:
 */
 
 // Intercambia los valores de dos variables con una función
 
  #include <stdio.h>
 
- int main () {
-
-
+ int main (void)
+ {
    int x, *y; // hemos creado un puntero "y".
 
    x = 4;
-   y = &x; // estamos definiendo la "y" como la dirección de "x".
+   y = &x; // estamos definiendo a la "y" con la dirección de "x".
 
-   printf ("El valor de *y es %i. \n\n", *y);
+   printf ("El valor de *y es %i.\n", *y);
 
+   return 0;
+ }
    /* lo impreso: el valor del puntero "y" es 4. Es decir, es exactamente el mismo valor que yo defini en x. Por qué pasa esto?
    Pues, justamente porque a la "y" la he definido con el valor que hay en la dirección de "x" (y = &x). Y, adicionalmente,
    hemos hecho uso de un puntero en "y" para que apunte o señale, de forma definitiva, al valor que tiene la variable de dirección. Cuál es la variable de dirección? la de "x".
@@ -39,7 +40,3 @@ Básicamente lo que hace un puntero es señalar el valor del que tenga la direcc
       anteriormente acontecía que solamente podiamos pasar un parametro de una función independiente a la función principal (return parametro1;) o bien, ninguno (con void);
       pues, bien, con el método por referencia ya podríamos pasar tantos parametros como queramos! Veamos este concepto teorico en práctica.
    */
-
-   system ("pause");
-   return 0;
- }
