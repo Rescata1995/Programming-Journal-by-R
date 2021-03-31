@@ -29,9 +29,13 @@ Básicamente lo que hace un puntero es señalar el valor del que tenga o guarda 
    /* lo impreso: el valor del puntero "y" es 4. Es decir, es exactamente el mismo valor que yo defini en x. Por qué pasa esto?
    Pues, justamente porque a la "y" la he definido con el valor que hay en la dirección de "x" que es 4 (y = &x). Y, adicionalmente,
    hemos hecho uso de un puntero en "y" para que apunte o señale, de forma definitiva, al valor que tiene la variable "x" en su dirección.
+   Es decir, se hace necesario el uso de un puntero (en este caso: *y) para que pueda ir a la dirección de una variable (en este caso: &x).
 
    Entonces, puntero "y" (*y) está señalando al valor de "x"; pues, repetimos, es la variable de dirección para nuestro caso. Los punteros señalan a la variable de dirección.
    Y justamente el puntero "y" (*y) lo que hace es buscar el valor de quién tenga la "dirección"; es decir, quién tenga el ampersand "&"; la "x" es la que la tiene.
+
+   Para agregar...
+   Con la función "scanf" también podemos notar que, si dentro de la dirección de una variable no ha sido asignado un valor aún, un usuario se lo puede pasar por tecla.
    */
 
    // A qué viene todo este rollo?
