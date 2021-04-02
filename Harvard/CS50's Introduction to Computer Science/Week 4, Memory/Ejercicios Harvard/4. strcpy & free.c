@@ -11,7 +11,7 @@ int main(void)
   char *b = malloc(strlen(a) + 1);
 
   /* "NULL" representa un valor de puntero que no apunta a ninguna dirección de memoria válida.
-     Cuando se inserta un valor "no valido" para el puntero, conviene cerrar el programa con "return 1;"
+     Cuando se inserta un valor "no valido" para el puntero (o no se apunta a ninguno), conviene cerrar el programa con "return 1;"
      NULL puede definirse como una expresión constante equivalente a los valores cero entero, cero entero largo o cero convertido.
   */
 
@@ -25,7 +25,7 @@ int main(void)
      se hará una copia, sí, pero será una copia totalmente independiente a la variable string original.
      Entonces, en nuestro caso puntual, será la variable string "b" (destino) la que copiará a la variable string "a" (fuente).
      */
-     
+
   strcpy(b, a);
 
   // Ahora sí, probemos que efectivamente los cambios en "b" no puedan influir sobre "a". Hagamos un cambio en "b".
