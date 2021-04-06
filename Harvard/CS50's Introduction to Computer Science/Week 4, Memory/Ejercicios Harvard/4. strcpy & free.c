@@ -11,7 +11,8 @@ int main(void)
   char *b = malloc(strlen(a) + 1);
 
   /* "NULL" representa un valor de puntero que no apunta a ninguna dirección de memoria válida.
-     Cuando se inserta un valor "no valido" para el puntero (o no se apunta a ninguno), conviene cerrar el programa con "return 1;"
+     Cuando se inserta un valor "no valido" para el puntero (o no se apunta a ningún lado),
+     o simplemente el archivo apuntado no existe, conviene cerrar el programa con "return 1;"
      NULL puede definirse como una expresión constante equivalente a los valores cero entero, cero entero largo o cero convertido.
   */
 

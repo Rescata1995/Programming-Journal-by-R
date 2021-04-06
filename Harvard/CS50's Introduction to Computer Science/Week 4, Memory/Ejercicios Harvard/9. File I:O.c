@@ -55,7 +55,7 @@ int main(void)
     perror("Error en la apertura del programa");
 
     /* si algo sale mal en el programa que lo cierre inmediatamente o, en definitva, que lo cierre si el puntero no apunta hacía ningún lado deseado de la memoria.
-       (para los casos en los que no se inicialice el puntero definido con FILE o se inicialice con una ruta inexistente, se le pase un parametro 1 errado a "fopen").
+       (para los casos en los que no se inicialice el puntero definido con FILE o se inicialice con una ruta inexistente, se le pase un parametro 1 errado a "fopen");
        */
     return 1;
 

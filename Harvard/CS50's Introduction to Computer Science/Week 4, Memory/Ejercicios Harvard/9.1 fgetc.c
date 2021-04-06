@@ -1,12 +1,13 @@
 /* Ahora, es válido aclarar que hay otras funciones adicionales propias a la técnica "FILE I/O", esas son:
    fgetc() y su función complementaria fputc(); fread() y su función complementaria fwrite()... son las funciones más usadas de la línea "FILE I/O".
 
-   En la literalidad, "fgetc" traduce: "File get a caracter"; lo que hace es tomar, de un archivo existente, un siguiente caracter cada vez que se corra el programa,
-   suponiendo que el programa ya haya sido ejecutado antes y, en consecuencia, no sea su primera llamada de "fgetc" y ya haya sido tomado antes un primer caracter.
+   En la literalidad, "fgetc" traduce: "File get a character"; lo que hace es tomar, de un archivo existente, un siguiente caracter cada vez que se corra el programa,
+   suponiendo que el programa ya haya sido ejecutado antes y, en consecuencia, no sea su primera llamada de "fgetc" (porque ya tomó antes un primer caracter).
 
    Este caracter tomado es almacenado en una variable nueva que nada tiene que ver con el puntero del archivo, ¿cómo así? Veamoslo propiamente en su formula:
-   Tenemos que la formula es así: "char ch = fgetc(<file pointer>);". Si hacemos uso de esta formula y la contextualizamos a nuestro ejercicio anterior, tendríamos que:
+   Tenemos que la formula es así: "char ch = fgetc(<file pointer>);". Si hacemos uso de esta formula y la contextualizamos al ejercicio anterior, tendríamos que:
    "char ch = fgetc(phonebook);".
+
    Entonces esto traduce que, almacenaremos un caracter, tomado de un archivo existente (suponiendo que ya existia "phonebook.csv"), en una variable llamada: "ch";
    archivo existente que fue apuntado, señalado, por el puntero del archivo en cuestión que se llama: "phonebook".
    Es decir, se toma un caracter del archivo existente que está siendo apuntado por "phonebook",
@@ -18,7 +19,7 @@
    Esto es así porque no podemos tomar un cáracter, con "fgetc", de un archivo que aún no existe, y que toque escribir inicialmente (w);
    Por el contrario, se puede tomar un caracter de lo que ya se pueda leer (r), lo que ya exista en sí.
    Por eso es que, para la funcionalidad "leer" y para la función "fgetc",
-   el puntero del archivo debe apuntar hacia un archivo ya existente y no hacía un archivo que aún no existe o que pretenda crear apenas (escribir, "w"):
+   el puntero del archivo debe apuntar hacia un archivo ya existente y no hacía un archivo que aún no existe o que pretenda crear apenas (escribir, "w" o agregar "a"):
    no puede leer ni tomar nada sobre lo que es un lienzo vacio.
 
    Ahora, algo importante, si quisieramos leer y escribir desde el mismo archivo; entonces debe abrir dos "punteros del archivo", separados, al mismo archivo.
@@ -32,7 +33,7 @@
    con ese mismo puntero de archivo se podría "leer" y "escribir" sobre un mismo archivo, ya sea uno que estemos creando o uno ya existente.
 
    Lo que viene, un ejercicio a desarrollar...
-   Haremos un ejercicio que nos tome, lea e imprima todos los caracteres de un archivo existente (todo su contenido, su código fuente).
+   Haremos un ejercicio que nos tome, lea e imprima todos los caracteres de un archivo existente (todo su contenido) en la terminal: replicando así al comando "cat" de Linux.
 */
 
 #include <stdio.h>
@@ -50,15 +51,16 @@ int main(void)
 
   char caracter;
 
-  /* con la función "feof" queremos cerciorarnos si hemos llegado al final del archivo; es decir, el bucle while se ejecutaría hasta que se tome el último caracter del archivo.
+  /* con la función "feof" queremos comprobar si hemos llegado al final del archivo; es decir, el bucle while se ejecutaría hasta que se tome el último caracter del archivo.
      la función "feof" (End Of File) nos va a regresar un valor igual a 0 mientras (while) haya todavía contenido dentro del archivo al que está apuntando "lectura";
      en este caso puntual, repetimos, "feof" será igual a 0 mientras haya todavía caracteres para tomar; apenas ya no haya más contenido en el archivo, asumirá un valor != 0.
      */
-  {
+
   while (feof(lectura) == 0)
+  {
     caracter = fgetc(lectura);
-    // la variable "caracter" es la que está tomando todos los caracteres del archivo "r.txt" hasta que llegue al último; luego son imprimidos, iterativamente, uno por uno.
     printf("%c", caracter);
+    // la variable "caracter" es la que está tomando todos los caracteres del archivo "r.txt" hasta que llegue al último; luego son imprimidos, iterativamente, uno por uno.
   }
 
   fclose(lectura);

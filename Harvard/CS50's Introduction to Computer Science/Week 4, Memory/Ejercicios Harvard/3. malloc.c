@@ -45,12 +45,14 @@ int main(void)
    char *a = get_string("a: ");
 
 
-   // estaremos asignando aquí la misma cantidad de bytes en memoria que asume "a", contando también el caracter nulo (de ahí el: "+ 1"), pero en "b";
-   // y, ojo, aquí lo importante, esta asignación de bytes en "b" la hace en otro espacio de memoria que no comprometa a "a" en absoluto.
-   // Aún no estamos dandole el mismo contenido textual de "a" hacia "b", no (no hemos copiado nada aún);
-   // pero, sí que ya estará asignada la cantidad de bytes requeridos para que, en otro espacio de memoria de la computadora, pueda ser replicado "a" por "b".
-   // Eso es lo que la función "malloc" nos permite hacer.
-   // Esto con qué finalidad al fin? Para que, cuando realmente se haga una copia del contenido textual, sean dos strings completamente independientes de sí.
+   /* estaremos asignando aquí la misma cantidad de bytes en memoria que asume "a", contando también el caracter nulo (de ahí el: "+ 1"), pero en "b";
+      y, ojo, aquí lo importante, esta asignación de bytes en "b" la hace en otro espacio de memoria que no comprometa a "a" en absoluto.
+      Aún no estamos dandole el mismo contenido textual de "a" hacia "b", no (no hemos copiado nada aún);
+      pero, sí que ya estará asignada la cantidad de bytes requeridos para que, en otro espacio de memoria de la computadora, pueda ser replicado "a" por "b".
+      Eso es lo que la función "malloc" nos permite hacer.
+      Esto con qué finalidad al fin? Para que, cuando realmente se haga una copia del contenido textual, sean dos strings completamente independientes de sí.
+      */
+      
    char *b = malloc(strlen(a) + 1);
    // se pone "+ 1" porque la función "strlen" no cuenta el caracter nulo que tienen todas las cadenas de texto y toca asumirlo (incorporarlo) manualmente.
 
