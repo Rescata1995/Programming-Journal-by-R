@@ -29,8 +29,9 @@
    Ahora, hay funcionalidades, operaciones que queramos realizar dentro de un archivo permanente, que no son mutuamente excluyentes;
    es decir, pueden funcionar conjuntamente ambas dentro un mismo puntero de archivo.
    Si, por ejemplo, pudieramos trabajar conjuntamente la funcionalidad de "leer" y "escribir" dentro de un mismo puntero de archivo;
-   el 2do parametro que se le pasaría a la función "fopen" de ese puntero de archivo sería: "wr"; es decir,
-   con ese mismo puntero de archivo se podría "leer" y "escribir" sobre un mismo archivo, ya sea uno que estemos creando o uno ya existente.
+   el 2do parametro que se le pasaría a la función "fopen" de ese puntero de archivo sería: "r+"; es decir,
+   con ese mismo puntero de archivo se podría "leer" y "escribir" sobre un mismo archivo, sin embargo, tiene que ser sobre un archivo existente.
+   "w+" hace lo mismo, leer y escribir; pero, lo que hará, sería sobre-escribir sobre el archivo ya existente.
 
    Lo que viene, un ejercicio a desarrollar...
    Haremos un ejercicio que nos tome, lea e imprima todos los caracteres de un archivo existente (todo su contenido) en la terminal: replicando así al comando "cat" de Linux.
@@ -56,12 +57,14 @@ int main(void)
      en este caso puntual, repetimos, "feof" será igual a 0 mientras haya todavía caracteres para tomar; apenas ya no haya más contenido en el archivo, asumirá un valor != 0.
      */
 
-  while (feof(lectura) == 0)
+  while ((caracter = fgetc(lectura)) != EOF)
+  // mientras la variable "caracter", definida por cada uno de los caracteres del archivo al que apunta "lectura"; es decir, "r.txt", no llegue al final del archivo (!= EOF)
+  // haga lo siguiente:
   {
-    caracter = fgetc(lectura);
     printf("%c", caracter);
     // la variable "caracter" es la que está tomando todos los caracteres del archivo "r.txt" hasta que llegue al último; luego son imprimidos, iterativamente, uno por uno.
   }
+  // Podría hacer un salto de línea, justo después de "%c", en cada iteracción para que se dé cuenta que, efectivamente, la función "fgetc" sólo toma un caracter por ejecución.
 
   fclose(lectura);
 

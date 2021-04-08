@@ -32,33 +32,34 @@
    Veamoslo en un ejercicio.
    */
 
-   #include <stdio.h>
-   #include <string.h>
+#include <stdio.h>
+#include <string.h>
 
-   int main(void)
-   {
-     FILE *lectura = fopen("/Users/robertovelasquezdean/r.txt", "r");
+int main(void)
+{
+  FILE *lectura = fopen("/Users/robertovelasquezdean/r.txt", "r");
 
-     FILE *copia = fopen("/Users/robertovelasquezdean/r_copy.txt", "w");
+  FILE *copia = fopen("/Users/robertovelasquezdean/r_copy.txt", "w");
 
+  if (lectura == NULL)
+  {
+  perror("Entrada invalida.\n");
+  return 1;
+  }
 
-     if (lectura == NULL)
-     {
-       perror("Entrada invalida.\n");
-       return 1;
-     }
+  char caracter;
 
-     char caracter;
+  while ((caracter = fgetc(lectura)) != EOF)
+  // mientras la variable "caracter", definida por cada uno de los caracteres del archivo al que apunta "lectura"; es decir, "r.txt", no llegue al final del archivo (!= EOF)
+  // haga lo siguiente:
+  {
+    fputc(caracter, copia);
+    // la variable "caracter" es la que está tomando todos los caracteres del archivo "r.txt", hasta que llegue al último; para luego ponerlos, uno a uno e iterativamente,
+    // sobre el puntero "copia"; es decir, para exportar todos los caracteres de "r.txt", de a uno en uno, al archivo "r_copy.txt".
+  }
 
-     while (feof(lectura) == 0)
-     {
-       caracter = fgetc(lectura);
-       fputc(caracter, copia);
-       // la variable "caracter" es la que está tomando todos los caracteres del archivo "r.txt" hasta que llegue al último; luego son imprimidos, iterativamente, uno por uno.
-     }
+  fclose(lectura);
+  fclose(copia);
 
-     fclose(lectura);
-     fclose(copia);
-
-     return 0;
-   }
+return 0;
+}
