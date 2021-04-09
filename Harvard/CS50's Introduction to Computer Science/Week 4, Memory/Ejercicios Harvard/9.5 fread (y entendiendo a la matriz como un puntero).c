@@ -25,54 +25,54 @@
 int main(void)
 {
   // declaración de una matriz de 10 enteros, ocuparemos de la parte de la memoria "stack" 40 bytes propios de 10 enteros (4 bytes por int)
-  int destino[10]; // buffer1
+  int salida[10]; // buffer1
 
-  /* Lo que sucederá es que leeremos 40 bytes de información del archivo apuntado por "objetivo" y serán almacenados en un lugar de la memoria donde hayamos reservado 40 bytes;
-     ese lugar hemos decidido que sea la matriz declarada "destino", la cual es capaz de contener 10 unidades de 4 bytes. Entonces, en total, puede contener 40 bytes de info.
+  /* Lo que sucederá es que leeremos 40 bytes de información del archivo apuntado por "entrada" y serán almacenados en un lugar de la memoria donde hayamos reservado 40 bytes;
+     ese lugar hemos decidido que sea la matriz declarada "salida", la cual es capaz de contener 10 unidades de 4 bytes. Entonces, en total, puede contener 40 bytes de info.
      */
-  // En resumen, estaremos leyendo 40 bytes del archivo apuntado por "objetivo" para almacenarlos en el array "destino".
+  // En resumen, estaremos leyendo 40 bytes del archivo apuntado por "entrada" para almacenarlos en el array "salida".
 
-  FILE *objetivo = fopen("objetivo.c", "r"); // file pointer
+  FILE *entrada = fopen("objetivo.c", "r"); // file pointer
 
-  fread(destino, sizeof(int), 10, objetivo);
+  fread(salida, sizeof(int), 10, entrada);
 
-  // Lo que se guarda en "destino" es la codificación en forma de bytes del texto que hay en "objetivo.c"
+  // Lo que se guarda en "salida" es la codificación en forma de bytes del texto que hay en "objetivo.c"
 
-  /* Sin embargo, no necesariamente tenemos que almacenar la información, que fue recopilada de "objetivo", en la parte de la memoria "stack" (por medio de un Array declarado);
+  /* Sin embargo, no necesariamente tenemos que almacenar la información, que fue recopilada de "entrada", en la parte de la memoria "stack" (por medio de un Array declarado);
      podríamos también almacenar esa información en la parte de la memoria "head", por medio de otro puntero que haga uso de la función "malloc" (siendo éste el nuevo buffer).
      Veamos un ejemplo.
      */
 
-  // le pediremos al "head" que nos dé un espacio de memoria dinamica libre para almacenar un total de 80 valores "double" a los cuales está apuntando el puntero "destino2".
-  // Estos valores que se van a almacenar en la ubicación a la que apunta "destino2" (otro Array) provienen, recuerde, del mismo file pointer que estamos empleando: "objetivo".
+  // le pediremos al "head" que nos dé un espacio de memoria dinamica libre para almacenar un total de 80 valores "double" a los cuales está apuntando el puntero "salida2".
+  // Estos valores que se van a almacenar en la ubicación a la que apunta "salida2" (otro Array) provienen, recuerde, del mismo file pointer que estamos empleando: "entrada".
 
-  double *destino2 = malloc(sizeof(double) * 80); // buffer2, asignamos memoria dinámica del "head", exactamente 640 bytes (80 * 8 bytes x double).
+  double *salida2 = malloc(sizeof(double) * 80); // buffer2, asignamos memoria dinámica del "head", exactamente 640 bytes (80 * 8 bytes x double).
 
-  /* Lo que pasará es que, la llamada de "fread", esta vez, recopilará 640 bytes de información provenientes del archivo al que apunta "objetivo"
-     (el cuál está leyendo para tomar de sí sus valores); y, dicha información, la va a almacenar, ahora, en otro espacio al que apunta "destino2".
+  /* Lo que pasará es que, la llamada de "fread", esta vez, recopilará 640 bytes de información provenientes del archivo al que apunta "entrada"
+     (el cuál está leyendo para tomar de sí sus valores); y, dicha información, la va a almacenar, ahora, en otro espacio al que apunta "salida2".
     */
 
-  fread(destino2, sizeof(double), 80, objetivo);
+  fread(salida2, sizeof(double), 80, entrada);
 
-  free(destino2);
+  free(salida2);
 
   /* Ahora, puntualmente, también podríamos tratar a "fread" como una llamada a "fgetc"; pues, en este caso, sólo intentamos obtener un carácter del archivo.
      Y, lo dicho, como sólo vamos a contener un valor (un caracter solamente), no necesitamos hacer uso de un Array.
 
      La novedad de esto es que, cuando sólo tenemos una variable, necesitamos pasar la dirección de esa variable; porque, si bien recuerda, el primer argumento para "fread"
      es un puntero a la ubicación y memoria donde queremos almacenar la información; pues, recordemos el nombre de una matriz o una matriz en sí misma (Array) es un puntero,
-     y es por esa razón que no necesitamos hacer algo como "una matriz con un ampersand"; por ejemplo, no necesitamos hacer en los previos casos: "&destino" o "&destino2".
+     y es por esa razón que no necesitamos hacer algo como "una matriz con un ampersand"; por ejemplo, no necesitamos hacer en los previos casos: "&salida" o "&salida2".
 
      Sin embargo, una variable caracter (char) no es una matriz ni mucho menos un puntero, por lo que sí se hace uso de parametros de dirección (&) para indicar que...
-     es ahí en esa dirección, en esa variable "char", donde queremos ir para almacenar ese byte de información, correspondiente a un "char", que proviene de "objetivo".
+     es ahí en esa dirección, en esa variable "char", donde queremos ir para almacenar ese byte de información, correspondiente a un "char", que proviene de "entrada".
 
      Veamos esto.
      */
 
   char c;
-  fread(&c, sizeof(char), 1, objetivo);
+  fread(&c, sizeof(char), 1, entrada);
 
-  fclose(objetivo);
+  fclose(entrada);
 
   return 0;
 }

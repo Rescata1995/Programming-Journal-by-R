@@ -13,7 +13,7 @@ int main(void)
      es decir, por cada línea de código del archivo apuntado en últimas. Ese archivo apuntado, en este caso, se llama: "rstring.txt".
      "20" sería el límite de caracteres máximos que puede leer y tomar, nuestro array char (un string), por cada línea de código del archivo apuntado: "rstring.txt".
 
-     Varias consideraciones. el Array char va a dejar de funcionar si:
+     Varias consideraciones. El Array char va a dejar de funcionar si:
 
      1. Se supera el límite de caracteres establecidos por definición para ser considerados; en este caso, si encuentra una oración o una línea de código,
      en el archivo apuntado, con más de 20 caracteres,... sólo lee los 20 caracteres primeros, los demás caracteres los omite.
