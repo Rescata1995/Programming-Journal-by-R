@@ -38,8 +38,9 @@ int main(void)
    y 3ro. va el file pointer (el que apunta al archivo de dónde se extraerá la info, la que será leída y tomada; es decir, de dónde se extrae cada línea de código).
     */
 
-  while (fgets(oracion, 20, lectura) != NULL)
+  while (fgets(oracion, 20, lectura))
   // establecemos la sentencia while para que, la anterior operación, se repita multiples veces mientras (while) "lectura" contenga información y no llegue a su fin (!= NULL);
+  // aunque si no coloca el "!= NULL" igual la computadora entiende que el bucle se ejecutará, sobre cada línea de código, hasta el final del archivo (puede probarlo).
   // es decir, lo que hará esta condición es que leerá todas las líneas de código de "rstring.txt" a su fin, las tomará y las exportará a "oracion"... para ponerlas en "copia".
 
   {
