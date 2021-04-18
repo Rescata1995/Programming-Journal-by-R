@@ -90,9 +90,16 @@ int main ()
 
     aux[3] = 4;
 
-    free (list);
+    free(list);
 
     list = aux;
+
+    for (int i = 0; i  < 4; i++)
+    {
+      printf("%i\n", list[i]); // imprimimos a "list" sólo para verificar que, efectivamente, tomó los valores de "aux".
+    }
+
+    free(list); // Al igual, luego de acabar con "list", de nuevo debe limpiar la memoria.
 
     return 0;
 }
