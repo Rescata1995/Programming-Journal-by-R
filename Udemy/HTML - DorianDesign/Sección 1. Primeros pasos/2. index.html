@@ -5,4 +5,35 @@
      (y motores de busqueda) sepan qué tipo de estructura están tratando de interpretar de HTML para ser reflejada en pantalla: 
      sobre cómo está estructurado, en suma, nuestro documento HTML. Esta es la gran importancia de HTML: sus etiquetas. -->
 
-     
+     <!-- Ahora vamos a recrear la estructura base de un documento HTML -->
+
+     <!DOCTYPE html> <!-- Esta etiqueta define el estandar de documento que estamos siguiendo; puntualmente, el estandar de HTML 5 -->
+     <html lang="en"> <!-- lang="en", como atributo, define el idioma del documento HTML; y "en" significa "inglés"; es decir, 
+                           tendríamos que, puntualmente, esta página web al ser reflejada en internet, su verá en inglés. 
+                         
+                           Ahora bien, antes del atributo lang= "en", está la palabra "html". La etiqueta "html" representa 
+                           la inicialización del documento HTML en sí; en consecuencia, esta etiqueta "html" sólo se cierra 
+                           cuando usted termine con su documento HTML en cuestión (cuando termine de trabajar con esta página). -->
+
+     <head>  <!-- todo lo que tiene que ver con los datos que le pasamos al navegador con info. de nuestra página web -->
+          <meta charset="UTF-8">  <!-- El atributo charset="UTF-8" configura el set de caracteres Unicode Estandar -->
+          <title>Document</title> <!-- Representa el titulo que tiene la pestaña de este documento o página web al abrirla -->
+     </head>
+
+     <body> <!-- "body" representa todo el contenido en sí de nuestra página web, lo que resulta meramente visual en el navegador -->
+
+          Aquí nuestro bodyyyy!
+
+     </body>
+     </html>
+
+     <!-- En resumen, esta es la estructura de un sitio web completamente básico, se compone por las etiquetas de apertura y cierre
+          de "html", "head" y "body". Idealmente toda página que desarrollemos, de ahora en adelante, debe ser abierta
+          desde un servidor de desarrollo (porque para eso están pensadas); en nuestro caso, haremos uso de un servidor local 
+          (instale extensión "live server" en VC); es decir, para trabajar nuestras páginas como si estuvieramos en un servidor real.
+
+          En cambio, si se abre nuestro documento o página web como un archivo, se estará expuesto a fallas de funcionamiento. 
+          Por el contrario, una gran ventaja de abrir nuestros documentos HTML desde un servidor de desarrollo es que, generalmente,
+          las páginas contarían con recarga instantanea de todos los cambios que se hagan dentro del editor Visual Studio Code
+          (sin necesidad de ir al navegador y actualizarlas manualmente).
+          -->
