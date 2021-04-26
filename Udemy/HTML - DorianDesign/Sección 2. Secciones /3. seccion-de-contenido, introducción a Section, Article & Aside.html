@@ -1,0 +1,79 @@
+<!-- Es una buena práctica estructurar el contenido de tu documento HTML tal que al navegador se le haga fácil interpretarlo 
+    (que la información suministrada por el documento HTML tenga más sentido para los navegadores); 
+    esto se logra por medio de un conjunto de etiquetas de sección de contenido, 
+    
+    2do conjunto de etiquetas: <section> </section>, <article> </article> & <aside> </aside>. 
+
+    Section: Es un contenedor genérico que agrupa contenido que está relacionado; es decir, se refiere a los casos en los que creamos bloques cuyo contenido hace parte de un bloque total (el que sería el "section"). Usaremos la etiqueta "Section" para estos casos.
+
+    Article: Es un contenedor que representa contenido independiente; es decir, podemos leer ese fragmento en cualquier otro sitio y tendría sentido por sí mismo (No hay una causalidad de un texto a otro).
+
+    Aside: Se utiliza para representar contenido relacionado pero que no forma parte, directamente, del contenido principal del que se habla.
+
+
+    Casos de Anidamiento: Un "section" puede contener articles (o vicerversa, indistintamente); pero para el caso referido, por ejemplo, si tenemos varios artículos que hablan sobre etiquetas HTML; éstas deben ir dentro de un section, ya que es contenido relacionado entre sí; pero, también, los "articles" serían necesariamente contenido independiente (en este caso puntual donde estemos hablando 
+    de "articulos" para referirnos a esos "articles" que están dentro de un "section"); entonces, tendríamos la facultad de leer un "article" sin haber leido el resto... y no se perdería el sentido de la lectura, porque estamos ante, precisamente, "articles" y ellos son independientes. 
+
+    También existe el caso en el que un article contenga varias secciones (sections), el articulo (article) independiente podría ser "navegadores" y este contener por dentro secciones (sections) donde se refieran a los "navegadores" más usados en el año 2020.
+
+    Pero, incluso, también se da el caso en que un "section" contiene otros "sections" (este ejemplo también lo veremos en este documento)
+
+    Ahora, algo importante: podríamos convenir que estas etiquetas, vendrían siendo "sub-etiquetas" de la etiqueta "main".
+
+    En la siguiente modelación pondremos de ejemplo un caso en el que un "section" contiene a "articles".
+-->
+
+<!DOCTYPE html>
+<html lang="es"> <!-- Hemos definido el lenguaje en español, "es", debido a que el contenido de esta página está escrita en español -->
+<head>
+    <title>Section > Articles</title>
+</head>
+<body>
+    <!-- encabezado -->
+    <header>
+        <h1>NOTICIAS NACIONALES</h1>
+    </header>
+    <!-- contenido -->
+    <main>
+        <section> 
+            <h2>Section como contenedor</h2>
+            <section>
+                <h3>Noticias del día</h3>
+            <article>
+                <header>
+                    <h4>Noticia 1</h4>
+                </header>
+                <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat hic repellendus ipsum voluptatum fuga provident dignissimos iste architecto sequi consequatur voluptates non, necessitatibus tempore quas dolorem eius nostrum, sint accusamus.</p>
+                <footer>Esta noticia 1 ocurrió en Madrid</footer>
+            </article>
+            <article>
+                <header>
+                    <h4>Noticia 2</h4>
+                </header>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea odio expedita a dicta unde delectus quisquam, vitae voluptatum! Quod a sequi odit fugiat excepturi animi ex optio omnis odio officia!</p>
+                <footer>Esta noticia 2 ocurrió en Londres</footer>
+            </article>
+            <article>
+                <header>
+                    <h4>Noticia 3</h4>
+                </header>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis, tempore distinctio aspernatur voluptate molestiae harum nihil sequi porro non iure optio blanditiis veniam dolores soluta fugiat aperiam, repellat officiis quisquam?</p>
+                <footer>Esta noticia 3 ocurrió en Paris</footer>
+            </article>
+        </section> <!-- Cierre de section 2 que está contenido por un section 1 -->
+      </section> <!-- Cierre de section 1 -->
+    </main>
+    <!-- pie de página -->
+    <footer>
+        25-abr-2021
+    </footer>
+</body>
+</html>
+
+<!-- Como los "articles" no dejan de ser etiquetas independientes, es una buena práctica que ellas también tengan por dentro su propio "header" y su propio "footer" (es lo ideal, que se haga de esta forma); en nuestro caso, no hemos dejado cabos sueltos, con respecto a eso, al colocar dentro de cada "article" un "header" (y su "h4"); es decir, un título, su respectivo párrafo y también su "footer".
+
+Necesariamente debía ser un "h4" porque los "articles" están contenido dentro de un "section" que presenta un título con "h3"... vendría luego, entonces, un "h4" -porque la etiqueta "section" los contiene (a los "articles").
+ -->
+
+<!-- Truco para ajustar el texto o las líneas de código a la ventana: "alt + z" -->
+<!-- Para saber si, semanticamente, nuestro código es correcto... reviselo en: https://validator.w3.org/ -->
