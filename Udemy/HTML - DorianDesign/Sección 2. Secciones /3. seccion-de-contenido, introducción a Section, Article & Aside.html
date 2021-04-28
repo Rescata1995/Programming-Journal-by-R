@@ -10,7 +10,6 @@
 
     Aside: Se utiliza para representar contenido relacionado pero que no forma parte, directamente, del contenido principal del que se habla.
 
-
     Casos de Anidamiento: Un "section" puede contener articles (o vicerversa, indistintamente); pero para el caso referido, por ejemplo, si tenemos varios artículos que hablan sobre etiquetas HTML; éstas deben ir dentro de un section, ya que es contenido relacionado entre sí; pero, también, los "articles" serían necesariamente contenido independiente (en este caso puntual donde estemos hablando 
     de "articulos" para referirnos a esos "articles" que están dentro de un "section"); entonces, tendríamos la facultad de leer un "article" sin haber leido el resto... y no se perdería el sentido de la lectura, porque estamos ante, precisamente, "articles" y ellos son independientes. 
 
@@ -24,7 +23,7 @@
 -->
 
 <!DOCTYPE html>
-<html lang="es"> <!-- Hemos definido el lenguaje en español, "es", debido a que el contenido de esta página está escrita en español -->
+<html lang="zxx"> <!-- Hemos definido el lenguaje en español, "zxx", debido a que el contenido de esta página está escrita en latin -->
 <head>
     <title>Section > Articles</title>
 </head>
@@ -33,35 +32,56 @@
     <header>
         <h1>NOTICIAS NACIONALES</h1>
     </header>
+    <!-- Aside: no forma parte del contenido principal "main" -->
+    <aside>Visita mi canal de Youtube</aside>
     <!-- contenido -->
     <main>
         <section> 
             <h2>Section como contenedor</h2>
             <section>
                 <h3>Noticias del día</h3>
-            <article>
+                <article>
+                    <header>
+                        <h4>Noticia 1</h4>
+                    </header>
+                    <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat hic repellendus ipsum voluptatum fuga provident dignissimos iste architecto sequi consequatur voluptates non, necessitatibus tempore quas dolorem eius nostrum, sint accusamus.</p>
+                    <footer>Esta noticia 1 ocurrió en Madrid</footer>
+                </article>
+                <article>
+                    <header>
+                        <h4>Noticia 2</h4>
+                    </header>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea odio expedita a dicta unde delectus quisquam, vitae voluptatum! Quod a sequi odit fugiat excepturi animi ex optio omnis odio officia!</p>
+                    <footer>Esta noticia 2 ocurrió en Londres</footer>
+                </article>
+                <article>
+                    <header>
+                        <h4>Noticia 3</h4>
+                    </header>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis, tempore distinctio aspernatur voluptate molestiae harum nihil sequi porro non iure optio blanditiis veniam dolores soluta fugiat aperiam, repellat officiis quisquam?</p>
+                    <footer>Esta noticia 3 ocurrió en Paris</footer>
+                </article>
+            </section> <!-- Cierre de section 2 que está contenido por un section 1 -->
+        </section> <!-- Cierre de section 1 -->
+      
+        <article> <!-- Ahora veremos el caso contrario: donde un "article" contiene varios "sections". -->
+            <h2>Navegadores más utilizados en 2021</h2>
+            <section> 
                 <header>
-                    <h4>Noticia 1</h4>
+                    <h3>Chrome</h3>
                 </header>
-                <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat hic repellendus ipsum voluptatum fuga provident dignissimos iste architecto sequi consequatur voluptates non, necessitatibus tempore quas dolorem eius nostrum, sint accusamus.</p>
-                <footer>Esta noticia 1 ocurrió en Madrid</footer>
-            </article>
-            <article>
-                <header>
-                    <h4>Noticia 2</h4>
+                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident enim rerum magnam unde hic, inventore porro similique. Aspernatur ea tenetur vel, corporis animi dicta facilis, ipsam unde nesciunt laudantium similique?
+                </p>
+                <footer>Creado por Larry Page & Serguéi Brin</footer>
+            </section>
+            <section>
+                <header> 
+                    <h3>Firefox</h3>
                 </header>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea odio expedita a dicta unde delectus quisquam, vitae voluptatum! Quod a sequi odit fugiat excepturi animi ex optio omnis odio officia!</p>
-                <footer>Esta noticia 2 ocurrió en Londres</footer>
-            </article>
-            <article>
-                <header>
-                    <h4>Noticia 3</h4>
-                </header>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis, tempore distinctio aspernatur voluptate molestiae harum nihil sequi porro non iure optio blanditiis veniam dolores soluta fugiat aperiam, repellat officiis quisquam?</p>
-                <footer>Esta noticia 3 ocurrió en Paris</footer>
-            </article>
-        </section> <!-- Cierre de section 2 que está contenido por un section 1 -->
-      </section> <!-- Cierre de section 1 -->
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid atque voluptas commodi, laudantium animi similique officiis distinctio odio. Dolorum officia dolor adipisci assumenda aperiam atque quod laboriosam iste tempore. Perferendis.</p>
+                <footer> Creado por David Hyatt</footer>
+            </section>
+        </article> <!-- Cierre de "article" que engloba varios "sections" -->
     </main>
     <!-- pie de página -->
     <footer>
@@ -77,3 +97,9 @@ Necesariamente debía ser un "h4" porque los "articles" están contenido dentro 
 
 <!-- Truco para ajustar el texto o las líneas de código a la ventana: "alt + z" -->
 <!-- Para saber si, semanticamente, nuestro código es correcto... reviselo en: https://validator.w3.org/ -->
+<!-- la etiqueta "header" es la que contiene siempre los títulos (las etiquetas de tipo "H") -->
+
+<!-- Si se da cuenta, es una buena práctica que una etiqueta (o varias de su mismo estilo) que estén siendo contenidas por otra diferente... en el caso puntual de referirnos a: un "section" que contiene varios "articles"; o, en su defecto, un "article" que contiene varios "sections"; respectivamente, es bueno que esos "articles" tengan su propio "header" y su propio "footer"; y, en el caso contrario, cuando es un "article" quién contiene varios "sections", éstos últimos tengan también (cada uno) su propio "header" y su propio "footer". 
+Tanto "article" como "section" forman parte del contenido principal "main"; mas, "aside" no necesariamente: puede estar dentro o afuera! 
+
+Desglocemos esto: "body" contiene al "header", al "aside", al "main" y a un "footer"; pero, dentro de la etiqueta "main" se contienen las etiquetas: "section" & "article". Idealmente se coloca siempre al "aside" por fuera del "main" porque, si bien "aside" se relaciona con el documento HTML, no hace parte del contenido principal. Ahora, a estas tres etiquetas en su conjunto se les llama: "elementos de bloque", es así porque ocupan todo el ancho disponible de su documento HTML (incluso aunque no lo requieran); lo mismo sucede con las etiquetas de tipo <h1>, <h2>... y <p>. Por otro lado, están los "elementos de línea", aquellos que sólo se conforman con ocupar un espacio equivalente al contenido textual y real del elemento; por ejemplo, la etiqueta "span" ->
