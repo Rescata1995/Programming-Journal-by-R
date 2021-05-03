@@ -1,3 +1,25 @@
+
+/*
+   Sintaxis de CSS 
+
+   Selector: Se refiere al elemento al que le vamos a aplicar estilos; por ejemplo: "body".
+
+   Propiedad: Se refiere a lo que nos interesa cambiar puntualmente de ese elemento; es decir, la caracteristica puntual que queremos cambiar. En nuestro ejemplo, "background-color".
+
+   Valor: Representaría el nuevo valor que le daremos a la "propiedad". En nuestro caso, "steelblue".
+
+   Propiedad-valor: Es la lectura de la expresión, en su conjunto, entre la propiedad y su valor; es decir, una declaración. En nuestro caso sería: "background-color: steelblue".
+
+   Regla: Así se le llama al selector, con todas sus declaraciones, en su conjunto.
+
+   selector
+   {
+       propiedad: valor;
+       propiedad2: valor;
+       propiedad3: valor;
+    } 
+   */
+
 body
 {
     background-color: steelblue;
