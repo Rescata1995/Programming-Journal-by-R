@@ -1,0 +1,30 @@
+<!-- Los enlaces son la puerta de entrada o ingreso, por medio de un click, a un sitio web. También son conocidos como "Links" y nos permiten conectar una página web con otra (ya sea del mismo sitio web o de un sitio web diferente). -->
+
+<!-- 
+
+Una forma de movernos entre estas páginas sería a través de un link, éstos se establecen con el elemento "a" seguido de un atributo llamado "href" (de momento). "href" se define o se inicializa con la dirección o ruta del recurso o sitio que queremos obtener, al que queremos ir. Probemos esto yendo a la página web llamada: "destino.html". Intentemos conectar una página web con otra (un documento HTML con otro).
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enlaces</title>
+</head>
+<body>
+
+    <h1>Probando los enlaces en Inicio</h1>
+    <a href="/Users/robertovelasquezdean/Desktop/Rescata_/Programación/Udemy/HTML - DorianDesign/Sección 5. Enlaces/destino.html">Presiona aquí para ir a la página: "destino.html"</a>
+    <!-- Lo anterior se define como una ruta relativa a la raiz (las que, en efecto, se recomienda usar siempre si se trata de rutas pertenecientes al proyecto) -->
+
+</body>
+</html>
+
+<!-- Rutas absolutas: 
+    Tienen un protocolo, http o https; y se refiere a las rutas, donde el enlace clickeado, nos conduciría a un lugar que está ubicado por fuera de nuestro propio proyecto; por eso es que se suelen usar para rutas externas. 
+
+     Rutas relativas:
+    Pueden ser relativas al punto donde nos encontramos; es decir, que dichas rutas o documentos HTML estén ubicados dentro de una misma carpeta (y sólo basta con poner en la ruta el nombre del archivo destino); o bien, relativas a la raiz del proyecto (si bien, las rutas pertenecen a un mismo proyecto, acá tocaría especificar una dirección de ruta completa porque los documentos HTML no se encuentran dentro de una misma carpeta): debe hacer uso de barras que separen un directorio de otro, más precisamente (de hecho todas las rutas comienzan con una barra /). Además, puede referirse a su directorio actual con un "." y al directorio "home" de su proyecto con "/"; de hecho, si desea ir directo al archivo "home", sólo basta con hacer esto: <a href="/"> </a>. Lo anterior sólo funciona si su archivo principal, el que está en su directorio "home", se llama "index.html" (principalmente por esto es una buena práctica llamar siempre a nuestro archivo principal como: "index.html").
+-->

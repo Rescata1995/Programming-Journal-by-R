@@ -1,0 +1,66 @@
+/* SELECTORES: Simples y Compuestos */
+
+/* 
+    Selectores Simples.
+
+        Selectores elementales, son los más básicos: se utilizan en casos muy concretos. Tales como:
+
+            Selector Universal: Llevan un Asterisco (*) y consisten en seleccionar absolutamente todo; es decir, aplican los valores definidos en una propiedad sobre todo el documento HTML (sobre todos sus elementos). No es bueno abusar de él.
+           
+            Selector de tipo o etiqueta: Llevan el nombre de la etiqueta en cuestión y consisten en aplicar el valor definido en una propiedad sobre un elemento en especifico.
+
+        Selectores de atributo (los atributos HTML) o clase: son los más usados porque se aplican sobre elementos con especificaciones (y no sobre la totalidad del elemento en sí).
+
+            Selector id (id del elemento): para ser manipulados en CSS, se deben inicializar con un numeral (#) y, posteriormente, colocar el valor del "id" en cuestión. No es recomendable dar estilos con "id", porque sólo se puede aplicar una vez sobre un elemento (es decir, sólo un intento por elemento, de todo el documento HTML, puede definir su atributo con un "id" -identificador).
+
+            Selector class (clase del elemento): para ser manipulados en CSS, se deben inicializar con un punto  (.) y, posteriormente, colocar el valor del "class" en cuestión (el de su interés). Esto es lo más recomendado para dar estilos: definir sus elementos con clases. Puede poner cuantas "class" desees sobre un mismo elemento (u otro); y tener la posibilidad, así, de manipular cada etiqueta en particular si así lo desea. Otra gran ventaja es que... podemos poner la misma clase, incluso, sobre elementos del documento HTML diferentes; y aplicar, desde CSS, las mismas caracteristicas de estilo sobre los dos elementos diferentes relacionados en una misma clase.
+
+            Otros atributos: Son representados con estas dos llaves [], dentro de las llaves se coloca el atributo (de alguna etiqueta de HTML) sobre el que queramos manipular para darle estilo con CSS. Por ejemplo, [href]
+    
+
+
+    Selectores Compuestos
+        Selectores Agrupados
+        Selectores Combinadores
+        Pseudoclases - Pseudoelementos   
+        */
+
+       
+/* 1. Simples, selectores elementales:
+    */
+
+/* Ejemplo de un selector universal */
+*{
+    background-color: lightcoral;
+}
+
+/* Ejemplo de un selector de tipo o etiqueta */
+h1{
+    background-color: lightcyan;
+}
+
+/* Otros ejemplos */
+
+p{
+    background-color: lightgreen;
+}
+
+ul{
+    background-color: red;
+}
+
+li{
+    background-color: lime;
+}
+
+/* Ejemplo con selector id */
+
+#title{
+    background-color: lightslategrey;
+}
+
+/* Ejemplo con selector class */
+
+.title2{
+    background-color: mediumblue;
+}
