@@ -15,7 +15,11 @@
 
             Selector class (clase del elemento): para ser manipulados en CSS, se deben inicializar con un punto  (.) y, posteriormente, colocar el valor del "class" en cuestión (el de su interés). Esto es lo más recomendado para dar estilos: definir sus elementos con clases. Puede poner cuantas "class" desees sobre un mismo elemento (u otro); y tener la posibilidad, así, de manipular cada etiqueta en particular si así lo desea. Otra gran ventaja es que... podemos poner la misma clase, incluso, sobre elementos del documento HTML diferentes; y aplicar, desde CSS, las mismas caracteristicas de estilo sobre los dos elementos diferentes relacionados en una misma clase.
 
-            Otros atributos: Son representados con estas dos llaves [], dentro de las llaves se coloca el atributo (de alguna etiqueta de HTML) sobre el que queramos manipular para darle estilo con CSS. Por ejemplo, [href]
+            Otros atributos: Es sólo otra forma de dar estilos a los atributos. Son representados con estas dos llaves [], dentro de las llaves se coloca el atributo (de alguna etiqueta de HTML) sobre el que queramos manipular para darle estilo con CSS, así: [atributo]. Por ejemplo, [href]: esto le daría estilos a cada una de las etiquetas que contengan el atributo "href", sin importar si esas etiquetas sean de un elemento diferente. 
+            
+            De hecho, podríamos tambien especificar todavía más sobre qué elemento en concreto deseamos darle estilo (hacer más de filtros) al no sólo dentro de las llaves pasarle un atributo; sino, también, pasarle el valor de interés definido para dicho atributo en cuestión, tal que así: [atributo: "valor"].
+
+            Por ahora, tenemos esto: [atributo] & [atributo: "valor"]
     
 
 
