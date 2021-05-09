@@ -15,12 +15,17 @@
 
             Selector class (clase del elemento): para ser manipulados en CSS, se deben inicializar con un punto  (.) y, posteriormente, colocar el valor del "class" en cuestión (el de su interés). Esto es lo más recomendado para dar estilos: definir sus elementos con clases. Puede poner cuantas "class" desees sobre un mismo elemento (u otro); y tener la posibilidad, así, de manipular cada etiqueta en particular si así lo desea. Otra gran ventaja es que... podemos poner la misma clase, incluso, sobre elementos del documento HTML diferentes; y aplicar, desde CSS, las mismas caracteristicas de estilo sobre los dos elementos diferentes relacionados en una misma clase.
 
-            Otros atributos: Es sólo otra forma de dar estilos a los atributos. Son representados con estas dos llaves [], dentro de las llaves se coloca el atributo (de alguna etiqueta de HTML) sobre el que queramos manipular para darle estilo con CSS, así: [atributo]. Por ejemplo, [href]: esto le daría estilos a cada una de las etiquetas que contengan el atributo "href", sin importar si esas etiquetas sean de un elemento diferente. 
+        Otros atributos: Es sólo otra forma de dar estilos a los atributos. Son representados con estas dos llaves [], dentro de las llaves se coloca el atributo (de alguna etiqueta de HTML) sobre el que queramos manipular para darle estilo con CSS, así: [atributo]. Por ejemplo, [href]: esto le daría estilos a cada una de las etiquetas que contengan el atributo "href", sin importar si esas etiquetas sean de un elemento diferente. 
             
-            De hecho, podríamos tambien especificar todavía más sobre qué elemento en concreto deseamos darle estilo (hacer más de filtros) al no sólo dentro de las llaves pasarle un atributo; sino, también, pasarle el valor de interés definido para dicho atributo en cuestión, tal que así: [atributo: "valor"].
+            De hecho, podríamos tambien especificar todavía más sobre qué elemento en concreto deseamos darle estilo (hacer más filtros) al no sólo dentro de las llaves pasarle un atributo; sino también, pasarle el valor de interés definido para dicho atributo en cuestión, tal que así: [atributo= "valor"].
 
-            Por ahora, tenemos esto: [atributo] & [atributo: "valor"]
-    
+            Por ahora, tenemos esto: [atributo] & [atributo= "valor"]  
+            
+            Tenemos también [atributo^="valor"], el acento (^) nos permite aplicar un estilo particular, definido en CSS, para todos aquellos atributos que comienzan siendo definidos por una misma palabra como "valor" (siendo el mismo atributo también para ellos). Es decir, el acento lo que hace es aplicarle el mismo estilo CSS a todos los atributos que sean definidos, en principio, por el mismo valor en HTML (por decir algo, la primera palabra con la que es definida el valor del atributo -siendo el atributo también igual para los casos de estudio). Este recurso se diferencia de [atributo= "valor"]; porque, en el anterior modelo, todo lo que es definido como "valor" debe ser completamente igual en todos los casos; mas no es así en nuestro caso de estudio actual, sólo es necesario encontrar similitudes en algúna parte de todo lo que sea definido como "valor" (haciendo el análisis desde el inicio).
+
+            También está el recurso [atributo*="valor"], este recurso hace lo mismo que el anterior; solo que, la palabra identificada en "valor" ("valor" de algún atributo) no necesariamente debe ser la primera, sino cualquiera de todo el "valor" definido.
+
+            Adicionalmente, tenemos el siguiente recurso: [atributo$="valor"], es exactamente todo lo contrario al recurso [atributo^="valor"]; es decir, este recurso, el del caso de estudio actual, considera sólo la última palabra de todo el "valor" definido para el atributo en cuestión (no la primera).
 
 
     Selectores Compuestos
@@ -30,7 +35,7 @@
         */
 
        
-/* 1. Simples, selectores elementales:
+/* 1. Selectores simples:
     */
 
 /* Ejemplo de un selector universal */
@@ -67,4 +72,47 @@ li{
 
 .title2{
     background-color: mediumblue;
+}
+
+/* Ejemplo de "Otros atributos", de tipo: [atributo] */
+
+[href]{
+    background-color: lightseagreen;
+}
+
+/* Ejemplo de "Otros atributos", de tipo: [atributo= "valor"] */
+
+[href= "es"]{
+    background-color: lightslategray;
+}
+
+/* Ejemplo de "Otros atributos", de tipo: [atributo^= "valor"] */
+
+[href^= "color"]{
+    background-color: magenta;
+}
+
+/* Ejemplo de "Otros atributos", de tipo: [atributo*= "valor"] */
+
+[href*= ",unbeso"]{
+    background-color: mediumslateblue;
+}
+
+/* Ejemplo de "Otros atributos", de tipo: [atributo$= "valor"] */
+
+[href$= "marico"]{
+    background-color: olive;
+}
+
+/* Todos estos recursos son válidos para cualquier atributo de HTML */
+
+/* Selectores compuestos: 
+    */
+
+/* Ejemplo de un selector agrupado: se recurre a este recurso cuando queremos aplicar las mismas caracteristiscas de estilo CSS sobre dos o más de dos atributos; pueden ser, incluso, independientes entre sí... De tal manera que se ahorre código. Veamos esto: */
+
+.title2,
+[href*= "o, m"],
+[href="color-blue"]{
+    background-color: firebrick;
 }
