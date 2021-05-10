@@ -33,7 +33,7 @@
                     Un buen ejemplo de lista desordenada, muy común en Internet, son los menus de navegación. Veamos un ejemplo de ellas. -->
 
                     <nav>
-                        <ul>
+                        <ul type= "circle">
                             <li><a href="#elemento1">Elemento 1 a visitar</a></li>
                             <li><a href="#elemento2">Elemento 2 a visitar</a></li>
                             <li><a href="#elemento3">Elemento 3 a visitar</a></li>
@@ -55,7 +55,7 @@
 
                     <!-- Luego de declarar que se hará una lista de tipo ordenada "ol"; es preciso abrir, dentro de ella, las etiquetas necesarias por cada "item" enlistado (list item) o que desee enlistar, esa etiqueta es: "li". Veamos esto enlistando, de forma ordenada, los cursos que debe tomar de desarrollo web (en su debido orden). -->
 
-                    <ol>
+                    <ol type= "A" start= "3">
                         <li>HTML</li>
                         <li>CSS</li>
                         <li>JavaScript</li>
@@ -115,3 +115,42 @@
 <!-- Para el navegador es importante que precise qué tipo de lista pretende realmente crear: si es una ordenada, desordenada o una definida: es una buena práctica dejarlo claro. -->
 
 <!-- Si se da cuenta, parece ser lo ideal poner las listas en el "header". Primero pone un titulo, dentro del "header", que haga su respectiva introducción; y posteriormente, debajo, introduce su lista (ya sea ordenada, desordenada o definida). -->
+
+<!-- Hay casos muy puntuales en los que se requiere hacer listas anidadas, pero es válido; sí se puede hacer. -->
+
+<!-- Adicionalmente, las etiquetas de las listas también cuentan con atributos. Veamos esto.
+
+Atributos de las listas ordenadas (ol): type & start.
+
+    type: El atributo "type", en listas ordenadadas, nos permite elegir el formato con el cual vamos a ordenar ("enumerar") la lista en cuestión: si con números, letras (tenemos la opción de elegir entre mayusc. y minusc.) o con números romanos (acá también tenemos la opción de elegir entre mayusc. y minusc.); en cualquier caso, el conteo se hará de forma ascendente (como bien debería suponer). Sería algo más o menos así, en su respectivo orden mencionado:
+
+    <ol type= "1"> </ol>
+    <ol type= "A"> </ol>
+    <ol type= "a"> </ol>
+    <ol type= "I"> </ol>
+    <ol type= "1"> </ol>
+
+    start: El atributo "start" nos permite establecer el punto inicial desde donde deseamos, personalizadamente, arrancar con el conteo de la lista ordenada; es decir, hay ocasiones donde no deseamos que el conteo de la lista ordenada se dé desde su principio; sino, desde un "inicio" establecido por nosotros mismos; "start", entonces, nos da la facultad de lograr esa cometido. Veamos con un ejemplo. 
+
+    Si por ejemplo deseo contar una lista ordenada, no desde el número 1, sino desde el número 5; la expresión sería así:
+
+    <ol type= "1" start= "5"> </ol>
+
+    Ahora, si deseo que el conteo de mi lista ordenada sea con letras mayusculas, pero iniciando el conteo con la letra "C" y no con la "A". Sería así:
+
+    <ol type= "A" start= "3"> </ol>
+
+    Como podría darse cuenta, el atributo "start" siempre es definido con un valor de tipo númerico, sin importar si la clasificación de la lista ordenada se hace con letras, números o nñumeros romanos.
+
+Atributos de las listas desordenadas (ul): type.
+
+    type: El atributo "type", en las listas desordenadas, nos permite elegir el formato de la viñeta con la cual se va a "enlistar" cada item de la lista. Los valores que puede tomar este atributo "type" son los siguientes: "disc", que sería el formato de viñeta que tienen por predeterminación las listas desordenadas (una especie de circulo totalmente negro); "square", donde el formato de la viñeta es un cuadrado "vacio"; y, "circle", donde el formato de la viñeta es un circulo "vacio" también. Sería algo más o menos así, en su respectivo orden mencionado: 
+
+    <ul type= "disc"> </ul>
+    <ul type= "square"> </ul>
+    <ul type= "circle"> </ul>,
+
+    podría probarlos cada uno modificando los valores iniciales con los cuales fueron definidos las listas desordenadas (ul).
+
+    En términos de "diferentes tipos de formato de viñetas", éstos son los recursos que nos brinda HTML; sin embargo, si nos asistimos con CSS, podríamos darle un estilo más personalizado a las viñetas en cuestión, al punto de tener la posibilidad de darles un formato con: imagenes, logotipos o iconos, etc (lo que queramos, las opciones son prácticamente infinitas). 
+    -->

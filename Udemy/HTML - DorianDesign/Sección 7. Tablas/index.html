@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablas</title>
+</head>
+<body>
+    <header>
+        <h1>
+            Introducción a Tablas!
+        </h1>
+    </header>
+
+    <main>
+        <table>
+            <caption>HORARIO DE CLASES</caption>
+
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>L</th>
+                    <th>M</th>
+                    <th>X</th>
+                    <th>J</th>
+                    <th>V</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr>
+                    <td>8:30 - 9:30</td>
+                    <td>Math</td>
+                    <td>Phisics</td>
+                    <td>Driving</td>
+                    <td>Math</td>
+                    <td>Phisics</td>
+                </tr>
+                
+                <tr>
+                    <td>9:30 - 10:25</td>
+                    <td>Math</td>
+                    <td>Phisics</td>
+                    <td>Driving</td>
+                    <td>Math</td>
+                    <td>Phisics</td>
+                </tr>
+                
+                <tr>
+                    <td>10:25 - 11:20</td>
+                    <td>Math</td>
+                    <td>Phisics</td>
+                    <td>Driving</td>
+                    <td>Math</td>
+                    <td>Phisics</td>
+                </tr>
+                
+                <tr>
+                    <td>11:20 - 11:45</td>
+                    <td>Math</td>
+                    <td>Phisics</td>
+                    <td>Driving</td>
+                    <td>Math</td>
+                    <td>Phisics</td>
+                </tr>
+                
+                <tr>
+                    <td>11:45 - 12:40</td>
+                    <td>Math</td>
+                    <td>Phisics</td>
+                    <td>Driving</td>
+                    <td>Math</td>
+                    <td>Phisics</td>
+                </tr>
+                
+                <tr>
+                    <td>12:40 - 13:35</td>
+                    <td>Math</td>
+                    <td>Phisics</td>
+                    <td>Driving</td>
+                    <td>Math</td>
+                    <td>Phisics</td>
+                </tr>
+                
+                <tr>
+                    <td>13:35 - 14:30</td>
+                    <td>Math</td>
+                    <td>Phisics</td>
+                    <td>Driving</td>
+                    <td>Math</td>
+                    <td>Phisics</td>
+                </tr>  
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Total de asignaturas:</td>
+                    <td>4</td>
+                </tr>
+            </tfoot>
+        </table>
+    </main>
+        
+    <br>
+        
+    <footer>Ejemplo de tabla diseñada para un horario de clases</footer>
+</body>
+</html>
+    
+    <!-- Estructura básica de una tabla 
+        
+Las tablas en HTML sirven para mostrar contenido tabulado. 
+
+La estructura básica de una tabla se compone de:
+
+    table: Etiqueta que encierra una tabla (es la etiqueta inicial con la que se le hace entender al navegador que lo que estás a punto de crear o estructurar será una "tabla").
+
+    tr: "table row", etiqueta que construye una fila (esta post-etiqueta, que viene luego de "table", es con la que se define una fila. La etiqueta "tr", hasta que no se cierre, no se deja claro que la fila haya acabado).
+
+    td: "table data", etiqueta que construye una celda (esta etiqueta "td", hasta su cierre, es la que establece la construcción de una celda; celda que está, bien recuerde, dentro de una fila o, para ser más precisos, dentro de una etiqueta de tipo "tr". Dentro de esta etiqueta de tipo "tr", mientras no se cierre, puede agregar cuanta cantidad de celdas desee; es decir, puede abrir y cerrar todas las etiquetas de tipo "td" que quiera).
+
+    Si se da cuenta, las etiquetas dependen de su antecesor en todos los casos.
+
+consejo: el número de celdas dentro de un "tr" establecerá el número de columnas de la tabla.
+
+
+Otros elementos de la estructura completa de una tabla:
+
+Los titulos: los titulos de las tablas se establecen con la etiqueta "caption", es una etiqueta opcional; y, según la especificación, esa etiqueta se coloca justo después de la etiqueta "table" (idealmente porque se supone que estás introduciendo dicha tabla con un titulo).
+
+Las cabeceras: la introducción a las "cabeceras" de una tabla, sólo para que el navegador interprete que estás a punto de crear "cabeceras", se hace por medio de la etiqueta "thead". Posteriormente, para crear una fila de "cabeceras" se hace con una etiqueta "tr" (como cualquier otra fila); sin embargo, ojo, para declarar celdas de "cabeceras" dentro de una fila o, en últimas, dentro de un "tr", se hacen con una nueva etiqueta: la etiqueta "th".
+
+Ahora, si nuestra tabla cuenta con un "thead", es ideal entonces que establezca un "tbody" (luego de cerrar su etiqueta "thead"). La etiqueta "tbody" cubriría todo el contenido de la tabla en sí, dejando por fuera únicamente a la etiqueta "thead".
+
+Pie de tablas: ahora, por último, si deseamos que nuestra tabla cuente con un "pie de tabla", para eso tendríamos a nuestra disposición la etiqueta "tfoot": va justo después del cierre de la etiqueta "tbody". La etiqueta "tfoot" conformaría, entonces, la última fila de la tabla (tr); y, en consecuencia, las últimas celdas (td) que quiera incorporar sobre ella. Veamos esto.
+
+Esta sería la estructura completa de una tabla.
+
+Estos conceptos, justamente, fueron los que se pusieron en práctica creando una tabla (table) con filas (tr) y celdas (td) de horario de clases.
+-->
