@@ -1,0 +1,73 @@
+<!-- En el mundo de la programación estamos llenos de lo que se conoce como: "Eventos".
+Cuando haces click en una página y ese "click" tiene una función precisa para ese momento, a eso se le llama "evento".
+Por ejemplo, cuando arrastras una página, eso es un "evento". En el caso de los smartphones cuando tocas una parte especifica de la pantalla para que haga algo puntual el celular, eso es un "evento". Esa interactividad es lo que nos da JavaScript como lenguaje de programación que es.
+
+Retomando el ejercicio anterior, lo que haremos ahora es: agregar un detector de eventos en mi formulario; de tal manera que, se "escuche" el evento "Submit" y el navegador haga algo (es decir, que haga algo cuando se haga click en el botón "Submit")
+
+Puntualmente, lo que habría que responder es: ¿qué quiero que haga mi código cuando se envíe el formulario?
+
+Por lo anterior, vamos agregar una nueva línea de código, adicional a las líneas de código pertenecientes a la función "greet" de JS y que está dentro de las etiquetas "script".
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello, friend</title>
+</head>
+<body>
+    <!-- Usted recuerda esto? que servían como atributo de la etiqueta "form":
+    "onsubmit" la manera que tenemos de relacionar HTML con alguna función que definamos en JS; en este caso: "greet()". Es un atributo de "form".
+    "return false;" sirve para que, en últimas, no se envie el formulario al servidor. 
+
+    Pues bien, todo lo anterior será suprimido para incorporarlo en una nueva línea de código dentro de las etiquetas "script". 
+    --> 
+    <form>
+        <input autocomplete= "off" autofocus id= "name" placeholder= "What's your name?" type= "text">
+        <input type= "submit" value= "Greet me">
+    </form>
+
+    <script>
+        // A continuación estaremos definiendo una función; es decir, la tarea que queremos que haga el navegador al responder a algo; en este caso, al responder a un evento (con lo cual vamos a trabajar ahora). Por lo general, a la hora de definir un evento, se llama a una función definida (la tarea que queremos que se ejecute; puntualmente, la tarea o función "greet") en relación al elemento o la etiqueta de HTML que sería manipulada; es decir, al manipular la etiqueta de HTML llamada, en este caso "form", queremos que se ejecute la función "greet". Eso es lo que pasa a la hora de agregar un evento: darle interactividad a una etiqueta o elemento de HTML, por medio de una función de JS, para que se ejecute algo que responda a una acción inicial tomada (como por ejemplo, hacer "click" o presionar el mouse, etc).
+        function greet()
+        {
+            let name = document.querySelector('#name').value;
+            alert('hello, ' + name);
+        }
+        
+        // la nueva línea de código, a la que nos vamos a referir posteriormente, tiene que ver con la definición del "evento":
+        document.querySelector('form').addEventListener('submit', greet);
+
+        /* Qué significa lo anterior? que, al hacer "click" sobre el botón del formulario de HTML (submit) se activará la función "greet" definida aquí en JS (es así porque le estariamos agregando dicho "evento", la función "greet" relacionada al evento "submit" de JS, para darle interactividad al bóton del formulario submit): en código esto se representaría como: ".addEventListener('submit', greet)".
+        
+        Pero primero, antes de eso, habría que vincular JS con HTML, más especificamente con la etiqueta de nuestro interés: "form", la que deseamos manipular. En código sería esto: "document.querySelector('form')" 
+        
+        En su conjunto tendríamos entonces: "document.querySelector('form').addEventListener('submit', greet);"
+        
+        ACLARACIÓN: el "submit" que está entre parentesis realmente se refiere al evento de JS como tal, el evento de "enviar formulario" (eso hace); que se activa, ciertamente, al hacer click sobre el botón del formulario que es definido con el valor de "submit" también */
+    </script>
+    <!-- Se coloca "script" justo antes del cierre del "body" para que JS pueda interpretar todos los elementos o etiquetas ya definidas anteriormente en HTML, y no las desconozca luego por estar por debajo del código de JS en cuestión; en caso que las desconozca, el navegador hará como que nunca fueron definidas. -->
+</body>
+</html>
+
+<!-- Dica: JS muestra tus errores en la consola del navegador y no, por ejemplo, en una terminal; esto es así porque, JS, se ejecuta al lado del cliente, en el navegador del usuario... Ahí es donde debe buscar todos sus posibles errores, en su propio navegador. -->
+
+<!-- Una lista adicional, no exhautiva, de eventos en JS: 
+
+blur
+change
+click
+drag
+focus
+keyup
+load
+mousedown
+mouseover
+mouseup
+submit
+touchmove
+unload
+-->
