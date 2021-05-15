@@ -1,0 +1,54 @@
+<!-- 
+    Listado de valores: Verá todo tipo de valores que pueden ser asignados al atributo "type" de la etiqueta "input"; es decir, más o menos así se vería: <input type = "...">.
+
+    Comenzaremos con los valores de tipo fecha.
+
+    date: Se utiliza para introducir una fecha.
+
+    datetime-local: fecha y hora, no funciona en firefox.
+
+    time: Se utiliza para introducir una hora.
+
+    month: Se utiliza para introducir un mes.
+
+    week: Se utiliza para introducir el número de semana al año.
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valores para el atributo "type"</title>
+</head>
+<body>
+    <form>
+
+        <!-- El siguiente valor "date" nos dibuja un campo para introducir fechas; es decir, un espacio para "día", "mes" y "año". Todo esto en un formato inicial predeterminado bastante ilustrativo -->
+
+        <input type="date">
+
+        <!-- El siguiente valor "datetime-local" nos dibuja un campo para introducir fechas también; sin embargo, se adiciona también un espacio para agregar "horas".  -->
+
+        <input type="datetime-local">
+        
+        <!-- Ahora, este recurso no funciona en Firefox. Entonces, lo recomendado es (si trabaja con firefox), lo siguiente: 
+    
+        Usar, por separado, type= "date" para las fechas; y, para las horas (incluye su indicador de tiempo, AM o PM), type= "time". Tal que así:
+        -->
+
+        <input type="date">
+        <input type="time">
+
+        <!-- Tenemos también el siguiente valor: "month"; que nos dibuja un campo, mucho más gráfico, para introducir "meses" en su forma textual (y de paso un año). Veamos.  -->
+
+        <input type="month">
+
+        <!-- Por último, tenemos el siguiente valor: "week"; que nos dibuja un campo para introducir el número de la semana de un año en curso o preseleccionado (y de paso el año en cuestión). Tal que así:  -->
+
+        <input type="week">
+
+    </form>
+</body>
+</html>
