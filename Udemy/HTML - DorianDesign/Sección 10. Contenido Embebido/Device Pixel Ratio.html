@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            max-width: 100%;
+        }
+    </style>
+</head>
+<!-- 
+    DPR (Device Pixel Ratio)
+    Es la relación que existe entre los píxeles reales que tiene el dispositivo y los píxeles que tenemos disponibles para "pintar" o "dibujar" contenido. Ese espacio, donde pintaremos o dibujaremos, se le llama: "viewport".
+ 
+    "Viewport" sería el espacio que tenemos disponible para dibujar o pintar; por lo general, es lo que nos dice las dimensiones del área de la pantalla sobre la cual estamos trabajando, ya sea desde un computador o desde un movil, etc. Ahora, "viewport" originalmente evalua las medidas de la pantalla completa; sin embargo, si desea, puede sólo evaluar las medidas correspondientes a la pantalla que asume el navegador; es decir, por ejemplo, las medidas que asume la página  web sobre la cuál está situado (y no las medidas, en área, de toda la pantalla en sí). Asistase de la siguiente herramienta: https://whatismyviewport.com/
+    
+    DPR = pixeles reales / pixeles disponibles
+
+    Este concepto tiende a tomar más relevancia cuando queremos crear contenido con "responsive design" (adaptable a cualquier pantalla o dispositivo); pues, a partir de las dimensiones de pantalla "trabajables", que tengamos en nuestros dispositivos; podríamos establecer las medidas, también, de nuestro contenido embebido.
+    
+    Aunque no sea recomendable trabajar con ellos, daremos introducción a los atributos "width" & "height" para definir el tamaño de una imagen en html; respectivamente "width" establece la anchura de la imagen en términos de pixeles; y, por otro lado, "height" establece la altura de la imagen en términos de pixeles. Sin embargo, esto debiera ser definido desde CSS. Desde HTML es necesario sólo en casos muy puntuales; por ejemplo, cuando las imagenes son dinamicas y las cargamos desde JS. 
+    
+    "width" & "height" no son muy funcionales a la hora de trabajar con ellos porque no se adaptan a las dimensiones de la pantalla y a sus posibles variaciones (no se puede recrear un "responsive design" con ellas). En CSS, por ejemplo,  para decirle al navegador que el tamaño de la imagen siempre se adapte a las dimensiones de la pantalla, cualquiera que sean y aunque varien sus dimensiones, es con la propiedad: "max-width". Si "max-width" asume un valor del "100%" quiere decir que, la imagen, ocupará completamente el espacio, en términos de anchura, que disponga la pantalla del navegador (desde cualquier dispositivo de dónde ésta se vea).
+
+    Ahora, algo ideal. Podemos adaptar el tamaño de una imagen de escritorio a una capacidad ideal para moviles sin que se pierda, en su intento, la calidad de la imagen. Es decir, podemos reducir el tamaño de una imagen, para moviles, sin necesidad de que se pierda la calidad de la misma al dejar de verla desde una PC, por ejemplo. No es una buena práctica utilizar la misma imagen tanto para escritorio como para movil. Eso es lo que veremos en la próxima sesión: queremos que se cargue una imagen u otra en función del dispositivo. 
+
+    -->
+<body>
+    <header>
+        <h1>
+            Contenido Embebido
+        </h1>
+    </header>
+
+    <img src="/assets/images/facebook.svg" alt="La reina Daniela">
+    
+</body>
+</html>
