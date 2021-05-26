@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- La etiqueta "picture" funciona más o menos igual que el atributo "srcset"; sólo que, nos brinda más opciones (incluyendo, de paso, el recurso "srcset"). "picture" se asiste por medio de unas sub-etiquetas llamadas: "source". En cada etiqueta "source", acompañada por el atributo "srcset", iría cada elemento que quisieramos importar, potencialmente, como contenido embebido (idealmente iría, en cada "source", dos elementos: uno en su versión con formato "webp", para ahorrar memoria; y otro en su versión original por si no funciona, dentro del navegador en uso, el formato "webp"). "source", como tal, se acompaña también del atributo "srcset" (lo dicho).
+        
+    Ahí no acaba todo. Luego, inmediatamente después del cierre de cada etiqueta "source" (que sería realmente una etiqueta de auto-cierre); se debe colocar, y acá sí es obligación para que funcione la etiqueta "picture", un respaldo que sirva de garantia por si no funciona o no es compatible la etiqueta "picture" con el navegador. Ese respaldo viene de la formula convencional con la que se importa una imagen como contenido embebido (img src= "" alt= ""); entonces, lo dicho, debe llamar su contenido embebido, también, con "img src" después de cerrar "source"; "source" que, si bien recuerda, está dentro de la etiqueta madre "picture". Tal que así. 
+    -->
+
+    <picture>
+        <source srcset= 
+        "assets/images/Capturandenpantallan2021n03n22nanlasn3n22n35npnmn___446058fd0677fdc___.png,
+        /assets/images/dani con mayor tamaño.webp" media="(min-width:1136px)">
+        <img src="/assets/images/dani de mayor tamaño.jpg" alt="imagen para pc">
+    </picture>
+</body>
+</html>
+
+<!-- Con el valor de "min-width", del atributo "media"; podemos establecer la anchura minima, en pixeles, que el navegador debe tener para que una imagen pueda ser reflejada dentro de él. Este atributo "media" se coloca justo después de llamar al contenido embebido sobre una etiqueta "source", sin cerrarla. Si no se cumple la condición, la de la anchura mínima del navegador (en nuestro caso fue de: "(min-width:1136px)"), naturalmentee "picture" mostrará entonces su imagen de respaldo: la definida dentro de "img src" (como pasa en nuestro caso justamente al manipular los pixeles de anchura del navegador).
+            
+Ahora, con el valor de "max-width" del atributo "media", pasa justo todo lo contrario. Con "max-width" se establece la anchura maxima, que puede tener el navegador, para que pueda cargar  una imagen importada como contenido embebido.
+-->
+
+        <!-- Ahora, algo importante. Usted también puede generar "responsive design", con la etiqueta "picture", manipulando el DPR. Solo que quisimos dar a conocer esta vez el atributo "media". Ya veremos el DPR en otro ejercicio: Manipulando el "responsive design", por medio del DPR, con la etiqueta "picture". -->
+
+<!-- IMPORTANTE: Algo que no hemos tenido en cuenta hasta ahora: por lo general se cargará siempre el elemento, mientras se pueda, que primero haya sido llamado dentro de "source" (en nuestro caso sería la imagen con formato ".jpg"). -->

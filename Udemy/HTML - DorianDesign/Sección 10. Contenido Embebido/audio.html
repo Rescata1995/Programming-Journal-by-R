@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio</title>
+</head>
+<!-- Ahora nos interesa saber cómo importar audio, como contenido embebido, en nuestrio sitio web -->
+<body>
+    <header>
+        <h1>
+            Contenido embebido: Audio.
+        </h1>
+    </header>
+
+    <main>
+        <header>
+            <h2>
+                Musica de Papa Chawa
+            </h2>
+        </header>
+        <audio src="assets/audio/la-toxica-juanda-iriarte-ft-mc-car-en-vivo.mp3" controls autoplay muted></audio>
+    </main>
+</body>
+</html> 
+
+<!-- La etiqueta "audio" es la que nos permite llamar contenido de audio (justamente) dentro de HTML; y, al igual que las imagenes, cuenta con un atributo "src" para importar dicho audio por medio de su ruta de ubicación, ya sea relativa o absoluta; sin embargo, para que propiamente se refleje un reproductor de audio en el navegador, toca adicionar un atributo más: "controls" (sin necesidad de acompañarlo con un valor).
+
+Ahora, existen otros tipos de atributos que le darán mayor personalización al reproductor de audio; por ejemplo, que el audio se reprodujera de forma automatica e inmediatamente al cargar la página, eso se logra con el atributo: "autoplay". Sin embargo, algunos navegadores actuales están bloqueando este atributo (autoplay) si encuentran que el audio no está silenciado y pueda resultar molesto para los usuarios. 
+
+Ahora, algo todavía más interesante, si en caso deseas que se reproduzcan las cosas, pero en segundo plano y "muteadas" (que se reproduzcan sin sonido); es decir, dandole la prioridad y la facultad al usuario de que él mismo determine si le interesa escuchar el audio en cuestión de lo que se estará reproduciendo, de forma automatica, se debe acompañar al atributo "autoplay" con el atributo "muted". Lo anterior es similar a la tecnologia que maneja "instagram"; que, mientras tú vas haciendo "scroll", él irá reproduciendo en segundo plano, de forma automatica, los videos pero sin audio (a menos que realmente te interese el video en cuestión y tú mismo le quites el "mute"). --> 
