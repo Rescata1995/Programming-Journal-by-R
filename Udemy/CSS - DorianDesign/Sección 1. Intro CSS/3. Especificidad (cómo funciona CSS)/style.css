@@ -1,0 +1,56 @@
+
+h1{
+    background-color: red;
+}
+
+.title{
+    background-color: chartreuse;
+}
+
+h1.title#title{
+    background-color: tomato;
+}
+
+#title{
+    background-color: cyan;
+}
+
+h1.title{
+    background-color: darkblue;
+}
+
+h1#title{
+    background-color: darkorange;
+}
+
+h1.title#title{
+    background-color: darkviolet;
+}
+
+/* 
+Hay un sitio web que se encarga de decirte si tu código CSS está bien escrito por medio de un gráfico de líneas, se llama: https://jonassebastianohlsson.com/specificity-graph/ 
+
+Copias y pegas tu código en el recuadro vacio y, por medio de picos, puedes enterarte que tan bien o mal está tu código. Si el gráfico refleja muchos picos, en el resultado final de la evaluación, quiere decir que su código en CSS está mal estructurado; por el contrario, si el gráfico resultante es muy plano, quiere decir que la estructura de su código CSS está muy bien diseñada.
+
+Es decir, mientras más lineal sea el gráfico, mejor diseñado está su código en CSS.
+*/
+
+/* Código para ejemplo de "heredero forzado" con el elemento "a": inherit */
+
+.padre{
+    background-color: red;
+}
+
+.heredero{
+    background-color: inherit;
+}
+
+/* Código para ejemplo de "NO heredar lo que se hereda por defecto" con el elemento "li": initial */
+
+.list{
+    color:red;
+}
+
+.list-item-extra{
+    color: initial;
+}

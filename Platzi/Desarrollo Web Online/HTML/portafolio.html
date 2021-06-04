@@ -35,13 +35,16 @@
             <nav>
                 <ol>
                     <li>
-                       <a href="">Portafolio</a>
+                       <a href="#portafolio">Portafolio</a>
                     </li>
                     <li>
-                        <a href="">Experiencia</a>
+                        <a href="#experiencias">Experiencia</a>
                     </li>
                     <li>
-                        <a href="">Trabajemos juntos</a>
+                        <a href="#contacto">Trabajemos juntos</a>
+                    </li>
+                    <li>
+                        <a href="./aboutme.html">Enlace a otra página de mi sitio web</a>
                     </li>
                 </ol>
             </nav>
@@ -56,7 +59,7 @@
             </header>
             <img src="https://x6i2p6h3.rocketcdn.me/wp-content/uploads/2018/08/selling-3213725_960_720.jpg" width="500" height="370" alt="Debe ponerse imagen de mi persona en el portafolio real">
 
-            <section>
+            <section id="portafolio">
                 <header>
                     <h2>
                         Portafolio (Proyectos)
@@ -97,7 +100,7 @@
                 </article>
             </section>
 
-            <section>
+            <section id="experiencias">
                 <header>
                     <h2>
                         Más sobre mi experiencia
@@ -119,11 +122,11 @@
                         Descripción de experiencia 1 que me marcó
                     </p>
 
-                    <a href=""></a> aquí ponga la ruta, con un enlace, a la experiencia.
+                    <a href="https://github.com/Rescata1995/programacion_rescata" target="_blank">aquí ponga la ruta, con un enlace, a la experiencia (que es otro sitio web y que se abrirá en otra pestaña con el atributo "target").</a> 
                 </article>
             </section>
     
-            <section>
+            <section id="contacto">
                 <form>
                     <h3>
                         ¿Creamos algo juntos?
@@ -145,4 +148,11 @@
 </html>
 
 <!-- El valor "datetime" del atributo "type" nos permite guardar toda la información que le hemos pasado a nuestro formulario; puntualmente, la información que le hemos pasado a los formularios de tipo "caja de texto" (de hecho, esta es la clase de formularios que se crean con este valor de "datetime").
+ -->
+
+<!-- Sobre la "navegación interna" (dentro de la misma página web del mismo sitio web): cómo se relacionan las etiquetas de enlace "a" acompañadas, como bien sabe, del atributo "href" con el atributo "id" de otra etiqueta o elemento (para lograr una comunicación entre ambas es preciso que los valores definidos en el atributo "href" de la etiqueta "a" y el valor de "id" de la otra etiqueta, sean iguales). El valor pasado al atributo "href" de la etiqueta "a" debe estar acompañado, en su inicio, de un numeral (#); la función del numeral (#) es decirle al navegador que esa navegación, del enlace, será interna,... dentro de la misma página. Puede ver ejemplos de todo esto en nuestro menu de navegación (nav) de este HTML.
+
+Sobre la navegación hacia otra página web del mismo sitio web: Ahora, si la navegación no es precisamente interna; sino, hacia otra página del mismo sitio web... sólo es necesario que el documento HTML al que desee ir; es decir, a la otra página web perteneciente al mismo sitio web, esté dentro del mismo directorio en el que se encuentra este mismo documento HTML (nuestra página web de origen); y, posteriormente, colocar como valor, dentro del atributo "href" de la etiqueta "a", la ruta relativa a la otra página web, del mismo sitio web, que le interesaría navegar... Bueno, no precisamente la ruta relativa; sino, el nombre del archivo al que le gustaria ir -es decir, la otra página de interés del mismo sitio web- pero, le agrega, en el inicio, esto: "./" (en el 4to item, de la lista ordenada en el menu de navegación, está un ejemplo de esto).
+
+Sobre la navegación hacia una página web de otro sitio web: Es más sencillo, sólo es colocar, dentro del enlace que conduce a dicho sitio web diferente, la URL del sitio web en cuestión. Es decir, poner como valor, dentro del atributo "href" de la etiqueta "a", el link del sitio web de interés al que deseas ir con el enlace en cuestión.
  -->
