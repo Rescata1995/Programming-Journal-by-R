@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Sección 1. Intro CSS/4. Estilos computados (de dónde vienen los estilos determinados, por defecto, en el lenguaje)/normalize.css">
+    <link rel="stylesheet" href="Sección 1. Intro CSS/4. Estilos computados (de dónde vienen los estilos determinados, por defecto, en el lenguaje)/style.css">
     <title>Estilos computados</title>
 </head>
 <body>
@@ -27,3 +29,20 @@
 
     Toda estas herramientas anteriormente mencionadas sirven para depurar nuestro código CSS; saber las razones de, por ejemplo, porqué no se aplica una propiedad que has escrito.
 -->
+
+<!-- 
+    Ahora, hablaremos sobre cómo normalizar o resetear los estilos del navegador (ya que cada navegador tiene su propia configuración de estilos por defecto)... Si desea evitarse lo anterior y estandarizar un formato de estilo para cualquier navegador existente, viene bien revisar el siguiente recurso que sirve de asistencia: https://necolas.github.io/normalize.css/. Del anterior sitio web podemos bajar una hoja de estilos CSS y "linkearla" (importarla), por medio de la etiqueta "link", en nuestro documento HTML de nuestro interés. Algo importante: ese "link", el de la hoja de estilos CSS importada, tiene que estar justamente arriba del "link" que vincula a su propia hoja de estilos que corresponde a su documento HTML (necesario esto).
+
+    Intente siempre vincular la hoja de estilos "normalize.css" a todos sus proyectos; pues, es una buena práctica estandarizar, por defecto y para cualquiera que sea el navegador, una configuración de estilos a su sitio web (de tal manera que lo que ofrece, por medio de una fachada de su sitio web, no sea vulnerable a tener ligeras diferencias de apariencia entre un navegador y otro; esto no es presentable).
+ -->
+
+ <!-- Por último, agregue prefijos CSS a su hoja de estilos. Asistase del siguiente sitio web: https://autoprefixer.github.io/
+
+    Siempre exporte todo su código final CSS formulado, para su documento HTML en cuestión, al sitio web anterior; y, posteriomente, importe el resultado final que le arroje, en código, Autoprefixer CSS online: es este código el que usará en su hoja de estilos CSS acabada, cuando ya no vaya a hacer más cambios. En caso de nuevas modificaciones en su hoja de estilo, puede hacerlas propiamente sobre su hoja de estilos de origen (no sobre la que le arroja Autoprefixer CSS online); y, luego, repetir el proceso de exportar dicho código a Autoprefixer CSS online e importar el nuevo resultado final,... y así sucesivamente.
+
+    Si desea saber más sobre la importancia de los prefijos, puede visitar estas fuentes:
+
+    https://lenguajecss.com/css/introduccion/niveles-y-prefijos-css/
+    
+    https://www.eniun.com/prefijos-css-navegadores-propiedades/#:~:text=Actualmente%20los%20navegadores%20tienen%20implementadas,que%20a%C3%BAn%20no%20son%20estables.
+ -->
