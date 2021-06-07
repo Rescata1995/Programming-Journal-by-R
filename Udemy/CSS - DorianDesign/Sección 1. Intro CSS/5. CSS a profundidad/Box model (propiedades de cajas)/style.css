@@ -1,0 +1,100 @@
+/* Sobre las propiedades "width" & "height" en elementos de línea y de bloque (y sus diferencias) */
+
+/* Dejemos algo claro. La propiedad "background-color" se refiere al color de fondo del selector; mas, la propiedad "color" se refiere al color propio del contenido del selector. */
+
+body{
+    background-color: #333;
+    color: #fff;
+}
+
+/* El selector ".block" se refiere a un elemento de bloque porque, en HTML, fue definido con la etiqueta "div". */
+
+/* Como las propiedades "width" & "height" evaluan la altura y ancho del selector; entonces, cuando ambos miden lo mismo, en términos de pixeles, tendremos lo que sería la conformación de un cuadrado (esto es así porque estamos trabajando con elementos de bloque; en elementos de línea, esto no funciona). */
+
+.block{
+    background-color: purple;
+    width: 200px;
+    height: 200px;
+    margin: 100px 50px 20px 200px;
+}
+
+/* El selector ".inline", que se refiere a nuestra primera etiqueta "a" del "body", lo que está haciendo al definir su propiedad "color" como: "inherit"; es decirle al navegador que defina el color del contenido de la etiqueta "a"; es decir, que defina la propiedad "color",... con el mismo valor con el que se definió la misma propiedad en su etiqueta "padre", la cual sería la etiqueta "body". Es decir, la propiedad "color" en ".inline" es, también, "#fff" (tal como lo hizo su padre "body"). */
+
+.inline{
+    background-color: lightcoral;
+    color: inherit;
+    width: 200px;
+    height: 200px;
+    margin-left: 80px;
+}
+
+/* A un elemento en línea, en nuestro caso representado por el selector ".inline", le es indiferente que le pases medidas de altura y anchura; es decir, le es indiferente que le definas valores en propiedades como "height" & "width" respectivamente; pues, los elementos en línea NO tienen medida, para ser más precisos, el tamaño lo determina su propio contenido (si se da cuenta, en el navegador, no se refleja una expansión del espacio del contenido por medio de su "color"). */
+
+/* ------------------------------------------- */
+
+/* Sobre las propiedad "margin" en elementos de bloque y de línea (y sus diferencias) */
+
+/*
+
+"margin" en elementos de bloque:
+
+"margin", si bien recuerda, es la propiedad que nos permite generar espacios entre elementos, etiquetas o selectores (establecer la distancia que hay entre uno y otro) 
+
+"margin" nos permite controlar los cuatro (4) lados posibles a los que podemos dar margenes; por tal motivo, "margin" engloba: 
+
+"margin-top": que sería el margen superior;
+"margin-right": que sería el margen derecho;
+"margin-bottom": que sería el margen inferior;
+"margin-left": que sería el margen izquierdo. 
+
+Adicionalmente, esta propiedad tiene la capacidad de incorporar, en la misma propiedad "margin", todos los 4 valores posibles para dar margenes en los 4 lados. A este mecanismo de "abreviación" de una propiedad se le llama: "Shorthand".
+
+Si define 4 valores en la propiedad "margin", se definen los valores del: "top", "right", "bottom" y "left"; cada uno por separado y de forma independiente, en ese orden (como las manecillas del reloj)
+
+Si define 3 valores en la propiedad "margin", se definen los valores del: "top", un mismo valor para "left & right", y un valor restante para "bottom", en ese orden.
+
+Si define 2 valores en la propiedad "margin", se definen los valores del: "top & bottom" (un mismo valor para ambos) y los valores del: "left & right" (un mismo valor para ambos también), en ese orden.
+
+Si define un (1) sólo valor en la propiedad "margin"; se definen, con ese mismo valor, todos los valores del "top", "right", "bottom" y "left". Es decir, se define un mismo margen para los cuatro lados. 
+
+Incorporemos estas propiedades en el mismo bloque que tenemos modelado inicialmente aquí, sí, en el elemento de bloque... porque esto funciona de manera diferente en el elemento de línea. Veamos.
+
+.....................................
+
+"margin" en elementos de línea:
+
+Los elementos en línea sólo tienen margenes horizontales (NO verticales); es decir, no funcionan las extensiones de la propiedad "margin" que son "margin-top" & "margin-bottom", pero SÍ funcionan "margin-left" & "margin-right" (probaremos las 4 propiedades para que lo evidencie). En cambio, como ya vimos, en los elementos de bloque sí funcionan las 4 extensiones de propiedades de "margin".
+
+*/
+
+/* ------------------------------------------- */
+
+/* 
+margenes automaticos ("margin-right: auto" & "margin-left: auto") en elementos de bloque.
+
+Con la propiedad-valor "margin-right: auto" lo que hacemos es pegar ese elemento, de bloque, hacia toda la izquierda del navegador.
+
+En el caso contrario, con la propiedad-valor "margin-left: auto" lo que hacemos es pegar ese elemento, de bloque, hacia toda la derecha del navegador.
+
+Ahora, si declara ambas propiedades-valor al mismo tiempo, "margin-left: auto" y "margin-right: auto", en el mismo selector, tendrás que el elemento se centrará a la pantalla del navegador (esto propiamente para elementos de bloque que consistan en ser una "caja" y nada más). Con los elementos de bloque que tienen por contenido textos, como es el caso de los títulos, el tratamiento es diferente; se centra el bloque o la caja del texto, que usualmente usted no la ve, mas no el contenido de la caja en sí, que el mismo texto.
+
+Se hace necesario definir siempre el ancho del elemento, que es de tipo "bloque", con la propiedad "width",... para que se haga evidente al ojo los cambios efectuados sobre el elemento en cuestión. Debe saber que, hay elementos de bloque que por defecto, por propiedades predefinidas por el propio navegador, tienen una anchura correspondiente a la anchura propia del navegador que las visualiza (como es el caso de los elementos de bloque de los títulos: h1, h2, h3...). Veamos todo esto.
+*/
+
+.titulo2{
+    background-color: black;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.block2{
+    background-color: blueviolet;
+    color:sandybrown;
+    width: 100px;
+    height: 100px;
+    margin-left: auto;
+}
+
+
+
