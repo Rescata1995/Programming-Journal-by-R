@@ -59,7 +59,7 @@ Si define un (1) sólo valor en la propiedad "margin"; se definen, con ese mismo
 
 Incorporemos estas propiedades en el mismo bloque que tenemos modelado inicialmente aquí, sí, en el elemento de bloque... porque esto funciona de manera diferente en el elemento de línea. Veamos.
 
-.....................................
+...............................................
 
 "margin" en elementos de línea:
 
@@ -96,5 +96,176 @@ Se hace necesario definir siempre el ancho del elemento, que es de tipo "bloque"
     margin-left: auto;
 }
 
+/* ------------------------------------------- */
 
+/* Sobre las propiedad "padding" en elementos de bloque y de línea (y sus diferencias) */
 
+/*
+
+"padding" en elementos de bloque y línea (funciona igual en ambos):
+
+"padding", como nuevo concepto, es la propiedad que nos permite generar espacio interno entre el borde y el contenido (un texto, por ejemplo). 
+
+A mayor "padding" se suele decir que hay "mayor espacio para respirar" 
+
+"padding", al igual que "margin", nos permite controlar los cuatro (4) lados posibles a los que podemos dar "padding"; por tal motivo, "padding" engloba: 
+
+"padding-top": que sería el "espacio interno" superior;
+"padding-right": que sería el "espacio interno" derecho;
+"padding-bottom": que sería el "espacio interno" inferior;
+"padding-left": que sería el "espacio interno" izquierdo. 
+
+Adicionalmente, esta propiedad tiene la capacidad de incorporar, en la misma propiedad "padding", todos los 4 valores posibles para dar "espacios internos" en los 4 lados. Recuerde que a esta "abreviación" de una propiedad se le llama: "Shorthand".
+
+Si define 4 valores en la propiedad "padding", se definen los valores del: "top", "right", "bottom" y "left"; cada uno por separado y de forma independiente, en ese orden (como las manecillas del reloj)
+
+Si define 3 valores en la propiedad "padding", se definen los valores del: "top", un mismo valor para "left & right", y un valor restante para "bottom", en ese orden.
+
+Si define 2 valores en la propiedad "padding", se definen los valores del: "top & bottom" (un mismo valor para ambos) y los valores del: "left & right" (un mismo valor para ambos también), en ese orden.
+
+Si define un (1) sólo valor en la propiedad "padding"; se definen, con ese mismo valor, todos los valores del "top", "right", "bottom" y "left". Es decir, se define un mismo margen para los cuatro lados. 
+*/
+
+.block3{
+background-color: white;
+color: black;
+width: 200px;
+height: 200px;
+margin-left: auto;
+margin-right: auto;
+margin-bottom: 50px;
+
+padding-top: 100px;
+padding-left: 50px;
+}
+
+/* Si se da cuenta, la distancia superior entre el borde de la caja blanca y el contenido real de ella; es decir, el texto, ahora es de: 100px (esta es la función de padding).
+
+Adicionalmente, la distancia hacia la izquierda entre el borde de la caja blanca y el contenido real de la misma es de: 50px
+*/
+
+.inline2{
+    background-color: white;
+    color: black;
+    width: 100px;
+    height: 35px;
+    padding-left: 30px;
+    margin-left: 20px;
+}
+
+/* Si nota la diferencia entre un "padding" & un "margin"? */
+
+/* ------------------------------------------- */
+
+/* Sobre la última propiedad del Box Model: Border
+
+Esta propiedad nos permite modificar el borde de la caja. Hablamos de "modificar" porque, por defecto, el elemento ya tiene un borde (el navegador desde donde usted abra su página web lo establecerá por defecto): sólo que no tiene medidas y por eso no se dibuja; sin embargo, através de la propiedad "border", lo que podemos hacer es modificarlo, darle medidas, colores y hacer que sea visible. Veamos esto.
+
+"border", al igual, es un "shorthand" (propiedad abreviada); este agrupa 3 propiedades.
+
+border-width: ancho del borde
+border-style: estilo del borde
+border-color: color del borde
+
+Ahora, la propia propiedad sola, "border", puede agrupar los tres propiedades anteriores en una, tal que así:
+
+border: ancho del borde, estilo del borde, color del borde
+
+Probemos esto en el mismo selector ".border"
+*/
+
+.inline2{
+    border: 15px solid red;
+}
+
+/* Nos da un borde de 10 pixeles, solido y de color rojo; lo mismo que haber dicho, por ejemplo, esto: 
+
+border-width: 15px;
+border-style: solid;
+border-color: red;
+
+Sin embargo, cada una de las tres propiedades anteriores, tienen sus propias 4 sub-divisiones de propiedades, tal que así:
+
+.......................................................
+
+border-width: ancho del borde generalizado.
+
+    border-top-width: define el ancho de la parte superior del borde
+
+    border-right-width: define el ancho de la parte derecha del borde
+
+    border-bottom-width: define el ancho de la parte inferior del borde
+
+    border-left-width: define el ancho de la parte izquierda del borde
+
+    Ahora...
+        Si define 4 valores en la propiedad "border-width", se definen los valores del: "top", "right", "bottom" y "left"; cada uno por separado y de forma independiente, en ese orden (como las manecillas del reloj)
+
+        Si define 3 valores en la propiedad "border-width", se definen los valores del: "top", un mismo valor para "left & right", y un valor restante para "bottom", en ese orden.
+
+        Si define 2 valores en la propiedad "border-width", se definen los valores del: "top & bottom" (un mismo valor para ambos) y los valores del: "left & right" (un mismo valor para ambos también), en ese orden.
+
+        Si define un (1) sólo valor en la propiedad "border-width"; se definen, con ese mismo valor, todos los valores del "top", "right", "bottom" y "left". Es decir, se define un mismo borde para los cuatro lados... tal como lo vimos en: "border-width: 15px;". 
+
+.......................................................
+
+border-style: estilo del borde generalizado.
+
+    border-top-style: define el estilo de la parte superior del borde
+
+    border-right-style: define el estilo de la parte derecha del borde
+
+    border-bottom-style: define el estilo de la parte inferior del borde
+
+    border-left-style: define el estilo de la parte izquierda del borde
+
+    Ahora...
+        Si define 4 valores en la propiedad "border-style", se definen los valores del: "top", "right", "bottom" y "left"; cada uno por separado y de forma independiente, en ese orden (como las manecillas del reloj)
+
+        Si define 3 valores en la propiedad "border-style", se definen los valores del: "top", un mismo valor para "left & right", y un valor restante para "bottom", en ese orden.
+
+        Si define 2 valores en la propiedad "border-style", se definen los valores del: "top & bottom" (un mismo valor para ambos) y los valores del: "left & right" (un mismo valor para ambos también), en ese orden.
+
+        Si define un (1) sólo valor en la propiedad "border-style"; se definen, con ese mismo valor, todos los valores del "top", "right", "bottom" y "left". Es decir, se define un mismo estilo de borde para los cuatro lados... tal como lo vimos en: "border-style: solid;". 
+
+.......................................................
+
+border-color: color del borde generalizado.
+
+    border-top-color: define el color de la parte superior del borde
+
+    border-right-color: define el color de la parte derecha del borde
+
+    border-bottom-color: define el color de la parte inferior del borde
+
+    border-left-color: define el color de la parte izquierda del borde
+
+    Ahora...
+        Si define 4 valores en la propiedad "border-color", se definen los valores del: "top", "right", "bottom" y "left"; cada uno por separado y de forma independiente, en ese orden (como las manecillas del reloj)
+
+        Si define 3 valores en la propiedad "border-color", se definen los valores del: "top", un mismo valor para "left & right", y un valor restante para "bottom", en ese orden.
+
+        Si define 2 valores en la propiedad "border-color", se definen los valores del: "top & bottom" (un mismo valor para ambos) y los valores del: "left & right" (un mismo valor para ambos también), en ese orden.
+
+        Si define un (1) sólo valor en la propiedad "border-color"; se definen, con ese mismo valor, todos los valores del "top", "right", "bottom" y "left". Es decir, se define un mismo color de borde para los cuatro lados... tal como lo vimos en: "border-color: red;". 
+*/
+
+.inline2{
+    border-right-color: pink;
+
+    /* Si se da cuenta, en esta ocasión, se ha personalizado aún más con la propiedad "border". Hemos definido que sólo la parte derecha del borde sea de color rosada.
+    */
+    border-left-width: 10px;
+    /* Adicionalmente, se ha ajustado también el tamaño de la parte izquierda del borde; que, a diferencia, de los demás bordes que son de 15px, este es de 10px. 
+    */
+
+    border-style: solid ridge dotted;
+    /* Por último, aquí hemos definido, con la propiedad "border-style", sin una especificación puntual sobre el estilo de un solo borde, el estilo para el "top" como "solid", en negrilla; el estilo para el "right & left" como "ridge", con sombrilla 3d al medio; y el estilo para el "bottom" como "dotted", que representa figuras circulares. Todo por separado. 
+    
+    Otro valor de estilo para "border-style" podría ser: "dashed", que representa figuras rectangulares; otro sería: "double", que representa un borde doble; otro sería: "groove", que representa una sombra 3D también, como "ridge", pero invertida.
+    
+    También tenemos los valores, para el estilo, de: "inset" y "outset": ambos dan sombrillas, pero sin 3D (y son sombrillas opuestas entre sí).
+    */
+}
+
+/* Con la propiedad-valor "border-style: none" se quitan los bordes; lo propio hace, al menos visualmente, la propiedad-valor: "border-style: hidden" (hay una diferencia entre ambas, pero ya se tocará luego). */
