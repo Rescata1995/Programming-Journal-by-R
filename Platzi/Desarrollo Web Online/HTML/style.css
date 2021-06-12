@@ -1,0 +1,25 @@
+
+body {
+    font-family: 'Source Sans Pro', Arial, Helvetica;
+}
+
+/* Se colocan tres fuentes para respaldar sobre una en caso que no se tenga y así; si Arial no está dentro de mi sistema, entonces coloca Helvetica y, si Helvetica tampoco está, me coloca una Sans-serif  */
+
+h1,
+h2,
+h3{
+    font-family: 'Source Sans Pro', Times, serif;
+}
+
+/* Si una fuente tiene más de dos palabras, debería encerrarse entre comillas simples */
+
+/* Adicionalmente, podemos tener a nuestra disposición una mayor variedad de fuentes bajadas desde la propia internet, siga el siguiente recurso: https://fonts.google.com/ 
+*/
+
+/* Para colocar un mismo estilo a diferentes selectores que son completamente independientes y ninguno se contiene entre sí, es necesario hacer separaciones por coma (como lo hicimos más arriba); en cambio, cuando estamos hablando de selectores descendientes; es decir, donde se quiere afectar sobre una etiqueta que está siendo contenida por otra y ambas están siendo llamadas en CSS... sería algo así:
+
+body h1{
+    ------
+}
+
+*/
