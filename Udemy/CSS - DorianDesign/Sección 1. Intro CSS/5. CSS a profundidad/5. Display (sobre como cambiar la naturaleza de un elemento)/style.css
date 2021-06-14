@@ -1,0 +1,29 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #333;
+    color: #fff;
+}
+
+.text{
+    background-color: lightcoral;
+    /* display: none; */
+    display: inline;
+
+    /* Acá hemos convertido un elemento de "bloque" en uno de "línea"; entonces, ya no se podrá hacer uso de ciertas propiedas que con el elemento de "bloque" podíamos. Tales como: "margin-bottom", "margin-top" o "height" y "width" dentro de él.
+    */
+}
+
+.link{
+    background-color: #fff;
+    display: block;
+    margin-bottom: 20px;
+    height: 40px;
+
+    /* Si se da cuenta, ahora como el elemento que originalmente era de "linea" pasó a ser un elemento de "bloque",... ahora sí podrá hacer uso de recursos o propiedades como: "margin-bottom", "margin-top" o "height" y "width" dentro de él.
+     */
+}
+
+/* Con el valor "inline-block" ya se debe imaginar qué sucede, ¿en qué casos se utiliza? Cuando tengas un elemento que sea de "línea" y deseas que conserve dicha naturaleza; pero, en todo caso, necesitas darle medidas o margenes verticales también (o incluso las dos cosas).  */

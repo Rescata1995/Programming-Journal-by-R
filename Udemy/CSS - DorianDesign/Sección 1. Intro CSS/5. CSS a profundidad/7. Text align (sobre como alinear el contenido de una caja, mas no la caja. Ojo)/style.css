@@ -1,0 +1,79 @@
+/* 
+    text-align: es la propiedad que nos permite alinear horizontalmente el contenido de un elemento de BLOQUE (NO DE LINEA) siempre que el contenido como tal NO TENGA UN ANCHO DECLARADO (esta es la práctica ideal para evitar confusiones).
+
+    Acepta 4 posibles valores: 
+        "text-align: left", alinea el contenido a la izquierda (por defecto cuando nosotros escribimos algo, ese algo suele estar alineado a la izquierda).
+        
+        "text-align: right", alinea el contenido a la derecha.
+
+        "text-align: center", alinea el contenido al centro.
+
+        "text-align: justify", alinea el contenido de forma justificada; es decir, se expande para ocupar todo el ancho sobre sí. No es recomendable usarlo.
+*/
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #333;
+    color: #fff;
+}
+
+.text{
+    text-align: left;
+}
+
+.box{
+    background-color: #666;
+    width: 100px;
+    padding: 10px 0;
+    margin: 20px 0;
+    border: 2px solid lightcoral;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+
+    /* Si se da cuenta, en este caso, sí pudimos centrar el contenido del elemento de bloque ".box"; porque, si bien es cierto que dentro de ".box" hay un "width"; es decir, se declara un ancho, ese ancho está siendo declarado para el elemento del bloque (la caja en sí); mas no, para el contenido propio de dicha caja; el cual, es un texto que dice: "border". 
+    
+    En ese caso, como no es el contenido de la caja a la  que se le está definiendo un ancho con "width", "text-align" sí puede funcionar sobre dicho contenido y alinearlo hacia la izquierda, derecha, centro o alinearlo de forma justificada. 
+    
+    Como "text-align" sólo funciona sobre el contenido (lo que está dentro de la caja), mas no sobre el contenedor (caja); entonces, usted no puede alinear una caja con esta propiedad; por ejemplo, si desea centrar la caja sobre todo el navegador de su página web, no puede hacer uso de "text-align: center"; sino, recuerde, debe usar las propiedades: "margin-left: auto" & "margin-right: auto" */
+}
+
+.link{
+    /* Los enlaces son elementos de línea; por lo tanto, si deseamos aplicar la propiedad-valor "text-align: center" para centrar este elemento; debemos primero, ante todo, convertir este elemento de línea en un elemento de bloque (ya que "text-align: center" no funciona en elementos de línea); es decir, usar primero la propiedad "display" con el valor: "block". Tal que así: 
+    */
+    
+    color: #fff;
+    display: block;
+    text-align: center;
+
+    margin-bottom: 20px;
+
+    /* En este caso, no fue necesario centrar con "margin-left: auto;" & "margin-right: auto;" debido a que ya el enlace, como contenedor (caja), ocupa todo el ancho de la pantalla del navegador y de por sí centraría, en consecuencia, el contenido mismo de la caja... contrario a las imagenes, lo siguiente que veremos. */
+}
+
+.img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+
+    /* No fue necesario hacer uso de la propiedad "text-align: center;" para centrar el contenido (la imagen) dentro del contenedor de la imagen; porque, de por sí, ya la imagen ocupa todo el espacio de su propio contenedor. Sin embargo, como una imagen (img) es un elemento de línea también; toca acá, al igual, convertir la imagen en un elemento de bloque; esto para poder centrarla con propiedades como: "margin-left: auto;" & "margin-right: auto;" al navegador. En todo caso, toca usar "margin-left: auto;" & "margin-right: auto;" para centrar sobre toda la pantalla de navegación debido a que un elemento de tipo "img" no ocupa toda la anchura sobre la pantalla de navegación en sí, sólo la anchura necesaria para contener la imagen en cuestión (muy diferente a un div,.. ya lo veremos).
+    */
+}
+
+/* Todo radica en saber realmente qué es lo que se está centrado, sobre qué selector se le está aplicando la propiedad "text-align: center;", si el contenedor, del contenido (el que realmente puede ser afectado por "text-align: center;"), ocupa todo el ancho de la pantalla o no. 
+
+Por ejemplo, si metemos una imagen (img) dentro de un "div" y llamamos al "div" como selector dentro de CSS para manipularlo,... si desea centrar la imagen sobre toda la pantalla, sólo bastaría con centrar con la propiedad-valor "text-align: center;" para que la imagen en sí se centre sobre todo el navegador... 
+
+Pasa que "div" ya es un elemento de bloque y, de paso, es un elemento que ocupa todo el ancho de la pantalla del navegador justamente, por lo que, nos facilita todo; pero, lo que realmente estaría pasando es que el contenido es el que sí centra (no el contenedor); sólo que, como el contenedor ocupa toda la pantalla en anchura, daría la sensación de que el contenedor "div" se centra, pero es la imagen la que se centra sobre todo el "div" que ya ocupa toda la anchura. Veamos esto. Para que vea que el "div" ocupa toda la anchura le daremos un color de rojo de fondo.
+
+*/
+
+.img2{
+    background-color: red;
+    text-align: center;
+}
+

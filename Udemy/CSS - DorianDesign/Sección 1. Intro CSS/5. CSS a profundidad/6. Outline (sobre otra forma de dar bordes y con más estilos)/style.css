@@ -1,0 +1,59 @@
+/* 
+    Outline es la propiedad que nos permite dibujar un borde por fuera del modelo de caja. Es un shorthand que engloba: 
+
+        1. outline-width: Controla el ancho del "outline".
+
+        2. outline-style: Controla el estilo del "outline".
+
+        3. outline-color: Controla el color del "outline".
+
+    Tiene las mismas propiedades y sintaxis de "border", incluso hasta podemos aplicar los mismos tipos de bordes que se manejan en "border": "outline: px tipo_de_borde color;"... pero con algunas diferencias.
+
+        1. No ocupa sitio dentro de la caja, ya que no forma parte del box-model. Es decir, si hacemos un borde muy grande, por muy grande que sea, NO acabaremos empujando a las cajas de alrededor (con "border" sí); sin embargo, con "outline", sí nos sobreponemos por encima de las demás cajas y los elementos. 
+
+        2. No se puede redonder, porque no contamos con el recurso de "border-radius", que es quién nos permite el redondeo.
+
+        3. No se pueden controlar los lados de forma independiente (con "border" sí que podríamos).
+    
+    También cuenta con la propiedad "outline-offset", que nos permite aumentar o disminuir la distancia del "outline" con respecto a la caja a la que pertenece (determinar la intensidad del "espacio vacio" entre el "outline" y la caja en sí, con todos sus elementos del "box model").
+
+    Adicionalmente, "border" & "outline" pueden trabajar conjuntamente sobre la misma caja.Sin embargo, hay que tener en cuenta que, el borde que quedará por fuera, como borde "exterior", será el borde que dibuje "outline"; pues, no hace parte del "Box model": no importa el orden en el que ambas propiedades sean llamadas dentro del selector que las ocupe.
+*/
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #333;
+    color: #fff;
+}
+
+.border,
+.outline{
+    background-color: #666;
+    width: 100px;
+    padding: 10px 20px;
+    margin: 50px 100px;
+}
+
+.border{
+    border: 2px solid lightcoral;
+}
+
+.outline{
+    outline: 2px inset lightcoral;
+    outline-offset: -15px;
+
+    /* "outline-offset", en este caso, si se da cuenta, nos ha generado un espacio vacio de 15px entre el "outline" y la última propiedad del "Box model" y la caja en sí, la cual es: "border".
+    
+    Sin embargo, el "outline", incluso, se podría colocar al interior mismo de la caja: dandole pixeles negativos al "outline-offset" (tal como lo revertimos posteriormente con los 15px pixeles iniciales). La propiedad "border" tampoco tiene la facultad de replicar las acciones de la propiedad "outline-offset".
+    */
+    
+    border: 5px solid blue;
+}
+
+/* ADVERTENCIA: El problema con "border" es que va a estar afectando y modificando directamente a la caja (por dentro) y empuja a los elementos que hay dentro de ella del "box model" (no respetará el "content" de la caja). Con "outline" todos estos problemas se ahorran; pero, recuerde, "outline" se va a sobreponer sobre los demás elementos del DOM de ser necesario. 
+
+Outline, por medio de outline-offset, puede resultar muy útil para dar un mayor efecto visual sobre nuestras cajas, y hacerlas más esteticas.
+*/  
