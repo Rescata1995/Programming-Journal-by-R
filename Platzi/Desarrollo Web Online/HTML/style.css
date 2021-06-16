@@ -1,25 +1,59 @@
 
 body {
-    font-family: 'Source Sans Pro', Arial, Helvetica;
+    font-family: 'Source Sans Pro', sans-serif, Arial;
 }
 
 /* Se colocan tres fuentes para respaldar sobre una en caso que no se tenga y así; si Arial no está dentro de mi sistema, entonces coloca Helvetica y, si Helvetica tampoco está, me coloca una Sans-serif  */
 
 h1,
 h2,
-h3{
-    font-family: 'Source Sans Pro', Times, serif;
+h3,
+h4,
+h5,
+h6{
+    font-family: 'Fjalla One', sans-serif;
+    font-weight: normal;
+    /* font-style: italic; */
 }
-
-/* Si una fuente tiene más de dos palabras, debería encerrarse entre comillas simples */
-
-/* Adicionalmente, podemos tener a nuestra disposición una mayor variedad de fuentes bajadas desde la propia internet, siga el siguiente recurso: https://fonts.google.com/ 
-*/
 
 /* Para colocar un mismo estilo a diferentes selectores que son completamente independientes y ninguno se contiene entre sí, es necesario hacer separaciones por coma (como lo hicimos más arriba); en cambio, cuando estamos hablando de selectores descendientes; es decir, donde se quiere afectar sobre una etiqueta que está siendo contenida por otra y ambas están siendo llamadas en CSS... sería algo así:
 
 body h1{
     ------
 }
+*/
 
+/*
+La propiedad "font-weight" define el tipo de peso de fuente; donde el valor "100" nos refleja el tipo de fuente más delgada posible y el valor "900" nos refleja el tipo de fuente más gruesa posible. 400 o "normal" es un valor estandar. 600 o "bold" es un valor un poco más grueso que lo estandarizado.
+
+La propiedad "font-style" define el estilo de la fuente, si deseas que la fuente sea cursiva o en  negrilla, etc. Le da formato al texto.
+*/
+
+h1{
+    font-size: 40px;
+    line-height: 1.5em;
+    letter-spacing: -.2px; 
+
+    /* La propiedad "font-size" define el tamaño de la fuente.
+
+    El tamaño de la fuente, por lo general, viene configurado por defecto por el navegador; en este caso, por ejemplo, ya las etiquetas de tipo "H1" vienen con una configuración predeterminada de tamaño asignada por el navegador; dicho eso, en ese caso, toca "inspeccionar elementos" para conocer el tamaño original de fuente asignado para "H1" por el navegador.
+    */
+
+    /* La propiedad "line-height" define el "alto de línea"; es decir, la distancia que hay entre una línea de texto y la línea de texto que le sigue inmediatamente, la que está por debajo. Esta propiedad puede recibir un valor en muchas unidades de medida; sin embargo, usaremos pixeles.
+
+    Por lo general, siempre será una buena referencia considerar un "line-height" (alto de línea) equivalente, por lo menos, al tamaño de la fuente, que se encuentra configurando, dentro del selector.
+
+    La propiedad "letter-spacing" es la que define la separación que haya entre cada una de las letras. Un valor bastante bien estandarizado es: "-.2px" (un 20% de un pixel menos).
+
+    Dato de interés: la unidad de medida "1em" o "1" se refiere a un tamaño del 100% sobre la base del tamaño de la fuente; "2em" o "2" sería, entonces, un tamaño del 200% sobre la base del tamaño de la misma fuente en cuestión. De hecho, podríamos definir como valor, dentro de "line-height", "100%",... y sería lo mismo que decir: "1em" o "1".
+
+    Existe otra propiedad que quizas le guste considerar más adelante: "text-transform", esta propiedad asume valores para determinar la configuración de mayusculas y minusculas en el texto del selector ocupado. Por ejemplo, el valor "capitalize" lo que hace es que todas las palabras, del texto del selector manipulado, comiencen en mayuscula. Otro valor podría ser "uppercase", el cual, coloca todas las letras en mayusculas; lo contrario lo hace "lowercase". Esta propiedad es recomendable usarla siempre, toda vez, que requiera escribir algo totalmente en mayusculas o en minusculas; para un botón, por ejemplo. Es de mal gusto escribir en su propio documento HTML todo en MAYUSCULAS (se ve grosero).
+
+    Otra propiedad interesante sería "text-decoration", que nos permite darle formato al texto, con valores como: "underline", "dashed", "unset"; y también color, con valores como: "red", "blue",... a nuestro texto.
+    */
+}
+
+/* Si una fuente tiene más de dos palabras, debería encerrarse entre comillas simples */
+
+/* Adicionalmente, podemos tener a nuestra disposición una mayor variedad de fuentes bajadas desde la propia internet, siga el siguiente recurso: https://fonts.google.com/
 */
