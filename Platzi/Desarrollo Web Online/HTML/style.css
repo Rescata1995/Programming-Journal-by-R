@@ -33,6 +33,7 @@ h1{
     font-size: 40px;
     line-height: 1.5em;
     letter-spacing: -.2px; 
+    color: white;
 
     /* La propiedad "font-size" define el tamaño de la fuente.
 
@@ -57,3 +58,77 @@ h1{
 
 /* Adicionalmente, podemos tener a nuestra disposición una mayor variedad de fuentes bajadas desde la propia internet, siga el siguiente recurso: https://fonts.google.com/
 */
+
+h1 strong{
+    /* color azul, con algo de "celeste" */
+    color: #025fff;
+}
+
+.hero{
+    height: 300px;
+    /* background-color: red; */
+
+    /* Ahora, si deseamos poner una imagen de fondo, a un selector, por medio de CSS, lo podemos hacer con la propiedad: "background-image"; en esta ocasión, será complementada el atributo "url" para poder ir a la ubicación de la imagen y poder importarla. */
+
+    background-image: url('./images/piscina.jpg');
+
+    /* Ahora, con "background-size" podemos definir las medidas de la imagen colocada como fondo; de tal manera que, el primer (1er) parametro que se le pase como valor sería el correspondiente al ancho (width) de la imagen; y, adicionalmente, el segundo (2do) parametro pasado como valor sería el correspondiente al alto (height). */
+
+    background-size: 700px 100%;
+
+    /* como el ancho del navegador es demasiado ancho para la imagen (1425px), no se vería esteticamente bien que, en un 100%, sea ocupado dicho espacio para toda la imagen en cuestión; por lo que, optamos colocar una medida exacta de "300px" (un ancho relativamente prudente); en cambio, la altura disponible para el selector ".hero"; es decir, donde estamos colocando la imagen en cuestión, es de "300px"; por lo que, en ese caso, sí que no es mala idea aprovechar en un 100% todo ese espacio (además que se corresponde, con exactitud, con la medida establecida para el ancho); en consecuencia, hemos definido ese valor con un "100%". Dando como resultado final una imagen cuadrada de 300px * 300px. 
+    
+    Sin embargo, como la imagen no ocupa realmente todo el ancho del navegador (300px ante 1425), se multiplicará instantaneamente de forma horizontal hasta que lo cubra. ¿Cómo solucionamos esto si nuestra intención es dejar una sola toma de foto y que no se repita? Pues bien, con la propiedad-valor "background-repeat: no-repeat".
+    */
+
+    background-repeat: no-repeat;
+
+    /* Ahora nos interesa darle una mejor posición a nuestra imagen, eso sería con la propiedad: "background-position". A "background-position", al igual, se le pasan dos parametros, que son: "background-position: eje x & eje y". 
+    Pero, si por ejemplo, queremos sólo manipular el eje de las x, sería: "background-position-x" & para el eje de las y, sería: "background-position-y". Nos interesa sólo el eje de las x. Veamos.
+    */
+
+    background-position-x: right;
+
+    /* La key-word value "right" lo que hizo fue colocarme la imagen en el lado más extremo hacía la derecha. El valor "left" hace lo propio, pero hacia la izquierda.
+    */
+
+    /* Por último, fondo en negro */
+    background-color: #060606;
+}
+
+/* Lo que estamos haciendo en "hero" es solapar, por medio del contenido textual del "header" principal, nuestra imagen de presentación inicial (no el logo, no confundir); de tal manera que, ambas, estén posicionadas bajo un mismo marco de altura; entonces, le quitamos altura a la imagen para que el contenido textual "suba" y se sobreponga a la imagen misma (la "solape"): así el elemento inmediatamente ulterior a uno puede solapar al otro: esta es la dinamica que se aplica para jugar, dentro de un mismo espacio disponible, con un contenido textual y un contenido embebido.
+*/
+
+.project-details{
+    width: 500px;
+}
+
+.project-image{
+    width: 500px;
+}
+
+.header{
+    padding-top: 0.1px;
+    background-color: #060606;
+    color: white;
+
+    /* Se recomienda que el color de fondo, de la cabecera ".header", sea correspondiente al color de fondo de la imagen que uses; en este caso, del logo. Para saber con exactitud que color de fondo usar en ".header", para este caso, puedes valerte del siguiente recurso: 
+
+    https://chrome.google.com/webstore/detail/colorpick-eyedropper/ohcpnigalekghcmgcdcenkpelffpdolg
+    
+    La anterior página, que realmente es una extensión de google, te dirá exactamente qué color posee, en términos de hexadecimales, cualquier imagen. */
+}
+
+.logo{
+    text-align: center;
+
+    /* Centra el contenido del contenedor. En este caso, nuestro contenedor es el elemento "figure"; entonces, como dicho elemento cubre toda la anchura de la pantalla del navegador; tenemos que, al centrar el contenido del contenedor, la imagen (logo), éste se situará sobre toda la mitad de la pantalla del navegador realmente. */
+}
+
+.header a{
+    color: white;
+    text-decoration: none;
+
+    /* La propiedad-valor "text-decoration: none" le quita el formato al contenido textual; eso incluye, por supuesto, los "underline" que vienen en los enlaces por defecto.
+    */
+}
