@@ -5,16 +5,17 @@
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=s, initial-scale=1.0">
      <link rel="stylesheet" href="normalize.css">
-     <link rel="stylesheet" href="style2.css">
+     <link rel="stylesheet" href="style3.css">
      <title>Position</title>
 </head>
 <body>
+     <img src="gato.png" alt="gatico">
      <header class="header">
-          <nav>
+          <nav class="menu">
                Menu
           </nav>
      </header>
-     <main>
+     <main class="main">
           <section>
                <header>
                     <h2>
@@ -25,13 +26,13 @@
                <article>
                     <header>
                          <h3>
-                              Position Fixed
+                              Position Sticky
                          </h3>
                     </header>
 
                     <section>
                          <article>
-                              <header>
+                              <header class="article-title">
                                    <h4>
                                         Sección 1
                                    </h4>
@@ -44,7 +45,7 @@
                          </article>
 
                          <article>
-                              <header>
+                              <header class="article-title">
                                    <h4>
                                         Sección 2
                                    </h4>
@@ -57,7 +58,7 @@
                          </article>
 
                          <article>
-                              <header>
+                              <header class="article-title">
                                    <h4>
                                         Sección 3
                                    </h4>
@@ -70,7 +71,7 @@
                          </article>
 
                          <article>
-                              <header>
+                              <header class="article-title">
                                    <h4>
                                         Sección 4
                                    </h4>
@@ -81,7 +82,17 @@
                                    Qui amet et quasi! Officiis repudiandae commodi enim quos quidem molestiae deserunt excepturi in. Dolore corrupti rem, architecto, optio nam totam aut vero mollitia hic vel molestias laboriosam placeat quis.
                               </p>
                          </article>
+                    </section>
+               </article>
 
+               <article>
+                    <header>
+                         <h3>
+                              Position Sticky 2
+                         </h3>
+                    </header>
+
+                    <section>
                          <article>
                               <header>
                                    <h4>
@@ -133,11 +144,11 @@
                                    Qui amet et quasi! Officiis repudiandae commodi enim quos quidem molestiae deserunt excepturi in. Dolore corrupti rem, architecto, optio nam totam aut vero mollitia hic vel molestias laboriosam placeat quis.
                               </p>
                          </article>
-
                     </section>
-               </article>
-          </section>
+               </article>            
+          </section>   
      </main>
+
      <footer> Para más información, visite: DorianDesign.</footer>
 </body>
 </html>
@@ -176,6 +187,4 @@
      TODOS LOS ELEMENTOS SE MOVERÁN, EN TÉRMINOS DE PIXELES, DESDE SU POSICIÓN INICIAL. Y, recuerde, el punto 0,0 de los elementos, generalmente, es una esquina superior a la izquierda.
      
      En adelante daremos una sesión para cada uno de ellos. 
-
-     Dato curioso extra: Usted se recuerda que a un elemento de línea, inicialmente, no puede darle medidas; tales como: "width" y/o "height"; pues bien, cuando nosotros le damos "position: fixed" a un elemento, acá también lo que estamos haciendo es generar un contexto de bloque automaticamente para poder darle medidas y que el navegador coloque dicho elemento; por lo tanto, si estás "posicionando" elementos de línea, quiero que sepas que no necesitas hacer uso de la propiedad-valor "display: inline-block" o "display: block" para poder darles medidas con: "width" y/o "height", por ejemplo.
 -->

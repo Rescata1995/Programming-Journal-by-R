@@ -1,3 +1,6 @@
+*{
+    box-sizing: border-box;
+}
 
 body {
     font-family: 'Source Sans Pro', sans-serif, Arial;
@@ -65,7 +68,7 @@ h1 strong{
 }
 
 .hero{
-    height: 300px;
+    height: 310px;
     /* background-color: red; */
 
     /* Ahora, si deseamos poner una imagen de fondo, a un selector, por medio de CSS, lo podemos hacer con la propiedad: "background-image"; en esta ocasión, será complementada el atributo "url" para poder ir a la ubicación de la imagen y poder importarla. */
@@ -98,6 +101,34 @@ h1 strong{
 
 /* Lo que estamos haciendo en "hero" es solapar, por medio del contenido textual del "header" principal, nuestra imagen de presentación inicial (no el logo, no confundir); de tal manera que, ambas, estén posicionadas bajo un mismo marco de altura; entonces, le quitamos altura a la imagen para que el contenido textual "suba" y se sobreponga a la imagen misma (la "solape"): así el elemento inmediatamente ulterior a uno puede solapar al otro: esta es la dinamica que se aplica para jugar, dentro de un mismo espacio disponible, con un contenido textual y un contenido embebido.
 */
+
+.project{
+
+    /* Demostración de diferentes valores que puede asumir cada borde en una división: medida, tipo o formato y color: */
+
+    /* border-top: 10px solid red;
+    border-right: 10px solid green;
+    border-left: 10px solid orange;
+    border-bottom: 10px solid pink; */
+
+    /* border-color: red; */
+
+    /* un color rojo para todos los bordes con "border-color"; sin embargo, para que sea visualizable este color, debemos hacer uso de la propiedad: "border-width", tal que así: 
+    */
+
+    /* border-width: 15px; */
+
+    /* También haría falta definir el estilo del borde con "border-style" */
+
+    /* border-style: solid; */
+
+    /* Ahora bien, si por alguna razón se le olvida definir el color del borde, el borde asumirá el color del contenido textual que está cubriendo. */
+
+    /* Lo que realmente queremos hacer: */
+
+    border: 1px solid gray;
+    border-radius: 10px;
+}
 
 .project-details{
     width: 500px;
