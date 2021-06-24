@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="style.css">
+     <title>Em vs Rem</title>
+</head>
+<body>
+     <h1 class="title">
+          em vs rem
+     </h1>
+
+     <a href="#" class="link">Soy un botón</a>
+</body>
+</html>
+
+
+<!-- RECUERDE LA SIGUIENTE BASE TEORICA
+
+     rem: Corresponde a la medida de la "m" de la raiz del documento (que vendría siendo el "html" como tal).
+
+     em: Corresponde a la medida de la "m" del contexto donde nos encontremos.
+
+     Se habla de "m" porque en inprenta es el caracter más ancho que existe; por tanto, al ser el más ancho es el que se usa como referencia para calcular el resto del tamaño de letras.
+     
+     El estandar del tamaño de fuente, por defecto, de la raiz, es de es 16px y NO ES RECOMENDABLE MODIFICARLO (todos los navegadores ya lo tienen así constituido): es así porque, en web, 16px equivalen aproximadamente a los 12 puntos de tamaño que se utilizan en imprenta; por temas de experiencia de usuario, está demostrado que es el tamaño al que el ojo está más acostumbrado, por lo cual no se recomienda que esto sea modificado.
+
+     NOTA: Tanto "em" como "rem" se calculan en base a la propiedad "font-size" (tamaño de fuente).
+-->
+
+<!-- 
+          Las medidas en CSS se pueden agrupar en dos (2) grupos: absolutos y relativos.
+
+          Las medidas absolutas NO CAMBIAN y siempre mantendrán su tamaño independientemente de la pantalla del navegador del dispositivo o la interacción del usuario. 
+
+          La más usada es px (pixeles) cuya medida es 1/96 de lin, pero existen otras como:
+
+               cm(centímetros) = 1cm = 96px/2,54
+
+               mm(milímetros) = 1mm = 1/10 de 1cm 
+
+               Q(cuarto de milímetro) = 1Q = 1/40 de 1cm
+
+               in(inches, pulgadas) = 1in = 2,54cm = 96px
+
+               pc(picas) = 1pc = 1/16 de 1in
+
+               pt(puntos) = 1pt = 1/72 de lin.
+
+          Las medidas relativas SIEMPRE dependen de un contexto, son las que se recomienda utilizar en la gran mayoría de ocasiones porque nos van a permitir que todos los elementos escalen proporcionalmente. Es decir, son las que usan para dar "responsive desing".
+
+          Las más usadas son "em", "rem", "%", "vw", "vh", "vmin" & "vmax", aunque tenemos otras como: 
+
+               "ex", "ch" & "lh"
+
+      -->

@@ -128,15 +128,24 @@ h1 strong{
 
     border: 1px solid gray;
     border-radius: 10px;
+
+    /* ATENCIÓN A ESTA PROPIEDAD-VALOR, se relacionará con "display: inline-block" */
+    display: flex;
 }
 
 .project-details{
     width: 500px;
+    /* display: inline-block; */
 }
 
 .project-image{
     width: 500px;
+    /* display: inline-block; */
 }
+
+/* Inicialmente, tanto en el selector ".project-details" como ".project-image", para poder dejar ambos DIV (divisiones) dentro de un mismo espacio de alto en el navegador, sin ocupar más de él; sino, aprovechando más bien la anchura todavía disponible, al crear dos columnas a lo largo de ella; hemos declarado la propiedad-valor "display: inline-block;". Así, los dos "DIV" no se extenderían hacía "lo largo"; sino, si la suma del ancho de ambos DIV (1000px) es menor que la anchura total del navegador; entonces, el navegador decidirá mejor aprovechar el espacio que aún tiene disponible en su anchura para una misma dimensión en términos de altura. */
+
+/* Sin embargo, sería una mejor técnica ponerle al elemento padre ".project", para que afecte a sus hijos directos (ojo, tienen que ser directos!) ".project-image" y ".project-details", la propiedad-valor "display: flex",... y esto se encargará de hacer lo mismo que ya explicamos más arriba y hasta de una forma más estetica y equilibrada.  */
 
 .header{
     padding-top: 0.1px;
@@ -161,5 +170,40 @@ h1 strong{
     text-decoration: none;
 
     /* La propiedad-valor "text-decoration: none" le quita el formato al contenido textual; eso incluye, por supuesto, los "underline" que vienen en los enlaces por defecto.
+    */
+}
+
+.flexbox{
+    display: flex;
+
+    /* el valor "flex" le dará flexibilidad a la hora de organizar sus elementos; en caso tal la anchura ya no dé abasto para la totalidad de elementos que quiera colocarse sobre ella, entonces, se reduce el ancho de los propios elementos en sí para que quepen sobre todo el ancho limitado del propio navegador sin afectar el alto definido inicialmente. Esto es así por defecto, que sería lo mismo que definir la propiedad-valor "flex-direction: row"; sin embargo, si no deseamos que los elementos se "amontonen" o se organicen en fila (que es lo que hace "flex-direction: row" y lo que hace, también, "display: flex" por defecto); sino que, deseamos que dichos elementos se organicen en columnas, tendríamos que declarar la propiedad-valor" flex-direction: column". Veamos.
+    
+    Lo interesante de todo esto es que, adicionalmente, "flex" es un valor que trabaja bajo las caracteristicas propias de un "responsive design".
+    */
+
+    flex-direction: row;
+
+    /* acá "flex-wrap: wrap;", abajo */
+
+    flex-wrap: wrap;
+
+    /* Otra propiedad interesante de "flex", que se emplea sobre el elemento "padre" o contenedor; en nuestro caso, ".flexbox", es la propiedad "justify-content". "justify-content", básicamente, se encargará de definir cómo será el alineado horizontal de los elementos "hijos" contenidos por diho elemento "padre"; es decir, en este caso, repetimos, estaríamos hablando del elemento ".flexbox" afectando sobre todos los elementos ".box". Esta propiedad es similar a las opciones de "alinear" que, comunmente, se ven en un documento Word. Por ejemplo, "alinear a la izquierda" en Word sería el equivalente al valor "flex-start" en CSS; "alinear a la derecha" sería "flex-end"; "alinear al centro" sería "center". Existen otros valores más sofisticados como: "space-between", "space-evenly" & "space-around"; todos estos valores, a su propio modo, aprovechan todo el espacio horizontal posible del elemento "padre" o contenedor. Pruebelos.
+    */
+
+    justify-content: center;
+}
+
+.box{
+    width: 200px;
+    height: 200px;
+    margin: 5px;
+    border: 1px solid red;
+
+    /* Ahora, si no quiero que se "amontonen" los elementos entre sí para que puedan caber todos dentro de la anchura disponible de la pantalla del navegador, irrespetandome la anchura definida inicialmente para cada uno de ellos, debo declarar otra propiedad-valor, la cuál es: "flex-shrink: 0", le estaríamos diciendo al navegador con ella que sea "0 encogible"; y que, a falta de espacio, entonces que el navegador me haga un "scroll" por todo lo ancho de la pantalla del navegador. El otro valor que puede asumir sería que sí sea "encogible"; es decir: "flex-shrink: 1"(que es el que viene definido por defecto con "flex"). Si se da cuenta, esto se define es sobre los elementos hijos, los que serán o quiere que sean afectados directamente con la propiedad-valor.
+    */
+
+    flex-shrink: 0;
+
+    /* Ahora, si no deseo ese "scroll" que me da "flex-shrink: 0" al acabarse la anchura disponible de mi pantalla; sino que, deseo que continue agregandome los elementos restantes aprovechando espacio en términos de altura para que no haya "scroll", debo declarar la propiedad-valor: "flex-wrap: wrap" y esto se declara sobre el elemento padre, no acá sobre sus hijos. "flex-wrap: nowrap" realmente sería el elemento que persiste en seguir adicionando elementos sobre la misma altura sin importar que tengas que hacer "scroll" (que ningún elemento caiga), que es lo que viene por defecto, también, con el valor "flex".
     */
 }

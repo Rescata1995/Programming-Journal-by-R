@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=s, initial-scale=1.0">
+     <link rel="stylesheet" href="normalize.css">
+     <link rel="stylesheet" href="style5.css">
+     <title>Stacking context</title>
+</head>
+<body>
+     <header>
+          <h1>
+               Stacking context
+          </h1>
+     </header>
+     <main>
+          <div class="box box-1">Box 1</div>
+          <div class="container">
+               <h1 class="title">Apilamiento</h1>
+               <p class="text">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto totam, culpa eaque nulla, corporis, quo cum atque minus modi qui ad et vitae labore obcaecati enim deleniti nam cupiditate. Libero.
+               </p>
+          </div>
+          <div class="box box-2">Box 2</div>
+          <div class="box box-3">Box 3</div>
+     </main>
+</body>
+</html>
+
+<!-- 
+     La propiedad "position" nos permite posicionar los elementos. Hay algunos conceptos que se deben conocer, en primer lugar, antes de introducirnos al tema.
+
+     Flujo de renderizado: Por norma general los elementos se dibujan de izquierda a derecha y de arriba a abajo. El punto 0,0 de los elementos, generalmente, es la esquina superior izquierda.
+
+     Espacio reservado: Es el espacio que tiene un elemento asignado en el navegador y que todos los demás elementos deben respetar. Sin embargo, es espacio modificable al fin, con propiedades como: "width" & "height" o uso de margenes. 
+
+     Elemento posicionado: Esto significa que el elemento tiene la propiedad position con un valor distinto de "static", que es el valor que tiene esta propiedad por defecto.
+
+     Stackin context: Contexto de apilamiento. Es el orden en el que se apilarán las cajas que se superponen, dentro del mismo contenedor.
+
+     Al posicionar un elemento se habilitan 5 propiedades que podemos utilizar para mover los elementos en los 3 ejes; dichas propiedades, incluso, pueden recibir valores numéricos negativos (lo cual sería mover los elementos en su forma inversa).
+     
+     "top": El elemento se moverá, desde la parte superior, la distancia que le hayamos indicado.
+
+     "right": El elemento se moverá, desde la parte derecha, la distancia que le hayamos indicado.
+
+     "bottom": El elemento se moverá, desde la parte inferior, la distancia que le hayamos indicado.
+
+     "left": El elemento se moverá, desde la parte izquierda, la distancia que le hayamos indicado.
+
+     "z-index": Nos permite mover el elemento en el contexto de apilamiento (eje z). Digamos, lo que sería la profundidad de ese elemento. Si lo miraramos en un plano 3d y tenemos dos cajas, una delante de otra, la que se coloca delante lo determinará el "z-index".
+
+     NOTA: Si a un elemento le declaramos la propiedad top y/o left, las propiedades bottom y/o right no funcionarán, respectivamente. Este caso se da cuando las propiedades afectan al mismo eje. Es decir, si el navegador tiene que elegir entre hacer caso a "top" o a "bottom", hará caso a "top"; incluso, aunque tengamos "bottom", lo va a ignorar completamente. Lo mismo sucede entre "left" & "right", donde va a predominar siempre "left". No puede usar al mismo tiempo "left" & "right" ni tampoco usar al mismo tiempo "top" & "bottom".
+
+     Los posibles valores que le podemos dar a "position" son: 
+     
+     1. "static": Es el valor que tiene por defecto un elemento. Con este valor el elemento NO ESTÁ POSICIONADO  y por lo cual no podremos moverlo.
+
+     Los demás son: "Relative", "Absolute", "Fixed" & "Sticky". Es decir, para poder mover un elemento con las otras propiedades consecuentes: "top", "right", "bottom", "left" & "z-index"; tenemos que primero definir con un valor, dentro de nuestro propio elemento de interés, a la propiedad "position", tal como: "relative", "absolute", "fixed" & "sticky". De lo contrario, no podremos mover el elemento en cuestión con las propiedades "top", "right", "bottom", "left" & "z-index". IMPORTANTE ESTO.
+
+     TODOS LOS ELEMENTOS SE MOVERÁN, EN TÉRMINOS DE PIXELES, DESDE SU POSICIÓN INICIAL. Y, recuerde, el punto 0,0 de los elementos, generalmente, es una esquina superior a la izquierda.
+     
+     En adelante daremos una sesión para cada uno de ellos. 
+-->

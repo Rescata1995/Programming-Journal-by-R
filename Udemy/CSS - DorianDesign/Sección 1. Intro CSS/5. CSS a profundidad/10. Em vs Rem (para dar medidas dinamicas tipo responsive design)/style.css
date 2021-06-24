@@ -1,0 +1,44 @@
+body{
+    background-color: #333;
+    color: lightcoral;
+    font-size: 16px;
+}
+
+.title{
+    /* font-size: 2rem; */
+    font-size: 2rem;
+
+    /* la medida "2rem" está siendo referencia al tamaño raiz, que es 16px. Es decir, 16px equivalen a una unidad de rem (1rem).
+
+    Entonces, como por defecto, los "h1" tienen un tamaño equivalente a 32px (lo puede observar al "inspeccionar elementos"); acontece que, si una unidad de rem (1rem) equivale a 16px; al sustituir el tamaño de nuestro título "h1", identificado con el selector ".title", por dos unidades de rem (2rem), realmente no cambiaría nada en términos de tamaño; pues, 2rem serían iguales a 32px (el tamaño de la fuente, por defecto, para los títulos "h1").
+
+    Para definir tamaños de fuentes siempre utiliza la unidad de medida "rem", que va de 16px en 16 por cada unidad.
+    */
+}
+
+/* Con "em" no pasa exactamente igual; con "em", el tamaño de fuente, corresponde al contexto donde nos encontramos; es decir, su cálculo en tamaño es más variable y depende de dónde se encuentre contenido. Por ejemplo, en el body, si no especificamos nada, vamos a tener "16px" por defecto en tamaño de fuente; sin embargo, si dentro del body, colocamos de entrada "10px" en tamaño de fuente, por ejemplo... si en caso tal deseamos cambiar dicho tamaño de fuente dentro del "body", o dentro de un elemento hijo de ese "body", con una unidad de medida en términos de "em"; tendríamos que, cada "em", sería equivalente a esos 10px definidos, es así porque toma como referencia el tamaño de fuente definido inicialmente, ya sea que haya sido definido de forma manual por nosotros mismos como programador o definido por defecto por el navegador como tal.
+*/
+
+/* Pero lo dicho. Para evitarse dolores de cabeza, y no condicionarse al contexto de dónde se encuentre, lo ideal sería siempre utilizar la unidad de medida "rem" para definir tamaños de fuente; que van de 16px en 16 por cada unidad de ella. 
+*/
+
+/* Ahora, en qué casos sería conveniente utilizar unidades de medidas "em" en vez de "rem",... que no sea en tamaño de fuentes? R/ En el tamaño de los elementos restantes del "box model"; es decir, si para el content se usa el "rem" (tamaño de fuente, que es contenido), para el "padding" y "border" se usa el "em".
+
+Veamos lo siguiente:
+*/
+
+.link{
+    background-color: lightcoral;
+    color: #333;
+    padding: 1em 2em;
+    border-radius: 0.5em;
+
+    font-size: 2rem;
+}
+
+/* Si a partir del tamaño de la fuente dada, por más que aumente o disminuye, queremos que, según su medida pasada, se conserve una proporcionalidad con los demás elementos de la caja, se usa la unidad de medida "em",... entonces, se usa "em" en los elementos de la caja; donde, la medida de dichos elementos, se definirá a partir de la medida, en tamaño, que se le dé al texto con "rem" en un principio.
+
+Es decir, en términos generales, si la medida que definas (o que vayas a definir) tiene que crecer proporcionalmente al tamaño del texto dado con "rem", como puede evidenciarse en este caso con el "padding" y el "margin", utilice siempre la unidad de medida "em" para definirlos. 
+
+Entonces, en la medida que aumente (o disminuye) el tamaño del texto, este crecimiento (o decrecimiento) se verá correspondido por el tamaño del resto de cosas; pues, la definición del tamaño del "resto de cosas" se define a partir del propio tamaño pasado al texto; guardandose una relación positiva entre ambos. El tamaño del "resto de cosas" pasaría a ser una extensión del tamaño del texto definido con "rem", es dependiente de él (eso es lo que hace "em").
+*/
