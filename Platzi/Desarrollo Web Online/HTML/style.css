@@ -191,11 +191,38 @@ h1 strong{
     */
 
     justify-content: center;
+
+    /* Ahora nos interesa alinear de forma vertical; para eso definimos, idealmente y con anterioridad, una altura con "height" a nuestro elemento "padre" o contenedor (en este caso, "div" de cajas); dado un alto, para tener más espacio de forma vertical, podríamos organizar las cajas, bajo cierto orden, alrededor de toda la altura disponible (y así hacer alineaciones verticales). Lo anterior lo podríamos hacer con la propiedad: "align-items". Ahora, definir el orden en el que serán organizadas la totalidad de las cajas, de forma vertical, es la tarea que le corresponde a cada valor que recibe la propiedad "align-items". 
+
+    UN PARENTESIS: "align-items" funciona, idealmente, sobre el elemento padre; es decir, la caja "padre" que contiene a las demás sub-cajas o elementos "hijos"; sin embargo, existe otra propiedad que hace exactamente lo mismo de "align-items", pero con la diferencia de que se aplica sobre cada uno de los elementos "hijos", por separado, y no sobre el elemento "padre" (para darle su propia alineación vertical a cada sub-caja o elemento "hijo" por individual); esa propiedad es: "align-self".
+
+    Entonces, cuál es la diferencia entre "align-items" & "align-self"? Pues, que "align-items" nos dicta el alineado vertical a todos los elementos "hijos" desde el elemento "padre". Sin embargo, "align-self" dicta el alineado vertical sobre cada uno de los elementos "hijos" por separado; en consecuencia, esta última propiedad se aplica individualmente para cada elemento "hijo" y no en el elemento "padre".
+
+    Veamos, de momento, la aplicación de la propiedad "align-items".
+    */
+
+    height: 200px;
+    align-items: center;
+
+    /* Esta vez probamos con "center", mas puede probar los demás valores y ver sus diferencias de manera más visual. 
+    */
+
+    /* Probemos algo ahora con "flex-direction" de nuevo, pero con valor "column".
+    */
+
+    flex-direction: column;
+
+    /* Si usted se da cuenta, todos los demás valores de todas las demás propiedades, que son extensión de "display: flex", SE INVIERTEN!
+    */
+
+    /* Pero volvamos a "flex-direction: column" */
+
+    flex-direction: row;
 }
 
 .box{
-    width: 200px;
-    height: 200px;
+    width: 50px;
+    height: 50px;
     margin: 5px;
     border: 1px solid red;
 

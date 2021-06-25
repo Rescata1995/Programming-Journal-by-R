@@ -5,15 +5,16 @@
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel="stylesheet" href="style.css">
-     <title>Width: % & auto</title>
+     <title>Height: % & auto</title>
 </head>
 <body>
+     <div class="header">Header</div>
      <header>
           <h1>
-               % vs auto
+               Height: % vs auto
           </h1>
      </header>
-     <div class="box">
+     <div class="box"> 
           <div class="box-children"></div>
      </div>
 </body>
@@ -27,6 +28,11 @@
 
      Ahora, si definimos a un elemento "hijo" que no está siendo contenido por ningún otro; es decir, que se somete al "body" directamente; y le pasamos valores porcentuales (%) en sus medidas; entonces, el "elemento" contenedor de dicho elemento sería el mismo "body" y sus medidas de tamaño se asignarán en relación a todo el "body" en cuestión; es decir, a toda la pantalla disponible del navegador en x o y dispositivo sin importar qué tan grande o pequeña pueda hacerse la ventana; pues, se terminará ajustando a ella. Es por lo anterior que es tan recomendable dar medidas en términos porcentuales también si deseamos, como es lo ideal, un diseño "responsive". 
 
-     Ahora, si por ejemplo nos interesa dar "margenes" a un elemento "hijo", sin dejar que éste deje de contenerse TOTALMENTE sobre su elemento "padre" (sea un elemento "padre" propiamente o el mismo "body"); debemos definir la medida de nuestro interés del elemento "hijo", ya sea "width" o "height", con el valor de "auto",... esto para que el elemento "hijo" no se desborde sobre su elemento "padre" (si el elemento "padre" es el propio "html" lo que hará el navegador es pasarnos un "scroll") o para que no deje de guardarse una relación equivalente entre el total de sus lados; se pone el "auto" sobre la medida afectada directamente, sea "width" o "height". Veremos esto con un ejemplo.
--->
+     Ahora, si por ejemplo nos interesa dar "margenes" a un elemento "hijo", sin dejar que éste deje de contenerse TOTALMENTE sobre su elemento "padre" (sea un elemento "padre" propiamente o el mismo "body"); debemos definir la medida de nuestro interés del elemento "hijo", eso para los casos con "width", con el valor de "auto",... esto para que el elemento "hijo" no se desborde sobre su elemento "padre" (si el elemento "padre" es el propio "html" lo que hará el navegador es pasarnos un "scroll") o para que no deje de guardarse una relación equivalente entre el total de sus lados; entonces, se pone el "auto" sobre la medida afectada directamente, eso en los casos "width". Lo vimos en el ejemplo pasado. 
 
+     Ahora, con la propiedad "height" pasa algo muy diferente. Si en caso tal definimos con el valor "auto" a "height", con respecto a otro elemento contenedor o con respecto al mismo "body", se desaparecerá el elemento que ocupó el valor "auto" en la propiedad "height" en cuestión. De hecho, si no define la propiedad "height", el navegador asumirá por defecto que está siendo definida por el valor "auto" y también desaparecerá el elemento en cuestión; así que procure siempre asignarle un valor a "height" y que no sea "auto".
+
+     Un elemento contenedor único o "padre" tampoco puede estar definido por un porcentaje (se desaparecería también), su elemento "hijo" sí.
+
+     Ya explicaremos esto en la hoja de estilos propiamente.
+-->

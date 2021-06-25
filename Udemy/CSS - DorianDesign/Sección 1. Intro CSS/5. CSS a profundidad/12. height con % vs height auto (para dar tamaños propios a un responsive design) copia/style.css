@@ -1,0 +1,41 @@
+/* HEIGHT:
+
+    %: Cuando estamos dentro de un contenedor, éste (el contenedor) tiene que tener un "alto" declarado; sino, no se podrá calcular el porcentaje sobre el elemento o selector "hijo". Si se le aplica una medida con porcentaje al "height", a su elemento "contenedor", se sustituirá automaticamente por "auto" (cualquiera que sea el valor porcentual que se le pase: de 0% a 100%); lo cual, desaparecerá automaticamente al elemento.
+
+    Sin embargo, todo esto tiene una explicación lógica "el porqué de las desapariciones"; pasa que, cuando definimos "auto" en la propiedad "height", el "alto" la calculará el navegador en base al contenido real del elemento (contrario a "width" que ocupa todo el ancho del navegador y es "responsive"); entonces, si la caja (suponiendo que es el elemento en cuestión) no tiene contenido por dentro, simplemente la caja no será dibujada (porque no hay nada que mostrar dentro de ella, así piensa el valor "auto" en "height").
+
+    NOTA: "height" es una propiedad que tienes que usar con mucho cuidado. Si no es realmente necesario establecer un "alto", deja que sea el mismo contenido quien decida la altura del elemento. Realmente "height" no se suele utilizar y si no sabes para qué la estás usando,... mejor ni la utilices. 
+    
+    Si estás empezando con CSS, siempre deja que el contenido del mismo elemento defina el "alto"; sin embargo, si por ejemplo deseas "guardar" espacios entre el "border" y el "content", ya sabes que hacer: usa el recurso del "padding" (no sería necesario, en este caso tampoco, definir un "height" para eso).
+
+    En todo caso, tanto "height" como "width" pueden ser definidos con medidas relativas; es decir, "rem", etc. Sin embargo, si eres principiante, insistimos en que sea el mismo contenido quien defina el "alto".
+
+    ALGO A TENER EN CUENTA: 
+
+    Si define un elemento con un valor porcentual para el "height" (%); y, adicionalmente, se declara una propiedad "position" con un valor "fixed" o "absolute"; tendríamos que, ese valor porcentual definido para la altura se calculará en base al total del "view port"; es decir, a la pantalla o ventana de navegación disponible en el momento (por más que el elemento que está siendo manipulado esté dentro de un contenedor o elemento "padre", no le importará). Es decir, por ejemplo, un "height" definido con "50%" equivaldría a la mitad del alto total de la ventana.
+
+    En cambio, con un "position" "relative" o "sticky", no se modifica absolutamente nada: el valor porcentual pasado al "height" se calcularía en base, de nuevo, a su contenedor (y no al "view port").
+    */
+
+body{
+    background-color: #333;
+    color: lightcoral;
+    margin: 0;
+}
+
+.header{
+    background-color: lightskyblue;
+    text-align: center;
+}
+
+.box{
+    width: 300px;
+    height: 300px;
+    background-color: lightgreen;
+}
+
+.box-children{
+    width: 50%;
+    height: 50%;
+    background-color: lightseagreen;
+}
