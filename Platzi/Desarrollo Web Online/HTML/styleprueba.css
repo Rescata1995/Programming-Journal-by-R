@@ -1,0 +1,236 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif, Arial;
+}
+
+/* Se colocan tres fuentes para respaldar sobre una en caso que no se tenga y así; si Arial no está dentro de mi sistema, entonces coloca Helvetica y, si Helvetica tampoco está, me coloca una Sans-serif  */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-family: 'Fjalla One', sans-serif;
+    font-weight: normal;
+    /* font-style: italic; */
+}
+
+/* Para colocar un mismo estilo a diferentes selectores que son completamente independientes y ninguno se contiene entre sí, es necesario hacer separaciones por coma (como lo hicimos más arriba); en cambio, cuando estamos hablando de selectores descendientes; es decir, donde se quiere afectar sobre una etiqueta que está siendo contenida por otra y ambas están siendo llamadas en CSS... sería algo así:
+
+body h1{
+    ------
+}
+*/
+
+/*
+La propiedad "font-weight" define el tipo de peso de fuente; donde el valor "100" nos refleja el tipo de fuente más delgada posible y el valor "900" nos refleja el tipo de fuente más gruesa posible. 400 o "normal" es un valor estandar. 600 o "bold" es un valor un poco más grueso que lo estandarizado.
+
+La propiedad "font-style" define el estilo de la fuente, si deseas que la fuente sea cursiva o en  negrilla, etc. Le da formato al texto.
+*/
+
+h1{
+    font-size: 40px;
+    line-height: 1.5em;
+    letter-spacing: -.2px; 
+    color: white;
+
+    /* La propiedad "font-size" define el tamaño de la fuente.
+
+    El tamaño de la fuente, por lo general, viene configurado por defecto por el navegador; en este caso, por ejemplo, ya las etiquetas de tipo "H1" vienen con una configuración predeterminada de tamaño asignada por el navegador; dicho eso, en ese caso, toca "inspeccionar elementos" para conocer el tamaño original de fuente asignado para "H1" por el navegador.
+    */
+
+    /* La propiedad "line-height" define el "alto de línea"; es decir, la distancia que hay entre una línea de texto y la línea de texto que le sigue inmediatamente, la que está por debajo. Esta propiedad puede recibir un valor en muchas unidades de medida; sin embargo, usaremos pixeles.
+
+    Por lo general, siempre será una buena referencia considerar un "line-height" (alto de línea) equivalente, por lo menos, al tamaño de la fuente, que se encuentra configurando, dentro del selector.
+
+    La propiedad "letter-spacing" es la que define la separación que haya entre cada una de las letras. Un valor bastante bien estandarizado es: "-.2px" (un 20% de un pixel menos).
+
+    Dato de interés: la unidad de medida "1em" o "1" se refiere a un tamaño del 100% sobre la base del tamaño de la fuente; "2em" o "2" sería, entonces, un tamaño del 200% sobre la base del tamaño de la misma fuente en cuestión. De hecho, podríamos definir como valor, dentro de "line-height", "100%",... y sería lo mismo que decir: "1em" o "1".
+
+    Existe otra propiedad que quizas le guste considerar más adelante: "text-transform", esta propiedad asume valores para determinar la configuración de mayusculas y minusculas en el texto del selector ocupado. Por ejemplo, el valor "capitalize" lo que hace es que todas las palabras, del texto del selector manipulado, comiencen en mayuscula. Otro valor podría ser "uppercase", el cual, coloca todas las letras en mayusculas; lo contrario lo hace "lowercase". Esta propiedad es recomendable usarla siempre, toda vez, que requiera escribir algo totalmente en mayusculas o en minusculas; para un botón, por ejemplo. Es de mal gusto escribir en su propio documento HTML todo en MAYUSCULAS (se ve grosero).
+
+    Otra propiedad interesante sería "text-decoration", que nos permite darle formato al texto, con valores como: "underline", "dashed", "unset"; y también color, con valores como: "red", "blue",... a nuestro texto.
+    */
+}
+
+/* Si una fuente tiene más de dos palabras, debería encerrarse entre comillas simples */
+
+/* Adicionalmente, podemos tener a nuestra disposición una mayor variedad de fuentes bajadas desde la propia internet, siga el siguiente recurso: https://fonts.google.com/
+*/
+
+h1 strong{
+    /* color azul, con algo de "celeste" */
+    color: #025fff;
+}
+
+.hero{
+    height: 310px;
+    /* background-color: red; */
+
+    /* Ahora, si deseamos poner una imagen de fondo, a un selector, por medio de CSS, lo podemos hacer con la propiedad: "background-image"; en esta ocasión, será complementada el atributo "url" para poder ir a la ubicación de la imagen y poder importarla. */
+
+    background-image: url('./images/piscina.jpg');
+
+    /* Ahora, con "background-size" podemos definir las medidas de la imagen colocada como fondo; de tal manera que, el primer (1er) parametro que se le pase como valor sería el correspondiente al ancho (width) de la imagen; y, adicionalmente, el segundo (2do) parametro pasado como valor sería el correspondiente al alto (height). */
+
+    background-size: 700px 100%;
+
+    /* como el ancho del navegador es demasiado ancho para la imagen (1425px), no se vería esteticamente bien que, en un 100%, sea ocupado dicho espacio para toda la imagen en cuestión; por lo que, optamos colocar una medida exacta de "300px" (un ancho relativamente prudente); en cambio, la altura disponible para el selector ".hero"; es decir, donde estamos colocando la imagen en cuestión, es de "300px"; por lo que, en ese caso, sí que no es mala idea aprovechar en un 100% todo ese espacio (además que se corresponde, con exactitud, con la medida establecida para el ancho); en consecuencia, hemos definido ese valor con un "100%". Dando como resultado final una imagen cuadrada de 300px * 300px. 
+    
+    Sin embargo, como la imagen no ocupa realmente todo el ancho del navegador (300px ante 1425), se multiplicará instantaneamente de forma horizontal hasta que lo cubra. ¿Cómo solucionamos esto si nuestra intención es dejar una sola toma de foto y que no se repita? Pues bien, con la propiedad-valor "background-repeat: no-repeat".
+    */
+
+    background-repeat: no-repeat;
+
+    /* Ahora nos interesa darle una mejor posición a nuestra imagen, eso sería con la propiedad: "background-position". A "background-position", al igual, se le pasan dos parametros, que son: "background-position: eje x & eje y". 
+    Pero, si por ejemplo, queremos sólo manipular el eje de las x, sería: "background-position-x" & para el eje de las y, sería: "background-position-y". Nos interesa sólo el eje de las x. Veamos.
+    */
+
+    background-position-x: right;
+
+    /* La key-word value "right" lo que hizo fue colocarme la imagen en el lado más extremo hacía la derecha. El valor "left" hace lo propio, pero hacia la izquierda.
+    */
+
+    /* Por último, fondo en negro */
+    background-color: #060606;
+}
+
+/* Lo que estamos haciendo en "hero" es solapar, por medio del contenido textual del "header" principal, nuestra imagen de presentación inicial (no el logo, no confundir); de tal manera que, ambas, estén posicionadas bajo un mismo marco de altura; entonces, le quitamos altura a la imagen para que el contenido textual "suba" y se sobreponga a la imagen misma (la "solape"): así el elemento inmediatamente ulterior a uno puede solapar al otro: esta es la dinamica que se aplica para jugar, dentro de un mismo espacio disponible, con un contenido textual y un contenido embebido.
+*/
+
+.project{
+
+    /* Demostración de diferentes valores que puede asumir cada borde en una división: medida, tipo o formato y color: */
+
+    /* border-top: 10px solid red;
+    border-right: 10px solid green;
+    border-left: 10px solid orange;
+    border-bottom: 10px solid pink; */
+
+    /* border-color: red; */
+
+    /* un color rojo para todos los bordes con "border-color"; sin embargo, para que sea visualizable este color, debemos hacer uso de la propiedad: "border-width", tal que así: 
+    */
+
+    /* border-width: 15px; */
+
+    /* También haría falta definir el estilo del borde con "border-style" */
+
+    /* border-style: solid; */
+
+    /* Ahora bien, si por alguna razón se le olvida definir el color del borde, el borde asumirá el color del contenido textual que está cubriendo. */
+
+    /* Lo que realmente queremos hacer: */
+
+    border: 1px solid gray;
+    border-radius: 10px;
+
+    /* ATENCIÓN A ESTA PROPIEDAD-VALOR, se relacionará con "display: inline-block" */
+    display: flex;
+}
+
+.project-details{
+    width: 500px;
+    /* display: inline-block; */
+}
+
+.project-image{
+    width: 500px;
+    /* display: inline-block; */
+}
+
+/* Inicialmente, tanto en el selector ".project-details" como ".project-image", para poder dejar ambos DIV (divisiones) dentro de un mismo espacio de alto en el navegador, sin ocupar más de él; sino, aprovechando más bien la anchura todavía disponible, al crear dos columnas a lo largo de ella; hemos declarado la propiedad-valor "display: inline-block;". Así, los dos "DIV" no se extenderían hacía "lo largo"; sino, si la suma del ancho de ambos DIV (1000px) es menor que la anchura total del navegador; entonces, el navegador decidirá mejor aprovechar el espacio que aún tiene disponible en su anchura para una misma dimensión en términos de altura. */
+
+/* Sin embargo, sería una mejor técnica ponerle al elemento padre ".project", para que afecte a sus hijos directos (ojo, tienen que ser directos!) ".project-image" y ".project-details", la propiedad-valor "display: flex",... y esto se encargará de hacer lo mismo que ya explicamos más arriba y hasta de una forma más estetica y equilibrada. En general, toda vez que se pueda aprovechar más espacio dentro de unas mismas dimensiones, ahí "display: flex" hará su trabajo */
+
+.header{
+    padding-top: 0.1px;
+    background-color: #060606;
+    color: white;
+
+    /* Se recomienda que el color de fondo, de la cabecera ".header", sea correspondiente al color de fondo de la imagen que uses; en este caso, del logo. Para saber con exactitud que color de fondo usar en ".header", para este caso, puedes valerte del siguiente recurso: 
+
+    https://chrome.google.com/webstore/detail/colorpick-eyedropper/ohcpnigalekghcmgcdcenkpelffpdolg
+    
+    La anterior página, que realmente es una extensión de google, te dirá exactamente qué color posee, en términos de hexadecimales, cualquier imagen. */
+}
+
+.logo{
+    text-align: center;
+
+    /* Centra el contenido del contenedor. En este caso, nuestro contenedor es el elemento "figure"; entonces, como dicho elemento cubre toda la anchura de la pantalla del navegador; tenemos que, al centrar el contenido del contenedor, la imagen (logo), éste se situará sobre toda la mitad de la pantalla del navegador realmente. */
+}
+
+.header a{
+    color: white;
+    text-decoration: none;
+
+    /* La propiedad-valor "text-decoration: none" le quita el formato al contenido textual; eso incluye, por supuesto, los "underline" que vienen en los enlaces por defecto.
+    */
+}
+
+.flexbox{
+    display: flex;
+
+    /* el valor "flex" le dará flexibilidad a la hora de organizar sus elementos; en caso tal la anchura ya no dé abasto para la totalidad de elementos que quiera colocarse sobre ella, entonces, se reduce el ancho de los propios elementos en sí para que quepen sobre todo el ancho limitado del propio navegador sin afectar el alto definido inicialmente. Esto es así por defecto, que sería lo mismo que definir la propiedad-valor "flex-direction: row"; sin embargo, si no deseamos que los elementos se "amontonen" o se organicen en fila (que es lo que hace "flex-direction: row" y lo que hace, también, "display: flex" por defecto); sino que, deseamos que dichos elementos se organicen en columnas, tendríamos que declarar la propiedad-valor" flex-direction: column". Veamos.
+    
+    Lo interesante de todo esto es que, adicionalmente, "flex" es un valor que trabaja bajo las caracteristicas propias de un "responsive design".
+    */
+
+    flex-direction: row;
+
+    /* acá "flex-wrap: wrap;", abajo */
+
+    flex-wrap: wrap;
+
+    /* Otra propiedad interesante de "flex", que se emplea sobre el elemento "padre" o contenedor; en nuestro caso, ".flexbox", es la propiedad "justify-content". "justify-content", básicamente, se encargará de definir cómo será el alineado horizontal de los elementos "hijos" contenidos por diho elemento "padre"; es decir, en este caso, repetimos, estaríamos hablando del elemento ".flexbox" afectando sobre todos los elementos ".box". Esta propiedad es similar a las opciones de "alinear" que, comunmente, se ven en un documento Word. Por ejemplo, "alinear a la izquierda" en Word sería el equivalente al valor "flex-start" en CSS; "alinear a la derecha" sería "flex-end"; "alinear al centro" sería "center". Existen otros valores más sofisticados como: "space-between", "space-evenly" & "space-around"; todos estos valores, a su propio modo, aprovechan todo el espacio horizontal posible del elemento "padre" o contenedor. Pruebelos.
+    */
+
+    justify-content: center;
+
+    /* Ahora nos interesa alinear de forma vertical; para eso definimos, idealmente y con anterioridad, una altura con "height" a nuestro elemento "padre" o contenedor (en este caso, "div" de cajas); dado un alto, para tener más espacio de forma vertical, podríamos organizar las cajas, bajo cierto orden, alrededor de toda la altura disponible (y así hacer alineaciones verticales). Lo anterior lo podríamos hacer con la propiedad: "align-items". Ahora, definir el orden en el que serán organizadas la totalidad de las cajas, de forma vertical, es la tarea que le corresponde a cada valor que recibe la propiedad "align-items". 
+
+    UN PARENTESIS: "align-items" funciona, idealmente, sobre el elemento padre; es decir, la caja "padre" que contiene a las demás sub-cajas o elementos "hijos"; sin embargo, existe otra propiedad que hace exactamente lo mismo de "align-items", pero con la diferencia de que se aplica sobre cada uno de los elementos "hijos", por separado, y no sobre el elemento "padre" (para darle su propia alineación vertical a cada sub-caja o elemento "hijo" por individual); esa propiedad es: "align-self".
+
+    Entonces, cuál es la diferencia entre "align-items" & "align-self"? Pues, que "align-items" nos dicta el alineado vertical a todos los elementos "hijos" desde el elemento "padre". Sin embargo, "align-self" dicta el alineado vertical sobre cada uno de los elementos "hijos" por separado; en consecuencia, esta última propiedad se aplica individualmente para cada elemento "hijo" y no en el elemento "padre".
+
+    Veamos, de momento, la aplicación de la propiedad "align-items".
+    */
+
+    height: 200px;
+    align-items: center;
+
+    /* Esta vez probamos con "center", mas puede probar los demás valores y ver sus diferencias de manera más visual. 
+    */
+
+    /* Probemos algo ahora con "flex-direction" de nuevo, pero con valor "column".
+    */
+
+    flex-direction: column;
+
+    /* Si usted se da cuenta, todos los demás valores de todas las demás propiedades, que son extensión de "display: flex", SE INVIERTEN!
+    */
+
+    /* Pero volvamos a "flex-direction: column" */
+
+    flex-direction: row;
+}
+
+.box{
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    border: 1px solid red;
+
+    /* Ahora, si no quiero que se "amontonen" los elementos entre sí para que puedan caber todos dentro de la anchura disponible de la pantalla del navegador, irrespetandome la anchura definida inicialmente para cada uno de ellos, debo declarar otra propiedad-valor, la cuál es: "flex-shrink: 0", le estaríamos diciendo al navegador con ella que sea "0 encogible"; y que, a falta de espacio, entonces que el navegador me haga un "scroll" por todo lo ancho de la pantalla del navegador. El otro valor que puede asumir sería que sí sea "encogible"; es decir: "flex-shrink: 1"(que es el que viene definido por defecto con "flex"). Si se da cuenta, esto se define es sobre los elementos hijos, los que serán o quiere que sean afectados directamente con la propiedad-valor.
+    */
+
+    flex-shrink: 0;
+
+    /* Ahora, si no deseo ese "scroll" que me da "flex-shrink: 0" al acabarse la anchura disponible de mi pantalla; sino que, deseo que continue agregandome los elementos restantes aprovechando espacio en términos de altura para que no haya "scroll", debo declarar la propiedad-valor: "flex-wrap: wrap" y esto se declara sobre el elemento padre, no acá sobre sus hijos. "flex-wrap: nowrap" realmente sería el elemento que persiste en seguir adicionando elementos sobre la misma altura sin importar que tengas que hacer "scroll" (que ningún elemento caiga), que es lo que viene por defecto, también, con el valor "flex".
+    */
+}
