@@ -30,6 +30,15 @@ h1 strong{
     color: #025fff;
 }
 
+h2 {
+    color: #026fff;
+    text-transform: uppercase;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+
 .hero{
     height: 310px;
 
@@ -41,13 +50,21 @@ h1 strong{
 
     background-position-x: right;
 
-    background-color: #060606;
+    background-color: #1b2127;
 
     /* Las siguientes 2 propiedades pondrán más estatico y "juntado" nuestro ".hero" */
 
     display: flex;
 
     align-items: center;
+
+    /* object-fit: cover; */
+}
+
+.portfolio {
+    background: #fafafa;
+    padding: 20px;
+    /* background: red; */
 }
 
 .project{
@@ -55,6 +72,34 @@ h1 strong{
     border-radius: 10px;
 
     display: flex;
+
+    /* Propiedades-valor sacadas propiamente del repositorio de Leonidas en GITHUB, donde se encuentra acabado el proyecto, a continuación: */
+
+    margin-bottom: 15px;
+    padding: 20px;
+    background: white;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.project-course,
+.project-date,
+.project-url {
+  margin: 10px 0;
+}
+
+.project-description {
+  font-size: 20px;
+}
+
+.project strong {
+  font-family: 'Fjalla One', sans-serif;
+}
+
+.project-title {
+    font-size: 30px;
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 
 .project-details{
@@ -69,7 +114,7 @@ h1 strong{
 
 .header{
     padding-top: 0.1px;
-    background-color: #060606;
+    background-color: #1b2127;
     color: white;
     display: flex;
     height: 120px;
@@ -82,10 +127,16 @@ ul{
     margin: 0px 15px 0px 0px;
     padding: 0;
     list-style: none;
+    font-family: Raleway;
+    font-size: 0.95rem;
     /* para que no tengan estilos ni formatos las listas */
 }
 
 figure{
+    margin: 0;
+}
+
+.header figure{
     margin: 5px 10px 5px 15px;
     /* "figure" por defecto viene con margenes, acá los estamos definiendo manualmente */
 }
@@ -137,7 +188,7 @@ figure{
 }
 
 .footer{
-    background-color: #060606;
+    background-color: #1b2127;
     color: white;
 
     display: flex;
@@ -161,4 +212,89 @@ figure{
 
 .footer a{
     color: white;
+}
+
+.experience-list-title{
+    margin-left: 20px;
+    
+}
+
+.experience-list{
+    display: flex;
+
+    /* ATENCIÓN, en el diseño original esta clase recibió el nombre de "event" y no de "experience" (como fue nuestro caso).
+    */
+}
+
+.experience{
+    
+    margin: 10px;
+    width: 480px;
+    border-radius: 10px;
+
+    /* para el desbordamiento de la imagen ante su contenedor (border), usemos la propiedad-valor: "overflow: hidden".
+    */
+
+    overflow: hidden;
+
+    /* con "overflow: hidden" se me alteraron un poco las medidas de mis "experience" de tal manera que ahora se me "encogieron" y caben todas, mis "experience", en la pantalla disponible del navegador; sin embargo, todavía deseo que se me respeten las medidas de ancho pasadas a cada una de ellas; por lo que declararé la propiedad-valor: "flex-shrink: 0".
+    */
+
+    flex-shrink: 0;
+
+    background-color: #f4fbff;
+    /* Color de fondo "celeste" del elemento "experience" */
+}
+
+.experience img{
+    margin-top: -5px;
+    margin-left: -16px;
+
+    /* De momento, se nos hizo necesario darle un margen negativo a la izquierda y al "top" de las imagenes debido a que, por defecto, se estaban sobresaliendo por el lado derecho del borde (y por encima hacia falta contenido) */
+
+    width: 480px;
+    height: 200px;
+
+    /* La propiedad-valor "object-fit: cover" nos sirve para cambiar la proporción de la imagen de tal manera que quepa, de la manera más estetica posible, dentro de las mediciones y los tamaños arbitrarios que se le estén pasando (aunque el valor "cover" como tal se come un poco los costados de la imagen). Veamos. */
+
+    object-fit: cover;
+}
+
+/* Ahora, lo que queremos hacer es darle margenes al contenido textual que está dentro de cada "experience"; es decir, queremos manipular por separada la clase "experience-detail" y darle sus respectivos margenes con respecto a su elemento o selector padre "experience" */
+
+.experience-detail{
+    margin: 20px 40px;
+
+    background-color: white;
+    /* Color de fondo "blanco" del elemento hijo "experience-detail" */
+
+    /* Ahora, nos interesa que "experience-detail" se sobreponga, sin ningún problema, sobre la imagen de cada "experience"; es decir, que el contenido textual se ubique por encima de nuestra imagen en cada "experience". Lo anterior, lo podríamos hacer, en principio, con un "margin-top" negativo. */ 
+
+    margin-top: -40px;
+    
+    /* Sin embargo, aún así, a veces pasa que la imagen quedaría por encima del contenido textual,... es decir, si bien el contenido textual "experience-detail" sube, existe la posibilidad de que sea opacado por la imagen en su intento (en esta ocasión, por ejemplo, opacó nuestro "background-color: white"). Para asegurarnos de que esto no pasará, podemos hacer uso del recurso que nos brinda la propiedad "position" por medio de su valor "z-index" (en caso de ser necesario dejar un orden de apilamiento que le dé prioridad al selector del contenido textual "experience-detail" sobre su elemento padre "experience", sino defina con "relative" solamente). 
+    */
+
+    position: relative;
+
+    /* Ahora, vamos a oxigenar un poco con "pagging" al contenido textual del "experience-detail" para que no quede tan pegado de su propio borde */
+
+    padding: 20px;
+
+    text-align: center;
+}
+
+.experience-description{
+    text-align: left;
+}
+
+.experience-url{
+    color: #056fff;
+    border: 1px solid;
+
+    /* El "border" en este ocasión asume el color del "content"; es decir, asume el color de la propiedad "color". */
+
+    padding: 5px 20px;
+    text-decoration: none;
+    border-radius: 5px;
 }
