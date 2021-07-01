@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="style.css">
+     <title>Seudoclases</title>
+</head>
+<body>
+     <a href="#text" class="menu">Ir a párrafo</a>
+
+     <p id="text" class="text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum fugiat labore omnis maxime architecto. Consequuntur eaque voluptatem maiores doloribus nemo eveniet quod quos nesciunt quisquam tempore? Repudiandae sequi ullam quasi.</p>
+</body>
+</html>
+
+<!-- 
+     Son selectores que reaccionan en tiempo real detectando la interacción del usuario con algunos elementos (algo más o menos así como JS en términos de interactividad)
+
+     -- > Funcionan con todos los selectores de CSS
+
+     -- > No están atados a ningún elemento.
+
+     Su sintaxis es (son dos):
+
+     1. con selector
+
+          selector:pseudoclase{
+               estilos (interactivos?)
+          }
+     
+     2. sin selector:
+          
+          :pseudoclase{
+               estilos
+          }
+
+     Adicionalmente a las pseudoclases "Dynamic", existen las pseudoclases de tipo: "Target" & "Language".
+
+     ":target"
+          -- > Cuando el elemento es objetivo de un marcador o ancla. Usualmente es usado en casos muy puntuales en los que desea especificar un "padding-top" parcial (es decir, un padding temporal que funciona sólo cuando se dé o se ponga en marcha el ":target") sobre la dirección o elemento (selector) al que desea ir por medio de un enlace al hacer navegación interna. 
+          
+          En resumidas cuentas, es una pseudoclase muy util y más eficiente en los casos en los que desea dejar claro, sin mucho lio, el espacio que deben tener y respetar los elementos posicionados con "fixed" en relación con el contenido restante del documento HTML (para que no lo tapen) o, bien, con un selector de HTML en especifico en los casos en los que, por medio de navegación interna, se desee ir hacia él.
+          
+          Esto es más evidenciable en la práctica, así que veamos.
+
+     ":lang()"
+          -- > Elemento 
+
+
+ -->

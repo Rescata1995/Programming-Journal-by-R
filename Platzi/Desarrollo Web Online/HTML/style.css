@@ -298,3 +298,111 @@ figure{
     text-decoration: none;
     border-radius: 5px;
 }
+
+.contact{
+    background-color: #056fff;
+    color: white;
+    height: 150px;
+
+    /* Alineado vertical con "display:flex" */
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+.social-link{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+}
+
+.social-link.twitter{
+    /* Importación de imagenes con CSS */
+    background-image: url('./images/twitter.svg');
+
+    /* Asignación de tamaños de imagenes importadas con CSS (hay que asignarles manualmente uno para poder visualizas las imagenes) */
+    background-size: 50px 50px;
+}
+
+.social-link.facebook{
+    background-image: url('./images/facebook.svg');
+    background-size: 50px 50px;
+}
+
+.social-link.github{
+    background-image: url('./images/github.svg');
+    background-size: 50px 50px;
+}
+
+.social-link.instagram{
+    background-image: url('./images/instagram.svg');
+    background-size: 50px 50px;
+}
+
+.form-email h3{
+    font-family: 'Source Sans Pro', sans-serif, Arial;
+}
+
+.form-email input{
+    font-family: Raleway;
+    font-size: 0.7rem;
+
+    /* Demosle un color al borde dibujado sobre el selector propio de la caja de texto */
+
+    border-color: gray;
+
+    /* Ahora, demosle un estilo particular al borde dibujado sobre el selector propio de dicha caja de texto */
+
+    border-style: solid;
+
+    padding: 10px 20px 10px 25px;
+}
+
+/* Vamos a seguir trabajando sobre los "input" hijos del elemento padre "form", que lleva por clase "form-email", pero ahora de forma independiente sobre cada uno de ellos.
+*/
+
+.form-text{
+
+    /* A continuación lo siguiente: viene un sin número de "propiedades-valor" relacionadas a la importación de imagenes directamente de css */
+    background-image: url('./images/envelope.svg');
+    background-size: 15px 15px;
+
+    /*  La propiedad-valor "background-repeat: no-repeat" es para que se me reproduzca una sola vez, sobre el selector seleccionado, la imagen que ha sido importada por medio de CSS */
+    background-repeat: no-repeat;
+
+    /*  
+    "background-position" nos permite colocar, sobre el selector seleccionado, la imagen importada en cualquier posición, ya sea sobre el eje de las Xs o sobre el eje de las Ys. Tal que así:
+    */
+
+    background-position-y: center;
+    background-position-x: 5px;
+
+    /* No es casualidad que hayamos querido importar la imagen de la "carta" por medio de CSS; pues, esa carta realmente cumple una mera función estética; es decir, no hace parte defitivamente del DOM (no está dentro del HTML realmente); sólo fue agregada para cumplir la única función de ser un adorno y no interfiera sobre la escritura dentro de HTML ni sobre la manipulación de sus elementos totales (es un fantasma). 
+
+    De hecho, si intenta tomar la "cartica" con el mouse, al intentar subrayarlo, no podrá seleccionarla; pues, realmente para la estructura de la página esa "cartica" no está ahí.
+    */
+}
+
+.form-box{
+
+    /* "form-box" es la clase (class) del "input" con atributo y valor de: type="submit"; esto puso ser reemplazado por un elemento de tipo "button", como lo hizo leonidas; es decir, él llamó al selector de la siguiente forma: ".form-email button"
+    */
+
+    display: block;
+
+    /* Le dimos "display: block" para que ocupará todo el ancho en el siguiente "renglón" de la página web y quede libre (que no se ponga al costado del input type="email"; es decir, que no quede al lado de la caja del texto). 
+    */
+
+    margin-top: 10px;
+
+    background: transparent;
+
+    /* Le dimos "background: transparent" para quitarle el color de fondo al contenido del selector ".form-box"; es decir, a la caja del botón. */
+
+    color: white;
+    width: 100px;
+
+    border-radius: 5px;
+}
