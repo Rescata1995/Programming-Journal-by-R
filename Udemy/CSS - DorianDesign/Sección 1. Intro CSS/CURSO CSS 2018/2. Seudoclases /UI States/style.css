@@ -1,0 +1,83 @@
+.input,
+.label{
+    display: block;
+}
+
+/* 
+
+En el caso de los formularios, hay pseudoclases que funcionan a la par de atributos declarados, como por ejemplo: 
+
+ ":enabled": además de que es un atributo de los campos de formularios, el cual es el atributo que sea aplica por defecto, significa que dicho campo del formulario está activo y puede recibir ordenes de entrada sin ningún problema. Pero, además, es también una pseudoclase; es decir, se utilizaría como pseudoclase cuando queremos manipular los estilos de todos los campos de formulario que han sido invocados por medio de un selector (digo "todos" porque, por defecto, todos los campos de formulario tienen de manera implicita declarada el atributo "enabled").
+
+ ":disabled": ahora, "disabled" también es un atributo para campos de formulario, sirve en los casos en los que se desea desactivar las ordenes de entrada al campo de un formulario en cuestión (casualmente). Como atributo debe declararse sobre dicho campo de HTMl, que fue creado inicialmente dentro de una etiqueta "form", sin valor alguno para él (solo). Ahora, ":disabled" es también una pseudoclase; pues, si nos remitimos a ella, quiere decir entonces que queremos darle unos estilos propios solamente a los campos de formularios que estén desactivados con el atributo "disabled" en HTML (y que, obvio, hayan sido llamados dentro del selector que se esté manipulando parcialmente con la pseudoclase ":disabled" declarada). 
+
+ nota: Los campos desactivados, en los formularios, tienen un color gris por defecto. Y, en general, todos tienen borde "grisasio" también (incluyendo los campos activados).
+ 
+ Veamos todo esto.
+ */
+
+ .input:enabled{
+     background-color: red;
+ }
+
+ .input:disabled{
+     background-color: yellow;
+     border: none;
+ } 
+
+ /* Ahora, la pseudoclase ":checked" sólo funciona en formularios de tipo "checkbox" que son declarados con el atributo: type="checkbox". Los estilos que pase con la pseudoclase ":checked" sólo se reflejarán cuando usted haga click sobre el "cuadro vacio"; es decir, sobre el "checkbox". 
+ 
+ Ahora, si quiere darle estilos al "label" que acompañe al "checkbox" (u otra cosa que acompañe al "checkbox"), debe llamarlo también dentro de la declaración del selector y la pseudoclase. Tal que así:
+ 
+ */
+
+ .input:checked + label{
+     font-size: 2em;
+ }
+
+
+ /* Ahora, vamos a trabajar con la pseudoclase ":in-range"; la cual, funciona sobre los campos de formulario declarados con el atributo: type="number".
+
+ Aquí los estilos, con la pseudoclase "in-range", se aplicarán, sólo si, la condición del rango definido se cumple, ésta se define dentro del propio campo del formulario "number" por medio de los atributos "min" o "max".
+
+ Por ejemplo, como estamos hablando de la pseudoclase "in-range", la condición del campo del formulario "number" se cumple cuando el número pasado por tecla (por nosotros) está dentro de los límites definidos dentro del rango, ya sea con los atributos "min" o "max". Veamos esto.
+ */
+
+ .in:in-range{
+     background-color: pink;
+
+     /* En nuestro caso, quiere decir que el color "pink" se aplicará sobre el campo del formulario "number" si y sólo si el número pasado sea igual o mayor que "50" o menor o igual que "60" (min= "50" || max= "60"); es decir, que el número esté literalmente dentro del rango numérico establecido porque así lo define la pseudoclase "in-range" para poder dar estilos. 
+     */
+ }
+
+ /* Ahora, en el caso contrario de ":in-range", tenemos ":out-of-range" que hace exactamente lo contrario: tener en cuenta los valores que están por fuera del rango del "min" y/o del "max", y no por dentro; para, posteriormente, aplicarle los estilos propios y definidos en CSS por medio de la pseudoclase ":out-of-range". Veamos. 
+*/
+
+.out:out-of-range{
+    background-color: pink;
+}
+
+/* Ahora, vamos a introducir la pseudoclase ":optional". ":optional" es una pseudoclase que sólo se aplica sobre los campos de formulario que están definidos, de hecho, por el atributo que recibe el nombre también de "optional"; para nuestra suerte, todos los campos de formularios están definidos por defecto como de tipo "optional": un atributo sin valor alguno, dicho sea de paso. Quiere decir entonces que, los estilos que se pasen con la pseudoclase "optional", serán aplicados a todos los campos de formulario que hayan sido llamados por medio de un selector.
+
+Ahora, no se le aplicarán esos estilos si declaramos manualmente, en HTML y dentro de "form", el atributo sin valor que es "required" (lo contrario de "optional"). Veamos ambos.
+*/
+
+.input:optional{
+    background-color: brown;
+}
+
+.input:required{
+    background-color: darkorange;
+}
+
+/* Por último tenemos las pseudoclases "valid" e "invalid" y lo que hacen es: comprobar que el contenido que hay, dentro del campo del formulario, sea correspondiente con la naturaleza del formulario mismo (si es de tipo númerico, texto, etc) y sea correspondiente, también, con las condiciones de validez que coloquemos a priori; en caso que haya correspondencia total, quiere decir que ese campo de formulario será "valido"; y que, en consecuencia, podemos darle estilo propio mediante CSS con la pseudoclase ":valid" a la "validez" de dicho formulario; de lo contrario, también podríamos darle estilo propio a lo "invalido" por medio de la pseudoclase ":invalid".
+
+Veamos. */
+
+.input:valid{
+    background-color: blue;
+}
+
+.input:invalid{
+    background-color: seagreen;
+}
