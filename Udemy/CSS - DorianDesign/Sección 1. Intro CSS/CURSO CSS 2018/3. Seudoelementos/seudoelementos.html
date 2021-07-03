@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="style.css">
+     <title>Pseudoclases</title>
+</head>
+<body>
+
+     <p class="p">Hola Mundo</p>
+
+     <div class="container">
+          <p class="p">
+               Parrafo 1
+          </p>
+          
+          <p class="p">
+               Parrafo 2
+          </p>
+          
+          <p class="p">
+               Parrafo 3
+          </p>
+          
+          <p class="p">
+               Parrafo 4
+          </p>
+          
+          <p class="p">
+               Parrafo 5
+          </p>
+          
+          <p class="p">
+               Parrafo 6
+          </p>
+          
+          <p class="p">
+               Parrafo 7
+          </p>
+          
+          <p class="p"></p>
+          
+          <p class="p">
+               Parrafo 9
+          </p>
+
+          <p class="p">
+               Parrafo 10
+          </p>
+
+     </div>
+
+</body>
+</html>
+
+<!-- De tipo "Structural" 
+     
+     :root -- > Representa exactamente la raiz del documento (html); sin embargo, si hacemos uso de esta pseudoclase, tenemos más especificidad que si usaramos directamente html. En todo caso, para ambos selectores, se está especificando unos parametros de estilo que incluirían todo el DOM del navegador.
+
+     :empty -- > Esta pseudoclase lo que hace es colocar estilos sobre todos los elementos vacios de HTML; es decir, etiquetas que no tengan contenido dentro de ellas.
+
+     Los "child". Para que las pseudoclases de tipo "child" funcionen sin ningún inconveniente alguno, es ideal que, a los elementos o selectores que desee afectar por medio de ellas estén contenidos por una etiqueta "padre"; generalmente, a esta etiqueta se llama, por medio del atributo "class", "container".
+
+          :first-child -- > Selecciona al primer hijo (independientemente del tipo de etiqueta -y no necesariamente tiene que ser una etiqueta-) de un elemento (el primer elemento que haya sido declarado); para, posteriormente, darle unas especificaciones de estilos propios.
+
+          :last-child -- > Selecciona al último hijo (independientemente del tipo de etiqueta -y no necesariamente tiene que ser una etiqueta-) de un elemento (el último elemento que haya sido declarado); para, posteriormente, darle unas especificaciones de estilos propios.
+
+          :nth-child(n) - Selecciona al hijo "n" (independientemente del tipo de etiqueta); para, posteriormente, darle unas especificaciones de estilos propios (al seleccionado o a los seleccionados).
+ 
+          ":nth-last-child(n)" selecciona al hijo "n" empezando a contar desde el último (independientemente del tipo de etiqueta también); para, posteriormente, darle unas especificaciones de estilos propios (al seleccionado o a los seleccionados).
+
+               A los que se les pasa un valor entre parentesis, de los "child", pueden recibir los siguientes: 
+
+               "odd": selecciona todos los elementos enumarados impares.
+
+               "even": selecciona todos los elementos enumerados pares.
+
+               números enteros: selecciona un elemento en especifico según el orden en el que se ubique (2, 3, 4, etc).
+
+               equaciones (1n, 3n, 4n+1, n+4,... ): funciona más o menos así, "n" aquí realmente vendría siendo un multiplicador que trabaja como un bucle y lo que hace es multiplicar desde 0, en referencia al número pasado que acompaña a "n", que es su límite de incremento, al número pasado en cuestión; dicho 0, que realmente vendría siendo la misma "n" en su punto de inicio, se sigue incrementando en una unidad y por cada unidad que se incremente hace una multiplicación con el número pasado; esto será así hasta que "n" llegue al límite del valor númerico pasado que le acompaña. 
+
+               Los resultados de cada una de las multiplicaciones, por cada paso que hizo el bucle, serán las posiciones que se verán afectadas del selector llamado; es decir, a donde irán los estilos pasados bajo esta modalidad.
+
+          Ambas funcionan para elementos o selectores que no están precisamente contenidos por un elemento "padre" tangible, tanto ":nth-last-child(n)" como ":nth-child(n)" pueden funcionar desde el mismo DOM o HTML directo.
+
+          ":only-child" selecciona al hijo único (independientemente del tipo de etiqueta); para, posteriormente, darle unas especificaciones de estilos propios.
+-->

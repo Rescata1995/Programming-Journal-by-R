@@ -257,10 +257,6 @@ figure{
 }
 
 .experience img{
-    /* OJO CON ESTO, EL PROYECTO ORIGINAL NO LO TIENE */
-    /* margin-top: -5px;
-    margin-left: -16px; */
-
     /* De momento, se nos hizo necesario darle un margen negativo a la izquierda y al "top" de las imagenes debido a que, por defecto, se estaban sobresaliendo por el lado derecho del borde (y por encima hacia falta contenido) */
 
     width: 480px;
