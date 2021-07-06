@@ -88,6 +88,7 @@ h2 {
     background: white;
     align-items: center;
     justify-content: space-between;
+    box-shadow: 10px 10px 30px -5px black;
 }
 
 .project-course,
@@ -117,6 +118,8 @@ h2 {
 
 .project-image{
     width: 500px;
+    object-fit: cover;
+
     /* display: inline-block; */
 }
 
@@ -138,6 +141,16 @@ ul{
     font-family: Raleway;
     font-size: 0.95rem;
     /* para que no tengan estilos ni formatos las listas */
+}
+
+.link:active{
+    transform: scale(.95);
+    border: 2px solid gray;
+    box-shadow: 2px 2px 10px -5px gray inset, -1px -1px 10px -5px gray inset;
+}
+
+.link:hover{
+    color: gray;
 }
 
 figure{
@@ -220,6 +233,11 @@ figure{
 
 .footer a{
     color: white;
+    text-decoration: none;
+}
+
+.footer a:hover{
+    text-decoration: underline;
 }
 
 .experience-list-title{
@@ -240,7 +258,7 @@ figure{
     
     margin: 10px;
     width: 479px;
-    border-radius: 10px;
+    border-radius: 0px;
 
     /* para el desbordamiento de la imagen ante su contenedor (border), usemos la propiedad-valor: "overflow: hidden".
     */
@@ -254,6 +272,10 @@ figure{
 
     background-color: #f4fbff;
     /* Color de fondo "celeste" del elemento "experience" */
+}
+
+.experience:hover{
+    box-shadow: 3px 3px 10px -5px black, -3px -3px 10px -5px black;
 }
 
 .experience img{
@@ -306,6 +328,14 @@ figure{
     border-radius: 5px;
 }
 
+.experience-url:hover{
+    background-color: #f5f5f5;
+}
+.experience-url:active{
+    box-shadow: 2px 2px 10px -5px #111 inset, -1px -1px 10px -5px #111 inset;
+    border: 2px solid #056FFF;
+}
+
 .contact{
     background-color: #056fff;
     color: white;
@@ -333,9 +363,22 @@ figure{
     background-size: 50px 50px;
 }
 
+.social-link.twitter:active{
+    transform: scale(.90);
+}
+
 .social-link.facebook{
     background-image: url('./images/facebook.svg');
     background-size: 50px 50px;
+}
+
+.social-link.facebook:hover{
+    background-color: #35548F;
+    border-radius: 9px;
+}
+
+.social-link.facebook:active{
+    transform: scale(.95);
 }
 
 .social-link.github{
@@ -343,9 +386,27 @@ figure{
     background-size: 50px 50px;
 }
 
+.social-link.github:hover{
+    background-color: #000000;
+    border-radius: 50px;
+}
+
+.social-link.github:active{
+    transform: scale(.95);
+}
+
 .social-link.instagram{
     background-image: url('./images/instagram.svg');
     background-size: 50px 50px;
+}
+
+.social-link.instagram:hover{
+    background-color: #F66041;
+    border-radius: 16px;
+}
+
+.social-link.instagram:active{
+    transform: scale(.95);
 }
 
 .form-email h3{
@@ -392,6 +453,10 @@ figure{
     */
 }
 
+.form-text:hover{
+    background-color: #f5f5f5;
+}
+
 .form-box{
 
     /* "form-box" es la clase (class) del "input" con atributo y valor de: type="submit"; esto puso ser reemplazado por un elemento de tipo "button", como lo hizo leonidas; es decir, él llamó al selector de la siguiente forma: ".form-email button"
@@ -412,6 +477,15 @@ figure{
     width: 100px;
 
     border-radius: 5px;
+}
+
+.form-box:active{
+    transform: scale(.95);
+    box-shadow: 2px 2px 10px -5px #111 inset, -1px -1px 10px -5px #111 inset;
+}
+
+.form-box:hover{
+    background-color: #0567FF;
 }
 
 .container{

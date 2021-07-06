@@ -75,8 +75,18 @@ html{
 .p:nth-child(5n){
     background-color: teal;
 
-    /* Bajo la explicación que dimos anteriormente; tenemos acá, entonces, que las posiciones afectadas de los "p" hijos de "div", bajo esta condición "nth-child(5n)", serán la posición 5 (5*1 = 5) y 10 (5*2 = 10). 
+    /* Bajo la explicación que dimos anteriormente; tenemos acá, entonces, que las posiciones afectadas de los "p" hijos de "div", bajo esta condición "nth-child(5n)", serán la posición 5 (5*1 = 5) y 10 (5*2 = 10); podrían seguir las operaciones, pero los elementos "p" se han agotado. No hay un elemento "p" 15, por ejemplo. 
     
     Es decir, a los "p" del "div" ubicados en la posición 5 y 10 se les pondrá como estilo el color "teal". 
     */
+}
+
+.p:nth-last-child(2){
+    background-color: pink;
+}
+
+.p:not(a){
+    text-decoration: underline;
+
+    /* Si bien todos son de "class" = "p", hay uno de ellos que realmente no es un parrafo; entonces, lo que decimos aquí es que... pongale "underline" a todos los que tengan la clase "p" menos a los de clase "p" que sea etiquetas "a". */
 }
