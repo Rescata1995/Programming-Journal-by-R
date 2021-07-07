@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Meta Viewport</title>
+</head>
+<body>
+    <header>
+        <h1>
+            Meta= "viewport"
+        </h1>
+    </header>
+    <p>
+
+        El primer problema que vamos a solventar con Responsive Design es que no se pierda la lecturabilidad de nuestro sitio web, esto se logra por medio de una etiqueta de metadatos que se valora con: "viewport"
+        
+        "viewport" lo que hace es lograr que el contenido se "escale" según las medidas propias del navegador o dispositivo que las ve, para que el contenido de una página web se adapte a la pantalla, por ejemplo; mas no por unas medidas fijas, generalmente, pasadas por un desarrollador. Es decir, que no se adapte a tamaños fijos, sino a variables según el alcance propio de la pantalla que cubriría x o y navegador (la pantalla del dispositivo).
+
+        La línea de código que hace eso, es decir, la etiqueta metadatos es la sgte: 
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        El atributo "content" generalmente puede definir de forma manual medidas del viewport, por ejemplo: "width=480"; sin embargo, esto lo hace de forma arbitraria y no adaptable al navegador que las ve; entonces, si queremos que las medidas del "viewport" se adapten con respecto al tamaño del dispositivo que esté cargando la página, y este proceso lo haga de forma automatica, tenemos que definir el atributo "content" de la siguiente forma: "width=device-width, initial-scale=1.0"
+
+        Atencion. Las cosas que ya están con tamaños fijos, predeterminados por el desarrollador, no varian,... a eso hay que darles un diseño "Responsive".
+    </p>
+</body>
+</html>
