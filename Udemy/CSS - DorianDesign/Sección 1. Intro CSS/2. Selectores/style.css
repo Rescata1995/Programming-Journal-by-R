@@ -85,24 +85,32 @@ li{
 
 [href= "es"]{
     background-color: lightslategray;
+
+    /* En este formato se toma todo el valor */
 }
 
 /* Ejemplo de "Otros atributos", de tipo: [atributo^= "valor"] */
 
 [href^= "color"]{
     background-color: magenta;
+
+    /* En este formato se selecciona "el principio" del valor del atributo */
 }
 
 /* Ejemplo de "Otros atributos", de tipo: [atributo*= "valor"] */
 
 [href*= ",unbeso"]{
     background-color: mediumslateblue;
+
+    /* En este formato se selecciona "el final" del valor del atributo */
 }
 
 /* Ejemplo de "Otros atributos", de tipo: [atributo$= "valor"] */
 
 [href$= "marico"]{
     background-color: olive;
+
+    /* En este formato se selecciona "un pedazo" del valor del atributo */
 }
 
 /* Todos estos recursos son válidos para cualquier atributo de HTML */

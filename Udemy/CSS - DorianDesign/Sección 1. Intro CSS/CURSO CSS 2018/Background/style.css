@@ -1,0 +1,111 @@
+[class^="bg-"] {
+    display: inline-block;
+    width: 30%;
+    height: 150px;
+    border: 1px solid red;
+}
+
+body{
+    padding-bottom: 50em;
+    text-align: center;
+}
+
+.bg-color{
+    background-color: red;
+
+    /* Lo que ya sabe, le pone un color al fondo (no al content, al fondo del "content") 
+    */
+}
+
+.bg-image{
+    background-image: url(Rescata.jpg);
+
+    /* Por medio de la función "url()" se coloca, como parametro, la ruta de una imagen con la intención de ser importada y, posteriormente, ser colocada como fondo 
+    
+    dato: a la función url() sólo fue necesario pasarle, como parametro, el nombre preciso de la imagen; pues, acontece que esta hoja de estilos "style.css" se encuentra situada sobre el mismo directorio de la imagen importada: "Rescata.jpg" */
+} 
+
+/* Ahora, generalmente la propiedad "background-image" se debe complementar con la propiedad "background-size"; pues la imagen, por defecto, no suele establecerse con las medidas requeridas para encajar (perfectamente) sobre nuestro fondo; el cual usualmente resulta ser un "div" con un tamaño exacto. 
+
+Entonces, para este caso, "background-size" tiene la labor de establecer el tamaño de la imagen de fondo; esta propiedad puede asumir 4 valores posibles para definir tamaños de fondo; tal que así:
+
+    1. x [y];, "x" e "y" son valores numéricos pasados (de elección propia), donde "x" establece la medida para el eje de las "x" e "y" establece la medida para el eje de las "y". El eje "y" es opcional y si no se coloca se calcula automaticamente. Se define con valores numéricos absolutos (en términos de pixeles) o también con términos porcentuales; para propositos de "responsive" (lo ideal), use siempre términos porcentuales para definir el "size" de esta manera.
+
+    2. "auto";, son las medidas por defecto de la propiedad "background-size" (es como no poner nada).
+
+    3. "cover";, cubre la caja por completo, aunque la imagen escape del contenedor (del espacio de fondo disponible del selector): dejando abierta la posibilidad de que no se visualice completamente.
+
+    4. "contain";, se ajusta al contenedor, y si queda algún pequeño espacio libre, el fondo pasado se multiplica sobre todo el fondo del selector; pero, importante, nunca se le escapará ni un poco alguna parte del fondo pasado; con "cover" sí.
+*/
+
+.bg-size{
+    background-image: url(Rescata.jpg);
+    background-size: 50% 50%;
+    
+
+    /* Se llama a la propiedad "background-size" y se define uno de los cuatro (4) valores posibles para dicho fondo; el cual, ha sido rellenado con una imagen (o con copias de la misma imagen, quien sabe). Probemos.
+    
+    Partiendo del 1er modelo, si le asignamos valores porcentuales tanto a "x" como a "y"; tendríamos como resultado que, la definición de un "ancho" y un "alto" se dará con relación a la medida del selector que ha importado la imagen; es decir, supondríamos que el selector en sí ya tiene unas medidas de 100% de ancho y 100% de alto. 
+    
+    Por ejemplo, si tenemos que "background-size: 50% 50%;", tendríamos que la imagen importada ocupará, por cada copia de imagen plasmada en el fondo, un "ancho" y un "alto" equivalente a la mitad de espacio total disponible que nos asegura el selector para cada respectivo lado (quedando de sobra un espacio restante). 
+    
+    Ese espacio restante, por defecto, se ocupa por copias de la misma imagen que se extienden hasta cubrir toda la medida del selector en sí (todo su fondo); sin embargo, en caso que uno no quisiera que se replique la imagen, por más que haya aún espacio disponible para ocupar en el fondo en cuestión, podemos hacer uso de la propiedad-valor: "background-repeat: no-repeat;", pero es algo que ya veremos más adelante.
+    */
+
+    /* Sin embargo, aún no terminamos con la propiedad: "background-size". "background-size" también puede recibir un valor de: "cover". Con el valor "cover" se cubre la caja (el fondo del selector) por completo; sin embargo, se cuenta con el riesgo de que la imagen de fondo pasada (o el fondo en sí que se le haya pasado) se escape del contenedor, del fondo disponible del selector (no salga completamente); es decir, en caso de que no entrará la imagen por completo, algunas partes de la misma se omitirían (con tal de que se ocupe todo el fondo). Veamos. */
+
+    background-size: cover;
+
+    /* Ahora, en caso que la propiedad "background-size" reciba el valor de: "contain",... ya sabe lo que acontecerá */
+
+    background-size: contain;
+} 
+
+.bg-repeat{
+    background-image: url(Rescata.jpg);
+    background-size: 20%;
+
+    /* Recuerda esto: "... ese espacio restante, por defecto "background-repeat: repeat;", se ocupa por copias de la misma imagen que se extienden hasta cubrir toda la medida del selector en sí (todo su fondo); sin embargo, en caso que uno no quisiera que se replique la imagen, por más que haya aún espacio disponible para ocupar en el fondo en cuestión, podemos hacer uso de la propiedad-valor: "background-repeat: no-repeat;"... */
+
+    background-repeat: no-repeat;
+
+    /* En efecto, deja de reproducirse la imagen; ahora, en caso que sólo desee que se reproduzca por sobre el eje de las "y", tendría que definir el valor: "repeat-y". 
+    
+    Contrario a eso, si sólo desea que se reproduzca por todo el eje de las "x", sería definir el valor con: "repeat-x". 
+    */
+}
+
+/* Ahora vamos a hablar de "background-position", esta propiedad establece la posición de la imagen; o en su defecto, del "fondo" seleccionado para ubicarse sobre el fondo del selector en cuestión. Adicionalmente, esta propiedad se define con dos valores; en caso que no se especifique un segundo valor, este valor automaticamente será "center". Acá la lista de los valores posibles: 
+
+    left top;
+    left center;
+    left bottom;
+    right top;
+    right center;
+    right bottom;
+    center top;
+    center center;
+    center bottom;
+    top center;
+    top left;
+    top right;
+
+    Estos últimos valores son los más comunes (lo normal es usar estos).
+
+    x-% y-%; (recibe % en el eje "x" e "y").
+    x-pos y-pos; (recibe también "px" o "em", etc).
+
+    Estas últimas medidas se calculan a partir de las medidas originales del contenedor; es decir, de las medidas propias al selector; que, usualmente, hace de "caja". Recuerde que, de hecho, el "porcentaje" es una medida relativa en CSS que establece una longitud referente al tamaño de los elementos "padre". Con relación al "alto" y "ancho" del selector propio es que se basarán las medidas de "posición" para ser establecidas.
+
+    initial;
+    inherit;
+
+    Estos dos últimos tienen más sentido cuando se trabaja con animaciones o con efectos.
+*/
+
+.bg-position{
+    background-image: url(Rescata.jpg);
+    background-size: 10%;
+    background-repeat: no-repeat;
+    background-position: top right;
+}

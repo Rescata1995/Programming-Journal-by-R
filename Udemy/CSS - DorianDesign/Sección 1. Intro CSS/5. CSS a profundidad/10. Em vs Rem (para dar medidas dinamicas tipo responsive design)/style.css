@@ -38,7 +38,7 @@ Veamos lo siguiente:
 
 /* Si a partir del tamaño de la fuente dada, por más que aumente o disminuye, queremos que, según su medida pasada, se conserve una proporcionalidad con los demás elementos de la caja, se usa la unidad de medida "em",... entonces, se usa "em" en los elementos de la caja; donde, la medida de dichos elementos, se definirá a partir de la medida, en tamaño, que se le dé al texto con "rem" en un principio.
 
-Es decir, en términos generales, si la medida que definas (o que vayas a definir) tiene que crecer proporcionalmente al tamaño del texto dado con "rem", como puede evidenciarse en este caso con el "padding" y el "margin", utilice siempre la unidad de medida "em" para definirlos. 
+Es decir, en términos generales, si la medida que definas (o que vayas a definir) tiene que crecer proporcionalmente al tamaño del texto dado con la medida relativa "rem", como puede evidenciarse en este caso con el "padding" y el "margin", utilice siempre la unidad de medida relativa "em" para ser definidos; es decir, para que se guarde siempre una proporción positiva entre el "content" (definido con "rem") y el "padding" & "margin" (definidos con "em") ante las multiples variaciones del "viewport".
 
 Entonces, en la medida que aumente (o disminuye) el tamaño del texto, este crecimiento (o decrecimiento) se verá correspondido por el tamaño del resto de cosas; pues, la definición del tamaño del "resto de cosas" se define a partir del propio tamaño pasado al texto; guardandose una relación positiva entre ambos. El tamaño del "resto de cosas" pasaría a ser una extensión del tamaño del texto definido con "rem", es dependiente de él (eso es lo que hace "em").
 */
