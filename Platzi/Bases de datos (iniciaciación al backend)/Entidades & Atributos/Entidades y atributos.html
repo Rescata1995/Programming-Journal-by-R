@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Entidades & Atributos</title>
+</head>
+
+<body>
+    <header>
+        <h1>
+            Entidades & Atributos.
+        </h1>
+    </header>
+
+    <main>
+        <section>
+            <header>
+                <h2>
+                    Sobre los principales objetos de manipulación dentro de una base de datos relacional.
+                </h2>
+            </header>
+
+            <article>
+                <header>
+                    <h3>
+                        Entidades, ¿qué son?
+                    </h3>
+                </header>
+
+                <p>
+                    Es un objeto que intenta similar o representar algo del mundo real, incluso aunque fuera algo abstracto. Estos objetos (relacionados al concepto de "entidad") se encasillan en rectangulos y, por convicción, se nombran en plural. Por ejemplo, así: 
+                </p>
+
+                <div class="entidad-1">Manzanas</div>
+                <div class="entidad-2">Carros</div>
+
+                <p>Los anteriores ejemplos de entidades, cada uno de ellos, se componen por <strong> Atributos.</strong></p>
+
+                <article>
+                    <header>
+                        <h4>
+                            Hay dos (2) tipos de entidades: fuertes & débiles.
+                        </h4>
+                    </header>
+
+                    <p>
+                        <strong>Debiles: </strong> Dependen de otra entidad para poder existir; es decir, no pueden existir sin la existencia de una entidad <strong>Fuerte</strong>; las cuales, justamente, no dependen de ninguna otra entidad.
+
+                        Las entidades debiles se represenan gráficamente con "doble línea", tal que así:
+                    </p>
+
+                    <div class="entidad-2">Debil
+                        <div class="entidad-3">Debil</div>
+                    </div>
+
+                    <p>
+                        Si usted recuerda el diagrama de casos de uso notará que a veces se hablaba de "extensiones" (extend); eso, tal cual, es lo mismo acá cuando hablamos de entidades "debiles". Las entidades debiles son una extensión de la entidad fuerte original, son derivaciones de ella. Por ejemplo, una entidad fuerte podrían ser los "libros" y, como entidad débil de ella, serían los "ejemplares". No puedes tener en una biblioteca un ejemplar de un libro que no tienes, por ejemplo. Entonces, la entidad debil siempre va a necesitar de su entidad fuerte.
+                    </p>
+
+                    <p>
+                        Las entidades debiles pueden ser debiles por dos motivos: <strong>1. por identidad: </strong>cuando las entidades debiles no se diferencian entre sí, mas que por el atributo "llave" o clave de su entidad "fuerte"; y <strong>2. por existencia: </strong>  cuando las entidades debiles no se diferencian entre sí, mas que por la clave que uno mismo les pase (que es diferente a la clave de su entidad fuerte).
+                    </p>
+
+                    <p>En todo caso, en las entidades debiles siempre debe haber algo que las diferencie entre sí, incluso aunque hagan parte de una misma entidad fuerte.</p>
+                </article>
+            </article>
+
+            <article>
+                <header>
+                    <h3>
+                        Atributos, ¿qué son?
+                    </h3>
+                </header>
+
+                <p>
+                    Cada entidad, por separado, se compone por sus propios Atributos; es decir, por sus propias cualidades o caracteristicas. Por ejemplo, en el caso de la entidad "Carro", podríamos decir que un atributo de él sería el "volante". Otro atributo podrían ser las "llantas", etc.
+
+                    Los atributos se encierran también en una figura, sólo que ya no rectangular, sino con ovalos. <strong>Por ejemplo, en el caso de los dos (2) atributos mencionados para el carro, sería así: </strong> 
+                </p>
+
+                <div class="atributo-1">Volante</div>
+                <div class="atributo-1">Llantas</div>
+
+                <p> Por lo general, los ovalos de cada entidad se conectan a él (por medio de líneas); este no es el caso, pero para que lo sepa. </p>
+
+                <p>
+                    Al igual, hay que decir que, cuando un mismo atributo de una entidad en especifica; digamos, "llantas", tiene más de un valor de sí mismo se le conoce como: "Atributo Multivaluado"; es decir, usted sabe que generalmente los automoviles tienen más de una (1) llanta, en ese caso entonces, se hablaría de un "Atributo Multivaluado" (tiene más de un valor). Estos "Atributos Multivaluados" se representan con un "doble ovalo". Tal que así:
+                </p>
+
+                <div class="atributo-2">Llantas
+                    <div class="atributo-3">Llantas</div>
+                </div>
+
+                <p>
+                    Ahora, un mismo atributo puede descomponerse en varias sub-partes; por ejemplo, otro atributo del "carro" sería el "motor"; mas, el "motor" también se divide de, por ejemplo: "pistones", "bujia", etc. Entonces, en estos casos, donde el atributo se puede seguir dividiendo en otras sub-partes, se les llama a ellos: "Atributos compuestos"; es así porque, dichos atributos, están a su vez compuestos de otros atributos más; es decir, el "motor" como atributo, también, se desglosa de otros atributos adicionales como: "pistones", "bujia", etc.
+                </p>
+                
+                <hr>
+
+                <p>
+                    Los atributos de "tiempo" en una entidad, por decirlo de alguna manera, también se encierran en un ovalo; la única diferencia es que el ovalo tiene un borde con líneas puntuadas de tipo "dotted". Supongamos el caso en que consideremos a la "antiguedad" un atributo del coche, tendríamos que: 
+                </p>
+
+                <div class="atributo-4">Antiguedad</div>
+
+                <p>
+                    Ahora, hay atributos que son propios a una entidad; incluso, propios y únicos sobre cada unidad de la entidad en sí; es decir, si existe una entidad que se llama "carros", existe la posibilidad de que cada <em>carro</em> tenga un atributo propio e identificativo a él solamente, a cada carro en sí; en ese caso, se coloca el nombre del atributo y éste va subrayado. 
+                </p>
+
+                <p>
+                    Estos son los atributos "llaves" y son tan importantes como necesarios debido a que, en una base de datos relacional, no se puede repetir dentro de una misma entidad varias unidades de ella con exactamente los mismos valores de unos mismos atributos. Nuestro atributo "llave" para la etiqueta "carros" podría ser:
+                </p>
+
+                <div class="atributo-5">No de serie
+                </div>
+
+                <p>
+                    Ahora, hay dos (2) grandes tipos de "atributos llaves". 1. Los atributos "naturales", que son inherentes al objeto de la entidad en cuestión, como por ejemplo el número de serie con el que viene un computador; o, para efectos prácticos a nuestro caso, la placa de un carro. Y 2. Los atributos "artificiales", que son los que se asignan "manualmente" y de manera arbitraria por conveniencia, los que no vienen de forma inherente al objeto en sí mismo.
+                </p>
+            </article>
+
+        </section>
+    </main>
+</body>
+</html>
+
+
+

@@ -11,7 +11,7 @@
 
         1. No ocupa sitio dentro de la caja, ya que no forma parte del box-model. Es decir, si hacemos un borde muy grande, por muy grande que sea, NO acabaremos empujando a las cajas de alrededor (con "border" sí); sin embargo, con "outline", sí nos sobreponemos por encima de las demás cajas y los elementos. 
 
-        2. No se puede redonder, porque no contamos con el recurso de "border-radius", que es quién nos permite el redondeo.
+        2. No se puede redondear, porque no contamos con el recurso de "border-radius", que es quién nos permite el redondeo.
 
         3. No se pueden controlar los lados de forma independiente (con "border" sí que podríamos).
     

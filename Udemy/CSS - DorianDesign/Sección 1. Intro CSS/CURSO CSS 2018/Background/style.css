@@ -1,6 +1,16 @@
+*{
+    box-sizing: border-box;
+}
+
 [class^="bg-"] {
-    display: inline-block;
+    display: flex;
+    flex-wrap: wrap;
+
+    /* De momento, por un tema de mera necesidad, hemos usado dos propiedades relacionadas con "flex"; sin embargo, no hemos trabajado con "flex" aún; entonces, simplemente ignorelo. 
+    */
+
     width: 30%;
+    margin: 0 auto;
     height: 150px;
     border: 1px solid red;
 }
@@ -108,4 +118,40 @@ Entonces, para este caso, "background-size" tiene la labor de establecer el tama
     background-size: 10%;
     background-repeat: no-repeat;
     background-position: top right;
+}
+
+/* Ahora vamos a hablar de "background-clip", con el cual se decide hasta donde se va a extender el fondo del selector; nos queremos referir, por lo general, al fondo que uno pasa (al fondo pasado); ya sea una imagen o un color. El valor de "border-box" es el valor que tiene por defecto la propiedad "background-clip" (el mismo que se asume si no se declara, incluso, a la propiedad como tal en sí).
+
+Pero "border-box" consiste, en teoría, que el fondo pasado va a cubrir, incluso, el borde; es decir, el fondo pasado llegará hasta el último límite del borde.
+
+Ahora, otro valor posible para esta propiedad es: "padding-box"; éste significa que, el fondo pasado al selector, sólo cubrirá hasta el último límite del padding; es decir, se dejaría por fuera al border (por fuera del formato propio al fondo pasado, al "bakcground" pasado). Para que se entienda mejor: el borde no estaría incluido en el "background", sólo llegaría hasta el padding.
+
+Por último, está también el valor: "content-box" que significa que el fondo pasado al selector sólo cubriría el content del box model. Tenga en cuenta que el "padding" con el "content" suelen confundir; en caso que desee ver visualmente la diferencia entre ambos, dé un "padding" a priori al selector.
+
+En general, lo que hace la propiedad "background-clip" es establecer en qué parte de la caja (box model) se va a configurar nuestro fondo o "background" pasado.
+*/
+
+.bg-clip{
+    padding: 20px;
+    border: 10px dotted red;
+    background-color: blue;
+    background-clip: content-box;
+}
+
+/* Ahora, vamos a hablar de "background-origin". "background-origin" hace lo mismo que "background-clip"; sólo que, con "background-origin", el fondo pasado al selector como "background", sea un color o una imagen (aunque esto es más perceptible con imagenes), tiene su origen o empieza a dibujarse desde el límite mismo que uno le determine en "background-origin" por medio de los valores que usted ya conoce: "content-box", "padding-box" & "border-box"; y no necesariamente, ni en todos los casos, desde la esquina propia más lejana de la caja. 
+
+Con "content-box", por ejemplo, suponiendo que el fondo pasado como "background" es una imagen, la imagen de fondo como tal se empezaría a dibujar desde la esquina de inicio del contenido mismo (content) de la caja, y no desde el límite de la esquina propia del inicio de la caja como tal (no desde su esquina más lejana); es decir, desde su borde (como sí pasa con "background-clip"). 
+
+Con "background-clip" la imagen se empezaría a dibujar desde su borde (border), sí, pero como estamos suponiendo que el valor pasado fue: "content-box"; lo que se vería realmente de la imagen, como fondo pasado, se vería solamente desde el "content" de la caja,... sin embargo no se vería todo el recorrido de imagen que ya viene cargada desde el borde de la caja misma. Contrario a "background-clip", con "background-origin", para este mismo caso, la imagen estaría siendo cargada puntualmente desde el "content" y no desde el "border".
+
+Entonces, en resumen, "background-clip" recorta y "background-origin" redimensiona a la hora de, ambos, configurar hasta dónde va a llegar el fondo pasado al selector dentro de su box model.
+*/
+
+.bg-origin{
+    background-origin: content-box;
+    border: 10px dotted red;
+    padding: 25px;
+    background-image: url(Rescata.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
