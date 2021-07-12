@@ -155,3 +155,58 @@ Entonces, en resumen, "background-clip" recorta y "background-origin" redimensio
     background-size: contain;
     background-repeat: no-repeat;
 }
+
+.bg-attachment{
+    width: 100%;
+    height: 400px;
+    background-image: url(Rescata.jpg);
+    background-size: contain;
+    background-attachment: fixed;
+
+    /* El valor "scroll" es el valor por defecto de la propiedad: "ackground-attachment". El fondo pasado al selector, como "background", se queda estatico por más que nos desplazemos con scroll vertical a lo largo de la página web; sin embargo, con el valor "fixed", podríamos hacer que la imagen se desplaze verticalmente a la par con el desplazamiento de la página hecho con "scroll" a lo largo de la página misma; se va a desplazar el fondo pasado al selector también, sí, pero dentro del selector mismo (dentro de su espacio disponible).
+    
+    Este efecto visual es más perceptible si el valor de la propiedad "background-size" es "cover" (aunque con "contain" también corre muy bien y el fondo pasado al selector se ve más nitido) y, de nuevo, si estamos trabajando con imagenes como "fondo pasado". Pero puntualmente con "cover", como bien se recuerda, el fondo pasado al selector se escapa del contenedor si no logró ser cubierto completamente sobre el mismo; entonces, en ese orden de ideas, "background-attachment: fixed" le da la facultad de mostrar el resto de la imagen (o fondo pasado al selector) que quedó por fuera del contenedor; esto se da en la medida que se desplaza con "scroll", hacia arriba y hacia abajo, la página web que visualiza. Este efecto visual recibe el nombre de: "Efecto Parallax" y, dentro de CSS, solamente se consigue declarando la siguiente línea: "background-attachment: fixed;"
+    
+    "background-attachment: fixed" logra este efecto porque, ese valor de la propiedad, "fixed", es relativo al "viewport". 
+    
+    Ahora, en términos generales, "background-attachment" como propiedad, le permite establecer si el fondo se coloca respecto a la caja ("scroll") o al viewport ("fixed"). 
+    */
+}
+
+/* Por último, vamos a hablar acerca de los "fondos multiples"; es decir, la facultad de poder establecer más de un "fondo pasado" en una caja (No es una propiedad de "background" propiamente, sino un truco para poder poner varios "background" dentro de una misma caja).
+*/
+
+.bg-multiple{
+    width: 100%;
+    height: 1000px;
+    background-image:  
+        url(Rescata.jpg),
+        url(re.jpg);
+        
+
+        /* Toda imagen que desee incorporar como fondo, dentro de una misma caja, debe llamarla por medio de la función "url" y separar a cada una por medio de comas (,) IMPORTANTE.
+        
+        Luego, la última imagen llamada, debe cerrar con punto y coma (;), como ya se imagina. 
+
+        Ahora bien, aparentemente, sólo se ve una imagen de fondo; esto es así porque la primera imagen importada se impone sobre las demás que han sido llamadas; es decir, los demás fondos pasados están por debajo del primer fondo importado (y eso, a veces, puede tapar todos los demás fondos llamados puestos posteriormente al primero); sin embargo, todo esto puede cambiar para bien al usar propiedades de tipo "background" con valores independientes para cada fondo pasado al selector. Veamos.
+        */
+
+        background-size: 20%, cover;
+
+        /* Lo anterior significa que, en términos de "background-size"; el primer fondo pasado como selector, "Rescata.jpg", tendrá un "background-size" de 10%; mientras, el segundo fondo pasado como selector, "re.jpg", tendrá un "background-size" definido como "contain". Esa es la lógica que se maneja para darle un valor particular, segun una propiedad del "background", a cada uno de los fondos pasados dentro de una misma caja,... para asignarles un valor por separado a cada una de las imagenes importadas (se separa en comas también y se sigue el orden en el que han sido llamados cada uno de los fondos pasados, con "background-image", al mismo selector o caja).
+
+        Ahora si por ejemplo deseamos pasarle un mismo valor, de una propiedad del "background", a todos los fondos llamados y contenidos en una misma caja o selector, sólo es necesario definir una vez el valor en cuestión como se define de forma convencional. Tal que así: 
+         */
+
+         background-repeat: no-repeat;
+
+         /* Sigamos como veniamos... */
+
+         background-position: bottom right, center;
+
+         /* Hasta aquí, por ejemplo, es que conseguimos ese efecto de "poner un logo por encima de una foto"; si se da cuenta, realmente ambos son dos imagenes inportadas y pasadas como fondos dentro de un mismo selector. */
+
+         /* Ahora, inventemos un poco... */
+
+         background-attachment: scroll, fixed;
+}

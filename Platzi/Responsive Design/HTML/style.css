@@ -512,6 +512,26 @@ figure{
     /* Emulando el "flex-wrap" del elemento padre "experience-list". 
     */
     /* flex-wrap: inherit; */
+}
 
+/* Aplicación de Media Queries por medio de "Desktop First". */
+
+@media screen and (max-width: 1024px){
+
+}
+
+@media screen and (max-width: 768px){
+    
+    body {
+    border: 10px solid green;
+
+    }
+}
+
+@media screen and (max-width: 480px){
+
+}
+
+@media screen and (max-width: 320px){
 
 }
