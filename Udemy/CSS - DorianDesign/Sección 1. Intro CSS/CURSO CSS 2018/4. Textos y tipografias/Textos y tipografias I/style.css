@@ -1,0 +1,31 @@
+/* Apliquemos una tipografía generica de tipo "sans-serif" a nuestro "title". 
+*/
+
+/* Recomendación de entrada: siempre use fuentes de reserva, siempre. Ahora, siendo más precisos, una buena práctica sería que... cuando se establezca la familia tipográfica (las "propias"), de su sitio web, busca dos o tres que se parezcan; y, como último recurso, coloque una familia tipografica generica (que se sabe que todos los navegadores tienen,... por si acaso el navegador no tiene las dos o tres propias que uso inicialmente).  */
+
+.title{
+    font-family: sans-serif;
+
+    /* Si se da cuenta, las letras del titulo tendrían un corte completamente recto; sin embargo, como buena práctica, se concibe que lo ideal sería seguirse de lo siguiente:
+
+        para textos largos: alguan fuente de tipo "sans-serif" (porque nos permiten la fácil lectura al ver mejor, de una forma más entendible visualmente, las letras).
+        
+        para titulos o relacionados: alguna fuente de tipo "serif" (porque el texto es más grande y nos podemos dar el lujo de "adornarlo"). 
+        */
+
+    /* Explicado lo anterior, usemos entonces en nuestro ".title" alguna "serif" */
+
+    font-family: serif;
+
+    /* Ahora, "fantasy" y "cursive" son más decorativas también (especialmente "fantasy", es muy barroca), pero se usan poco. 
+    
+    "monospace" hace que todos los caracteres tengan el mismo ancho. Es la tipografía que se suele utilizar en todos los editores de código y también se utiliza cuando usamos la etiqueta "pre" para colocar fragmentos de código en nuestra página.
+    */
+}
+
+/* Veamos el efecto de "monospace" sobre el párrafo (para que se dé cuenta que, en efecto, sí que queda como si fuera un editor de código) 
+*/
+
+.paragraph{
+    font-family: monospace;
+}

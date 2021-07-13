@@ -40,7 +40,7 @@ h2 {
   }
 
 .hero{
-    height: 310px;
+    height: 300px;
 
     /* background-image: url('./images/piscina.jpg');
 
@@ -57,6 +57,7 @@ h2 {
     /* Las siguientes 2 propiedades pondrán más estatico y "juntado" nuestro ".hero" */
 
     display: flex;
+    flex-wrap: wrap;
 
     align-items: center;
 
@@ -89,6 +90,7 @@ h2 {
     align-items: center;
     justify-content: space-between;
     box-shadow: 10px 10px 30px -5px black;
+    flex-wrap: wrap;
 }
 
 .project:hover{
@@ -128,13 +130,13 @@ h2 {
 }
 
 .header{
-    padding-top: 0.1px;
     background-color: #1b2127;
     color: white;
     display: flex;
     height: 120px;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 ol,
@@ -223,6 +225,7 @@ figure{
     */
 
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .footer img{
@@ -350,6 +353,7 @@ figure{
 
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .social-link{
@@ -494,11 +498,12 @@ figure{
 
 .container{
     /* El siguiente tipo de border es una gran forma de depuración de estilos, siempre se coloca al inicio del proceso, pero al final se quita */
+
     /* border: 1px solid red; */
 
     /* Al poner un contenedor, toca volver a centrar y ampliar (por lo general, ya que los elementos dentro del "container" se contraen) */
 
-    width: 1000px; /* ampliación */
+    max-width: 1020px; /* ampliación */
     margin: 0 auto; /* centrado */
 
     /* Hay efectos visuales que se perdieron, como puede ver, al usar un contenedor; pues bien, esos efectos visuales, podemos heredarlos de un elemento padre; es decir, usar las mismas propiedades visuales del elemento padre y definirlas con un valor de "inherit".
@@ -511,7 +516,7 @@ figure{
 
     /* Emulando el "flex-wrap" del elemento padre "experience-list". 
     */
-    /* flex-wrap: inherit; */
+    flex-wrap: inherit;
 }
 
 /* Aplicación de Media Queries por medio de "Desktop First". */
@@ -522,10 +527,6 @@ figure{
 
 @media screen and (max-width: 768px){
     
-    body {
-    border: 10px solid green;
-
-    }
 }
 
 @media screen and (max-width: 480px){
@@ -535,3 +536,20 @@ figure{
 @media screen and (max-width: 320px){
 
 }
+
+/* Lo primero que haremos, como responsive, será apilar las cosas en la medida que tengan menos espacio disponible (en la medida que se "achique" la página); mas precisamente, la estrategia que se aplicará, es que los elementos se vayan apilando uno debajo del otro. Se empieza de arriba hacía abajo. 
+
+De hecho, la primera muestra de que intentamos "apilar" para ayudar al diseño responsive de nuestro sitio web fue el uso de la propiedad-valor: "flex-wrap: wrap" en el elemento padre, como se debe, del selector "experience". El elemento padre del selector "experience" es el selector "experience-list" (un "section" de HTML),... posteriormente el contenedor, selector ".container", lo heredó. Sin embargo, la propiedad-valor "flex-wrap: wrap" no sólo debe ir en "experience-list", sino en todas las sesiones más importantes que hacen de elementos "padres", principalmente en aquellas donde se nos hace un "scroll" horizontal debido a que su espacio disponible, horizontalmente, ya está agotado para los elementos "hijos" existentes. La idea es que, en vez de hacerse ese "scroll" horizontal, los elementos se apilen más abajo en caso de que no pueda ocupar más espacio para un límite máximo de ancho establecido (cosa que haremos justamente ahora, establecer un límite máximo de ancho para nuestros contenedores ".container").
+*/
+
+/* Ahora queremos que nuestros contenedores, ".container", tenga un tamaño variable; pues, de momento, tienen un tamaño fijo y nos ayudará bastante adaptar las "cajas" contenedoras del sitio web a las medidas variables del "viewport". Vamos allá!
+
+Pero, como mencionamos antes,... primero definamos, para los ".container", un máximo de ancho con la propiedad: "max-width",... para motivar a que los elementos tiendan a ajustarse un poco más siempre y evitar que se extiendan sobre todo lo ancho al tener la flexibilidad de hacerlo. PERO, OJO, el ancho del contenedor debe de ser lo suficientemente grande como para que quepen dentro todos sus elementos hijos,... si no es necesario que se apilen hacia abajo y si no se hace necesario hacer "scroll" horizontal.
+
+Entonces, de momento nos estamos valiendo de dos herramientas: "max-width" y "flex-wrap: wrap".
+
+"max-width" para ".container" &
+"flex-wrap: wrap" para los elementos "padres": ".header", ".hero", ".project", ".experience-list", ".contact" & ".footer"; que son, justamente, los elementos "padres" donde sus elementos "hijos" se extienden por todo lo ancho y generan "scroll" horizontal. En todo caso, ".container" también está heredando (inherit) la propiedad-valor: "flex-wrap: wrap"..., así lo hemos decidido para que el efecto "flex-wrap: wrap" afecte a los hijos de los hijos de cada elemento "padre" como ".header", ".hero", "experience-list", "contact" & ".footer".
+
+
+*/
