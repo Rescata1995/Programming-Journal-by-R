@@ -44,186 +44,188 @@
     </div> -->
 <!-- ... --> 
 
-<header class="header">
+    <header class="header">
     <!-- El "header" se queda por fuera del "container" porque necesitamos mantener en vigencia sus propiedades y valores definidos (que posteriormente serán heredados). Esta misma dinámica será empleada con los demás "section" o "header" padres siguientes. -->
 
-    <div class="container">
-        <!-- 1ER CONTENEDOR -->
-        
-        <figure class="logo">
-            <img src ="images/roriginal.jpg" height="100px" alt="logo Rescata_">
-        </figure>
-        
-        <nav class="menu">
-            <ol>
-                <li>
-                    <a class="link" href="#portafolio" tabindex="1">Portafolio</a>
-                </li>
-                <li>
-                    <a class="link" href="#experiencias" tabindex="2">Experiencia</a>
-                </li>
-                <li>
-                    <a class="link" href="#contacto" tabindex="3">Trabajemos juntos</a>
-                </li>
-                <li>
-                    <a class="link" href="./aboutme.html" tabindex="4">About Me</a>
-                </li>
-            </ol>
-        </nav> 
+        <div class="container">
+            <!-- 1ER CONTENEDOR -->
+            
+            <figure class="logo">
+                <img src ="images/roriginal.jpg" height="100px" alt="logo Rescata_">
+            </figure>
+            
+            <nav class="menu">
+                <ol>
+                    <li>
+                        <a class="link" href="#portafolio" tabindex="1">Portafolio</a>
+                    </li>
+                    <li>
+                        <a class="link" href="#experiencias" tabindex="2">Experiencia</a>
+                    </li>
+                    <li>
+                        <a class="link" href="#contacto" tabindex="3">Trabajemos juntos</a>
+                    </li>
+                    <li>
+                        <a class="link" href="./aboutme.html" tabindex="4">About Me</a>
+                    </li>
+                </ol>
+            </nav> 
 
-    </div>
+        </div>
 
     </header>
-    
+
     <main>
-        <section>
 
-            <!-- A este "header", el de "main", convencionalmente, siempre se le pone por nombre "hero"; pues, es la parte de mayor visibilidad de nuestro sitio web (donde se pone nuestro slogan o qué estamos vendiendo). -->
+        <!-- A este "section", el de "main" (o al primer "section" del "body"), convencionalmente, siempre se le pone por nombre "hero"; pues, es la parte de mayor visibilidad de nuestro sitio web (donde se pone nuestro slogan o qué estamos vendiendo). -->
+        
+        <section class="hero">
             
-            <header class="hero">
-
-                <div class="container">
-                    <!-- 2DO CONTENEDOR -->
-       
+            <div class="container">
+                <!-- 2DO CONTENEDOR -->
+                
+                <header>
                     <h1>Hola! Soy <strong>Roberto Velasquez</strong>  <br>Desarrollador <strong>Front-end</strong> & <br>Analista de <strong>Sistemas de Información</strong> 
                         <!-- & <br>Gestor en <strong>Mercados Apalancados</strong>  -->
                     </h1>
-                    
-                    <!-- DE MOMENTO VAMOS A DEJAR COMENTADA LA IMAGEN IMPORTADA -->
-                        <img class="hero-image" src="robe.jpg" width="500" height="310" alt="Debe ponerse imagen de mi persona en el portafolio real">
-                    <!-- La imagen que se ve ahora, dentro de este "header", realmente fue importada desde CSS y no desde HTML; eso se logró por medio de la propiedad: "background-image". Revise el llamado al selector, en CSS, de ".hero". -->
-                </div>
-
-            </header>
-
-            <section id="portafolio" class="portfolio">
-                <!-- El valor del "id", "portafolio", no se borra porque, através de él, podemos llevar a cabo la navegación interna de la página web con los enlaces del tag "nav". 
+                </header>
+                
+                <!-- DE MOMENTO VAMOS A DEJAR COMENTADA LA IMAGEN IMPORTADA -->
+                <img class="hero-image" src="robe.jpg" width="500" height="300" alt="Debe ponerse imagen de mi persona en el portafolio real">
+                <!-- La imagen que se ve ahora, dentro de este "header", realmente fue importada desde CSS y no desde HTML; eso se logró por medio de la propiedad: "background-image". Revise el llamado al selector, en CSS, de ".hero". -->
+            </div>
+            
+        </section>
+        
+        <section id="portafolio" class="portfolio">
+            <!-- El valor del "id", "portafolio", no se borra porque, através de él, podemos llevar a cabo la navegación interna de la página web con los enlaces del tag "nav". 
                 
                 Y, el uso de "class" (como el de la gran mayoria), es para darle personalización de estilos a la etiqueta como tal, por medio de CSS -->
-
-                <div class="container">
-                    <!-- 3ER CONTENEDOR -->
-
-                    <header>
-                        <h2>
-                            Portfolio (Proyectos en curso)
-                        </h2>
-                    </header>
+                
+            <div class="container">
+                <!-- 3ER CONTENEDOR -->
+                
+                <header>
+                    <h2>
+                        Portfolio (Proyectos en curso)
+                    </h2>
+                </header>
+                
+                
+                <article class="project">
+                    <!-- Se colocará un "div" para separar nuestro contenido textual de nuestra imagen sin dejar de estar situado sobre el mismo "article" (para que se siga entiendendo que la imagen corresponde al texto,... sólo que ahora cada uno ocuparía su propio espacio); con esto, efectivamente, pretendemos dividir el contenido textual del contenido embebido (la imagen) por la mitad de la pantalla del navegador.  En ese orden de ideas, le daremos un "div" independiente al contenido textual y un "div" independiente al contenido embebido; sin embargo, no se olvide, ambos están dentro del mismo "article".
+                    -->
                     
-                    <article class="project">
-                        <!-- Se colocará un "div" para separar nuestro contenido textual de nuestra imagen sin dejar de estar situado sobre el mismo "article" (para que se siga entiendendo que la imagen corresponde al texto,... sólo que ahora cada uno ocuparía su propio espacio); con esto, efectivamente, pretendemos dividir el contenido textual del contenido embebido (la imagen) por la mitad de la pantalla del navegador.  En ese orden de ideas, le daremos un "div" independiente al contenido textual y un "div" independiente al contenido embebido; sin embargo, no se olvide, ambos están dentro del mismo "article".
-                        -->
-    
-                        <div class="project-details">
-                            <header>
-                                <h3 class="project-title">
-                                    Harvard University
-                                </h3>
-                            </header>
-                            
-                            <h4 class="project-course">CS50: Introduction to Computer Science</h4>
-                            
-                            <p class="project-date">
-                                <small>
-                                    <form>
-                                        <label for="fecha">
-                                            <strong>¿Qué día es hoy?</strong>
-                                        </label>
-                                        <input type="date" id="fecha">
-                                    </form>
-                                </small>
-                            </p>
-                            
-                            <p class="project-url">
-                                <small>
-                                    <strong>Puedes verlo en: </strong> <a href=""></a> aquí ponga la ruta, con un enlace, de su proyecto; en este caso, se llama: "Platzi Video".
-                                </small>
-                            </p>
-                            
-                            <p class="project-description">
-                                Aquí describa propiamente el contenido de su proyecto; es decir, de lo que se trata, en este caso (y esto variará con el tiempo), "Platzi Video". 
-                            </p>
-                        </div>
-    
-                        <div class="project-image">
-                            <figure class="project-imageContainer">
-                                <img class="project-image" src="https://www.programmersought.com/images/558/9c42e2c96822fc7dcb500a21ce3faad6.JPEG" width="500" height="370" alt="Debe ponerse imagen referente a un proyecto en el portafolio real">
-                            </figure>
-                        </div>
-    
-                    </article>
-    
-                    <article class="project">
-                        <!-- Se colocará un "div" para separar nuestro contenido textual de nuestra imagen sin dejar de estar situado sobre el mismo "article" (para que se siga entiendendo que la imagen corresponde al texto,... sólo que ahora cada uno ocuparía su propio espacio); con esto, efectivamente, pretendemos dividir el contenido textual del contenido embebido (la imagen) por la mitad de la pantalla del navegador.  En ese orden de ideas, le daremos un "div" independiente al contenido textual y un "div" independiente al contenido embebido; sin embargo, no se olvide, ambos están dentro del mismo "article".
-                        -->
-    
-                        <div class="project-details">
-                            <header>
-                                <h3 class="project-title">
-                                    Platzi Video
-                                </h3>
-                            </header>
-                            
-                            <h4 class="project-course">React Native/React</h4>
-                            
-                            <p class="project-date">
-                                <small>
-                                    <form>
-                                        <label for="fecha">
-                                            <strong>¿Qué día es hoy?</strong>
-                                        </label>
-                                        <input type="date" id="fecha">
-                                    </form>
-                                </small>
-                            </p>
-                            
-                            <p class="project-url">
-                                <small>
-                                    <strong>Puedes verlo en: </strong> <a href=""></a> aquí ponga la ruta, con un enlace, de su proyecto; en este caso, se llama: "Platzi Video".
-                                </small>
-                            </p>
-                            
-                            <p class="project-description">
-                                Aquí describa propiamente el contenido de su proyecto; es decir, de lo que se trata, en este caso (y esto variará con el tiempo), "Platzi Video". 
-                            </p>
-                        </div>
-    
-                        <div class="project-image">
-                            <figure class="project-imageContainer">
-                                <img class="project-image" src="https://x6i2p6h3.rocketcdn.me/wp-content/uploads/2018/08/selling-3213725_960_720.jpg" width="500" height="370" alt="Debe ponerse imagen referente a un proyecto en el portafolio real">
-                            </figure>
-                        </div>
-    
-                    </article>
-                </div>
+                    <div class="project-details">
+                        <header>
+                            <h3 class="project-title">
+                                Harvard University
+                            </h3>
+                        </header>
+                        
+                        <h4 class="project-course">CS50: Introduction to Computer Science</h4>
+                        
+                        <p class="project-date">
+                            <small>
+                                <form>
+                                    <label for="fecha">
+                                        <strong>¿Qué día es hoy?</strong>
+                                    </label>
+                                    <input type="date" id="fecha">
+                                </form>
+                            </small>
+                        </p>
+                        
+                        <p class="project-url">
+                            <small>
+                                <strong>Puedes verlo en: </strong> <a href=""></a> aquí ponga la ruta, con un enlace, de su proyecto; en este caso, se llama: "Platzi Video".
+                            </small>
+                        </p>
+                        
+                        <p class="project-description">
+                            Aquí describa propiamente el contenido de su proyecto; es decir, de lo que se trata, en este caso (y esto variará con el tiempo), "Platzi Video". 
+                        </p>
+                    </div>
                     
-            </section>
-
-<!-- METALE "BOX SHADOW" A SUS CAJAS PARA DARLES MÁS ESTILO. Con el "BOX SHADOW" se harían unas sombras permanentes alrededor del botón (que den la sensación de que "sobresalgan" por encima de la pantalla del navegador); sin embargo, le daremos, además de estilo, más interactividad al botón en sí,... al aplicarle sobre dicho selector las pseudoclases ":active" (para darle la sensación de que en efecto estamos "hundiendo" el botón) y ":hover" (para darle un blanco más "oscuro" al botón cada vez que pasemos el mouse por encima de él). 
-
-Por otro lado, a las cajas de texto de los formularios ponerles sombras con "box shadow" o un "border" solid al hacer uso de la pseudoclase ":focus" (es decir, para que se vea el efecto de estilo al hacer click sobre dicha caja y se mantenga dicho estilo al ser ese el último click; si hace click luego en otro lugar, la sombra se quita). 
-
-Al igual, a las cajas de texto de "echale un vistazo!" ponerles sombras con "box shadow" o un "border" solid al hacer uso de la pseudoclase ":hover" y "active".
-
-Colocarle sombras con "box shadow" también a las cajas que contienen cada sección de nuestro sitio web.
-
-Adicionalmente, aplicar con la pseudoclase ":hover" (la que asigna estilos al pasar el mouse por encima del elemento en cuestión) border-radius tipo elipse y color identificativo a las marcas de las redes sociales (ya hay una muestra de ejemplo, que necesita perfeccionar las elipses, con el botón de instagram y facebook).
--->
-
-            <section id="experiencias">
+                    <div class="project-image">
+                        <figure class="project-imageContainer">
+                            <img class="project-image" src="https://www.programmersought.com/images/558/9c42e2c96822fc7dcb500a21ce3faad6.JPEG" width="500" height="370" alt="Debe ponerse imagen referente a un proyecto en el portafolio real">
+                        </figure>
+                    </div>
+                    
+                </article>
+                
+                <article class="project">
+                    <!-- Se colocará un "div" para separar nuestro contenido textual de nuestra imagen sin dejar de estar situado sobre el mismo "article" (para que se siga entiendendo que la imagen corresponde al texto,... sólo que ahora cada uno ocuparía su propio espacio); con esto, efectivamente, pretendemos dividir el contenido textual del contenido embebido (la imagen) por la mitad de la pantalla del navegador.  En ese orden de ideas, le daremos un "div" independiente al contenido textual y un "div" independiente al contenido embebido; sin embargo, no se olvide, ambos están dentro del mismo "article".
+                    -->
+                    
+                    <div class="project-details">
+                        <header>
+                            <h3 class="project-title">
+                                Platzi Video
+                            </h3>
+                        </header>
+                        
+                        <h4 class="project-course">React Native/React</h4>
+                        
+                        <p class="project-date">
+                            <small>
+                                <form>
+                                    <label for="fecha">
+                                        <strong>¿Qué día es hoy?</strong>
+                                    </label>
+                                    <input type="date" id="fecha">
+                                </form>
+                            </small>
+                        </p>
+                        
+                        <p class="project-url">
+                            <small>
+                                <strong>Puedes verlo en: </strong> <a href=""></a> aquí ponga la ruta, con un enlace, de su proyecto; en este caso, se llama: "Platzi Video".
+                            </small>
+                        </p>
+                        
+                        <p class="project-description">
+                            Aquí describa propiamente el contenido de su proyecto; es decir, de lo que se trata, en este caso (y esto variará con el tiempo), "Platzi Video". 
+                        </p>
+                    </div>
+                    
+                    <div class="project-image">
+                        <figure class="project-imageContainer">
+                            <img class="project-image" src="https://x6i2p6h3.rocketcdn.me/wp-content/uploads/2018/08/selling-3213725_960_720.jpg" width="500" height="370" alt="Debe ponerse imagen referente a un proyecto en el portafolio real">
+                        </figure>
+                    </div>
+                    
+                </article>
+            </div>
+            
+        </section>
+            
+            <!-- METALE "BOX SHADOW" A SUS CAJAS PARA DARLES MÁS ESTILO. Con el "BOX SHADOW" se harían unas sombras permanentes alrededor del botón (que den la sensación de que "sobresalgan" por encima de la pantalla del navegador); sin embargo, le daremos, además de estilo, más interactividad al botón en sí,... al aplicarle sobre dicho selector las pseudoclases ":active" (para darle la sensación de que en efecto estamos "hundiendo" el botón) y ":hover" (para darle un blanco más "oscuro" al botón cada vez que pasemos el mouse por encima de él). 
+                
+                Por otro lado, a las cajas de texto de los formularios ponerles sombras con "box shadow" o un "border" solid al hacer uso de la pseudoclase ":focus" (es decir, para que se vea el efecto de estilo al hacer click sobre dicha caja y se mantenga dicho estilo al ser ese el último click; si hace click luego en otro lugar, la sombra se quita). 
+                
+                Al igual, a las cajas de texto de "echale un vistazo!" ponerles sombras con "box shadow" o un "border" solid al hacer uso de la pseudoclase ":hover" y "active".
+                
+                Colocarle sombras con "box shadow" también a las cajas que contienen cada sección de nuestro sitio web.
+                
+                Adicionalmente, aplicar con la pseudoclase ":hover" (la que asigna estilos al pasar el mouse por encima del elemento en cuestión) border-radius tipo elipse y color identificativo a las marcas de las redes sociales (ya hay una muestra de ejemplo, que necesita perfeccionar las elipses, con el botón de instagram y facebook).
+            -->
+            
+            <section id="experiencias" class="experience-list">
                 <div class="container">
                     <!-- 4TO CONTENEDOR -->
-
+                    
                     <header>
                         <h2 class="experience-list-title">
                             Más sobre mi experiencia
                         </h2>
                     </header>
-    
+                    
                     <!-- Ahora vienen 4 artículos de "experience" en cadena. -->
-    
+                    
                     <div class="experience-list">
-
+                        
                         <article class="experience">
                             <div>
                                 <figure class="experience-imageContainer">
@@ -312,38 +314,39 @@ Adicionalmente, aplicar con la pseudoclase ":hover" (la que asigna estilos al pa
                             </div>
                         </article>
                     </div>
-            <!-- aquí ponga la ruta, con un enlace, a la experiencia (que es otro sitio web y que se abrirá en otra pestaña con el atributo "target"). -->
+                    <!-- aquí ponga la ruta, con un enlace, a la experiencia (que es otro sitio web y que se abrirá en otra pestaña con el atributo "target"). -->
                 </div>
-
+                
             </section>
-    
+            
             <section id="contacto" class="contact">
                 <div class="container">
                     <!-- 4TO CONTENEDOR -->
-
+                    
                     <form class="form-email">
                         <h3>
                             ¿Creamos algo juntos?
                         </h3>
-    
+                        
                         <input type="email" placeholder="Déjame tu email" id="email" class="form-text"> 
-    
+                        
                         <input type="submit" value="Send me!" class="form-box">
                     </form>
-    
+                    
                     <div class="social">
                         <a href="https://twitter.com/Rescata3" class="social-link twitter" target="_blank"></a>
                         <a href="https://web.facebook.com/louizroberto/" class="social-link facebook" target="_blank"></a>
                         <a href="https://github.com/Rescata1995" class="social-link github" target="_blank"></a>
                         <a href="https://www.instagram.com/velasquezdean/?hl=es-la" class="social-link instagram" target="_blank"></a>
                     </div>
-
+                    
                 </div>
                 
             </section>    
-                
-        </section>
-    </main>
+            
+        </main>
+
+
 
     <footer class="footer">
 
@@ -370,8 +373,6 @@ Adicionalmente, aplicar con la pseudoclase ":hover" (la que asigna estilos al pa
  -->
 
 <!-- Sobre la "navegación interna" (dentro de la misma página web del mismo sitio web): cómo se relacionan las etiquetas de enlace "a" acompañadas, como bien sabe, del atributo "href" con el atributo "id" de otra etiqueta o elemento (para lograr una comunicación entre ambas es preciso que los valores definidos en el atributo "href" de la etiqueta "a" y el valor de "id" de la otra etiqueta, sean iguales). El valor pasado al atributo "href" de la etiqueta "a" debe estar acompañado, en su inicio, de un numeral (#); la función del numeral (#) es decirle al navegador que esa navegación, del enlace, será interna,... dentro de la misma página. Puede ver ejemplos de todo esto en nuestro menu de navegación (nav) de este HTML.
-
 Sobre la navegación hacia otra página web del mismo sitio web: Ahora, si la navegación no es precisamente interna; sino, hacia otra página del mismo sitio web... sólo es necesario que el documento HTML al que desee ir; es decir, a la otra página web perteneciente al mismo sitio web, esté dentro del mismo directorio en el que se encuentra este mismo documento HTML (nuestra página web de origen); y, posteriormente, colocar como valor, dentro del atributo "href" de la etiqueta "a", la ruta relativa a la otra página web, del mismo sitio web, que le interesaría navegar... Bueno, no precisamente la ruta relativa; sino, el nombre del archivo al que le gustaria ir -es decir, la otra página de interés del mismo sitio web- pero, le agrega, en el inicio, esto: "./" (en el 4to item, de la lista ordenada en el menu de navegación, está un ejemplo de esto).
-
 Sobre la navegación hacia una página web de otro sitio web: Es más sencillo, sólo es colocar, dentro del enlace que conduce a dicho sitio web diferente, la URL del sitio web en cuestión. Es decir, poner como valor, dentro del atributo "href" de la etiqueta "a", el link del sitio web de interés al que deseas ir con el enlace en cuestión.
  -->

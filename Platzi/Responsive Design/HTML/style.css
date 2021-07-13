@@ -40,7 +40,7 @@ h2 {
   }
 
 .hero{
-    height: 310px;
+    height: 300px;
 
     /* background-image: url('./images/piscina.jpg');
 
@@ -511,7 +511,7 @@ figure{
 
     /* Emulando el "flex-wrap" del elemento padre "experience-list". 
     */
-    /* flex-wrap: inherit; */
+    flex-wrap: inherit;
 }
 
 /* Aplicación de Media Queries por medio de "Desktop First". */
