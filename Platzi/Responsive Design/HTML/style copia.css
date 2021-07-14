@@ -43,8 +43,11 @@ h2 {
     height: 300px;
 
     /* background-image: url('./images/piscina.jpg');
+
     background-size: 700px 100%;
+
     background-repeat: no-repeat;
+
     background-position-x: right; */
 
     background-color: #1b2127;
@@ -54,6 +57,7 @@ h2 {
     /* Las siguientes 2 propiedades pondrán más estatico y "juntado" nuestro ".hero" */
 
     display: flex;
+    flex-wrap: wrap;
 
     align-items: center;
 
@@ -86,6 +90,7 @@ h2 {
     align-items: center;
     justify-content: space-between;
     box-shadow: 10px 10px 30px -5px black;
+    flex-wrap: wrap;
 }
 
 .project:hover{
@@ -125,13 +130,13 @@ h2 {
 }
 
 .header{
-    padding-top: 0.1px;
     background-color: #1b2127;
     color: white;
     display: flex;
     height: 120px;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 ol,
@@ -220,12 +225,14 @@ figure{
     */
 
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .footer img{
     vertical-align: middle;
 
     /* Cuando tienes un texto (un "div" 1) y lo mezclas, por ejemplo, con otros tipos de elementos como contenido embebido; en este caso, una imagen (un "div" 2), tú puedes preferir el alineado, de la imagen que tienes, dentro de esa disposición vertical (la del texto); entonces, para eso, se llama la propiedad "vertical-align" sobre el elemento al que le deseas copiar su alineado vertical; en este caso, como ya lo dijimos, sobre nuestra imagen actual. 
+
     "vertical-align" puede asumir varios valores: "top", "bottom", "text-bottom", etc. Puede probarlos en tiempo real para percibir sus diferencias visuales.
     
     Tenga en cuenta que ambos elementos, texto e imagen, son "div" independientes; pero que hacen parte, y son hijos directos, de un mismo selector: ".footer". */
@@ -346,6 +353,7 @@ figure{
 
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .social-link{
@@ -448,6 +456,7 @@ figure{
     background-position-x: 5px;
 
     /* No es casualidad que hayamos querido importar la imagen de la "carta" por medio de CSS; pues, esa carta realmente cumple una mera función estética; es decir, no hace parte defitivamente del DOM (no está dentro del HTML realmente); sólo fue agregada para cumplir la única función de ser un adorno y no interfiera sobre la escritura dentro de HTML ni sobre la manipulación de sus elementos totales (es un fantasma). 
+
     De hecho, si intenta tomar la "cartica" con el mouse, al intentar subrayarlo, no podrá seleccionarla; pues, realmente para la estructura de la página esa "cartica" no está ahí.
     */
 }
@@ -489,11 +498,13 @@ figure{
 
 .container{
     /* El siguiente tipo de border es una gran forma de depuración de estilos, siempre se coloca al inicio del proceso, pero al final se quita */
+
     /* border: 1px solid red; */
 
     /* Al poner un contenedor, toca volver a centrar y ampliar (por lo general, ya que los elementos dentro del "container" se contraen) */
 
-    width: 1000px; /* ampliación */
+    max-width: 1020px; /* ampliación */
+    flex: 1;
     margin: 0 auto; /* centrado */
 
     /* Hay efectos visuales que se perdieron, como puede ver, al usar un contenedor; pues bien, esos efectos visuales, podemos heredarlos de un elemento padre; es decir, usar las mismas propiedades visuales del elemento padre y definirlas con un valor de "inherit".
@@ -507,4 +518,106 @@ figure{
     /* Emulando el "flex-wrap" del elemento padre "experience-list". 
     */
     flex-wrap: inherit;
+}
+
+/* Lo primero que haremos, como responsive, será apilar las cosas en la medida que tengan menos espacio disponible (en la medida que se "achique" la página); mas precisamente, la estrategia que se aplicará, es que los elementos se vayan apilando uno debajo del otro. Se empieza de arriba hacía abajo. 
+
+De hecho, la primera muestra de que intentamos "apilar" para ayudar al diseño responsive de nuestro sitio web fue el uso de la propiedad-valor: "flex-wrap: wrap" en el elemento padre, como se debe, del selector "experience". El elemento padre del selector "experience" es el selector "experience-list" (un "section" de HTML),... posteriormente el contenedor, selector ".container", lo heredó. Sin embargo, la propiedad-valor "flex-wrap: wrap" no sólo debe ir en "experience-list", sino en todas las sesiones más importantes que hacen de elementos "padres", principalmente en aquellas donde se nos hace un "scroll" horizontal debido a que su espacio disponible, horizontalmente, ya está agotado para los elementos "hijos" existentes. La idea es que, en vez de hacerse ese "scroll" horizontal, los elementos se apilen más abajo en caso de que no pueda ocupar más espacio para un límite máximo de ancho establecido (cosa que haremos justamente ahora, establecer un límite máximo de ancho para nuestros contenedores ".container").
+*/
+
+/* Ahora queremos que nuestros contenedores, ".container", tenga un tamaño variable; pues, de momento, tienen un tamaño fijo y nos ayudará bastante adaptar las "cajas" contenedoras del sitio web a las medidas variables del "viewport". Vamos allá!
+
+Pero, como mencionamos antes,... primero definamos, para los ".container", un máximo de ancho con la propiedad: "max-width",... para motivar a que los elementos tiendan a ajustarse un poco más siempre y evitar que se extiendan sobre todo lo ancho al tener la flexibilidad de hacerlo. PERO, OJO, el ancho del contenedor debe de ser lo suficientemente grande como para que quepen dentro todos sus elementos hijos,... si no es necesario que se apilen hacia abajo y si no se hace necesario hacer "scroll" horizontal.
+
+Entonces, de momento nos estamos valiendo de dos herramientas: "max-width" y "flex-wrap: wrap".
+
+"max-width" para ".container" &
+"flex-wrap: wrap" para los elementos "padres": ".header", ".hero", ".project", ".experience-list", ".contact" & ".footer"; que son, justamente, los elementos "padres" donde sus elementos "hijos" se extienden por todo lo ancho y generan "scroll" horizontal. En todo caso, ".container" también está heredando (inherit) la propiedad-valor: "flex-wrap: wrap"..., así lo hemos decidido para que el efecto "flex-wrap: wrap" afecte a los hijos de los hijos de cada elemento "padre" como ".header", ".hero", "experience-list", "contact" & ".footer".
+
+Ahora, vamos a trabajar sesión por sesión por separada,... para nuestra comododidad y enfocarnos sólo en ella, así que vamos a comentar todas las sesiones en el html, menos el ".header" (nuestra primera sesión). De tal manera que, al navegar el sitio web, solo se vea el "header" en sí.
+
+Estando ya solamente de frente con una sesión (section o article importante) debe activar las "media queries" en "Show Media Queries" de la Devtools (inspeccionar elementos). 
+
+Estando en "Show Media Queries" visualizamos los tamaños estandar: desde el tamaño full al tamaño más pequeño, tomando uno a uno; de tal manera que, se configure individualmente el diseño responsive para cada Media Querie en CSS. Recuerde:
+
+    @media screen and (max-width: 1024px){
+
+    }
+
+    @media screen and (max-width: 768px){
+        
+    }
+
+    @media screen and (max-width: 480px){
+
+    }
+
+    @media screen and (max-width: 320px){
+
+    }
+
+    Se trabajará desde el 2do, pero disminuyendo un pixel,... pasa que, en el tamaño de "iPad"; que va desde, justamente, 768px a 1024px, aún se pueden visualizar los elementos sin necesidad de hacerle un diseño tipo "responsive"; entonces, empezaremos a trabajar el "responsive" justamente después del "viewport" de iPad; es decir, de 767px para abajo,... lo que sería:  
+
+    @media screen and (max-width: 767px){
+        
+    }
+
+Pero antes, apliquemos un primer truco para que se ajusten los elementos de cada contenedor, lo más posible, al ancho total de la pantalla que tenemos disponible. El ancho total de la pantalla disponible es el que le hemos pasado manualmente, en este caso, con la propiedad-valor: "max-width: 1020px"; entonces, dicho lo anterior, declaremos la propiedad-valor: "flex: 1" en todos los contenedores; es decir, en el selector ".container".
+
+Luego, ahora sí, configure el ".header" para cada Media Queri; posteriormente hará lo propio, recuerde, para cada "section" o "articulo" importante de su proyecto.
+*/
+
+/* Aplicación de Media Queries por medio de "Desktop First". */
+
+@media screen and (max-width: 1024px){
+
+}
+
+@media screen and (max-width: 767px){
+    .header{
+        padding-top: 4px;
+        display: block;
+        /* Definimos "display: block" porque queremos que todos los elementos se apilen por debajo del otro; pues, recuerdese que con "display: block" cada elemento asume todo el ancho de la pantalla para su respectivo espacio. En el ".header" original teníamos "display: flex", lo cual hace todo lo contrario, que los elementos vayan uno al costado del otro. */
+
+        /* Resulta que ahora no se pueden ver nuestros elementos, eso es porque en el ".header" original de nuestro CCS tiene un alto (height) asignado, es de 120px y no nos permite visualizar los elementos; pongamos, entonces, el "height" en "auto",... una herramienta muy útil en Responsive. */
+
+        height: auto;
+    }
+
+    /* Ahora, tampoco queremos que los items de nuestra lista, del ".header", se pongan al costado del otro; pues, también tienen la propiedad-valor: "display: flex" (en el selector .header ol),... pongamos acá también, entonces, "display: block". */
+
+    .header ol{
+        display: block;
+    }
+
+    /* Ahora bien, llegó el momento de darle estilos a cada item (etiqueta "li") de la lista del ".header",... esto ya va más a nivel personal, pero podemos seguir un estandar y es el siguiente: darles un poco más de alto (con la prop. "height") y centrarlos (con la prop.-valor "justify-content: center;").
+     */
+
+     .header ol li{
+         height: 50px;
+     }
+
+     .header a{
+         justify-content: center;
+     }
+
+     /* La configuración de "margin" que le habíamos pasado al selector "ol, ul" para que se viera más centrado, y mejor esteticamente, ya no nos sirve en "viewports" más pequeños, así que le daremos un "margin" equivalente a "0". Lo propio, por las mismas razones, tiene que hacerse con el selector: ".header figure". */
+     
+     ol, ul{
+         margin: 0;
+     }
+
+     .header figure{
+        margin: 0;
+     }
+
+     /* Si se da cuenta, es muy útil ir visualizando los cambios a tiempo real que más se adapten esteticamente al sitio web; esto, al ir manipulando directamente al propio "inspector de elementos". */
+}
+
+@media screen and (max-width: 480px){
+
+}
+
+@media screen and (max-width: 320px){
+
 }

@@ -551,5 +551,5 @@ Entonces, de momento nos estamos valiendo de dos herramientas: "max-width" y "fl
 "max-width" para ".container" &
 "flex-wrap: wrap" para los elementos "padres": ".header", ".hero", ".project", ".experience-list", ".contact" & ".footer"; que son, justamente, los elementos "padres" donde sus elementos "hijos" se extienden por todo lo ancho y generan "scroll" horizontal. En todo caso, ".container" también está heredando (inherit) la propiedad-valor: "flex-wrap: wrap"..., así lo hemos decidido para que el efecto "flex-wrap: wrap" afecte a los hijos de los hijos de cada elemento "padre" como ".header", ".hero", "experience-list", "contact" & ".footer".
 
-
+Ahora, vamos a trabajar sesión por sesión por separada,... para nuestra comododidad y enfocarnos sólo en ella, así que vamos a comentar todas las sesiones en el html, menos el ".header" (nuestra primera sesión).
 */

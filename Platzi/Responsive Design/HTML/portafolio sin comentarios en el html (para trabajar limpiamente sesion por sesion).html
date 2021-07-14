@@ -30,7 +30,7 @@
     <!-- <link rel="stylesheet" href="media.css" media="screen and (max-width:768px)"> -->
 
     <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style copia.css">
 
     <title>Rescata_</title>
 </head>
@@ -75,36 +75,23 @@
 
     </header>
 
-    <main>
-
-        <!-- A este "section", el de "main" (o al primer "section" del "body"), convencionalmente, siempre se le pone por nombre "hero"; pues, es la parte de mayor visibilidad de nuestro sitio web (donde se pone nuestro slogan o qué estamos vendiendo). -->
-        
+    <!-- <main>
         <section class="hero">
             
-            <div class="container">
-                <!-- 2DO CONTENEDOR -->
-                
+            <div class="container"> 
                 <header>
                     <h1>Hola! Soy <strong>Roberto Velasquez</strong>  <br>Desarrollador <strong>Front-end</strong> & <br>Analista de <strong>Sistemas de Información</strong> 
-                        <!-- & <br>Gestor en <strong>Mercados Apalancados</strong>  -->
                     </h1>
                 </header>
                 
-                <!-- DE MOMENTO VAMOS A DEJAR COMENTADA LA IMAGEN IMPORTADA -->
                 <img class="hero-image" src="robe.jpg" width="500" height="300" alt="Debe ponerse imagen de mi persona en el portafolio real">
-                <!-- La imagen que se ve ahora, dentro de este "header", realmente fue importada desde CSS y no desde HTML; eso se logró por medio de la propiedad: "background-image". Revise el llamado al selector, en CSS, de ".hero". -->
             </div>
             
         </section>
         
         <section id="portafolio" class="portfolio">
-            <!-- El valor del "id", "portafolio", no se borra porque, através de él, podemos llevar a cabo la navegación interna de la página web con los enlaces del tag "nav". 
-                
-                Y, el uso de "class" (como el de la gran mayoria), es para darle personalización de estilos a la etiqueta como tal, por medio de CSS -->
                 
             <div class="container">
-                <!-- 3ER CONTENEDOR -->
-                
                 <header>
                     <h2>
                         Portfolio (Proyectos en curso)
@@ -113,9 +100,7 @@
                 
                 
                 <article class="project">
-                    <!-- Se colocará un "div" para separar nuestro contenido textual de nuestra imagen sin dejar de estar situado sobre el mismo "article" (para que se siga entiendendo que la imagen corresponde al texto,... sólo que ahora cada uno ocuparía su propio espacio); con esto, efectivamente, pretendemos dividir el contenido textual del contenido embebido (la imagen) por la mitad de la pantalla del navegador.  En ese orden de ideas, le daremos un "div" independiente al contenido textual y un "div" independiente al contenido embebido; sin embargo, no se olvide, ambos están dentro del mismo "article".
-                    -->
-                    
+                   
                     <div class="project-details">
                         <header>
                             <h3 class="project-title">
@@ -156,9 +141,7 @@
                 </article>
                 
                 <article class="project">
-                    <!-- Se colocará un "div" para separar nuestro contenido textual de nuestra imagen sin dejar de estar situado sobre el mismo "article" (para que se siga entiendendo que la imagen corresponde al texto,... sólo que ahora cada uno ocuparía su propio espacio); con esto, efectivamente, pretendemos dividir el contenido textual del contenido embebido (la imagen) por la mitad de la pantalla del navegador.  En ese orden de ideas, le daremos un "div" independiente al contenido textual y un "div" independiente al contenido embebido; sin embargo, no se olvide, ambos están dentro del mismo "article".
-                    -->
-                    
+               
                     <div class="project-details">
                         <header>
                             <h3 class="project-title">
@@ -197,161 +180,155 @@
                     </div>
                     
                 </article>
+
             </div>
             
         </section>
             
-            <!-- METALE "BOX SHADOW" A SUS CAJAS PARA DARLES MÁS ESTILO. Con el "BOX SHADOW" se harían unas sombras permanentes alrededor del botón (que den la sensación de que "sobresalgan" por encima de la pantalla del navegador); sin embargo, le daremos, además de estilo, más interactividad al botón en sí,... al aplicarle sobre dicho selector las pseudoclases ":active" (para darle la sensación de que en efecto estamos "hundiendo" el botón) y ":hover" (para darle un blanco más "oscuro" al botón cada vez que pasemos el mouse por encima de él). 
+        <section id="experiencias" class="experience-list">
+
+            <div class="container">
+                <header>
+                    <h2 class="experience-list-title">
+                        Más sobre mi experiencia
+                    </h2>
+                </header>
                 
-                Por otro lado, a las cajas de texto de los formularios ponerles sombras con "box shadow" o un "border" solid al hacer uso de la pseudoclase ":focus" (es decir, para que se vea el efecto de estilo al hacer click sobre dicha caja y se mantenga dicho estilo al ser ese el último click; si hace click luego en otro lugar, la sombra se quita). 
-                
-                Al igual, a las cajas de texto de "echale un vistazo!" ponerles sombras con "box shadow" o un "border" solid al hacer uso de la pseudoclase ":hover" y "active".
-                
-                Colocarle sombras con "box shadow" también a las cajas que contienen cada sección de nuestro sitio web.
-                
-                Adicionalmente, aplicar con la pseudoclase ":hover" (la que asigna estilos al pasar el mouse por encima del elemento en cuestión) border-radius tipo elipse y color identificativo a las marcas de las redes sociales (ya hay una muestra de ejemplo, que necesita perfeccionar las elipses, con el botón de instagram y facebook).
-            -->
-            
-            <section id="experiencias" class="experience-list">
-                <div class="container">
-                    <!-- 4TO CONTENEDOR -->
+                <div class="experience-list">
                     
-                    <header>
-                        <h2 class="experience-list-title">
-                            Más sobre mi experiencia
-                        </h2>
-                    </header>
+                    <article class="experience">
+
+                        <div>
+                            <figure class="experience-imageContainer">
+                                <img class="experience-image" src="https://x6i2p6h3.rocketcdn.me/wp-content/uploads/2018/08/selling-3213725_960_720.jpg" width="500" height="370" alt="Debe ponerse imagen referente a un evento, al que haya asistido, en el portafolio real">
+                            </figure>
+                        </div>
+                        
+                        <div class="experience-detail">
+                            <header>
+                                <h3 class="experience-title">
+                                    Experiencia 1
+                                </h3>
+                            </header>
+                            
+                            <p class="experience-description">
+                                Descripción de experiencia 1 que me marcó
+                            </p>
+                            
+                            <a class="experience-url" href="https://github.com/Rescata1995/programacion_rescata" target="_blank">Echale un vistazo!</a> 
+                        </div>
+
+                    </article>
                     
-                    <!-- Ahora vienen 4 artículos de "experience" en cadena. -->
+                    <article class="experience">
+
+                        <div>
+                            <figure class="experience-imageContainer">
+                                <img class="experience-image" src="https://x6i2p6h3.rocketcdn.me/wp-content/uploads/2018/08/selling-3213725_960_720.jpg" width="500" height="370" alt="Debe ponerse imagen referente a un evento, al que haya asistido, en el portafolio real">
+                            </figure>
+                        </div>
+                        
+                        <div class="experience-detail">
+                            <header>
+                                <h3 class="experience-title">
+                                    Experiencia 1
+                                </h3>
+                            </header>
+                            
+                            <p class="experience-description">
+                                Descripción de experiencia 1 que me marcó
+                            </p>
+                            
+                            <a class="experience-url" href="https://github.com/Rescata1995/programacion_rescata" target="_blank">Echale un vistazo!</a> 
+                        </div>
+
+                    </article>
                     
-                    <div class="experience-list">
+                    <article class="experience">
+
+                        <div>
+                            <figure class="experience-imageContainer">
+                                <img class="experience-image" src="https://x6i2p6h3.rocketcdn.me/wp-content/uploads/2018/08/selling-3213725_960_720.jpg" width="500" height="370" alt="Debe ponerse imagen referente a un evento, al que haya asistido, en el portafolio real">
+                            </figure>
+                        </div>
                         
-                        <article class="experience">
-                            <div>
-                                <figure class="experience-imageContainer">
-                                    <img class="experience-image" src="https://x6i2p6h3.rocketcdn.me/wp-content/uploads/2018/08/selling-3213725_960_720.jpg" width="500" height="370" alt="Debe ponerse imagen referente a un evento, al que haya asistido, en el portafolio real">
-                                </figure>
-                            </div>
+                        <div class="experience-detail">
+                            <header>
+                                <h3 class="experience-title">
+                                    Experiencia 1
+                                </h3>
+                            </header>
                             
-                            <div class="experience-detail">
-                                <header>
-                                    <h3 class="experience-title">
-                                        Experiencia 1
-                                    </h3>
-                                </header>
-                                
-                                <p class="experience-description">
-                                    Descripción de experiencia 1 que me marcó
-                                </p>
-                                
-                                <a class="experience-url" href="https://github.com/Rescata1995/programacion_rescata" target="_blank">Echale un vistazo!</a> 
-                            </div>
-                        </article>
+                            <p class="experience-description">
+                                Descripción de experiencia 1 que me marcó
+                            </p>
+                            
+                            <a class="experience-url" href="https://github.com/Rescata1995/programacion_rescata" target="_blank">Echale un vistazo!</a> 
+                        </div>
+
+                    </article>
+                    
+                    <article class="experience">
+
+                        <div>
+                            <figure class="experience-imageContainer">
+                                <img class="experience-image" src="https://x6i2p6h3.rocketcdn.me/wp-content/uploads/2018/08/selling-3213725_960_720.jpg" width="500" height="370" alt="Debe ponerse imagen referente a un evento, al que haya asistido, en el portafolio real">
+                            </figure>
+                        </div>
                         
-                        <article class="experience">
-                            <div>
-                                <figure class="experience-imageContainer">
-                                    <img class="experience-image" src="https://x6i2p6h3.rocketcdn.me/wp-content/uploads/2018/08/selling-3213725_960_720.jpg" width="500" height="370" alt="Debe ponerse imagen referente a un evento, al que haya asistido, en el portafolio real">
-                                </figure>
-                            </div>
+                        <div class="experience-detail">
+                            <header>
+                                <h3 class="experience-title">
+                                    Experiencia 1
+                                </h3>
+                            </header>
                             
-                            <div class="experience-detail">
-                                <header>
-                                    <h3 class="experience-title">
-                                        Experiencia 1
-                                    </h3>
-                                </header>
-                                
-                                <p class="experience-description">
-                                    Descripción de experiencia 1 que me marcó
-                                </p>
-                                
-                                <a class="experience-url" href="https://github.com/Rescata1995/programacion_rescata" target="_blank">Echale un vistazo!</a> 
-                            </div>
-                        </article>
-                        
-                        <article class="experience">
-                            <div>
-                                <figure class="experience-imageContainer">
-                                    <img class="experience-image" src="https://x6i2p6h3.rocketcdn.me/wp-content/uploads/2018/08/selling-3213725_960_720.jpg" width="500" height="370" alt="Debe ponerse imagen referente a un evento, al que haya asistido, en el portafolio real">
-                                </figure>
-                            </div>
+                            <p class="experience-description">
+                                Descripción de experiencia 1 que me marcó
+                            </p>
                             
-                            <div class="experience-detail">
-                                <header>
-                                    <h3 class="experience-title">
-                                        Experiencia 1
-                                    </h3>
-                                </header>
-                                
-                                <p class="experience-description">
-                                    Descripción de experiencia 1 que me marcó
-                                </p>
-                                
-                                <a class="experience-url" href="https://github.com/Rescata1995/programacion_rescata" target="_blank">Echale un vistazo!</a> 
-                            </div>
-                        </article>
-                        
-                        <article class="experience">
-                            <div>
-                                <figure class="experience-imageContainer">
-                                    <img class="experience-image" src="https://x6i2p6h3.rocketcdn.me/wp-content/uploads/2018/08/selling-3213725_960_720.jpg" width="500" height="370" alt="Debe ponerse imagen referente a un evento, al que haya asistido, en el portafolio real">
-                                </figure>
-                            </div>
-                            
-                            <div class="experience-detail">
-                                <header>
-                                    <h3 class="experience-title">
-                                        Experiencia 1
-                                    </h3>
-                                </header>
-                                
-                                <p class="experience-description">
-                                    Descripción de experiencia 1 que me marcó
-                                </p>
-                                
-                                <a class="experience-url" href="https://github.com/Rescata1995/programacion_rescata" target="_blank">Echale un vistazo!</a> 
-                            </div>
-                        </article>
-                    </div>
-                    <!-- aquí ponga la ruta, con un enlace, a la experiencia (que es otro sitio web y que se abrirá en otra pestaña con el atributo "target"). -->
+                            <a class="experience-url" href="https://github.com/Rescata1995/programacion_rescata" target="_blank">Echale un vistazo!</a> 
+                        </div>
+
+                    </article>
+
                 </div>
                 
-            </section>
+            </div>
             
-            <section id="contacto" class="contact">
-                <div class="container">
-                    <!-- 4TO CONTENEDOR -->
+        </section>
+        
+        <section id="contacto" class="contact">
+            
+            <div class="container">
+                
+                <form class="form-email">
+                    <h3>
+                        ¿Creamos algo juntos?
+                    </h3>
                     
-                    <form class="form-email">
-                        <h3>
-                            ¿Creamos algo juntos?
-                        </h3>
-                        
-                        <input type="email" placeholder="Déjame tu email" id="email" class="form-text"> 
-                        
-                        <input type="submit" value="Send me!" class="form-box">
-                    </form>
+                    <input type="email" placeholder="Déjame tu email" id="email" class="form-text"> 
                     
-                    <div class="social">
-                        <a href="https://twitter.com/Rescata3" class="social-link twitter" target="_blank"></a>
-                        <a href="https://web.facebook.com/louizroberto/" class="social-link facebook" target="_blank"></a>
-                        <a href="https://github.com/Rescata1995" class="social-link github" target="_blank"></a>
-                        <a href="https://www.instagram.com/velasquezdean/?hl=es-la" class="social-link instagram" target="_blank"></a>
-                    </div>
-                    
+                    <input type="submit" value="Send me!" class="form-box">
+                </form>
+                
+                <div class="social">
+                    <a href="https://twitter.com/Rescata3" class="social-link twitter" target="_blank"></a>
+                    <a href="https://web.facebook.com/louizroberto/" class="social-link facebook" target="_blank"></a>
+                    <a href="https://github.com/Rescata1995" class="social-link github" target="_blank"></a>
+                    <a href="https://www.instagram.com/velasquezdean/?hl=es-la" class="social-link instagram" target="_blank"></a>
                 </div>
                 
-            </section>    
+            </div>
             
-    </main>
+        </section>    
+            
+    </main> -->
 
 
-
-    <footer class="footer">
+    <!-- <footer class="footer">
 
         <div class="container">
-            <!-- 5TO CONTENEDOR -->
 
             <div>
                 <p>My Portfolio website developed by myself in collaboration with Platzi<img src="images2/logoplatzi.webp" alt="" width="80px" height="auto"></p>
@@ -365,7 +342,8 @@
             
         </div>
         
-    </footer>
+    </footer> -->
+
 </body>
 </html>
 
