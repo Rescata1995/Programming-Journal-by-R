@@ -21,6 +21,8 @@
     
     "monospace" hace que todos los caracteres tengan el mismo ancho. Es la tipografía que se suele utilizar en todos los editores de código y también se utiliza cuando usamos la etiqueta "pre" para colocar fragmentos de código en nuestra página.
     */
+
+    font-size: 30px;
 }
 
 /* Veamos el efecto de "monospace" sobre el párrafo (para que se dé cuenta que, en efecto, sí que queda como si fuera un editor de código) 
@@ -28,4 +30,8 @@
 
 .paragraph{
     font-family: monospace;
+}
+
+.span{
+    font-size: 2em;
 }
