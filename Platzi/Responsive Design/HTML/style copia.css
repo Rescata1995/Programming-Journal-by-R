@@ -118,12 +118,12 @@ h2 {
 }
 
 .project-details{
-    width: 500px;
+    width: 50%;
     /* display: inline-block; */
 }
 
-.project-image{
-    width: 500px;
+.project-imageContainer{
+    width: 50%;
     object-fit: cover;
 
     /* display: inline-block; */
@@ -527,7 +527,7 @@ De hecho, la primera muestra de que intentamos "apilar" para ayudar al diseño r
 
 /* Ahora queremos que nuestros contenedores, ".container", tenga un tamaño variable; pues, de momento, tienen un tamaño fijo y nos ayudará bastante adaptar las "cajas" contenedoras del sitio web a las medidas variables del "viewport". Vamos allá!
 
-Pero, como mencionamos antes,... primero definamos, para los ".container", un máximo de ancho con la propiedad: "max-width",... para motivar a que los elementos tiendan a ajustarse un poco más siempre y evitar que se extiendan sobre todo lo ancho al tener la flexibilidad de hacerlo. PERO, OJO, el ancho del contenedor debe de ser lo suficientemente grande como para que quepen dentro todos sus elementos hijos,... si no es necesario que se apilen hacia abajo y si no se hace necesario hacer "scroll" horizontal.
+Pero, como mencionamos antes,... primero definamos, para los ".container", un máximo de ancho con la propiedad: "max-width",... para motivar a que los elementos tiendan a ajustarse un poco más siempre y evitar que se extiendan sobre todo lo ancho al tener la flexibilidad de hacerlo. PERO, OJO, el ancho del contenedor debe de ser lo suficientemente grande como para que quepen dentro todos sus elementos hijos,... si no es necesario que se apilen hacia abajo y si no se hace necesario hacer "scroll" horizontal. IMPORTANTE: En términos de anchura, para que quepen todos los elementos hijos del contenedor, dentro del contenedor, sin importar cuanto mida el contenedor ni cuantos elementos hijos tenga, es preferible definir el tamaño de los elementos hijos con porcentajes; pues, el porcentaje es una medida relativa que toma como referencia el tamaño de los elementos padres; es decir, los elementos hijos se adaptaptarían a su elemento padre de forma definitiva y en cualquiera que sea el contexto. ESTO EN SITUACIÓN: Por ejemplo, para el selector ".project" le tocará hacer que los dos elementos hijos que tiene ahí dentro, "project-imageContainer" & "project-details", quepen completamente dentro del ancho definido para su contenedor "project"; entonces, puede optar por darle un ancho a cada elemento hijo equivalente al 50% (de hecho, esto fue lo que hicimos en cada uno de los selectores de esos elementos hijos); así, en todos los casos que sea, podrá ver que los dos elementos hijos, "project-imageContainer" & "project-details", siempre tendrán espacio dentro del elemento padre, que sería el contenedor del selector ".project".
 
 Entonces, de momento nos estamos valiendo de dos herramientas: "max-width" y "flex-wrap: wrap".
 
@@ -612,6 +612,26 @@ Luego, ahora sí, configure el ".header" para cada Media Queri; posteriormente h
      }
 
      /* Si se da cuenta, es muy útil ir visualizando los cambios a tiempo real que más se adapten esteticamente al sitio web; esto, al ir manipulando directamente al propio "inspector de elementos". */
+
+     /* Ahora vamos a darle al section del "portfolio" */
+
+     /* Acá aplicaremos de entrada algo que ya hicimos antes,... hacer que los elementos hijos, de un contenedor, bajen (se apilen hacia abajo) luego de haber unas dimensiones en el "viewport" inferiores a las dimensiones modo "iPad"; es decir, tampoco queremos que los elementos hijos "project-details" & "project-imageContainer", del selector ".project", se pongan al costado del otro ante dimensiones del "viewport" ya considerablemente disminuidas; pues, también tienen la propiedad-valor: "display: flex" (en el selector .project),... pongamos acá también, entonces, "display: block".  */
+
+     .project{
+         display: block;
+     }
+
+     /* Ahora nos interesa expandir, a lo largo de todo el ancho, los elementos hijos "project-details" & "project-imageContainer" del selector padre ".project". Esto lo lograremos si le pasamos, a cada uno de ellos, una propiedad-valor: "width: auto". Veamos. */
+
+     .project-details{
+         width: auto;
+     }
+
+     .project-imageContainer{
+         width: auto;
+
+         /* A nivel personal, considerar la opción de usar el recurso de "background" para mejorar la calidad de la imagen en "viewports" más pequeños.  */
+     }
 }
 
 @media screen and (max-width: 480px){

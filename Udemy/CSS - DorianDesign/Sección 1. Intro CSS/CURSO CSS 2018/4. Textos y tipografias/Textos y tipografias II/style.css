@@ -1,0 +1,93 @@
+/* Recordemos... */
+
+/* Cuando se aplica estilos a las "fuentes", se está aplicando estilos propiamente sobre la letra en sí; sin embargo, cuando se aplica estilos sobre los "textos", se está aplicando estilos es sobre el contenedor de la letra.
+
+          Algunas propiedades de tipo "texto", las que ensayaremos ahora, son: 
+
+          1. "text-transform": Determina si colocamos todo el texto en mayusc. (lowercase) o todo en minusc. (uppercase); o sólo la 1ra en mayusculas (capitalize), etc...
+
+          2. "text-align": Determina el alineamiento del texto; si es a la derecha (right), a la izquierda (left), justificado (justify) o centrado (center). SOLO FUNCIONA CON ELEMENTOS DE BLOQUE (EXCEPTO EN BOTONES, que aunque sean de elementos de línea, funciona). En caso que desee usar este recurso en un elemento de línea; pues, debe convertir el elemento de línea en un elemento de bloque con la propiedad-valor "display:block". 
+          
+          Importante: "justify" en web es algo que no se suele utilizar, debido a que se ve esteticamente mal los espacios que se forman entre una palabra y otra (dentro de un texto). Los espacios no son uniformes. En caso que, por algún motivo, por defecto, el navegador le está manejando un texto "justificado",... puede cambiar eso llamando un "text-align" y asignandole alguno de los otros tres valores disponibles. 
+
+          3. "text-decoration": Determina las decoraciones del texto; es decir, si poner subrayado inferior (underline) o, también, si se pone el texto tachado (line-throught); y, por último, lo contrario a "underline", poner un subrayado superior (overline).
+
+          4. "text-indent": lo que hace es identar la primera línea de, por ejemplo, un texto; como lo que se hace, comunmente, en los libros. SÓLO ELEMENTOS DE BLOQUE. */
+
+
+.title{
+    text-transform: uppercase;
+
+    /* "uppercase", todo en mayuscula */
+
+    text-transform: lowercase;
+
+    /* "lowercase", todo en minuscula */
+
+    text-transform: capitalize;
+
+    /* "capitalize", pone la primera letra de cada palabra en mayusculas. */
+}
+
+.link{
+    display: block;
+    text-align: center;
+
+    /* Uso de la propiedad "text-align" en elementos de línea convertidos en elementos de bloque. Me "alineó" el texto al centro con el valor: "center". */
+}
+
+.paragraph{
+    text-align: justify;
+}
+
+.link{
+    text-decoration: overline;
+
+    /* "overline", subrayado superior. */
+
+    text-decoration: underline;
+
+    /* "underline", subrayado inferior; que, por cierto, es el valor que por defecto tienen todos los enlaces */
+
+    text-decoration: line-through;
+
+    /* "line-through", tachado. */
+
+    /* Ahora, lo más recomendable usar en los enlances es el valor: "none", que significa no tener ninguna decoración. */
+
+    text-decoration: none;
+}
+
+.paragraph{
+    text-indent: 10px;
+
+    /* Para dar identación se le debe pasar alguna medida. Si le damos un valor positivo, lo alejamos a la derecha; lo contrario, si le damos un valor negativo, lo acercamos a la izquierda (del viewport). */
+}
+
+/* OTROS
+
+line-height: Establece la distancia que se debe guardar por cada línea de texto; el espacio, en términos de "alto", que se debe respetar entre el cierre de una y el inicio de otra. Establece la altura de una casilla remarcada por líneas. Comúnmente se usa para establecer la distancia entre líneas de texto.
+
+letter-spacing: Establece la separación de las letras con una medida en cualquier unidad.
+*/
+
+.box{
+    width: 200px;
+    height: 200px;
+    background-color: skyblue;
+    line-height: 34px;
+
+    /* Por lo general, "line-height" se aplica sobre el elemento padre del elemento hijo que deseas que sea afectado directamente; en nuestro caso, el elemento padre realmente es ".box", al que le estamos pasando la propiedad "line-height", sin embargo el texto afectado realmente está dentro de su elemento hijo ".box__item". */
+}
+
+.box__item{
+    /* letter-spacing: 5px; */
+
+    /* "letter-spacing" ya sí funciona sobre el elemento al que realmente desees afectar; es decir, si quieres afectar a un elemento hijo con "letter-spacing", debes poner "letter-spacing" directamente sobre él. En nuestro caso, si deseo afectar a mi selector ".box__item", ya no necesito valerme de su elemento padre para poder afectar, con la propiedad, a dicho elemento hijo. 
+    
+    Explicado eso, ya sabe lo que hace "letter-spacing",... y es definir el espacio que debe haber entre una letra y otra. Veamos esto mejor en nuestro párrafo directamente. */
+}
+
+.paragraph{
+    letter-spacing: 5px;   
+}

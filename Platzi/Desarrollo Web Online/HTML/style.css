@@ -117,7 +117,7 @@ h2 {
     /* display: inline-block; */
 }
 
-.project-image{
+.project-imageContainer{
     width: 500px;
     object-fit: cover;
 
