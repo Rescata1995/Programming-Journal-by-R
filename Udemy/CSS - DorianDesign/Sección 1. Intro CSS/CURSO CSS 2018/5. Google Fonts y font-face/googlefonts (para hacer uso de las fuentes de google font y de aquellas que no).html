@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+
+     <!-- aquí se esta llamando, de la 1ra forma, un tipo de familia tipografica de Google Fonts (revise el 2do párrafo) -->
+
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
+
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+
+     <link rel="stylesheet" href="style.css">
+<body>
+     <section>
+
+          <header>
+               <h1>
+                    Google Fonts & font-face.
+               </h1>
+          </header>
+
+          <article>
+               <header>
+                    <h2>
+                         Google Fonts.
+                    </h2>
+               </header>
+          
+          <p>
+               Cómo trabajar con fuentes de la mano de Google Fonts & font-face (regla de CSS para utilizar fuentes cuando no las tenemos en Google Fonts). Fuera de eso, cómo trabajar con las familias tipográficas propias de Google Fonts (varias formas de llamarlas).
+          </p>
+          
+          <p>
+               1ra forma: Copiar la opción "link" de la familia seleccionada (selected family) de alguna de sus 12 posibles fuentes (estilos como Bold, Regular, Thin, Medium, Light, etc) disponibles y de su elección propia (revise en "Review"); y, posteriormente, pegar en nuestro "head" del archivo html de nuestro interés (revise el "head").
+               
+               Luego, en nuestra hoja de estilos vinculada al archivo html de nuestro interés, colocar dentro del dominio del selector "p" (en caso que la familia tipografica que considere usar vaya a ser empleada en textos y no precisamente en titulos) la "CSS rules to specify families". Vaya a CSS y revise cómo se llama a la "font-family" de Google Fonts para las "p". Y listo! pd: Si desea colocar otra familia tipografica para los titulos, podría usar como selector el elemento: "header",... y tendría que hacer el mismo proceso que hizo con la primera familia tipografica para las "p".
+          </p>
+          
+          <p>
+               Ahora, normalmente, uno usa dos (2) tipos de familias tipograficas: una para titulos (que suele ser también de una familia generica con serifas -puntas curvadas (sólo si así lo desea); en este caso, por ejemplo, usamos "Raleway") y uno para textos (que, por el contrario, suele ser de una familia generica sin serifas -para su mejor lectura; por ejemplo, "Montserrat").
+          </p>
+
+          <p>
+               https://fonts.google.com/
+          </p>
+          </article>
+
+          <article>
+               <header>
+                    <h2>
+                         Ahora, ¿Cómo trabajar con tipografias que no están en Google Fonts? Uso de Font-face
+                    </h2>
+               </header>
+
+               <p>
+                    Para los casos en los que, por ejemplo, una empresa tenga un proyecto para ti y ya haya diseñado su propia tipografia,...
+               </p>
+                    
+               <p>
+                    Se descargan, se extraen (porque vienen comprimidas generalmente) y punto.
+               </p>
+
+               <p>
+                    https://www.dafont.com/es
+                    https://www.1001fonts.com
+
+                    Enlaces para descargar nuevos tipos tipograficos que no encuentre en GoogleFonts.
+               </p>
+
+               <p>
+                    Use una carpeta auxiliar que reciba por nombre "assets", dentro de su directorio de proyecto de trabajo, y guarde ahí todo su contenido embebido (imagenes, videos, archivos comprimidos, musica, etc); es decir, el contenido que ha importado. Para los archivos comprimidos, de tipo "fuentes" o relacionados, crea una sub-carpeta que se llame: "fonts".
+               </p>
+
+               <p>
+                    Ahora, ¿cómo usamos esas fuentes importadas bajadas de internet y no desde Googlefonts?
+               </p>
+
+               <p>
+                    Vaya a su hoja de estilos y escriba sobre ella la norma: "@font-face{dentro de este dominio es donde se importará la fuente en cuestión desde una URL, luego se le pasa un nombre por medio de un parametro y, ya con esto, podrá tener acceso a ella para poder utilizarla}"; es decir, repetimos:
+                    
+                    @font-face{ ... };
+               </p>
+
+               <p>
+                    El dominio de "@font-face" recibe dos (2) parametros efectivamente: 
+<hr>
+                    1. src: url('aquí dentro va la ruta que me lleva hacia la fuente -la que ya está descomprimida en mi directorio "fonts"-, use comillas simples').
+<hr>
+                    2. font-family: 'myFont';
+
+                    En el parametro dos (2), "font-family", es donde se le pasa un nombre a mi nueva fuente importada (el nombre que usted desee).
+<hr>
+                    Y listo! Por medio del nombre que usted pasó, ya está lista su nueva fuente para ser usada (no se le olvide usar tipografias de reserva).
+               </p>
+          </article>
+
+          <article>
+               <header>
+                    <h2>
+                         Truquillo: para saber qué fuentes está usando un sitio web cualquiera.
+                    </h2>
+               </header>
+
+               <p>
+                    Vincule a Chrome la extensión: WhatFont, y listo!
+               </p>
+          </article>
+
+     </section>
+</body>
+</html>

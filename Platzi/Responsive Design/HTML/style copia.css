@@ -263,9 +263,10 @@ figure{
 
 .experience{
     
+    border: 1px solid #E5E7EA;
     margin: 10px;
     width: 479px;
-    border-radius: 0px;
+    border-radius: 8px;
 
     /* para el desbordamiento de la imagen ante su contenedor (border), usemos la propiedad-valor: "overflow: hidden".
     */
@@ -282,7 +283,8 @@ figure{
 }
 
 .experience:hover{
-    box-shadow: 3px 3px 10px -5px black, -3px -3px 10px -5px black;
+    box-shadow: 1px 1px 12px -6px black, -1px -1px 12px -6px black;
+    border: none;
 }
 
 .experience img{
@@ -632,10 +634,66 @@ Luego, ahora sí, configure el ".header" para cada Media Queri; posteriormente h
 
          /* A nivel personal, considerar la opción de usar el recurso de "background" para mejorar la calidad de la imagen en "viewports" más pequeños.  */
      }
+
+     /* Ahora queremos que el tamaño del texto, aún trabajando dentro del selector padre ".project" (más especificamente en el selector ".project-details", que es quién contiene toda la parte textual), sea proporcional a las dimensiones del viewport; es decir, en la medida que tengamos una pantalla más pequeña para navegar el sitio web, queremos que el tamaño de la tipografía se "achique". Para lograr la anterior finalidad, entonces, tenemos que hacer uso de medidas relativas. Cómo lo hacemos?
+     
+     Lo haremos pasandole una medida fija al elemento padre ".project-details"; es decir, realmente las medidas relativas asignadas a los selectores hijos de ".project-details" tomarán como referencia al mismo padre ".project-details"; de tal manera que, la medida relativa con la que trabajaremos será "em". A partir de la medida fija que le pasemos a ".project-details", se definirán todas las medidas relativas de los elementos hijos que éste contenga. Los elementos hijos son, precisamente, los que definen toda la parte textual del elemento padre ".project". Veamos. 
+     
+     Ahora, si se fija, es una buena práctica que la medida fija sea asignada sobre el contenedor (en este caso, selector ".project-details") que contiene a los elementos (en este caso, sus selectores hijos) que realmente están asignando algo visual dentro de su sitio web,... para que las medidas relativas se pongan solamente sobre éstos últimos en base a una medida fija de su preferencia o elección personal (esto en los casos en los que trabaje con una medida relativa "em"). Ya luego, visualmente, puede ir probando que medida relativa encaja mejor para cada selector hijo. Para que me entienda en contexto, sepa de entrada que el "em" asignado al selector hijo ".project-title" debe ser mayor a los "em" de los demás selectores hijos; pues, ".project-title" es el título de toda la parte textual del selector padre. 
+     
+     Luego, en viewports más pequeños, lo único que tendría que hacer entonces es cambiar la medida fija pasada al elemento padre, en nuestro caso ".project-details", y asignarle una más pequeña,... y listo!
+     */
+
+     .project-details{
+         font-size: 16px;
+     }
+
+     .project-title{
+         font-size: 1.5em;
+         margin-bottom: .3em;
+     }
+
+     .project-course{
+         font-size: .7em;
+
+     }
+
+     .project-date{
+        font-size: 1em;
+     }
+
+     .project-url{
+        font-size: 1em;
+     }
+
+     .project-description{
+        font-size: .8em;
+     }
+
+     /* También pasaremos a darle margenes relativos a los elementos hijos del selector ".project-details" */
+     
+    .project-course,
+    .project-date,
+    .project-url {
+
+        /* Por defecto, "1em" equivale a 16px,... pondremos entonces ".4em" que serían entonces, en medida fija, 6.4px */
+        margin: .3em 0;
+
+        /* Al ".project-title", que sólo tenía margen en el "bottom", se le ha pasado la misma medida de ".3em". */
+    }
+    
+
 }
 
 @media screen and (max-width: 480px){
+    .project-details{
+        font-size: 12px;
+    }
 
+    /* Acá pusimos en práctica esto: "... luego, en viewports más pequeños, lo único que tendría que hacer entonces es cambiar la medida fija pasada al elemento padre, en nuestro caso ".project-details", y asignarle una más pequeña,... y listo!" */
+
+    /* Ahora, no tuvimos necesidad de importar todos los elementos hijos de ".project-details" porque, simplemente, han heredado todas las medidas "em" anteriormente asignadas en la Media querie previa de "max-width: 767px".
+    */
 }
 
 @media screen and (max-width: 320px){
