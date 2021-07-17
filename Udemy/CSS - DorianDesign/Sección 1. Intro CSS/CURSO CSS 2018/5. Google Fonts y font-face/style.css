@@ -7,5 +7,8 @@ p{
 }
 
 @font-face{
-    
+    src: url();
+    font-family:;
+
+    /* Aquí se pasan los parametros "src: url()" & "font-family" luego de descargado y descompromida la tipografia que no posee "GoogleFonts",... para poder ser posteriomente usada.   */
 }
