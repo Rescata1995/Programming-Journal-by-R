@@ -264,8 +264,8 @@ figure{
 .experience{
     
     border: 1px solid #E5E7EA;
-    margin: 10px;
-    width: 479px;
+    margin: 1%;
+    width: 48%;
     border-radius: 8px;
 
     /* para el desbordamiento de la imagen ante su contenedor (border), usemos la propiedad-valor: "overflow: hidden".
@@ -290,7 +290,7 @@ figure{
 .experience img{
     /* De momento, se nos hizo necesario darle un margen negativo a la izquierda y al "top" de las imagenes debido a que, por defecto, se estaban sobresaliendo por el lado derecho del borde (y por encima hacia falta contenido) */
 
-    width: 480px;
+    width: 490px;
     height: 200px;
 
     /* La propiedad-valor "object-fit: cover" nos sirve para cambiar la proporción de la imagen de tal manera que quepa, de la manera más estetica posible, dentro de las mediciones y los tamaños arbitrarios que se le estén pasando (aunque el valor "cover" como tal se come un poco los costados de la imagen). Veamos. */
@@ -529,9 +529,12 @@ De hecho, la primera muestra de que intentamos "apilar" para ayudar al diseño r
 
 /* Ahora queremos que nuestros contenedores, ".container", tenga un tamaño variable; pues, de momento, tienen un tamaño fijo y nos ayudará bastante adaptar las "cajas" contenedoras del sitio web a las medidas variables del "viewport". Vamos allá!
 
-Pero, como mencionamos antes,... primero definamos, para los ".container", un máximo de ancho con la propiedad: "max-width",... para motivar a que los elementos tiendan a ajustarse un poco más siempre y evitar que se extiendan sobre todo lo ancho al tener la flexibilidad de hacerlo. PERO, OJO, el ancho del contenedor debe de ser lo suficientemente grande como para que quepen dentro todos sus elementos hijos,... si no es necesario que se apilen hacia abajo y si no se hace necesario hacer "scroll" horizontal. IMPORTANTE: En términos de anchura, para que quepen todos los elementos hijos del contenedor, dentro del contenedor, sin importar cuanto mida el contenedor ni cuantos elementos hijos tenga, es preferible definir el tamaño de los elementos hijos con porcentajes; pues, el porcentaje es una medida relativa que toma como referencia el tamaño de los elementos padres; es decir, los elementos hijos se adaptaptarían a su elemento padre de forma definitiva y en cualquiera que sea el contexto. ESTO EN SITUACIÓN: Por ejemplo, para el selector ".project" le tocará hacer que los dos elementos hijos que tiene ahí dentro, "project-imageContainer" & "project-details", quepen completamente dentro del ancho definido para su contenedor "project"; entonces, puede optar por darle un ancho a cada elemento hijo equivalente al 50% (de hecho, esto fue lo que hicimos en cada uno de los selectores de esos elementos hijos); así, en todos los casos que sea, podrá ver que los dos elementos hijos, "project-imageContainer" & "project-details", siempre tendrán espacio dentro del elemento padre, que sería el contenedor del selector ".project".
+Pero, como mencionamos antes,... primero definamos, para los ".container", un máximo de ancho con la propiedad: "max-width",... para motivar a que los elementos tiendan a ajustarse un poco más siempre y evitar que se extiendan sobre todo lo ancho al tener la flexibilidad de hacerlo. PERO, OJO, el ancho del contenedor debe de ser lo suficientemente grande como para que quepen dentro todos sus elementos hijos,... si no es necesario que se apilen hacia abajo y si no se hace necesario hacer "scroll" horizontal. IMPORTANTE: En términos de anchura, para que quepen todos los elementos hijos del contenedor, dentro del contenedor, sin importar cuanto mida el contenedor ni cuantos elementos hijos tenga, es preferible definir el tamaño de los elementos hijos con porcentajes; pues, el porcentaje es una medida relativa que toma como referencia el tamaño de los elementos padres; es decir, los elementos hijos se adaptarían a su elemento padre de forma definitiva y en cualquiera que sea el contexto. ESTO EN SITUACIÓN: Por ejemplo, para el selector ".project" le tocará hacer que los dos elementos hijos que tiene ahí dentro, "project-imageContainer" & "project-details", quepen completamente dentro del ancho definido para su contenedor "project"; entonces, puede optar por darle un ancho a cada elemento hijo equivalente al 50% (de hecho, esto fue lo que hicimos en cada uno de los selectores de esos elementos hijos); así, en todos los casos que sea, podrá ver que los dos elementos hijos, "project-imageContainer" & "project-details", siempre tendrán espacio dentro del elemento padre, que sería el contenedor del selector ".project". 
 
-Entonces, de momento nos estamos valiendo de dos herramientas: "max-width" y "flex-wrap: wrap".
+    Es también lo que debe suceder, por ejemplo, para los elementos hijos del selector ".experience-list"; es decir, lo que debe pasar para el selector ".experience". Tenga en cuenta que, aunque sean cuatro (4) elementos con el selector ".experience", sólo son dos (2) los que se ocupan por todo el ancho del viewport; es decir, debe repartir un 50% como máximo en el "width" del selector ".experience" (considerando también que las medidas adicionales del "box model", como "margin" y "padding", terminan afectando también sobre el "width" total del selector en cuestión). Entonces, quizas, como ya usted tenía un "margin" definido para el selector ".experience", es probable que le quite 1% al "width" para darselo al "margin", quedando los valores así,... "width": 48% y "margin": 1% (se deja 1% libre para no sobre-exigir al selector padre).
+
+
+Retomando los temas anteriores, entonces, de momento nos estamos valiendo de dos herramientas: "max-width" y "flex-wrap: wrap".
 
 "max-width" para ".container" &
 "flex-wrap: wrap" para los elementos "padres": ".header", ".hero", ".project", ".experience-list", ".contact" & ".footer"; que son, justamente, los elementos "padres" donde sus elementos "hijos" se extienden por todo lo ancho y generan "scroll" horizontal. En todo caso, ".container" también está heredando (inherit) la propiedad-valor: "flex-wrap: wrap"..., así lo hemos decidido para que el efecto "flex-wrap: wrap" afecte a los hijos de los hijos de cada elemento "padre" como ".header", ".hero", "experience-list", "contact" & ".footer".
@@ -682,6 +685,24 @@ Luego, ahora sí, configure el ".header" para cada Media Queri; posteriormente h
         /* Al ".project-title", que sólo tenía margen en el "bottom", se le ha pasado la misma medida de ".3em". */
     }
     
+    /* Ahora vamos a darle al section de "experiences".
+
+    /* Queremos, de entrada, que todos los elementos hijos del selector ".experience-list"; es decir, los ".experience", asuma cada uno todo el ancho disponible del viewport; es decir, que no quepen ya dos ".experience" por ancho; sino, sólo uno (1). Tal que así: */
+
+    .experience{
+        width: 98%;
+        /* Debe intuir porqué no se coloca un 100% */
+    }
+
+    /* Si se da cuenta, el selector que está dentro del selector ".experience" que contiene propiamente a la imagen del mismo (.experience-image), inicialmente tiene definido el tamaño de la imagen con medidas absolutas (con pixeles para ser más precisos) y no se ve estetico a la hora de hacer responsive... Queremos, entonces, que la imagen tome todo el ancho de su contenedor también; es decir, sería definir un "width" de 100% en el selector ".experience-image"... Sin embargo, tomaremos mejor como selector la siguiente expresión ".experience img"; pues, su especificad es mayor y, anteriormente, habíamos declarado las medidas absolutas de las imagenes de ".experience-image" con dicho selector. */
+
+    .experience img{
+        width: 100%;
+    }
+
+
+/* Ahora, si no quiero que se "amontonen" los elementos entre sí para que puedan caber todos dentro de la anchura disponible de la pantalla del navegador, irrespetandome la anchura definida inicialmente para cada uno de ellos, debo declarar otra propiedad-valor, la cuál es: "flex-shrink: 0", le estaríamos diciendo al navegador con ella que sea "0 encogible"; y que, a falta de espacio, entonces que el navegador me haga un "scroll" por todo lo ancho de la pantalla del navegador. El otro valor que puede asumir sería que sí sea "encogible"; es decir: "flex-shrink: 1"(que es el que viene definido por defecto con "flex"). Si se da cuenta, esto se define es sobre los elementos hijos, los que serán o quiere que sean afectados directamente con la propiedad-valor.
+    */
 
 }
 
@@ -694,6 +715,24 @@ Luego, ahora sí, configure el ".header" para cada Media Queri; posteriormente h
 
     /* Ahora, no tuvimos necesidad de importar todos los elementos hijos de ".project-details" porque, simplemente, han heredado todas las medidas "em" anteriormente asignadas en la Media querie previa de "max-width: 767px".
     */
+
+    /* Vamos a trabajar acá también el section de "experiences". Más especificamente queremos ajustar las medidas del "margin" de la caja (div) con clase = "experience-detail" (la sub-caja que contiene el contenido textual de las "experience"). Todo esto se hace con el animo de lograr algo visual y esteticamente mejor en viewports más pequeños. Por la misma razón, luego de salir del "margin", haremos algunos cambios en el "padding". */
+
+    .experience-detail{
+        margin: -40px 10px 10px 10px;
+    }
+
+    /* Le hemos pasado medidas absolutas, pero sería ideal que lo trabaje con medidas relativas. Podría considerar la medida relativa "em". Recuerde que si el tamaño de fuente del elemento padre; es decir, ".experience", nunca ha sido cambiado,... "em", entonces, equivale por defecto a 16px para su elemento hijo directo; es decir, para ".experience-detail". Lo mismo pasa con "rem". Veamos. */
+
+    .experience-detail{
+        margin: -2.5em 0.625em 0.625em;
+        
+        /* Vamos con el "padding" ahora. El "padding" que se le pasó al selector ".experience-detail", inicialmente, fue de 20px... Cambiemos esto. */
+        
+        padding: 1em;
+
+    }
+
 }
 
 @media screen and (max-width: 320px){
