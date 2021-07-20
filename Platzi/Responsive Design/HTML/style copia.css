@@ -94,7 +94,7 @@ h2 {
 }
 
 .project:hover{
-    box-shadow: 10px 10px 15px -5px black;
+    /* box-shadow: 10px 10px 15px -5px black; */
 }
 
 .project-course,
@@ -144,7 +144,7 @@ ul{
     margin: 0px 15px 0px 0px;
     padding: 0;
     list-style: none;
-    font-family: Raleway;
+    font-family: 'Raleway', sans-serif;
     font-size: 0.95rem;
     /* para que no tengan estilos ni formatos las listas */
 }
@@ -424,7 +424,7 @@ figure{
 }
 
 .form-email input{
-    font-family: Raleway;
+    font-family: 'Raleway', sans-serif;
     font-size: 0.7rem;
 
     /* Demosle un color al borde dibujado sobre el selector propio de la caja de texto */
@@ -503,7 +503,7 @@ figure{
 
     /* border: 1px solid red; */
 
-    /* Al poner un contenedor, toca volver a centrar y ampliar (por lo general, ya que los elementos dentro del "container" se contraen) */
+    /* Al poner un contenedor, toca volver a centrar y ampliar (esto por lo general, ya que los elementos dentro del "container" se contraen) */
 
     max-width: 1020px; /* ampliación */
     flex: 1;
@@ -517,8 +517,6 @@ figure{
     align-items: inherit;
     justify-content: inherit;
 
-    /* Emulando el "flex-wrap" del elemento padre "experience-list". 
-    */
     flex-wrap: inherit;
 }
 
@@ -575,7 +573,11 @@ Luego, ahora sí, configure el ".header" para cada Media Queri; posteriormente h
 /* Aplicación de Media Queries por medio de "Desktop First". */
 
 @media screen and (max-width: 1024px){
+    .container{
+        padding: 0 .5em;
 
+        /* Oxigenando un poco el ".container" para medidas de viewport inferiores a 1024px; de tal manera que, los elementos no se apiñen tanto hacia los costados. */
+    }
 }
 
 @media screen and (max-width: 767px){
@@ -730,9 +732,61 @@ Luego, ahora sí, configure el ".header" para cada Media Queri; posteriormente h
         /* Vamos con el "padding" ahora. El "padding" que se le pasó al selector ".experience-detail", inicialmente, fue de 20px... Cambiemos esto. */
         
         padding: 1em;
-
     }
 
+    /* Ahora, vamos a trabajar acá con el section "contact". Más especificamente, nos interesa redefinir el tamaño del "height" de dicho selector para que quepen bien, al menos lo suficiente (lo estricto), los elementos que contiene; ya que, parcialmente, no cabrían ante medidas de ancho del viewport muy pequeñas. Lo anterior lo lograremos dandole un valor de "auto" al "height" del selector ".contact". Veamos. */
+
+    .contact{
+        height: auto;
+
+        /* Ahora, para oxigenar un poco el espacio entre el "content" y el "border" del selector ".contact", sólo oxigenar hacia arriba y hacia abajo, podemos dar un poco de "padding". Probemos. */
+
+        padding: 1em 0;
+
+        /* Ahora, nos interesa centrar los elementos contenidos por el selector ".content" (elemento de bloque), así que le pasaremos una propiedad-valor "text-align: center" a este elemento padre. */
+
+        text-align: center;
+
+        /* Mas, no está funcionando el centrado; eso puede ser por varios motivos, sin embargo, el motivo de esta ocasión es porque tenemos, anteriomente, declarado para este selector ".contact" la propiedad-valor: "display: flex". Acontece que (y recuerde) la propiedad-valor "text-align: center" sólo funciona estrictamente sobre elementos de bloque o que emulan las caracteristicas de un elemento de bloque, tales como: "display: block" y "display: inline-block", NO "display: flex";
+        
+        "display: flex" mientras esté vigente dentro de un selector "padre" no va a permitir centrar los elementos "hijo", de dicho selector, con "text-align: center". */
+
+        display: block;
+    }
+
+    /* Faltaría centrar, de todos los elementos que están dentro del selector ".contact", el botón de "Send me"; es decir, el selector
+    ".form-box". Lo podríamos hacer declarando un "margin" tal que: "1em auto" (forma de hacer centrado como último recurso). */
+
+    .form-box{
+        margin: 1em auto;
+    }
+
+    /* Ahora, para darle un poco más de toque, podemos quitar el "margin-top" que por defecto tiene el título (h3) que está dentro de la clase ".form-email", tal que así: */
+
+    .form-email h3{
+        margin-top: 0;
+    }
+
+    /* Ahora, nos interesa trabajar con el "footer". La estrategia es más o menos la misma: centrar los elementos hijos del "footer"; pero, para eso, recuerde debe asegurarse que su "footer" sea un elemento de bloque; es decir, "display: block" y, posteriomente poder así sí, centrar los elementos hijos con "text-align: center". Veamos esto a ver si nos funciona.
+     */
+
+     .footer{
+         display: block;
+         text-align: center;
+     }
+
+     /* Ahora, se me generó "accidentalmente" un trazo completamente blanco que se me interpusó, horizontalmente, entre el cierre de mi selector ".contact" y el inicio de mi selector ".footer"; esto, generalmente pasa, porque acontece lo que se conoce como: "colapsado de margenes"; es decir, el "margin-botton" de un elemento superior tropieza con el "margin-top" del elemento inmediatamente inferior. De esto dimos una clase con Dorian Design, debe saber qué hacer. Lo ideal es que no le ponga "margin-top" al elemento inferior; sólo trabaje con el "margin-bottom" del elemento superior para empujar hacia abajo al elemento inferior en cuestión. 
+     
+     Sin embargo, recuerde bien que hay otras alternativas como: 
+     
+        1. "overflow: hidden;"
+        2. "padding-top: 0.1px;"
+        3. "border-top: 0.1px solid color;" Veamos.
+     */
+
+     .footer{
+         border: 0.1px solid transparent;
+     }
 }
 
 @media screen and (max-width: 320px){

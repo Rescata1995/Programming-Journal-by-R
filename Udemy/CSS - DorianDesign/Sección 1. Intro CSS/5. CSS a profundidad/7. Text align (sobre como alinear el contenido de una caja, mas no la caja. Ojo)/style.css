@@ -1,5 +1,5 @@
 /* 
-    text-align: es la propiedad que nos permite alinear horizontalmente el contenido de un elemento de BLOQUE (NO DE LINEA) siempre que el contenido como tal NO TENGA UN ANCHO DECLARADO (esta es la práctica ideal para evitar confusiones).
+    text-align: es la propiedad que nos permite alinear horizontalmente el contenido de un elemento de BLOQUE (NO DE LINEA) siempre que el contenido (o los contenidos del contenedor) como tal NO TENGA(N) UN ANCHO DECLARADO (esta es la práctica ideal para evitar confusiones).
 
     Acepta 4 posibles valores: 
         "text-align: left", alinea el contenido a la izquierda (por defecto cuando nosotros escribimos algo, ese algo suele estar alineado a la izquierda).
