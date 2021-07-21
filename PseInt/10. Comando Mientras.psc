@@ -2,7 +2,7 @@ Algoritmo Mientra_s
 	Mientras num < 5 Hacer
 		Escribir "Hola Mundo"
 		
-		
+		num <- num + 1;
 	Fin Mientras
 FinAlgoritmo
 
@@ -40,4 +40,12 @@ FinAlgoritmo
 
 // En pseint no es necesario inicializar en 0 directamente al incrementador, 
 // se puede hacer de forma indirecta dentro del propio dominio de los 
-// comandos de tipo "repetitivos"
+// comandos de tipo "repetitivos"; de hecho, a esto se le conoce como: 
+// Estructuras ciclicas indeterminadas. Los ciclos "mientras" y "repita" son 
+// de tipo indeterminadas; pues, son aquellas estructuras donde el número
+// de ejecuciones (iteraciones) no se conoce con exactitud y depende de la 
+// cantidad de las ejecuciones de una condición o variable dentro del ciclo.
+
+// Por otro lado, están las estructuras ciclicas determinadas (para): 
+// son aquellas estructuras donde el número de ejecuciones (iteraciones)
+// se conoce antes de ejecutar el ciclo.
