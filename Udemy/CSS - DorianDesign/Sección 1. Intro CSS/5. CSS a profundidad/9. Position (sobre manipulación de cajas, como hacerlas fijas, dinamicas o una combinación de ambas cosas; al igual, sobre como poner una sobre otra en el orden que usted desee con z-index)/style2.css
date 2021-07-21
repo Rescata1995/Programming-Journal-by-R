@@ -1,5 +1,5 @@
 /*
-    "fixed": El elemento perderá sus medidas y su espacio reservado. Si lo movemos usará el elemento html de referencia (incluso aunque esté siendo contenido antes por un elemento "padre" o superior a él: 1ra diferencia con "absolute"); y, además (aquí estaría la 2da diferencia con "absolute"), se quedará fijo en esa posición aunque hagamos scroll. Este recurso ya no se usa tanto como antes, desde que apareció "sticky", pero viene bien saber manejarlo porque "sticky" no soporta a navegadores antiguos; "fixed", sí.
+    "fixed": El elemento perderá sus medidas y su espacio reservado. Si lo movemos usará el elemento html de referencia (incluso aunque esté siendo contenido antes por un elemento "padre" o superior a él: 1ra diferencia con "absolute"); y, además (aquí estaría la 2da diferencia con "absolute"), se quedará fijo en esa posición, incluso aunque hagamos scroll (siempre se quedará en la misma posición del viewport y lo podrá ver "eternamente"). Este recurso ya no se usa tanto como antes, desde que apareció "sticky", pero viene bien saber manejarlo porque "sticky" no soporta a navegadores antiguos; "fixed", sí.
     */
 
     *{
