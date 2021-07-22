@@ -94,38 +94,38 @@
              /* Ademas, viene bien que recordar que para que funcione este método, la imagen debe ser un elemento de línea.  */
         }
 
-
      /*
 
-    4. Centrado vertical
-        Flexbox (La mejor opción)
-        vertical-align: middle. A la imagen y al texto
-*/
+    4. Centrado vertical. Hay una variedad de maneras de hacer centrado vertical; en lo posible, las mostraremos todas. Sin embargo, la mejor opción para centrar verticalmente es: "flexbox". El problema con "flexbox" es que todavía hay navegadores muy antiguos que no lo soportan; entonces, a veces, es necesario recurrir a formas de centrar, verticalmente, más genericas.
 
-/* .img{
-    max-width: 100%;
-     display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-.img-container{
-    text-align: center;
-    background: lavender;
-}*/
+        1er caso: Supongamos que queremos que el texto, que acompaña a nuestra imagen, se coloque de forma centrada con respecto al logo. Esto se logra por medio de la propiedad-valor: "vertical-align: middle". En principio, esa propiedad tiene por defecto un valor de: "baseline" (línea base); lo que quiere decir que el elemento, también hijo, que acompaña a la imagen (en este caso una LÍNEA de texto de tipo "span"), estaría centrada con respecto a la BASE; es decir, la línea (de texto) estaría centrada con respecto a la base,... & eso es justo lo que cambiamos con el valor pasado de "middle"; quiere decir entonces que, ahora la línea estaría centrada con respecto al medio. */
 
-/* .img-container img,
-.img-container span{
-    vertical-align: middle;
-}
-.img-container{
-    display: table;
-}
-.img-container span,
-.img-container p{
-    display: table-cell;
-} */
+        .contenedorvertical img,
+        .contenedorvertical span{
+            vertical-align: middle;
 
-/* .img-container{
-    display: flex;
-    align-items: center;
-} */
+            /* Si se fija, la propiedad fue aplicada directamente sobre los elementos contenidos; es decir, no sobre un selector padre, sino sobre los selectores propiamente correspondientes al texto y a la imagen (a ambos se les debe pasar dicha propiedad-valor por igual).
+            
+            Sin embargo, este recurso no es completamente autosuficiente; resulta que si tenemos un texto muy largo o, mas bien, si el ancho del viewport no es lo suficientemente amplio como para cubrir en una sola linea todo el texto en cuestión,... la 2da línea que se registre, de dicho texto, se centraría con respecto a la base y no con respecto al medio; lo cual, podría ser frustrante para nosotros. 
+            
+            Toca entonces hacer lo siguiente: Darle un "display: table" al elemento contenedor; el que contiene, en este caso, tanto a la imagen como al texto; es decir, a ".contenedorvertical"; y, además, darle un "display: table-cell", ahora sí, sobre uno de los elementos hijos; más precisamente, sobre el elemento hijo correspondiente al texto en cuestión, de selector: ".contenedorvertical span". Tal que así, veamos. */
+        }
+
+        .contenedorvertical{
+            display: table;
+        }
+
+        .contenedorvertical span{
+            display: table-cell;
+        }
+
+    /* 
+
+    5. Centrado vertical con flex. Para hacer exactamente lo mismo que lo anterior (incluso mejor porque se nos hace la imagen "responsive" de paso) sólo es necesario declarar dos propiedades-valor sobre el elemento contenedor; es decir, el selector padre que contiene tanto a la imagen como al texto; en este caso puntual sería: "contenedorflex". Esas propiedades-valor serían: "display: flex" & "align-items": center". Veamos.  */
+
+    .contenedorflex{
+        display: flex;
+        align-items: center;
+
+        /* Recuerde, esto no en todos los navegadores funciona... tiene que estar su navegador muy actualizado para que funcione completamente bien cada propiedad. */
+    }
