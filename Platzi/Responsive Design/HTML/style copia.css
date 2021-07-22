@@ -581,6 +581,60 @@ Luego, ahora sí, configure el ".header" para cada Media Queri; posteriormente h
 }
 
 @media screen and (max-width: 767px){
+    .hero{
+
+        /* Anteriormente el "hero" ya venía con un alto (height) fijo equivalente a 300px; ahora, nos interesa que, su alto (height) sea dinámico; más precisamente, que se adapte a lo que el navegador crea que sería lo más "útil" y/o "flexible" (generalmente al adaptarse a las dimensiones de sus propios elementos hijos, los que contiene; en este caso, los que contiene el selector ".hero"); eso lo lograremos con el valor "auto". */
+
+        height: auto;
+        }
+
+    h1{
+        /* Redefinamos tamaño de fuente. */
+
+        /* Siento que lo ideal sería que las medidas relativas, para definir el tamaño de una familia tipografica, deben ser guiadas por las medidas absolutas que hayan en el viewport más grande; de tal manera que, a las pantallas más chicas, se les guarde la misma proporción de tamaño que haya entre una familia tipografica y su contenedor (dentro de pantallas más grandes y que son definidas con medidas absolutas) en las pantallas más pequeñas para ser más precisos, justamente, en la configuración de sus medidas relativas. Es decir, por ejemplo, si en una pantalla 1024 de ancho, hay un tamaño de fuente ya determinada para la familia tipografica; es decir, digamos, de 20px; y, como tenemos que, supongamos, su elemento padre recibio una medida, para pasarle al tamaño de sus propias fuentes, de 40px; entonces, queda constituido que "1em" equivale a 40px; dicho eso, entonces, lo ideal sería pasarle una medida relativa al tamaño de las fuentes de "viewports" más pequeños y que, aca lo importante, guarde la misma proporción en términos del medidas que se vieron en un viewport de ancho de 1024px; es decir, que la proporción entre 20px y 40px se vea también en la definicion de las medidas relativas pasadas en viewports más peques.  Si tenemos, entonces, que se entiende 1em como 40px,... Cuantos "em" serían los necesarios si hablamos de 20px? R/ 0.5em (y esta tamaño sería proporcional y relativo para cualquier medida en el viewport). */
+
+        font-size: 2em;
+    }
+
+    .hero-image{
+        
+        /* Position: "Absolute". */
+
+        /* Ahora, para poder mover la imagen a cualquier lado; en este caso, nos interesa que la imagen quede POSICIONADA por debajo del contenido textual que está dentro del selector ".hero"; es decir, que quede por debajo del "h1" de ".hero"; y, adicionalmente, hacer que la imagen pierda sus medidas y su espacio reservado (para que ningun espacio quede vacio y sin ser aprovechado por otros),... tenemos que declarar sobre la imagen misma lo siguiente: Position: "Absolute". Veamos. Esta acción hará que el elemento "rebote" de afuera hacia dentro (es porque ya perderiamos el espacio reservado inicialmente para el elemento en cuestión; y, los demás elementos que le siguen, verticalmente hablando, cubririan esos espacios por defecto). */
+
+        position: absolute;
+
+        /* Ahora, como la idea es que las letras de "h1" queden por encima o sobre la imagen en cuestión, hay que establecer entonces un orden de apilamiento,... eso se logra por medio de la propiedad "z-index". Ahora, el "z-index" superior se sobrepone sobre el inferior. Veamos. */
+
+        z-index: 1;
+
+        /* Ahora, "max-width: 100%" para hacer la imagen responsive. */
+
+        max-width: 100%;
+
+        /* Y para que la imagen se estire hasta más no poder dentro de sus cuatro lados posibles, hagamos así: */
+
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        bottom: 0px;
+    }
+
+    .hero{
+
+        /* A los selectores posicionados con "absolute"; sus padres, como elementos contenedores, deben estar posicionados también (en este caso, ".hero"); de lo contrario, las posiciones que asuma el selector posicionado con "absolute" serán relativas al DOM del HTML y no precisamente a las dimensiones de su elemento contenedor propio,... por lo que ".hero" toca ser posicionado. Veamos. */
+
+        position: relative;
+        }
+
+    h1 {
+
+        /* Indispensable usar un "position" para poder trabajar con "z-index". */
+
+        position: relative;
+        z-index: 10;
+    }
+
     .header{
         padding-top: 4px;
         display: block;
