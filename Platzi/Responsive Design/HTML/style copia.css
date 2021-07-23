@@ -578,9 +578,7 @@ Luego, ahora sí, configure el ".header" para cada Media Queri; posteriormente h
 
         /* Oxigenando un poco el ".container" para medidas de viewport inferiores a 1024px; de tal manera que, los elementos no se apiñen tanto hacia los costados. */
     }
-}
 
-@media screen and (max-width: 767px){
     .hero{
 
         /* Anteriormente el "hero" ya venía con un alto (height) fijo equivalente a 300px; ahora, nos interesa que, su alto (height) sea dinámico; más precisamente, que se adapte a lo que el navegador crea que sería lo más "útil" y/o "flexible" (generalmente al adaptarse a las dimensiones de sus propios elementos hijos, los que contiene; en este caso, los que contiene el selector ".hero"); eso lo lograremos con el valor "auto". */
@@ -618,6 +616,10 @@ Luego, ahora sí, configure el ".header" para cada Media Queri; posteriormente h
         right: 0px;
         top: 0px;
         bottom: 0px;
+
+        /* Nos interesa una imagen "responsive", así que le daremos un "width" del 100%. */
+
+        width: 100%;
     }
 
     .hero{
@@ -625,6 +627,15 @@ Luego, ahora sí, configure el ".header" para cada Media Queri; posteriormente h
         /* A los selectores posicionados con "absolute"; sus padres, como elementos contenedores, deben estar posicionados también (en este caso, ".hero"); de lo contrario, las posiciones que asuma el selector posicionado con "absolute" serán relativas al DOM del HTML y no precisamente a las dimensiones de su elemento contenedor propio,... por lo que ".hero" toca ser posicionado. Veamos. */
 
         position: relative;
+
+        /* Ahora, si se fija bien, la imagen se está desbordando de su elemento contenedor; es decir, "se le sale de las manos" a nuestro ".hero", el elemento de tipo "section" que le contiene a la imagen ".hero-image". Una propiedad de CSS que nos ayuda para los desbordamientos es: "overflow", que significa estar "fuera del flujo"; entonces, como no queremos estar "fuera del flujo", le pasaremos un valor "hidden" al elemento padre (OJO, esta propiedad se aplica es sobre el elemento padre); entonces, el valor "hidden" es el que nos va a permitir que no se desborde el elemento hijo de un elemento padre/contenedor. Veamos. */
+
+        overflow: hidden;
+
+        /* Vamos a darle un poco más de respiro, oxigenar un poco más los espacios, al ".hero" al definirle un padding. */
+
+        padding: 2em;
+        
         }
 
     h1 {
@@ -634,7 +645,9 @@ Luego, ahora sí, configure el ".header" para cada Media Queri; posteriormente h
         position: relative;
         z-index: 10;
     }
+}
 
+@media screen and (max-width: 767px){
     .header{
         padding-top: 4px;
         display: block;
@@ -841,8 +854,41 @@ Luego, ahora sí, configure el ".header" para cada Media Queri; posteriormente h
      .footer{
          border: 0.1px solid transparent;
      }
+
+     h1{
+         /* Queremos un tamaño de fuente más proporcional con las dimensiones del viewport en la medida que éste se "achica", así que pasemos medidas relativas. */
+
+         font-size: 1.5em;
+
+        /* Me interesa, por ejemplo, situar más al costado izquierdo e inferior del ".hero" mi contenido textual; es decir, mi "h1" sin que pierda, el "h1", su espacio reservado. */
+
+        position: relative;
+
+        /* Lo mismo que decir 8px: 0.5em */
+        top: 0.5em;
+
+        /* Lo mismo que decir 7.2px: 0.45em */
+        right: 0.45em; 
+
+        /*  Si no queriamos personalizar tanto las medidas, sólo con padding hubiera sido necesario "oxigenar" (tal como lo hizo Leonidas, sin necesidad de dar "position: relative" y el resto de medidas). */
+     }
 }
 
 @media screen and (max-width: 320px){
+    h1{
+        /* Acá también queremos que el tamaño de fuente sea proporcional a las dimensiones del viewport en la medida que éste se "achica", así que se siguen pasando medidas relativas; sin embargo, como nunca se le pasó/definió un tamaño de fuente al elemento que contiene a nuestro "h1"; es decir, al ".hero" (elemento padre), acontece que "em", en cualquiera que sean las medidas del viewport (más precisamente del ".hero"), siempre será 16px si se define así para "h1"; es decir, realmente el tamaño de fuente no disminuye si bajamos el ancho del ".hero" de 480px a 320px: siempre será equivalente a 16px.
+        
+        Qué se podría hacer entonces? Lo que se podría hacer es definir la cantidad de "em", para un ancho del ".hero" de 320px, que sea correspondiente con la disminución de anchura de 480px a 320px del mismo ".hero" justamente (tomando como base que "1.5em" en el tamaño de fuente es correspondiente a 480px de anchura del ".hero"). Lo anterior se podría resolver por medio de una regla de tres simple; es decir, si tenemos que para un ancho del ".hero" de 480px el tamaño de fuente es de "1.5em", ¿cuantos "em" serían equivalentes, proporcionalmente hablando, para una anchura del ".hero" de 320px? El resultado da: 1em */
+
+        font-size: 1em;
+
+        /* Lo mismo que decir 19,2px: 1.2em */
+        top: 1.2em;
+
+        /* Lo mismo que decir 11.2px: 0,7em */
+        right: 0.7em; 
+    }
+
+    /* Considere aplicar algún recurso de "backgroun" sobre la imagen para alejarla un poco y que se oxigene en relación al contenido textual. */
 
 }

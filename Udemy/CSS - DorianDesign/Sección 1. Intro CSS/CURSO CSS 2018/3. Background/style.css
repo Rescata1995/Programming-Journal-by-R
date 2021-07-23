@@ -39,7 +39,7 @@ body{
 
 Entonces, para este caso, "background-size" tiene la labor de establecer el tamaño de la imagen de fondo; esta propiedad puede asumir 4 valores posibles para definir tamaños de fondo; tal que así:
 
-    1. x [y];, "x" e "y" son valores numéricos pasados (de elección propia), donde "x" establece la medida para el eje de las "x" e "y" establece la medida para el eje de las "y". El eje "y" es opcional y si no se coloca se calcula automaticamente. Se define con valores numéricos absolutos (en términos de pixeles) o también con términos porcentuales; para propositos de "responsive" (lo ideal), use siempre términos porcentuales para definir el "size" de esta manera.
+    1. x [y];, "x" e "y" son valores numéricos pasados (de elección propia), donde "x" establece la medida para el eje de las x e "y" establece la medida para el eje de las y. El eje "y" es opcional y si no se coloca se calcula automaticamente. Se define con valores numéricos absolutos (en términos de pixeles) o también con términos porcentuales; para propositos de "responsive" (lo ideal), use siempre términos porcentuales para definir el "size" de esta manera.
 
     2. "auto";, son las medidas por defecto de la propiedad "background-size" (es como no poner nada).
 
