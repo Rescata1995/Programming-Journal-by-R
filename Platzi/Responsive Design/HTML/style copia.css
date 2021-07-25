@@ -296,6 +296,8 @@ figure{
     /* La propiedad-valor "object-fit: cover" nos sirve para cambiar la proporción de la imagen de tal manera que quepa, de la manera más estetica posible, dentro de las mediciones y los tamaños arbitrarios que se le estén pasando (aunque el valor "cover" como tal se come un poco los costados de la imagen). Veamos. */
 
     object-fit: cover;
+    object-position: 0px -15px;
+
 }
 
 /* Ahora, lo que queremos hacer es darle margenes al contenido textual que está dentro de cada "experience"; es decir, queremos manipular por separada la clase "experience-detail" y darle sus respectivos margenes con respecto a su elemento o selector padre "experience" */
@@ -518,6 +520,23 @@ figure{
     justify-content: inherit;
 
     flex-wrap: inherit;
+}
+
+.html-video{
+
+    /* La diferencia entre "max-width: 100%" & "width: 100%" es que, si bien "max-width: 100%" se adapta al 100% de su elemento contenedor, tiene un límite (en términos de anchura). El límite tiene que ver con el límite propio, del ancho establecido, que tiene originalmente el elemento en cuestión (el elemento propio, no el elemento padre o contenedor). 
+    
+    El ancho del elemento nunca será superior al propio ancho pasado o establecido para él. En cambio, con la propiedad-valor: "width: 100%" no se respeta casi nada el ancho que tenga pasado el elemento; pues, no le importa mucho el tamaño que tenga el navegador, en términos de anchura, y querrá seguir ampliandose. 
+    */
+
+    /* max-width: 100%; */
+    width: 100%;
+
+    /* Con la propiedad-valor "height: auto" se anularía el alto inicialmente pasado al elemento del video; de tal manera que, el "alto" del elemento, termine adaptadose automaticamente al alto de su elemento padre o contenedor. */
+
+    height: auto;
+
+    /* Acá, en el selector ".html-video", es que le debe pasar unas medidas responsive al video importado; por lo general, si el elemento del video ya está siendo contenido por un elemento padre, sólo es necesario declarar las propiedades-valor: "max-width: 100%" & "height: auto" propiamente dentro del elemento del contenido embebido; es decir, dentro del selector del video (para este caso). */
 }
 
 /* Lo primero que haremos, como responsive, será apilar las cosas en la medida que tengan menos espacio disponible (en la medida que se "achique" la página); mas precisamente, la estrategia que se aplicará, es que los elementos se vayan apilando uno debajo del otro. Se empieza de arriba hacía abajo. 
