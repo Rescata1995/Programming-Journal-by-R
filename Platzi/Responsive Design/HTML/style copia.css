@@ -67,7 +67,7 @@ h2 {
 .hero-image{
     object-fit: cover;
 
-    /* Lo que hace es arreglar o ponernos las dimensiones originales de nuestra imagen */
+    /* La función de esta propiedad está muy bien explicada en el apartado del curso de CCS de Dorian Designs que se llama: "Object-fit, object-position & filter()" en la carpeta de "6. Listas, tablas, imagenes,..." */
 }
 
 .portfolio {
@@ -573,6 +573,13 @@ Luego, ahora sí, configure el ".header" para cada Media Queri; posteriormente h
 /* Aplicación de Media Queries por medio de "Desktop First". */
 
 @media screen and (max-width: 1024px){
+
+    .hero-image{
+        object-position: 0px -210px;
+
+        /* Con la propiedad "object-position", que se aplica directamente sobre el elemento de interés que se desea afectar; en nuestro caso, sobre el elemento propio de la imagen (y sólo puede afectar a imagenes y videos), lo que hace es determinar qué posición del contenido embebido, una imagen, se podrá visualizar cuando la imagen en cuestión no se puede mostrar de forma completa sobre su propio contenedor; es decir, sobre sus propias medidas en terminos de anchura y altura. */
+    }
+
     .container{
         padding: 0 .5em;
 
@@ -648,6 +655,12 @@ Luego, ahora sí, configure el ".header" para cada Media Queri; posteriormente h
 }
 
 @media screen and (max-width: 767px){
+
+    .hero-image{
+        object-position: 0px -150px;
+    }
+
+
     .header{
         padding-top: 4px;
         display: block;
@@ -776,6 +789,10 @@ Luego, ahora sí, configure el ".header" para cada Media Queri; posteriormente h
 }
 
 @media screen and (max-width: 480px){
+    .hero-image{
+        object-position: initial;
+    }
+
     .project-details{
         font-size: 12px;
     }
@@ -875,6 +892,11 @@ Luego, ahora sí, configure el ".header" para cada Media Queri; posteriormente h
 }
 
 @media screen and (max-width: 320px){
+
+    .hero-image{
+        object-position: 0px -80px;
+    }
+
     h1{
         /* Acá también queremos que el tamaño de fuente sea proporcional a las dimensiones del viewport en la medida que éste se "achica", así que se siguen pasando medidas relativas; sin embargo, como nunca se le pasó/definió un tamaño de fuente al elemento que contiene a nuestro "h1"; es decir, al ".hero" (elemento padre), acontece que "em", en cualquiera que sean las medidas del viewport (más precisamente del ".hero"), siempre será 16px si se define así para "h1"; es decir, realmente el tamaño de fuente no disminuye si bajamos el ancho del ".hero" de 480px a 320px: siempre será equivalente a 16px.
         
@@ -889,6 +911,6 @@ Luego, ahora sí, configure el ".header" para cada Media Queri; posteriormente h
         right: 0.7em; 
     }
 
-    /* Considere aplicar algún recurso de "backgroun" sobre la imagen para alejarla un poco y que se oxigene en relación al contenido textual. */
+    /* Considere aplicar algún recurso de "object-position" sobre la imagen para alejarla un poco y que se oxigene en relación al contenido textual. */
 
 }

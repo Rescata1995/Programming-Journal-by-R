@@ -1,0 +1,88 @@
+/* Con la propiedad "Object-fit" lo que se pretende es que una imagen (o varias) se ajuste(n), por motivos propios de un sitio web, a unas medidas deseadas en altura y anchura declaradas,... pero sin que se pierdan las proporciones de la o de las imagenes en cuestión (evita que se deformen).  */
+
+/* En teoria...
+
+    "object-fit": se usa para especificar cómo se debe cambiar el tamaño de una "img" o "video" para que se ajuste a su contenedor (de que manera se ajustaría); pero, sin hacer uso del "max-width: 100%": de tal manera que se ajuste al contenedor con más opciones y libertad para trabajar con la imagen o video. (en ambos la propiedad funciona igual).
+
+        "fill": valor por defecto de "object-fit" (por lo general es el valor que por defecto deforma a la imagen cuando le pasamos, a dicha imagen, un ancho y alto en cuestión).
+
+        "contain": El contenido, la imagen, se ajustará hasta donde pueda visualizarse de forma completa y sin deformarse, ¿a costo de que? Pues que la imagen, muy generalmente, nunca llegará a cubrir todo el contenedor de la misma (de sus propias medidas pasadas en términos de anchura y altura).
+
+        "cover": El contenido, la imagen, se ajustará hasta rellenar de forma horizontal y vertical todo su contenedor (sus propias medidas pasadas en términos de anchura y altura) y sin deformarse, ¿a costo de que? Pues que la imagen, muy generalmente, no podrá visualizarse completamente (se recorta para que pueda "caber" dentro de las medidas pasadas).
+
+        "none": El contenido, la imagen, no se redimensiona y mantiene su tamaño original;sin embargo sólo muestra un trozo, de la imagen misma, que sí pueda caber dentro de las dimensiones especificadas.
+
+        "scale-down": Selecciona el menor de la comparación entre "none" y "contain". Si "none" es más pequeño que "contain", se aplica "none"; de lo contrario, se aplica "contain".
+
+    Veamos.
+    */
+
+    .img{
+        width: 250px;
+        height: 450px;
+        background-color: red;
+
+        object-fit: fill;
+
+        /* No pasa nada, sigue la imagen igual */
+
+        object-fit: contain;
+
+        object-fit: cover;
+
+        /* Esta es la propiedad que más se suele utilizar a la hora de trabajar con una galeria (en un sitio web, por ejemplo) */
+
+        object-fit: none;
+
+        /* No es recomendable trabajar este valor con imagenes muy grandes; pues, no se alcanzaría a apreciar, ni siquiera, de que trata la imagen en sí. Quizás con imagenes muy pequeñas se pudiera conseguir efectos "chulos". */
+
+        object-fit: scale-down;
+    }
+
+/*
+    "objet-position": Le da la facultad de definir la posición de la imagen, sobre el eje de las x e y, cuando ésta no se puede mostrar de forma completa en el contenedor. Por lo general, es un buen complemento a la propiedad-valor: "object-fit: cover" (con "none" también). Adicionalmente, hay que decir que, "objet-position" puede asumir dos (2) valores o uno. Si son dos valores, el 1ro sería para la posición de la imagen sobre el eje de las "x" y 2do valor sería para la posición de la imagen sobre el eje de las "y" (Hay casos en los que uno de los dos ejes, contra todos los pronosticos, sí pudo ocupar todo el espacio de la medida original de la imagen, ya sea el eje de las "x" o el eje de las "y"; en ese caso, no necesitaría pasarle nada a ese eje en concreto). Los valores "top" & "bottom" sería para colocarlos sobre el eje de las "y" & "left" & "right" sería para colocarlos sobre el eje de las "x". Al igual, es una propiedad que puede recibir todo tipo de medida, tanto relativa como absoluta. Veamos.
+*/ 
+
+    .img{
+        object-fit: cover;
+        object-position: left;
+
+        /* Apliquemos un truquillo! */
+
+        transition: object-position 5s;
+    }
+
+    .img:hover{
+        object-position: right;
+    }
+
+    /* Lo que hemos hecho es desplazar la imagen, de izquierda (object-position: left) a derecha (object-position: right) y en términos de 5 segundos (transition: object-position 5s), toda vez que el ratón pasa por encima de la imagen en cuestión (":hover") */
+
+/* Vamos a otra propiedad: "filter" (Sí, los mismos que se suelen -o se solían- poner en Instagram). Los "filter" (filtros), además del nombre del filtro, reciben como valor el grado de intensidad para el filtro en cuestión; ahora, dicho valor, se expresa en términos de alguna unidad de medida que viene, por defecto, definida con el tipo de filtro que vaya a usar (que también es definido como valor). La lógica es más o menos así: a mayor unidad de medida, mayor grado de intensidad del filtro; a menor unidad de medida, menor grado de intensidad... Veamos los posibles valores que pueda asumir la propiedad "filter"; es decir, los tipos de filtros y sus unidades de medida.
+
+/*
+    blur(px): desenfoca la imagen (su unidad de medida son los pixeles).
+
+    brightness(decimales y enteros): Ajusta el brillo de la imagen, siendo el "1" el brillo original que, por defecto, viene con ella. De "0" a "1" se da oscuridad y del "1" a "n" se da sobre-exposición (la pone completamente blanca en última instancia).
+
+    contrast(%): Ajusta el contraste de la imagen siendo 1 el original. De 0 es negro y de 1 a n dan más contraste
+    drop-shadow(h-shadow v-shadow blur (spread) color): Aplica una sombra paralela a la imagen
+    grayscale(%): Convierte la imagen a escala de grises, 0 es el original y 1 sería blanco y negro completamente
+    hue-rotate(deg): Añade matiz de color a la imagen. Se da un valor en grados según la rueda cromática. El valor máximo es 360deg
+    invert(%): Invierte el color de la imagen. Saca un negativo. 0 es el valor por defecto y 1 es totalmente invertida
+    opacity(%): Controla la opacidad de la imagen. 1 es el valor por defecto y 0 es transparente
+    saturate(%): Controla la saturación de color de la imagen. 1 es el valor por defecto, 0 es totalmente desaturada y por encima de 1 se sobresatura
+    sepia(%): Aplica un tono sepia a la imagen. 0 es el valor por defecto y 1 es totalmente sepia
+    url() - Buscar información
+*/
+
+.img-2{
+    max-width: 100%;
+}
+
+.img-2:hover{
+    filter: blur(10px);
+    filter: brightness(2);
+}
+
+/* Por lo general, los efectos visuales que se pretenden lograr con "filter" se aplican por medio de la pseudo-clase ":hover", ¿en qué sentido? Pues, que el contenido embebido originalmente reciba el efecto del filtro en cuestión; y que, posteriomente, al pasar el mouse por encima de él, el efecto del filtro se ha suprimido.  */
