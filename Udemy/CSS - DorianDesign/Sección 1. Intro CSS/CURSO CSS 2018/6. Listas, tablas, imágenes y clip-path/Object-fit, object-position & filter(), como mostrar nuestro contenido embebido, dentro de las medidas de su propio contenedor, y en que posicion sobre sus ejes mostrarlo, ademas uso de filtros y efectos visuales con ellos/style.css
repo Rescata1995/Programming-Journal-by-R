@@ -65,14 +65,36 @@
 
     brightness(decimales y enteros): Ajusta el brillo de la imagen, siendo el "1" el brillo original que, por defecto, viene con ella. De "0" a "1" se da oscuridad y del "1" a "n" se da sobre-exposición (la pone completamente blanca en última instancia).
 
-    contrast(%): Ajusta el contraste de la imagen siendo 1 el original. De 0 es negro y de 1 a n dan más contraste
-    drop-shadow(h-shadow v-shadow blur (spread) color): Aplica una sombra paralela a la imagen
-    grayscale(%): Convierte la imagen a escala de grises, 0 es el original y 1 sería blanco y negro completamente
-    hue-rotate(deg): Añade matiz de color a la imagen. Se da un valor en grados según la rueda cromática. El valor máximo es 360deg
-    invert(%): Invierte el color de la imagen. Saca un negativo. 0 es el valor por defecto y 1 es totalmente invertida
-    opacity(%): Controla la opacidad de la imagen. 1 es el valor por defecto y 0 es transparente
-    saturate(%): Controla la saturación de color de la imagen. 1 es el valor por defecto, 0 es totalmente desaturada y por encima de 1 se sobresatura
-    sepia(%): Aplica un tono sepia a la imagen. 0 es el valor por defecto y 1 es totalmente sepia
+    contrast(decimales y enteros): Ajusta el contraste de la imagen, siendo el "1" el brillo original que, por defecto, viene con ella. El "0" es gris y de "1" a "n" dan más contraste.
+
+    drop-shadow: Aplica una sombra paralela a la imagen (lo que hace es crear sombras). Recibe varios valores, entre sus parentesis, en el siguiente orden: 
+        
+        "h-shadow": se refiere al valor de la sombra que afecta a lo largo del horizonte, de sus lados (hasta donde la posiciona en términos de pixeles).
+        
+        "v-shadow": se refiere al valor de la sombra que afecta a lo largo de lo vertical, de sus lados (hasta donde la posiciona en términos de pixeles).
+        
+        "blur": se refiere al valor del desenfoque de la sombra (también se mide en términos de pixeles). 
+        
+        "": se refiere al valor de la extensión de la sombra (no muy soportado por los navegadores).
+
+        "color": se refiere al color pasado a la sombra.
+
+        Es decir, su propiedad-valor estaría definida de la siguiente forma: 
+        
+        filter: drop-shadow(h-shadow v-shadow blur spread color);
+
+    grayscale(%): Convierte la imagen a escala de grises, va de "0" a "1"; siendo el "0" el color original que, por defecto, viene con ella (te deja la foto igual),... y "1" sería la foto completamente en blanco y negro.
+    
+    hue-rotate(0-360 grados): Añade matiz de color a la imagen. Se da un valor en grados según la rueda cromática (busquela en Google si no la recuerda o si no conoce la posición de sus colores). El valor máximo es "360deg", va desde "0deg" a "360deg". Si bien es cierto que es un filtro que te pone un color por encima, hay que tener en cuenta que los propios colores de la foto también afectan.
+
+    invert(%): Invierte el color de la imagen. Saca un negativo. Siendo el "0" el color original que, por defecto, viene con la foto (te la deja igual) y "1" es la foto totalmente invertida. "0.5" es el punto intermedio, por lo tanto es un gris.
+
+    opacity(%): Controla la opacidad de la imagen. Siendo "1" el valor que representa una opacidad totalmente nula; es decir, la opacidad nula que por defecto viene con todas las fotos (sin opacidad alguna),... y "0" es la foto completamente transparente. Va de "1" a "0".
+
+    saturate(decimales y enteros): Controla la saturación de color de la imagen. "1" es el valor por defecto (sin saturación), "0" es la imagen totalmente desaturada; y, adicionalmente, por encima de "1" se sobresatura.
+
+    sepia(%): Aplica un tono sepia a la imagen. Siendo el "0" el color original que, por defecto, viene con la imagen (te la deja igual) y "1" es totalmente sepia. Va de "0" a "1".
+
     url() - Buscar información
 */
 
@@ -83,6 +105,15 @@
 .img-2:hover{
     filter: blur(10px);
     filter: brightness(2);
+    filter: contrast(2);
+    filter: drop-shadow(20px 5px 5px blue);
+    filter: grayscale(1);
+    filter: hue-rotate(300deg);
+    filter: invert(0.9);
+    filter: opacity(0.7);
+    filter: saturate(2);
+    filter: sepia(1);
+
 }
 
 /* Por lo general, los efectos visuales que se pretenden lograr con "filter" se aplican por medio de la pseudo-clase ":hover", ¿en qué sentido? Pues, que el contenido embebido originalmente reciba el efecto del filtro en cuestión; y que, posteriomente, al pasar el mouse por encima de él, el efecto del filtro se ha suprimido.  */
