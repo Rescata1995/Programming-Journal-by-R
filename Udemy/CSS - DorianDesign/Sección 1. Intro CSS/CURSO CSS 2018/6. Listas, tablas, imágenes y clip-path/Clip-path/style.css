@@ -1,18 +1,23 @@
 /*
-    clip-path: Es una máscara que oculta partes de una caja
-        circle(): dibuja un círculo, puede tener una medida fija, circle(100px) o podemos especificar un centro con at, circle(100px at medidaX medidaY | palabrasClaveX palabrasClaveY)
-        ellipse(): dibuja una elipse, funciona igual que el círculo, pero en este caso tenemos que especificar 2 centros, el horizontal y el vertical
-        inset(): dibuja un borde transparente por dentro de la caja
-            inset(all| Y X | top X bottom | top left bottom right)
-            existe la opción de redondear las esquinas, para ello después de los valores de inset pondremos round
-            inset(*** round all | 
-                top-left & bottom-right top-right & bottom-left |
-                top-left top-right & bottom-left bottom-right
-                top-left top-right bottom-right bottom-left
-            )
-        polygon(): Especifica una serie de puntos (mínimo 3) para definir la zona visible siendo el punto 0 0 la esquina superior izquierda
+    clip-path: Es una máscara que oculta partes de una caja (Por lo general es para esto su uso; por lo que, muchas veces, esta propiedad se aplica sobre un "div" hijo, o contenido, por otro "div"; es decir, por un "div" padre). Puede recibir 4 valores.
+
+        1. circle(): dibuja un círculo en el centro (por defecto). Puede tener una medida fija; por ejemplo, "circle(100px)": que se encargaría de dibujar un circulo, por defecto en todo el centro, de tamaño de 100px (recuerde, es sobre todo el centro su posicionamiento original por defecto),... Sin embargo, si usted desea, puede cambiar o definir de manera personal dónde posicionar el circulo; es decir, para que no esté siempre condicionado a ubicarse en todo el centro de su elemento contenedor; esto último se hace por medio del atributo "at". "at" se vale de dos valores posibles: el 1RO pasado define la posición del circulo sobre el eje de las X &, adicionalmente, el 2DO pasado definiría la posición del circulo, pero ahora, sobre el eje de las Y. Si en caso tal a "at" se le pasa sólo un valor (que sería el de las X), el otro valor asume (que sería el de las Y) la posición de "centro"; es decir, el eje X tiene prioridad sobre el eje Y. La única excepción a la regla anterior es que, si solo define un parametro para "at"; por ejemplo, "top" o "bottom", la prioridad la tendrá el eje de la Y; en cambio, si sólo define "right" o "left" en el "at", como unico parametro pasado a "at", la prioridad la tendrá (como generalmente ocurre) el eje de las X.
+
+        Los valores que pueden recibir los ejes de X e Y, del atributo "at", pueden ser numericos: de cualquier tipo de medida relativa o absoluta; o bien, pueden ser medidas "textuales". Tipo: "top", "left", "right" o "bottom".
+
+        2. ellipse(): dibuja una elipse en el centro (por defecto); funciona igual que el círculo,... a excepción de algo; en este caso, tenemos que especificar 2 "centros": el horizontal y el vertical, en ese orden. Si no le pasa los 2 "centros", el valor "ellipse()" no funciona. Por lo demás, la lógica que hay detrás del atributo "at" es exactamente igual.
+
+        3. inset(): dibuja cuatro bordes (tipo "rectos", conforman un cuadrado) transparente por dentro de la caja, se pueden especificar sus valores exactamente igual a como lo hace el modelo de caja:
+
+            inset(all -un valor- | Y X -dos valores- | top X bottom -tres valores- | top left bottom right -los cuatro valores- ).
+
+        Existe la opción de redondear las esquinas; esto último se logra por medio del atributo "round"; el cual, se coloca inmediatamente después de definir las medidas de los bordes de cada lado; es decir, después de las medidas pasadas a "inset". "Round" también se puede valer de 4 valores para definir, para cada lado, qué tipo de "redondeo" desea (sus valores posibles para cada lado se definen, también, como lo hace el modelo de caja).
+
+        4. polygon(): Especifica una serie de puntos (mínimo 3) para definir la zona visible siendo el punto 0 0 la esquina superior izquierda
         los puntos se especifican por parejas de ejeX y ejeY separados por comas
-        polygon(0 0, 100% 0, 0 100%)
+        polygon(0 0, 100% 0, 0 100%). "polygon()" es el valor más usado.
+
+
         Generador de clip-path: https://bennettfeely.com/clippy/
 */
 
@@ -24,21 +29,27 @@ body{
     width: 400px;
     height: 400px;
     background: white;
+
     margin-left: auto;
     margin-right: auto;
+
+    /* Estas dos últimas propiedades-valor, como puede observar, están definiendo la centralidad sobre el elemento padre o contenedor; es decir, sobre "box",... no confundir este "centro" con la centralidad que se pueda lograr, propiamente, en el elemento hijo o contenido; pues, esos otros "centros" se están logrando es con la propiedad: "clip-path" y en el selector ".box-item". */
 }
 
-.box__item{
+.box_item{
     background: lightcoral;
     width: 400px;
     height: 400px;
-    /* clip-path: circle(100px at left) */
-    /* clip-path: ellipse(100px 50px at left top) */
-    /* clip-path: inset(20px round 20px 50px 100px 150px) */
-    clip-path: polygon(0% 0%, 0% 100%, 25% 100%, 25% 25%, 75% 25%, 75% 75%, 25% 75%, 25% 100%, 100% 100%, 100% 0%);
-    transition: clip-path .5s;
+    clip-path: circle(100px at bottom left);
+
+    clip-path: ellipse(50px 100px at right);
+
+    clip-path: inset(20px round 20px 50px 100px 150px);
+
+    /* clip-path: polygon(0% 0%, 0% 100%, 25% 100%, 25% 25%, 75% 25%, 75% 75%, 25% 75%, 25% 100%, 100% 100%, 100% 0%);
+    transition: clip-path .5s; */
 }
 
-.box:hover > .box__item{
+/* .box:hover > .box__item{
     clip-path: polygon(0% 0%, 0% 100%, 10% 100%, 10% 10%, 90% 10%, 90% 90%, 10% 90%, 10% 100%, 100% 100%, 100% 0%);
-}
+} */
