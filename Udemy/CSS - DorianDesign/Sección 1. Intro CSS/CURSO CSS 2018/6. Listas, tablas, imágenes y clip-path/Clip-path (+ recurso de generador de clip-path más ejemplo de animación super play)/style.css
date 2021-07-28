@@ -13,10 +13,16 @@
 
         Existe la opción de redondear las esquinas; esto último se logra por medio del atributo "round"; el cual, se coloca inmediatamente después de definir las medidas de los bordes de cada lado; es decir, después de las medidas pasadas a "inset". "Round" también se puede valer de 4 valores para definir, para cada lado, qué tipo de "redondeo" desea (sus valores posibles para cada lado se definen, también, como lo hace el modelo de caja).
 
-        4. polygon(): Especifica una serie de puntos (mínimo 3) para definir la zona visible siendo el punto 0 0 la esquina superior izquierda
-        los puntos se especifican por parejas de ejeX y ejeY separados por comas
-        polygon(0 0, 100% 0, 0 100%). "polygon()" es el valor más usado.
+        4. polygon(): Podemos construir casi que cualquier poligono que se nos ocurra; pero, sin poder hacer curvas. Es decir, tiene que ser un poligono con los angulos sin curvas. Al poligono como tal, como minimo, se le pasa tres puntos para cada vertices; esto es así porque el poligono más simple que existe es un triangulo (que tiene tres lados con tres vertices). Sumado a lo anterior, como estamos trabajando con dos ejes, X e Y; quiere decir que, para cada vertice, hay que definir una pareja de medidas con los que se posicione cada vertice en cuestión. Cada vertice se define pasandole valores (porcentales a excepción del 0) tanto para el eje de las X como para el eje de las Y. El eje X se pasa de primero y el eje Y se pasa de segundo.
+        
+        Por ejemplo, para que se ubique, se podría entender al punto (0,0) como la esquina superior izquierda; es decir, ahí se situaría entonces un vertice.
 
+        Importante: Los puntos se especifican por parejas de ejeX e ejeY, separados por comas. 
+        
+        Por ejemplo: 
+        polygon(0 0, 100% 0, 0 100%). 
+        
+        "polygon()", entre los 4, es el valor más usado de "clip-path".
 
         Generador de clip-path: https://bennettfeely.com/clippy/
 */
@@ -46,10 +52,18 @@ body{
 
     clip-path: inset(20px round 20px 50px 100px 150px);
 
-    /* clip-path: polygon(0% 0%, 0% 100%, 25% 100%, 25% 25%, 75% 25%, 75% 75%, 25% 75%, 25% 100%, 100% 100%, 100% 0%);
-    transition: clip-path .5s; */
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    /* un triangulo */
+
+    clip-path: polygon(25% 25%, 75% 25%, 75% 75%, 25% 75%); /* un cuadrado */
+
+
+    /* Ahora, extra, un ejemplo de animación con "clip-path" haciendo uso de "transition" & y de la pseudo-clase ":hover". */
+
+    clip-path: polygon(0% 0%, 0% 100%, 25% 100%, 25% 25%, 75% 25%, 75% 75%, 25% 75%, 25% 100%, 100% 100%, 100% 0%);
+    transition: clip-path .5s; 
 }
 
-/* .box:hover > .box__item{
+    .box:hover > .box_item{
     clip-path: polygon(0% 0%, 0% 100%, 10% 100%, 10% 10%, 90% 10%, 90% 90%, 10% 90%, 10% 100%, 100% 100%, 100% 0%);
-} */
+} 
