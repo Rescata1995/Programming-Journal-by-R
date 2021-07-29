@@ -1,0 +1,93 @@
+/*
+    Colores. Sobre cómo aplicar colores a una página web y las distintas formas que tenemos de asignar esos colores a los elementos.
+
+        Hay varias formas de dar color a los elementos: 
+
+            - Palabras clave (keywords): cuando se asigna el color con las palabras en inglés. Aquí un recurso que nos muestra un montón de colores y sus distintas formas de ser llamados: 
+
+                https://developer.mozilla.org/en-US/docs/Web/CSS/color_value
+
+            */
+
+            .box--color{
+                color: blueviolet;
+
+                /* Con la propiedad "color" se le asigna el color directamente al contenido (content) del elemento; por ejemplo, al texto. */
+
+                background-color: aquamarine;
+
+                /* Con la propiedad "background-color" se le asigna el color, no al contenido del elemento, sino al fondo; es decir, en este caso, lo que estaría por debajo del texto.  */
+            }
+            
+            /*
+
+            - RGB (Red, Green, Blue): es una función de color que recibe 3 valores separados por comas, siendo 0 el mínimo y 255 el máximo. Por ejemplo, "rgb(0,0,0)" sería el equivalente a un negro total; y, por otro lado, "rgb(255,255,255)" sería el equivalente a un blanco total. Pero, la dinámica es "dar un poco de rojo, verde y azul", en cada uno de los tres valores, y conjugarlos al final para dar un resultado final de color (la mezcla de los 3).
+
+            */
+
+            .box--rgb{
+
+                /* Una muestra de porqué el modelo RGB consiste en "dar un poco de rojo, verde y azul" es la siguiente: */
+
+                color: rgb(255, 0, 0);
+
+                /* Cuando sólo le das un máximo valor, 255, al canal donde se define el grado o intensidad del color Rojo; y, adicionalmente, defines los demás canales  con el valor de 0,... Lo lógico sería esperar que, por consencuencia, el elemento al que se le aplique este RGB, termine siendo dibujado con un color rojo de pleno. Es lo mismo si prueba lo propio, asignar el valor superior a un canal pero dejando los demás canales en 0, con las partes de los colores Green & Blue. Tal que así: */
+
+                color: rgb(0, 255, 0);
+
+                color: rgb(0, 0, 255);
+
+                /* Sin embargo, la idea es jugar con los tres distintos valores que puedan asumir cada uno de los tres espacios */
+
+                color: rgb(255, 125, 4);
+            }
+
+            /*
+
+            -RGBA: Es una extensión de RGB, es exactamente igual en la definición de sus tres (3) primeros valores (para sus tres primeros canales: R, G, B, respectivamente); pero, con la opción extra de: agregar un cuarto canal, llamado "alpha", que pueda recibir un valor adicional que sea el encargado de establecer el nivel de transperencia (0) u opacidad (1) del color conformado. Es decir, con "alpha" se controla el nivel de opacidad del color resultante: sus valores van de 0 a 1, siendo "0" lo más transparente (el color no se vería) y "1" lo más opaco (no tendría sentido usar este recurso, sería la intensidad de color por defecto).
+
+            */
+
+            .box--rgba{
+                background-color: rgba(255, 125, 4, 0.4);
+            }
+
+            /*
+
+
+            - Hexadecimal: La notación hexademal tiene 16 valores, 0-1-2-3-4-5-6-7-8-9-A-B-C-D-E-F. Se escriben con un # al inicio y se pueden usar 3 o 6 valores. Si se usan 6 valores deben ir en parejas #ffffff, pero cuando las parejas tienen el mismo valor se suele obviar y se ponen solo 3 valores #fff.
+            El código hexadecimal se representa con los canales rgb de esta forma #rgb o #rrggbb. Utilizar el modo hexadecimal cuando se buscan colores especiales se queda corto si no utilizamos un preprocesador, ya que no podemos controlar la luminosidad, la saturación, etc.
+            Cuando los 3/6 valores son iguales es un color neutro, #000 sería negro y #fff blanco, y todos los valores intermedios serían grises con mayor o menor luminosidad #666, #aaa
+            HSL(hue, saturation, lightness): Es una función de color que nos permite controlar el tono, la saturación y la luminosidad. Es el modo de color que se recomienda para tener un control total sobre los colores
+            hue es el ángulo en la rueda cromática. Los valores van de 0 a 360 grados
+            saturation es la intensidad del color. Los valores van de 0 (gris) a 100% (color puro) 
+            lightness es la intensidad de la luz. Los valores van de 0 (negro) a 100% (blanco)
+            HSLA: Exactamente igual que RGBA
+*/
+
+body{
+    background: #333;
+}
+
+.box{
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    margin: .5em;
+    text-align: center;
+    line-height: 200px;
+    font-size: 2.5em;
+    display: inline-block;
+}
+
+.box--hexa{
+    background-color: #00ff80;
+}
+
+.box--hsl{
+    background-color: hsl(120,26%,30%);
+}
+
+.box--hsla{
+    background-color: hsla(120,26%,30%,.8);
+}
