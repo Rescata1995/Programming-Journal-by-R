@@ -25,6 +25,8 @@ body{
 }
 
 .box{
+    /* Antes que nada sepa que estas propiedades se están aplicando sobre un elemento contenedor */
+
     background-color: #666;
     width: 100px;
     padding: 10px 0;

@@ -55,7 +55,7 @@
           <article>
                <header>
                     <h2>
-                         Ahora, ¿Cómo trabajar con tipografias que no están en Google Fonts? (o con cualquier tipo de "font" -iconos- en sí, de sitios como: "Font awesome" & "Icon font"): Uso de Font-face
+                         Ahora, ¿Cómo trabajar con tipografias que no están en Google Fonts? (o con cualquier tipo de "font" en sí -como las fuentes de icono-, de sitios como: "Font awesome" & "Icon font"): Uso de Font-face
                     </h2>
                </header>
 
@@ -64,14 +64,19 @@
                </p>
                     
                <p>
-                    Se descargan, se extraen (porque vienen comprimidas generalmente) y punto.
+                    Dichas tipografias (o en el caso espeial, fuentes de icono) se descargan, se extraen (porque vienen comprimidas generalmente) y punto.
                </p>
 
                <p>
+                    Enlaces para descargar nuevos tipos tipograficos que no encuentre en GoogleFonts:
+
                     https://www.dafont.com/es
                     https://www.1001fonts.com
 
-                    Enlaces para descargar nuevos tipos tipograficos que no encuentre en GoogleFonts.
+                    Ahora, enlaces para descargar fuentes de icono: 
+
+                    https://icomoon.io/
+                    https://fontawesome.com/
                </p>
 
                <p>
@@ -97,15 +102,19 @@
 <hr>
                     2. font-family: 'myFont';
 
-                    En el parametro dos (2), "font-family", es donde se le pasa un nombre a mi nueva fuente importada (el nombre que usted desee).
+                    En el parametro dos (2), "font-family", es donde se le pasa un nombre a mi nueva fuente importada, sea fuente de icono o tipografia (el nombre que usted desee).
 <hr>
-                    Y listo! Por medio del nombre que usted pasó, ya está lista su nueva fuente para ser usada (no se le olvide usar tipografias de reserva)
+                    Y listo! Por medio del nombre que usted pasó, ya está lista su nueva fuente para ser usada (no se le olvide usar tipografias de reserva en caso que se trate de fuentes tipograficas y no de fuentes de icono)
                     
-                    extra: Dentro del dominio de "@font-face"; adicionalmente, si quieres especificar más estilos a la fuente importada, puede usar también la propiedad "font-weight" y/o "font-style" y pasarle un estilo deseado a ellas.
+                    extra: Dentro del dominio de "@font-face"; adicionalmente, si quieres especificar más estilos a la fuente importada, puede usar también la propiedad "font-weight" y/o "font-style" y pasarle un estilo deseado a ellas (sea fuente tipografica o fuente de icono).
                </p>
 
                <p>
-                    Lo que se ve comunmente en "iconos" importados: Ahora, en varias ocasiones, el contenido que ha descargado y se ha extraido; y que, a partir de dicha extracción, le ha pasado una copia resultante al directorio de su proyecto de trabajo,... hay ocasiones en que dichas copias de extracciones,... cuentan con una hoja de estilos que, dentro de ella, tiene absolutamente todo el código que necesita para emular lo que sea que haya bajado de internet y le interese tener dentro de su sitio web (tan dado todo que sólo sería copiar y pegar el código CSS dentro de su propia hoja de estilos). Lo único que habría que hacer es crear un elemento en HTML, con un atributo "class", que asuma todos los estilos que ha importado a la hoja de estilos de su sitio web; esto con el objetivo de, obviamente, poder visualizar todo el código CSS que ha importado al pasarselo a un elemento HTML que, por medio de un selector, lo represente. Si por ejemplo lo importado es algún tipo de icono, por lo general el elemento HTML que sea crea para que asuma ese papel del código CSS importado es un elemento "i" o "span"; al cual, se le asigna un atributo "class" (generalmente hasta te dan el nombre que debe colocarse en el atributo "class").
+                    Ahora, lo que se ve comunmente en las "fuentes de iconos" importadas; es que, en varias ocasiones, el contenido que ha descargado y se ha extraido; y que, a partir de dicha extracción, le ha pasado una copia resultante al directorio de su proyecto de trabajo,... hay ocasiones en que dichas copias de extracciones ya cuentan con una hoja de estilos que, dentro de ella, tiene absolutamente todo el código que necesita para emular lo que sea que haya bajado de internet y le interese tener dentro de su sitio web (está tan dado todo que sólo sería copiar y pegar el código CSS dentro de su propia hoja de estilos). Lo único que habría que hacer, como novedad; es que declare un elemento en HTML, con un atributo "class", que asuma todos los estilos que ha importado a la hoja de estilos de su sitio web; esto con el objetivo de, obviamente, poder visualizar todo el código CSS que ha importado en su proyecto,... al pasarselo a un elemento HTML que, por medio de un selector, lo represente. Si por ejemplo lo importado es algún tipo de icono, por lo general el elemento HTML que sea crea para que asuma ese papel, del código CSS importado, es un elemento "i" o "span"; al cual, se le asigna un atributo "class" (e incluso, generalmente, hasta te dan el nombre que debe colocarse en el atributo "class").
+               </p>
+
+               <p>
+                    ALGO MUY IMPORTANTE: Como lo hemos dicho todo este tiempo, las fuentes de iconos al final del día sólo son un tipo de "fuente" más; en ese sentido, usted podría aplicar sobre ellas las propiedades relacionadas a la definición de estilos en las fuentes; por ejemplo, las mismas propiedades "font-weight" y/o "font-style" las podría usar en fuentes de iconos, entre otras.
                </p>
           </article>
 
