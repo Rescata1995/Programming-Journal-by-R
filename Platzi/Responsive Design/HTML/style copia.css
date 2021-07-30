@@ -781,7 +781,14 @@ Luego, ahora sí, configure el ".header" para cada Media Queri; posteriormente h
      }
 
      .header a{
-         justify-content: center;
+        justify-content: center;
+        height: 40px;
+        font-size: 2em;
+        margin-bottom: .5em;
+     }
+
+     .header a:hover{
+         text-decoration: underline;
      }
 
      /* La configuración de "margin" que le habíamos pasado al selector "ol, ul" para que se viera más centrado, y mejor esteticamente, ya no nos sirve en "viewports" más pequeños, así que le daremos un "margin" equivalente a "0". Lo propio, por las mismas razones, tiene que hacerse con el selector: ".header figure". */
@@ -799,6 +806,25 @@ Luego, ahora sí, configure el ".header" para cada Media Queri; posteriormente h
      /* Ahora vamos a darle al section del "portfolio" */
 
      /* Acá aplicaremos de entrada algo que ya hicimos antes,... hacer que los elementos hijos, de un contenedor, bajen (se apilen hacia abajo) luego de haber unas dimensiones en el "viewport" inferiores a las dimensiones modo "iPad"; es decir, tampoco queremos que los elementos hijos "project-details" & "project-imageContainer", del selector ".project", se pongan al costado del otro ante dimensiones del "viewport" ya considerablemente disminuidas; pues, también tienen la propiedad-valor: "display: flex" (en el selector .project),... pongamos acá también, entonces, "display: block".  */
+
+     .menu {
+        position: fixed;
+        background: rgb(5, 111, 255, 0.9);
+        z-index: 15;
+        top: 0;
+        left: -100vw;
+        width: 100vw;
+        /* height: 100vh; */
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: .3s;
+    }
+
+    .menu.is-active{
+        left: 0;
+    }
 
      .project{
          display: block;
