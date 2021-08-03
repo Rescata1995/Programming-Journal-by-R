@@ -18,3 +18,20 @@
 
     /* el valor "inset" suele utilizarse para crear bordes internos también; y, además, no ocupa sitio al igual que "outline"; es decir, no empuja a los demás elementos hacia abajo en el caso que los tropiece. */
 }
+
+/* text-shadow: 
+
+Valores posibles: h-offset v-offset blur color
+
+    Sombras múltiples.
+
+        Se añaden las sombras separadas por comas.
+        
+        Ejemplo con dos sombras de "text-shadow": 10px 10px 2px red, -11px -11px 2px blue; */
+
+.title{
+    text-align: center;
+    text-shadow: 10px 10px 2px red, -11px -11px 2px blue;
+}
+
+/* Si no se da un desenfoque en "text-shadow" o "box-shadow", tendríamos un clon exacto del "div" o texto. */

@@ -9,6 +9,7 @@
      <title>Box Shadow</title>
 </head>
 <body>
+     <h1 class="title">Text Shadow</h1>
      <div class="box">
           BOX
      </div>
@@ -26,17 +27,23 @@
 
           "offset-y": Desplazamiento en y en términos de pixeles: a mayor pixeles, mayor desplazamiento hacia abajo del clon. Es el segundo (2do) valor con el que se define la propiedad (obligatorio). También puede darle valores negativos.
 
-          "blur-radius": Desenfoque de la sombra, también se mide en términos de pixeles: a mayor pixeles, mayor efecto de sombreado menos oscuro. Es el tercer (3er) valor a definir para esta propiedad. 
+          "blur-radius": Desenfoque de la sombra, también se mide en términos de pixeles: a mayor pixeles, mayor desenfoque de la sombra. Es el tercer (3er) valor a definir para esta propiedad. 
 
           "spread-radius": Expansión de la sombra. Lo que estaríamos haciendo aquí es añadirle más volumen, más "padding" a la sombra o clon en cuestión, esto en términos de pixeles: a mayor pixeles, obtendríamos una sombra más grande. También puede darle pixeles negativos para hacer una sombra de menor tamaño al elemento que replica. Es el cuarto (4to) valor a definir para esta propiedad. 
 
           "color": El color de la sombra, si no lo especificamos lo herederará del elemento que lo contiene; más precisamente, del contenido del elemento al que está clonando el clon como tal. Ojo, no replica el color del contenedor; que, en la mayoria de los casos, es la caja; sino, del contenido de dicho contenedor; es decir, replica el color del contenido del contenedor (por ejemplo, el color de las letras). Es el quinto (5to) valor a definir para esta propiedad.  
           
-          "inset": Determina si la sombra será interior o exterior; sin embargo, propiamente "inset" dibuja la sombra por dentro y, preciso señalar, de manera inversa a su posición original. Es el sexto (6to) valor a definir para esta propiedad. 
+          "inset": Determina si la sombra será interior o exterior (si se dibuja por dentro o por fuera); sin embargo, propiamente "inset" dibuja la sombra por dentro y, cabe señalar, de manera inversa a su posición original. Es el sexto (6to) valor a definir para esta propiedad. "outset" dibuja la sombra por fuera de la caja.
 
           IMPORTANTE: Usted puede agregar cuantas sombras (box-shadow) desee y, lo más interesante, lo hará sobre la misma definición de una única declaración de la propiedad; es decir, dentro una única propiedad "box-shadow" declarada, podrá crear cuántas sombras desee. Lo que separará una sombra, de otra, serán comas (,).
 
           Las sombras siempre se pondrán en el orden en el que las hemos puesto; es decir, la sombra que se reflejará primero es la que haya sido colocada de primero y así sucesivamente.
+
+          Adicionalmente, El efecto visual que se logra con "Box Shadow" no ocupa espacio ni sitio en la caja; es decir, realmente "Box Shadow" no tiene un espacio reservado, por lo que no puede "empujar" a otros elementos cuando se tropiece con ellos.
+
+          Esta propiedad es animable.
+
+          Ahora, hay otra propiedad que es parecida a esta: "Text Shadow". Funciona prácticamente igual a "Box Shadow", sólo que acá no tenemos dos valores que son: "spread-radius" & "inset" o "outset".
 
           RECURSO EXTRA: https://www.codesdope.com/blog/article/10-amazing-effects-you-can-create-using-box-shadow/
 -->
