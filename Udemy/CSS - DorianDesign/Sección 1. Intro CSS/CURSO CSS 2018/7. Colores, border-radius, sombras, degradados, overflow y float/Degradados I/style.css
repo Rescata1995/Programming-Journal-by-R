@@ -1,104 +1,83 @@
 /*
-    Colores. Sobre cómo aplicar colores a una página web y las distintas formas que tenemos de asignar esos colores a los elementos.
 
-        Hay varias formas de dar color a los elementos: 
+https://developer.mozilla.org/es/docs/Web/CSS/radial-gradient
 
-            - Palabras clave (keywords): cuando se asigna el color con las palabras en inglés. Aquí un recurso que nos muestra un montón de colores y sus distintas formas de ser llamados: 
+Un degradado es una transición entre un color y otro. Por ejemplo, cuando nosotros ponemos dos (2) colores, el navegador calculará todos los colores intermedios entre el color 1 y el color 2: esto para poder pasar, definitivamente, de un color a otro. Si ponemos tres colores, pues lo mismo. Adicionalmente, no está de más decir que los degradados son un valor de la propiedad "background-image" (poner siempre los degradados solamente con esta propiedad para no afectar el resto de valores que pueda asumir la propiedad "background" en su conjunto).
 
-                https://developer.mozilla.org/en-US/docs/Web/CSS/color_value
+Dicho lo anterior, existen dos tipos de degradados: lineales y radiales
 
-            */
+    Degradados lineales:
 
-            .box--color{
-                color: blueviolet;
+        1er caso: La forma más común de hacer un degragadado es: linear-gradient([direction], color-1, color-2, color-3); es decir, por ejemplo: 
 
-                /* Con la propiedad "color" se le asigna el color directamente al contenido (content) del elemento; por ejemplo, al texto. */
+        background-image: linear-gradient(red, blue, yellow); 
+        
+        -acá omitimos la "direction" del degradado- 
 
-                background-color: aquamarine;
-
-                /* Con la propiedad "background-color" se le asigna el color, no al contenido del elemento, sino al fondo; es decir, en este caso, lo que estaría por debajo del texto.  */
-            }
+        2do caso: Podemos usar, efectivamente, el parametro de "direction" en un degradado lineal. La dirección es opcional y se puede establecer de dos (2) formas: 
             
-            /*
+            1. con palabras claves: "to top | to right | to bottom | to left | to top left | to top right| to bottom left | to bottom right".
 
-            - RGB (Red, Green, Blue): es una función de color que recibe 3 valores separados por comas, siendo 0 el mínimo y 255 el máximo. Por ejemplo, "rgb(0,0,0)" sería el equivalente a un negro total; y, por otro lado, "rgb(255,255,255)" sería el equivalente a un blanco total. Pero, la dinámica es "dar un poco de rojo, verde y azul", en cada uno de los tres valores, y conjugarlos al final para dar un resultado final de color (la mezcla de los 3).
-
-            */
-
-            .box--rgb{
-
-                /* Una muestra de porqué el modelo RGB consiste en "dar un poco de rojo, verde y azul" es la siguiente: */
-
-                color: rgb(255, 0, 0);
-
-                /* Cuando sólo le das un máximo valor, 255, al canal donde se define el grado o intensidad del color Rojo; y, adicionalmente, defines los demás canales  con el valor de 0,... Lo lógico sería esperar que, por consencuencia, el elemento al que se le aplique este RGB, termine siendo dibujado con un color rojo de pleno. Es lo mismo si prueba lo propio, asignar el valor superior a un canal pero dejando los demás canales en 0, con las partes de los colores Green & Blue. Tal que así: */
-
-                color: rgb(0, 255, 0);
-
-                color: rgb(0, 0, 255);
-
-                /* Sin embargo, la idea es jugar con los tres distintos valores que puedan asumir cada uno de los tres espacios */
-
-                color: rgb(255, 125, 4);
-            }
-
-            /*
-
-            -RGBA: Es una extensión de RGB, es exactamente igual en la definición de sus tres (3) primeros valores (para sus tres primeros canales: R, G, B, respectivamente); pero, con la opción extra de: agregar un cuarto canal, llamado "alpha", que pueda recibir un valor adicional que sea el encargado de establecer el nivel de transperencia (0) u opacidad (1) del color conformado. Es decir, con "alpha" se controla el nivel de opacidad del color resultante: sus valores van de 0 a 1, siendo "0" lo más transparente (el color no se vería) y "1" lo más opaco (no tendría sentido usar este recurso, sería la intensidad de color por defecto).
-
-            */
-
-            .box--rgba{
-                background-color: rgba(255, 125, 4, 0.4);
-            }
-
-            /*
-
-            - Hexadecimal: La notación hexademal tiene 16 valores, 0-1-2-3-4-5-6-7-8-9-A-B-C-D-E-F. Se escriben con un # al inicio y se pueden usar 3 o 6 valores. Si se usan 6 valores deben ir en parejas #ffffff (las parejas 1 y 2, 3 y 4 & 5 y 6); ahora, cuando las parejas tienen el mismo valor (las que acabamos de mencionar) se suele obviar y se ponen solo 3 valores #fff. Sin embargo, todas las 3 parejas deben ser iguales; esto, dentro de sus propios valores contenidos para cada par, me refiero, ser iguales los valores entre sí para cada pareja,... no que todos los números sean iguales, no; deben ser iguales, al menos, los números contenidos por cada par. Para así, por cada par, mostrar sólo un número.
-
-                El código hexadecimal se representa con los canales rgb de esta forma #rgb o #rrggbb; es decir, cada par de números o caracteres de un Hexadecimal controlan, en su orden, y por medio de sus 16 valores posibles para cada uno de los 6 espacios (#ffffff), la intensidad de rojo (para el primer par de un Hexadecimal), la intensidad de verde (para el segundo par de un Hexadecimal) y, por último, la intensidad de azul (para el tercer par de un Hexadecimal). Para que se entienda mejor: si el 1er par de un hexadecimal se define con #ff, entonces, tendríamos por resultado el rojo más rojo de todos; si el 2do par de un hexadecimal se define con #ff, entonces, tendríamos por resultado el verde más verde de todos; y, por último, si el 3er par de un hexadecimal se define con #ff, entonces, tendríamos por resultado el azul más azul de todos.
+            Si queremos un degradado simetrico, normalmente lo hacemos con palabras claves porque son bastante intuitivas. 
             
-                De todas maneras, utilizar el modo "hexadecimal", cuando se buscan colores especiales, se queda corto si no utilizamos un preprocesador; es decir, si no se controla la luminosidad, la saturación, etc.
+            El "to" de las palabras claves significa "hacia"; es decir, hacia qué dirección tomará rumbo el degradado; esto, tomando como referencia, un primer color dado hasta que se transforma en un segundo (en caso que sea el ejemplo con dos colores).
 
-                Cuando los 3/6 valores son iguales es un color neutro, #000 sería negro y #fff blanco, y todos los valores intermedios serían grises con mayor o menor luminosidad #666, #aaa.
+            2. con ángulos: 20deg, 180deg,...); por ejemplo, "0deg" equivale a un "to top" (si hacemos un simil), el color empieza desde abajo y va HACIA arriba (to top), "45deg" a "to top right", "90deg" a "to right", y así...
+        
+        A parte de poder hacer la transición entre dos colores, se pueden establecer "paradas de color"; es decir, determinar desde dónde empieza, dentro del elemento manipulado, el degradado para cada color: esto a partir de una medida pasada que indicaría, realmente, el límite de la solidez del color mismo (hasta donde se ocuparía la solidez del color dentro del espacio del propio elemento). Para establecer las paradas se puede usar cualquier medida: "px", "em","%"... Ahora bien, si desea que el corte sea solido (sin transiciones graduales de un color a otro, sin degradado) se establecería para todos los colores una misma medida como "parada de color". Es decir, si las paradas/inicios empiezan en el mismo sitio se genera un corte sólido, con lo cual, no habría espacio para degradados; por ejemplo, vea el caso de:
+        
+        "background-image: linear-gradient(red 50%, blue 50%);"
 
-            HSL(hue, saturation, lightness): Es una función de color que nos permite controlar el tono (hue), la saturación (saturation) y la luminosidad (lightness).
-            Es el modo de color que se recomienda para tener un control total sobre los colores.
+    Degradados radiales
 
-                1er valor (hue): es el ángulo en la rueda cromática. Los valores van de 0 a 360 grados.
+        Funcionan de una forma similar a los degradados lineales.
 
-                2do valor (saturation): es la intensidad del color. Los valores van de 0 (gris) a 100% (color puro).
+        background-image: radial-gradient([shape], red, blue);
 
-                3er valor (lightness): es la intensidad de la luz. Los valores van de 0 (negro) a 100% (blanco); ahora, si se quiere el color puro, exacto, la luminosidad tendría que estar al 50%.
+        background-image: radial-gradient(red, blue);
 
-            HSLA: Exactamente igual que RGBA, pero con HSL.
+        Por defecto, shape se ajustará al tamaño de la caja, pero podemos establecer si queremos un círculo o una elipse y definir el radio o los radios.
+
+        background-image: radial-gradient(circle 100px, red, blue);
+
+        background-image: radial-gradient(ellipse 100px 50px, red, blue);
+
+        Si no establecemos un punto de origen, el punto 0 0 será el centro del elemento. Para establecer el punto de origen podemos hacerlo en medidas o con palabras clave.
+        Con la palabra "at" establecemos el punto de origen. Los valores que acepta son:
+
+        top | right | bottom | left | center | closest-side | closest-corner | farthest-side | farthest-corner
+
+        background-image: radial-gradient(circle 100px at top left, red 50%, blue 50%);
+
+        si establecemos un solo valor, el segundo por defecto será center
+        background-image: radial-gradient(circle 100px at top, red 50%, blue 50%);
 */
 
-body{
-    background: #333;
-}
-
-.box{
+.box {
     width: 200px;
     height: 200px;
-    border: 1px solid black;
-    margin: .5em;
-    text-align: center;
-    line-height: 200px;
-    font-size: 2.5em;
-    display: inline-block;
-}
+    border: 3px solid black;
+    margin: 2em auto;
 
-.box--hexa{
-    background-color: #00ff80;
-}
+    background-image: linear-gradient(red, blue, yellow); 
 
-.box--hsl{
-    background-color: hsl(120,26%,30%);
-}
+    /* Acá conseguimos un degragado sencillo, por defecto, de rojo a azul y de azul a amarillo. Es nuestro primer caso de degradado lineal (sin el uso del parametro "direction") y se usaron 3 colores: en el 0% un rojo puro, en el 50% un azul puro, y en el 100% un amarillo puro. */
 
-.box--hsla{
-    background-color: hsla(120,26%,30%,.8);
-}
+    /* Ahora, revisemos el caso en el que le pasamos el parametro "direction" a "linear-gradient". */
 
-/* Consejo: Usa HSL si quieres un control absoluto sobre el color;y, si no necesitas un control absoulto, puedes definir los colores con Hexadecimal o RGB. */
+    background-image: linear-gradient(to top, red, blue); 
+
+    /* Probemos las paradas de color. Por ejemplo, queremos que el degradado del  color rojo comience desde el 10% de la ubicación del elemento manipulado ".box"; y, además, que el degradado del color azul comience desde el 90% de la ubicación del mismo elemento ".box" */
+
+    background-image: linear-gradient(red 10%, blue 90%);
+
+    /* Ahora, probemos las paradas de color con corte solido (sin degradado) */
+
+    background-image: linear-gradient(red 50%, blue 50%);
+
+    /* Veamos este otro caso de parada de color con corte solido, y sin degradado, pero con tres colores. Se fijará que también se pueden establecer dos "sub-parametros" de parada de color en cada color; es decir, un inicio y un fin para señalar cuál sería el espacio exacto que ocupará, desde un punto A a un punto B, cada color. Esto en contexto se pondrá en práctica con el color "blue"; pues, sólo ocupará el espacio del elemento que va desde el 50% hasta el 75% */
+
+    background-image: linear-gradient(red 50%, blue 50% 75%, green 75%);
+
+    /* background-image: radial-gradient(ellipse 225px 50px at bottom, transparent 50%, blue 50%); */
+}
