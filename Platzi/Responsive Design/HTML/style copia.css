@@ -84,7 +84,7 @@ h3,
 h4,
 h5,
 h6{
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Raleway', serif;
     font-weight: normal;
     /* font-style: italic; */
 }
@@ -216,7 +216,7 @@ ul{
     margin: 0px 15px 0px 0px;
     padding: 0;
     list-style: none;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Raleway', serif;
     font-size: 0.95rem;
     /* para que no tengan estilos ni formatos las listas */
 }
@@ -403,7 +403,7 @@ figure{
 }
 
 .experience-title{
-    font-family: 'Raleway';
+    font-family: 'Raleway', serif;
 }
 
 .experience-description{
@@ -509,7 +509,7 @@ figure{
 }
 
 .form-email input{
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Raleway', serif;
     font-size: 0.7rem;
 
     /* Demosle un color al borde dibujado sobre el selector propio de la caja de texto */
@@ -933,14 +933,11 @@ Luego, ahora sí, configure el ".header" para cada Media Queri; posteriormente h
         object-position: initial;
     }
 
-    .project-details{
+    .project-details,
+    .experience-description
+    {
         font-size: 13px;
-        font-family: 'Montserrat';
-    }
-
-    .experience-description{
-        font-family: 'Montserrat';
-        font-size: 13px;
+        font-family: 'Montserrat', sans-serif;
     }
 
     /* Acá pusimos en práctica esto: "... luego, en viewports más pequeños, lo único que tendría que hacer entonces es cambiar la medida fija pasada al elemento padre, en nuestro caso ".project-details", y asignarle una más pequeña,... y listo!" */
