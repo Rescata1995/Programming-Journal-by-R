@@ -1048,18 +1048,18 @@ Luego, ahora sí, configure el ".header" para cada Media Queri; posteriormente h
 
         Qué se podría hacer entonces? Lo que se podría hacer es definir la cantidad de "em", para un ancho del ".hero" de 320px, que sea correspondiente con la disminución de anchura de 480px a 320px del mismo ".hero" justamente (tomando como base que "1.5em" en el tamaño de fuente es correspondiente a 480px de anchura del ".hero"). Lo anterior se podría resolver por medio de una regla de tres simple; es decir, si tenemos que para un ancho del ".hero" de 480px el tamaño de fuente es de "1.5em", ¿cuantos "em" serían equivalentes, proporcionalmente hablando, para una anchura del ".hero" de 320px? El resultado da: 1em */
 
-        font-size: 1.1em;
+        font-size: 1.15em;
         /* Antes: 1em */
 
         /* Config. anterior: Lo mismo que decir 19,2px: 1.2em */
-        top: .7em;
+        top: 1.2em;
 
         /* Config. anterior: Lo mismo que decir 11.2px: 0,7em */
         right: .9em;
     }
 
     .portfolio {
-        padding: 15px;
+        padding: 10px;
     }
 
     /* .project{
