@@ -84,7 +84,7 @@ h3,
 h4,
 h5,
 h6{
-    font-family: 'Fjalla One', sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-weight: normal;
     /* font-style: italic; */
 }
@@ -176,7 +176,7 @@ h2 {
 }
 
 .project-description {
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .project strong {
@@ -377,7 +377,7 @@ figure{
 .experience-detail{
     margin: 20px 40px;
 
-    background-color: white;
+    background-color: rgb(229, 231, 234, .2);
     /* Color de fondo "blanco" del elemento hijo "experience-detail" */
 
     /* Ahora, nos interesa que "experience-detail" se sobreponga, sin ningún problema, sobre la imagen de cada "experience"; es decir, que el contenido textual se ubique por encima de nuestra imagen en cada "experience". Lo anterior, lo podríamos hacer, en principio, con un "margin-top" negativo. */
@@ -391,9 +391,19 @@ figure{
 
     /* Ahora, vamos a oxigenar un poco con "pagging" al contenido textual del "experience-detail" para que no quede tan pegado de su propio borde */
 
-    padding: 20px;
+    /* padding: 20px; */
 
     text-align: center;
+
+    /* testing */
+
+    /* border-radius: 6px; */
+    border: 1px solid #E5E7EA;
+    padding: 1px 20px 15px 20px;
+}
+
+.experience-title{
+    font-family: 'Raleway';
 }
 
 .experience-description{
@@ -412,7 +422,8 @@ figure{
 }
 
 .experience-url:hover{
-    background-color: #f5f5f5;
+    /* background-color: #f5f5f5; */
+    background-color: rgb(229, 231, 234, .6);
 }
 .experience-url:active{
     box-shadow: 2px 2px 10px -5px #111 inset, -1px -1px 10px -5px #111 inset;
@@ -743,6 +754,10 @@ Luego, ahora sí, configure el ".header" para cada Media Queri; posteriormente h
         position: relative;
         z-index: 10;
     }
+
+    .experience img{
+        object-position: -5px -15px;
+    }
 }
 
 @media screen and (max-width: 767px){
@@ -756,6 +771,9 @@ Luego, ahora sí, configure el ".header" para cada Media Queri; posteriormente h
         object-position: 0px -150px;
     }
 
+    .experience img{
+        object-position: 0px -15px;
+    }
 
     .header{
         padding-top: 4px;
@@ -822,7 +840,7 @@ Luego, ahora sí, configure el ".header" para cada Media Queri; posteriormente h
         transition: .3s;
     }
 
-    .menu.is-active{
+    .menu.is-active {
         left: 0;
     }
 
@@ -916,7 +934,13 @@ Luego, ahora sí, configure el ".header" para cada Media Queri; posteriormente h
     }
 
     .project-details{
-        font-size: 12px;
+        font-size: 13px;
+        font-family: 'Montserrat';
+    }
+
+    .experience-description{
+        font-family: 'Montserrat';
+        font-size: 13px;
     }
 
     /* Acá pusimos en práctica esto: "... luego, en viewports más pequeños, lo único que tendría que hacer entonces es cambiar la medida fija pasada al elemento padre, en nuestro caso ".project-details", y asignarle una más pequeña,... y listo!" */
@@ -1024,15 +1048,21 @@ Luego, ahora sí, configure el ".header" para cada Media Queri; posteriormente h
 
         Qué se podría hacer entonces? Lo que se podría hacer es definir la cantidad de "em", para un ancho del ".hero" de 320px, que sea correspondiente con la disminución de anchura de 480px a 320px del mismo ".hero" justamente (tomando como base que "1.5em" en el tamaño de fuente es correspondiente a 480px de anchura del ".hero"). Lo anterior se podría resolver por medio de una regla de tres simple; es decir, si tenemos que para un ancho del ".hero" de 480px el tamaño de fuente es de "1.5em", ¿cuantos "em" serían equivalentes, proporcionalmente hablando, para una anchura del ".hero" de 320px? El resultado da: 1em */
 
-        font-size: 1em;
+        font-size: 1.1em;
+        /* Antes: 1em */
 
-        /* Lo mismo que decir 19,2px: 1.2em */
-        top: 1.2em;
+        /* Config. anterior: Lo mismo que decir 19,2px: 1.2em */
+        top: .7em;
 
-        /* Lo mismo que decir 11.2px: 0,7em */
-        right: 0.7em;
+        /* Config. anterior: Lo mismo que decir 11.2px: 0,7em */
+        right: .9em;
     }
 
-    /* Considere aplicar algún recurso de "object-position" sobre la imagen para alejarla un poco y que se oxigene en relación al contenido textual. */
+    .portfolio {
+        padding: 15px;
+    }
 
+    /* .project{
+        padding: 15px;
+    } */
 }
