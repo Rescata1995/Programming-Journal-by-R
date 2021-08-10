@@ -100,11 +100,19 @@
                     
                     Nota: Lo que va dentro de los parentesis, inmediatamente después de "url", se escribe entre comillas simples.
 <hr>
-                    2. font-family: 'myFont';
+                    2. font-family: 'myNewFont';
 
                     En el parametro dos (2), "font-family", es donde se le pasa un nombre a mi nueva fuente importada, sea fuente de icono o tipografia (el nombre que usted desee).
 <hr>
-                    Y listo! Por medio del nombre que usted pasó, ya está lista su nueva fuente para ser usada (no se le olvide usar tipografias de reserva en caso que se trate de fuentes tipograficas y no de fuentes de icono)
+                    Y listo! Por medio del nombre que usted pasó, ya está lista su nueva fuente importada para ser usada en algún selector; es decir, la podría llamar tal que así (siguiendo el mismo ejemplo):
+                    
+                    .selector{
+                         font-family: 'myNewFont';
+                    }
+
+                    La anterior declaración es completamente diferente a la declaración previa a ella. La 1ra declaración tiene que ver con el nombreamiento o el nombre que recibe la nueva fuente importada; en cambio, la 2da declaración tiene que ver ya con el llamado de dicha fuente importada, ahora con un nombre asignado, para su usabilidad sobre un selector.
+
+                    Caso aparte, no se le olvide usar tipografias de reserva en caso que se trate de fuentes tipograficas y no de fuentes de icono)
                     
                     extra: Dentro del dominio de "@font-face"; adicionalmente, si quieres especificar más estilos a la fuente importada, puede usar también la propiedad "font-weight" y/o "font-style" y pasarle un estilo deseado a ellas (sea fuente tipografica o fuente de icono).
                </p>
