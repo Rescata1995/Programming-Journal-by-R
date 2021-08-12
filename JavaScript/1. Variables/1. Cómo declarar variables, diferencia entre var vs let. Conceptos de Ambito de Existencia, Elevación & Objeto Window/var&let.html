@@ -1,0 +1,79 @@
+<!-- Sobre qué es una variable y cómo declararla de manera correcta en JS -->
+
+<!--  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos JavaScript</title>
+</head>
+
+<body>
+    <h1>
+        Fundamentos JavaScript: ¿Qué es una variable?
+    </h1>
+
+    <p>
+        Una variable en JS es un lugar, en la memoria de nuestra computadora, para almacenar datos (recuerdese los tipos de datos de JS, desde los tipos de datos primitivos hasta los tipos de datos compuestos).
+    </p>
+
+    <h1>
+        Diferencias entre declarar una variable con "let" y una con "var". 
+    </h1>
+
+    <p>
+        Las diferencias básicamente consisten en conocer en qué "ambito de existencia" trabaja cada una o para qué ambito de existencia están destinadas a ser o fueron diseñadas.
+    </p>
+
+    <p>
+        El ambito de existencia evalua el límite o alcance de la variable. Si una variable tiene un alcance global quiere decir que, la existencia de la variable es permanente dentro de todo el documento y también su valor (mientras no haya sido cambiado posteriormente); en cambio, cuando una variable tiene un alcance de bloque (un ambito de existencia por bloque), quiere decir que las variables sólo existirán dentro del dominio o cuerpo del bloque de código que las contenga (donde hayan sido declaradas); un bloque de código, por ejemplo, podría ser el dominio de una sentencia condicional "if" o el dominio de un bucle "for".
+    </p>
+
+    <p>
+        También hay "alcances funcionales"; es decir, son las variables que sólo existen dentro del cuerpo o dominio de una función al ser declaradas dentro de dicha función. Antes del 2015, por ejemplo, JS sólo tenía variables con alcance global o con alcance funcional, mas no con alcance de bloque,... algo que molestaba mucho a programadores; pues, cuando se intentaba declarar a una variable dentro de un bloque; ésta realmente irrespetaba dicho límite e, instantaneamente, actuaba como si fuera una variable con alcance funcional; y, en caso que dentro de su documento no existiera función alguna, inmediatamente pasaba a actuar como si fuera una variable con alcance global. Esta dinámica de ir "escalando" alcances según lo precisara el contexto, dentro de JS, se conoció como: "Elevación".
+    </p>
+
+    <p>
+        Al final JS se dio cuenta que esto frustraba mucho a los programadores; por lo cual decidió, por medio de ECMAScript 6, crear una forma de declaración de variable que fuera solamente destinada a ambitos de existencia por bloque (donde la variable sería usada solamente en los casos en los que se deseaba que tuviera un alcance de bloque, y punto, más nada); para eso fue creada la palabra reservada: "let",... para declarar ese tipo de variables.
+    </p>
+
+    <p>
+        Entonces, pongamos así: Si tu declaras una variable con la palabra "var", esa variable será de ambito global.
+    </p>
+    <p>
+        Si declaras la variable con la palabrar "let", esa variable será de ambito de bloque. Por lo anterior usar "var" suele ser una mala práctica; pues, por lo general, necesitamos más bien sólo variables de ambito de bloque.
+    </p>
+
+    <h1>Objeto "Window": Objeto que mapea toda la ventana del navegador para el JS. </h1>
+
+    <p>
+        El Objeto "Window", más precisamente, es donde se almacena toda la información, del ambito global, que haya de JS dentro del navegador. 
+    </p>
+
+    <p>
+        En consecuencia puede intuir que, para el objeto "Window", toda variable declarada con "let" no existe para él.
+    </p>
+
+    <script>
+        // Inicialmente toda variable se declara con la palabra reservada "var"; tal que así:
+
+        var hola = "Hola Mundo";
+        // Aquí estamos declarando una variable global con el identificador "hola" (nombre pasado a la variable declarada); dicha variable guarda una cadena de texto (tipo de dato "string") equivalente al valor "Hola Mundo".
+
+        console.log(hola);
+        // "console.log()" se encarga de imprimir, dentro de la consola del navegador, cualquiera que sea la variable que se le pase dentro de sus parentesis; más concretamente, el valor que la variable en sí guarda dentro ella.
+
+        let hello = "Hello World";
+        //nuestra variable "let" que debiera ser creada dentro de un ambito de bloque.
+
+        console.log(hello);
+        console.log(window);
+        // Compruebe en consola que, para el Objeto "window", la palabra reservada o variable de tipo "let" efectivamente no existe para él (por más que la haya declarado). En cambio, las variables declaradas con "var" sí se quedan o son reconocidas por el objeto "Window".
+
+        // Esto es así porque la palabra reservada "let" sólamente permite que la variable exista en el bloque que ha sido definido, no como variable global (que es en lo que se enfoca el papa de Messi). 
+    </script>
+</body>
+</html>
