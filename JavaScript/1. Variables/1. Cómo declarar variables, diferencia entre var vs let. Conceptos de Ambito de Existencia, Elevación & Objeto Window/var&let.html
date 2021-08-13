@@ -57,6 +57,10 @@
         En consecuencia puede intuir que, para el objeto "Window", toda variable declarada con "let" no existe para él.
     </p>
 
+    <p>
+        Dato de interés: Un "bloque" es simplemente lo que está separado por un juego de llaves, tal que así, por ejemplo: {... bloque ...}
+    </p>
+
     <script>
         // Inicialmente toda variable se declara con la palabra reservada "var"; tal que así:
 
@@ -73,7 +77,48 @@
         console.log(window);
         // Compruebe en consola que, para el Objeto "window", la palabra reservada o variable de tipo "let" efectivamente no existe para él (por más que la haya declarado). En cambio, las variables declaradas con "var" sí se quedan o son reconocidas por el objeto "Window".
 
-        // Esto es así porque la palabra reservada "let" sólamente permite que la variable exista en el bloque que ha sido definido, no como variable global (que es en lo que se enfoca el papa de Messi). 
+        // Esto es así porque la palabra reservada "let" permite que la variable exista solamente dentro del bloque en el que ha sido declarada (mientras haya sido declarada dentro de un bloque propiamente; pues, hay que precisar que "let", aunque el objeto "Window" no la reconozca, también puede usarse para declarar variables por fuera de un bloque. De hecho, para cualquier caso, use siempre la palabra reservada "let" para declarar sus variables (incluso aquellas que se declaran por fuera de un bloque),... Lastimosamente pasa que, en varios contextos, declarar una variable con "var" puede prestarse para muchas ambiguedades. Qué tipo de ambiguedades? 
+
+        // Por ejemplo, lo ideal es que usted se sienta en la suficiente capacidad lógica para entender el siguiente código sin problema alguno, veamos:
+
+        console.log("1. Uso de Let");
+
+        let musica = "Rock";
+        console.log("Variable música antes del bloque:", musica);
+
+        {
+            let musica = "Champeta";
+            console.log("Variable música antes del bloque:", musica);
+        }
+
+        console.log("Variable música antes del bloque:", musica);
+
+        {
+            let musica = "Balada Boa";
+            console.log("Variable música antes del bloque:", musica);
+        }
+
+        // Si se percató, el identificador "musica" con la palabra reservada "let", puede asumir valores parciales, indistintamente, cada vez que éste pueda ser cambiado (al ser declarado) dentro de un nuevo bloque creado; es decir, cada vez que usted desee podría re-asignarle un nuevo y diferente valor, para el mismo identificador "musica", a cada uno de los tantos bloques, por separado, que desee abrir con él (al ser declarado el mismo identificador, pero con otros valores, para distintos bloques -todo esto por separado),... sí, asumiendo que cada bloque podría, incluso, tener su propio valor de "musica" y está bien (esta es la idea al fin al cabo).
+        
+        // Entonces, como puede observar, con "let" tiene la posibilidad de re-difinir cuantas veces desee el valor de su variable o identificador inicial; es decir, cada vez que usted quiera puede inicializar, por medio de un bloque nuevo, el valor de un mismo identificador o variable; en este caso, "musica". Y, fundamentalmente así, se sigue la lógica de que con "let" se definiría un único y diferente valor, a partir de un mismo identificador, para cada bloque por separado  creado.
+
+        // Ahora, por fuera de bloques, el valor dado en principio al identificador o variable creado con "let", mientras no lo haya cambiado directamente por fuera, seguirá siendo el mismo. Tal como se vio también en nuestro ejemplo. Esta es, justamente, la dinámica lógica que no se ve al hacer declaraciones de variables, ahora, con "var" (y es lo que se pretende evitar). Veamos:
+
+        console.log("1. Uso de Var");
+
+        var musica2 = "Rock";
+        console.log("Variable música antes del bloque:", musica2);
+
+        {
+            var musica2 = "Champeta";
+            console.log("Variable música antes del bloque:", musica2);
+        }
+
+        console.log("Variable música antes del bloque:", musica2);
+
+        // Si se da cuenta, en esta última impresión, se imprime el valor pasado al "var" que está dentro de los bloques; es decir, "Champeta". No se imprime el que está por fuera,... y esto no es ideal, lo ideal sería que las variables declaradas dentro de bloques solo funcionen dentro de bloques, no por fuera a ellos; por lo cual, se configuraría una mala práctica. 
+
+        // Al igual, en Node.js, JS del lado del servidor, es también una mala práctica (por ese mismo motivo) declarar variables con "var". Ahora, en node.js, el equivalente al Objeto "window" de Js, es "global".
     </script>
 </body>
 </html>
