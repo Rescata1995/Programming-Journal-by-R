@@ -31,8 +31,17 @@ Flexbox:
         /* Si necesita recordar a plenitud las propiedades de un elemento de línea y uno de bloque, revise de nuevo los viejos apuntes */
     }
 
+    /* Para agregar: cuando se define un display de "flex" (cualquiera de los dos posibles) se habilita el uso de otras dos propiedades más:
+    
+        1. flex-direction.
+        2. flex-wrap.
+
+        En ese orden, las abordaremos ahora.
+        */
+
     /* -------------------------------------- 
-    AHORA VAMOS A VER CÓMO MODIFICAR LAS DIRECCIONES DE LAS FLECHAS con la propiedad "flex-direction". */
+
+    Ahora vamos a ver cómo modificar las direcciones de las flechas con la propiedad "flex-direction". */
 
     /*
     Valores disponibles para "flex-direction": 
@@ -71,18 +80,48 @@ Flexbox:
         /* En resumen, con la propiedad "flex-direction", podemos reubicar el "main axis" según una dirección y orientación deseada */
     
     /*
+
+    Ahora vamos a hablar de "flex-wrap", sobre cómo controlar el colapsado, desbordado o qué hacer cuando los elementos no quepan, y quiere que sí, con sus medidas originales (así sea le toque "robarse" más espacio del "viewport" que no tenía),... todo esto con la propiedad-valor "flex-wrap: wrap".
+
+    Cuando definimos algún tipo de "flex" a nuestro "display", en algún selector padre contenedor de varios elementos hijos directos,... Si los elementos no caben en el "viewport" con sus medidas originales de ancho y alto, por defecto, tratarán de ajustarse lo más que puedan sobre su mismo "viewport" disponible en cuestión; esto sin importarle mucho, o dejando en segundo plano, las medidas originales en términos de altura y anchura que tienen sus elementos hijos directos contenidos (ahora elementos "flexibles"); de tal manera que, incluso, sus medidas se vean obligadas a ser "comprimidas".
+
+    Por defecto es así como lo contamos; sin embargo, la propiedad de extensión de "flex" que tiene la capacidad de controlar si se respetan o no las medidas, en términos de altura y anchura, pasadas a los elementos hijos directos contenidos es: "flex-wrap".
+
+    "flex-wrap", por defecto, tiene un valor de "no-wrap": es el que fuerza a que los elementos hijos directos quepen sobre un espacio determinado sin importarle las medidas originales, en términos de alto y ancho, que dichos elementos contengan (sin importarle, incluso, que se desborden sobre su propio "viewport" disponible).
     
-    flex-wrap: no-wrap(default) | wrap | wrap-reverse
-        Controla si los elementos saltarán de línea o no
-        no-wrap es el valor por defecto, un contenedor flex va a hacer que todos los elementos se queden en una línea si no le especificamos lo contrario
-        wrap hace que los elementos que no quepan en una línea (manteniendo sus dimensiones, si las tuvieran) salten a la linea inferior.
-        wrap-reverse hace lo mismo que wrap pero en lugar de hacer que salten a la línea inferior, hace que salten a la linea superior. 
+    flex-wrap: no-wrap (default) 
+    
+    Ahora, en la otra cara de la moneda,... En caso que desee hacer respetar las medidas, en términos de altura y anchura, pasadas a los elementos hijos directos (incluso aunque le toque "robarse" más espacio del "viewport" que no tenía y hacer un salto de línea inferior),... debe asistirse del valor: "wrap". Así:
+
+    flex-wrap: wrap;
+    
+    Por último, "wrap-reverse" hace lo mismo que "wrap"; pero, en lugar de hacer que salten los elementos hijos flexibles a la línea inferior, hace que salten a la linea superior (es decir, si parcialmente la totalidad de los elementos hijos directos no caben sobre su "viewport" inicial disponible,... se hará un salto de línea también, pero ahora hacia arriba, para que arriba quepan los elementos que no pudieron caber con el "viewport" inicialmente asignado).
 */
 
 .flex-container {
+
+    /* Para trabajar en esta ocasión con "flex-wrap" nos interesa, primero, dejar un display con valor "flex" y, también, dejar un "flex-direction" con valor "row".
+    */
+
+    display: flex;
+    flex-direction: row;
+
+    /* ---- */
+    
     background-color: #FCA17D;
     padding: .5em 0;
+
+    /* Sin saltos de línea y medidas comprimidas */
+    flex-wrap:nowrap;
+
+    /* Con salto de línea para abajo y medidas respetadas */
     flex-wrap: wrap;
+
+    /* Con salto de línea para arriba y medidas respetadas  */
+
+    flex-wrap: wrap-reverse;
+
+    /*  */
 }
 
 .flex-item {
