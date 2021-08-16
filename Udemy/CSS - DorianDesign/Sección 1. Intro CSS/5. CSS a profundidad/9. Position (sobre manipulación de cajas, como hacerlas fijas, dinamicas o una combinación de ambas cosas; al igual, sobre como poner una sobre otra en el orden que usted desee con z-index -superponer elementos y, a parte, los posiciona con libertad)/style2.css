@@ -1,0 +1,49 @@
+/*
+    "fixed": El elemento perderá sus medidas y su espacio reservado. Si lo movemos usará el elemento html de referencia (incluso aunque esté siendo contenido antes por un elemento "padre" o superior a él: 1ra diferencia con "absolute"); y, además (aquí estaría la 2da diferencia con "absolute"), se quedará fijo en esa posición, incluso aunque hagamos scroll (siempre se quedará en la misma posición del viewport y lo podrá ver "eternamente"). Este recurso ya no se usa tanto como antes, desde que apareció "sticky", pero viene bien saber manejarlo porque "sticky" no soporta a navegadores antiguos; "fixed", sí.
+    */
+
+    *{
+        box-sizing: border-box;
+    }
+
+    body{
+        margin: 0;
+        background-color: #333;
+        color:#fff;
+    }
+
+    .header{
+        text-align: center;
+        padding: 25px 0;
+        background-color: lightskyblue;
+        color: orangered;
+        position: fixed;
+
+        /* Le daremos "top: 0;" para que la barra de menu ".header" se siga manteniendo fija sobre el tope de la pantalla del navegador. Recuerdese que, luego de declarar a "position", es que puede darles una ubicación al selector por medio de las propiedades consecuentes "top", "right", "bottom", "left" & "z-index".
+        */
+
+        top: 0;
+
+        /* Ahora si por ejemplo desea recuperar todo el ancho que, inicialmente, tenía nuestra barra de menu ".header" con relación a todo la pantalla del navegador, puede hacerlo de varias formas:
+        */
+
+        width: 100%;
+        /* Lo más conveniente */
+
+        /* Ahora, si se da cuenta, nuestra barra de menu (por sus medidas en altura y anchura) nos está tapando nuestro "H2" que dice: "Valores para la propiedad position"
+
+        /* Ahora, aquí hay un detalle nuevo, con "fixed" no importa que el selector "posicionado" esté contenido por otro elemento de HTML (padre, abuelo, etc); pues, de todas maneras, las posiciones que va a asumir, al darle parametros de ubicación, serán en relación a la página completa de HTML (su referencia) y no al posible elemento HTML que le contenga (con "absolute" esto sí que importa, acá no). */
+
+    }
+
+
+    /*
+    Si desea que, en esta ocasión, el H2 "Valores para la propiedad position" se vea (porque no se ve, "Menu" lo está tapando parcialmente); debe darle a dicho selector un "padding" tal que sea, al menos, de la misma longitud del selector que lo está ocultando; en este caso, la barra de Menu. Veamos eso. 
+    */
+
+    h2{
+        padding-top: 70px;
+    }
+
+    /* El anterior "padding" también podria haberselo dado de pleno al "body" en cuestión; mas, preferimos ser más puntuales y darselo al selector preciso que lo requiere */
+        

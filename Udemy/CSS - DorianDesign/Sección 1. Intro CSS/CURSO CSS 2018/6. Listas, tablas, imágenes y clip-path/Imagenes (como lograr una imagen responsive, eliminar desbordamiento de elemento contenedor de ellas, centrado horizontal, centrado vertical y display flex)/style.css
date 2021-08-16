@@ -1,0 +1,131 @@
+/* 
+    No existen propiedades para imágenes en CSS.
+
+    El 1er punto a resolver será cómo conseguir una imagen responsive.
+
+    1. Imágenes responsive. En el archivo base se recomienda poner esta regla; es decir, en el "normalize.css"; esto para que, por "defecto", todas las imagenes sean "responsive", tanto las habidas como por haber. La regla es la siguiente: */
+
+        .img-container{
+            width: 300px;
+
+            /* Se le puede pasar un ancho definido al elemento contenedor de la imagen (su elemento padre) */
+        }
+
+        .img{
+            max-width: 100%;
+
+            /* y a la imagen como tal es a la que se le define la propiedad-valor: "max-width: 100%". */
+        }
+        
+        /*
+        
+        Con esto se soluciona el problema del "scroll" horizontal (que suele darse en imagenes muy grandes que sobrepasan el viewport en términos de anchura); entonces, para evitar todo eso, simplemente podemos hacer que la imagen se adapte a las medidas de su contenedor; es decir, más precisamente, que el ancho máximo de la imagen sea relativo a la anchura total del elemento que le contiene, siendo la última instacia de "contenedor" el mismo HTML (en caso que no tenga un contenedor pasado por uno mismo o el contenedor que tenga no tenga un ancho definido a priori, por ejemplo).
+
+-------------------------------------
+
+    2. Cubrir todos los espacios al descubierto de una imagen. Las imágenes por defecto son elementos de línea; lo cual causa siempre un espacio, por debajo de ellas, que nos permite ir más allá y visualizar los estilos que tiene su contenedor y, en general, lo que hay en sí por detrás de la imagen, como al contenedor mismo propiamente,... este fenomeno ocurre por el "line-height" que tienen por defecto las imagenes. De hecho, podemos probar lo que estamos planteando: vamos a darle un "background-color" al selector que contiene ambas imagenes; es decir, a ".img-container", le daremos un fondo de color rojo para que se note bien (observe bien la parte inferior de las imagenes). */
+
+    .img-container{
+        background-color: red;
+    }
+    
+    /* Lo ve bien? Ahora, en caso que queramos tapar el "hueco" que nos deja expuesto la imagen, al no permitir que se visualice (aunque sea un poco) el contenedor que la cubre, le podemos dar solución de varias formas (dos formas):
+
+        a. Definiendo la propiedad-valor: "line-height: 0" al selector de su elemento contenedor (elemento padre)
+        
+        b. Definiendo la propiedad-valor: "display: block" al selector de la imagen en cuestión. 
+
+        Veamos. */
+    
+        .img-container{
+            line-height: 0;
+
+            /* Funciona! Recuerde va sobre el selector del elemento padre que contiene a la imagen */
+        }
+
+        .img{
+            display: block;
+
+            /* También funciona! Recuerde va sobre el selector propio con el que se identifica la imagen.
+            
+            Generalmente este es el método más usado; pues, suele ser conveniente, incluso para otras ocasiones, que la imagen sea pasada a elemento de bloque.
+            
+            Ahora, si necesita que la imagen conserve su condición de ser elemento de línea, por x o y motivo, use el método: "line-height: 0" */
+        }
+
+/* ---------------------------------- */
+    /*
+
+    3. Centrado horizontal. Hay dos formas de lograr que una imagen se centre de manera horizontal. 
+        
+        a. Si la imagen ha sido convertida a un elemento de bloque, recuerdese, al tener declarada la propiedad-valor "display: block"; entonces, existe sólo una forma, por lo menos la más correcta, de centrar dicha imagen en cuestión,... y es dando margenes automaticos a los laterales. Esos margenes, ojo, deben ser pasados al selector que es corresponiente a la imagen propia, no al elemento padre que le contiene.
+        
+        b. Ahora, si la imagen no ha sido convertida a elemento de bloque, sino que aún conserva su natural condición de ser un elemento de línea (y se desea que así se mantenga),... tenemos otra fórmula para centrar la imagen en cuestión; pero, ahora, este recurso se aplicaría es sobre el elemento contenedor de la imagen; es decir, sobre el selector padre que contiene al elemento de la imagen en sí. OJO con eso. La propiedad-valor que usted debe declarar es: "text-align: center".
+        
+        Y, OJO, este recurso sólo funciona si la imagen aún conserva su condición natural de ser un elemento de linea; de lo contrario, no funcionará.
+
+        Probemos todo esto.
+
+     */
+
+        .i2mg{
+            max-width: 100%;
+
+            /* Esta imagen no se extiende por todo lo ancho del viewport, porque ya viene con medidas fijas que son mucho mas inferiores que una pantalla comun de computador */
+            display: block;
+
+            margin-left: auto;
+            margin-right: auto;
+
+            /* Hay personas que hacen esto: 
+            
+            "margin: 0 auto;" // Es una mala práctica
+
+            & Funciona! Recuerde, estas propiedades-valor se aplican sobre el selector propio con el que se identifica a la imagen, no sobre el elemento que la contiene. */
+        }
+
+        .contenedorhorizontal{
+            background-color: lavender;
+
+            text-align: center;
+
+             /* Funciona! Recuerde, esta propiedad-valor se aplica sobre el selector del elemento padre que contiene a la imagen, no sobre el selector de la imagen en sí. */
+
+             /* Ademas, viene bien que recordar que para que funcione este método, la imagen debe ser un elemento de línea.  */
+        }
+
+     /*
+
+    4. Centrado vertical. Hay una variedad de maneras de hacer centrado vertical; en lo posible, las mostraremos todas. Sin embargo, la mejor opción para centrar verticalmente es: "flexbox". El problema con "flexbox" es que todavía hay navegadores muy antiguos que no lo soportan; entonces, a veces, es necesario recurrir a formas de centrar, verticalmente, más genericas.
+
+        1er caso: Supongamos que queremos que el texto, que acompaña a nuestra imagen, se coloque de forma centrada con respecto al logo. Esto se logra por medio de la propiedad-valor: "vertical-align: middle". En principio, esa propiedad tiene por defecto un valor de: "baseline" (línea base); lo que quiere decir que el elemento, también hijo, que acompaña a la imagen (en este caso una LÍNEA de texto de tipo "span"), estaría centrada con respecto a la BASE; es decir, la línea (de texto) estaría centrada con respecto a la base,... & eso es justo lo que cambiamos con el valor pasado de "middle"; quiere decir entonces que, ahora la línea estaría centrada con respecto al medio. */
+
+        .contenedorvertical img,
+        .contenedorvertical span{
+            vertical-align: middle;
+
+            /* Si se fija, la propiedad fue aplicada directamente sobre los elementos contenidos; es decir, no sobre un selector padre, sino sobre los selectores propiamente correspondientes al texto y a la imagen (a ambos se les debe pasar dicha propiedad-valor por igual).
+            
+            Sin embargo, este recurso no es completamente autosuficiente; resulta que si tenemos un texto muy largo o, mas bien, si el ancho del viewport no es lo suficientemente amplio como para cubrir en una sola linea todo el texto en cuestión,... la 2da línea que se registre, de dicho texto, se centraría con respecto a la base y no con respecto al medio; lo cual, podría ser frustrante para nosotros. 
+            
+            Toca entonces hacer lo siguiente: Darle un "display: table" al elemento contenedor; el que contiene, en este caso, tanto a la imagen como al texto; es decir, a ".contenedorvertical"; y, además, darle un "display: table-cell", ahora sí, sobre uno de los elementos hijos; más precisamente, sobre el elemento hijo correspondiente al texto en cuestión, de selector: ".contenedorvertical span". Tal que así, veamos. */
+        }
+
+        .contenedorvertical{
+            display: table;
+        }
+
+        .contenedorvertical span{
+            display: table-cell;
+        }
+
+    /* 
+
+    5. Centrado vertical con flex. Para hacer exactamente lo mismo que lo anterior (incluso mejor porque se nos hace la imagen "responsive" de paso) sólo es necesario declarar dos propiedades-valor sobre el elemento contenedor; es decir, el selector padre que contiene tanto a la imagen como al texto; en este caso puntual sería: "contenedorflex". Esas propiedades-valor serían: "display: flex" & "align-items": center". Veamos.  */
+
+    .contenedorflex{
+        display: flex;
+        align-items: center;
+
+        /* Recuerde, esto no en todos los navegadores funciona... tiene que estar su navegador muy actualizado para que funcione completamente bien cada propiedad. */
+    }

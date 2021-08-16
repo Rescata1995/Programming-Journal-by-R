@@ -43,11 +43,8 @@ h2 {
     height: 300px;
 
     /* background-image: url('./images/piscina.jpg');
-
     background-size: 700px 100%;
-
     background-repeat: no-repeat;
-
     background-position-x: right; */
 
     background-color: #1b2127;
@@ -120,7 +117,7 @@ h2 {
     /* display: inline-block; */
 }
 
-.project-image{
+.project-imageContainer{
     width: 500px;
     object-fit: cover;
 
@@ -229,7 +226,6 @@ figure{
     vertical-align: middle;
 
     /* Cuando tienes un texto (un "div" 1) y lo mezclas, por ejemplo, con otros tipos de elementos como contenido embebido; en este caso, una imagen (un "div" 2), tú puedes preferir el alineado, de la imagen que tienes, dentro de esa disposición vertical (la del texto); entonces, para eso, se llama la propiedad "vertical-align" sobre el elemento al que le deseas copiar su alineado vertical; en este caso, como ya lo dijimos, sobre nuestra imagen actual. 
-
     "vertical-align" puede asumir varios valores: "top", "bottom", "text-bottom", etc. Puede probarlos en tiempo real para percibir sus diferencias visuales.
     
     Tenga en cuenta que ambos elementos, texto e imagen, son "div" independientes; pero que hacen parte, y son hijos directos, de un mismo selector: ".footer". */
@@ -452,7 +448,6 @@ figure{
     background-position-x: 5px;
 
     /* No es casualidad que hayamos querido importar la imagen de la "carta" por medio de CSS; pues, esa carta realmente cumple una mera función estética; es decir, no hace parte defitivamente del DOM (no está dentro del HTML realmente); sólo fue agregada para cumplir la única función de ser un adorno y no interfiera sobre la escritura dentro de HTML ni sobre la manipulación de sus elementos totales (es un fantasma). 
-
     De hecho, si intenta tomar la "cartica" con el mouse, al intentar subrayarlo, no podrá seleccionarla; pues, realmente para la estructura de la página esa "cartica" no está ahí.
     */
 }

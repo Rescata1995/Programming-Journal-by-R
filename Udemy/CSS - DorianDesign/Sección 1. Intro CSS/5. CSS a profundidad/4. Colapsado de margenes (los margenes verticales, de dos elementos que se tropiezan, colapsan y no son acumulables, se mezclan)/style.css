@@ -23,8 +23,7 @@ Resulta que, si a un "header" le agregas algún título con algún "H"; acontece
 
 Primero que todo al "H"; es decir, al título, que en este caso lo nombramos con el selector ".title", se le debe colocar una propiedad-valor de: "margin: 0;".
 
-Pero adicionalmente, al propio "header", se le debe agregar una declaración, de varias disponibles, para arreglar por completo este "bug" de CSS. 
-
+Pero adicionalmente, al propio "header", se le debe agregar una declaración, de varias disponibles, para arreglar por completo este "bug" de CSS. El ".header" vendría siendo el elemento "padre".
 Puede elegir entre: 
 
 1. "overflow: hidden;"

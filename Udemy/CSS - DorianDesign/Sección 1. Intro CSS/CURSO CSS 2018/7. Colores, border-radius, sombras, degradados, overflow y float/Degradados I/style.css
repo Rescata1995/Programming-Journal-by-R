@@ -1,0 +1,140 @@
+/*
+
+Un degradado es una transición entre un color y otro. Por ejemplo, cuando nosotros ponemos dos (2) colores, el navegador calculará todos los colores intermedios entre el color 1 y el color 2: esto para poder pasar, definitivamente, de un color a otro. Si ponemos tres colores, pues lo mismo. Adicionalmente, no está de más decir que los degradados son un valor de la propiedad "background-image" (poner siempre los degradados solamente con esta propiedad para no afectar el resto de valores que pueda asumir la propiedad "background" en su conjunto).
+
+Dicho lo anterior, existen dos tipos de degradados: lineales y radiales
+
+    Degradados lineales:
+
+        1er caso: La forma más común de hacer un degragadado es: linear-gradient([direction], color-1, color-2, color-3); es decir, por ejemplo: 
+
+        background-image: linear-gradient(red, blue, yellow); 
+        
+        -acá omitimos la "direction" del degradado- 
+
+        2do caso: Podemos usar, efectivamente, el parametro de "direction" en un degradado lineal. La dirección es opcional y se puede establecer de dos (2) formas: 
+            
+            1. con palabras claves: "to top | to right | to bottom | to left | to top left | to top right| to bottom left | to bottom right".
+
+            Si queremos un degradado simetrico, normalmente lo hacemos con palabras claves porque son bastante intuitivas. 
+            
+            El "to" de las palabras claves significa "hacia"; es decir, hacia qué dirección tomará rumbo el degradado; esto, tomando como referencia, un primer color dado hasta que se transforma en un segundo (en caso que sea el ejemplo con dos colores).
+
+            2. con ángulos: 20deg, 180deg,...); por ejemplo, "0deg" equivale a un "to top" (si hacemos un simil), el color empieza desde abajo y va HACIA arriba (to top), "45deg" a "to top right", "90deg" a "to right", y así...
+        
+        A parte de poder hacer la transición entre dos colores, se pueden establecer "paradas de color"; es decir, determinar desde dónde empieza, dentro del elemento manipulado, el degradado para cada color: esto a partir de una medida pasada que indicaría, realmente, el límite de la solidez del color mismo (hasta donde se ocuparía la solidez del color dentro del espacio del propio elemento). Para establecer las paradas se puede usar cualquier medida: "px", "em","%"... Ahora bien, si desea que el corte sea solido (sin transiciones graduales de un color a otro, sin degradado) se establecería para todos los colores una misma medida como "parada de color". Es decir, si las paradas/inicios empiezan en el mismo sitio se genera un corte sólido, con lo cual, no habría espacio para degradados; por ejemplo, vea el caso de:
+        
+        "background-image: linear-gradient(red 50%, blue 50%);"
+
+    Degradados radiales
+
+        Funcionan de una forma similar a los degradados lineales.
+
+        background-image: radial-gradient([shape], red, blue);
+
+        Si no se le pasa el parametro "shape" (ya no hablamos de "direction" como es el caso de los Degradados lineales), por defecto, se hará un degradado circular y se ubicará en todo el centro; es decir, la forma que va a asumir por defecto el degradado del primer color es la de un circulo y éste se posicinonará sobre todo el centro y se irá degradando hacia los extremos hasta que se asume el color del segundo color pasado. 
+        
+        Pruebe con el siguiente ejemplo donde "red" equivaldría al 1er color y "blue" equivaldría al 2do: 
+
+        background-image: radial-gradient(red, blue);
+
+        Adicionalmente es preciso decir que, por defecto, "shape" se ajustará al tamaño de la caja,... sin embargo, podemos establecer si realmente queremos un círculo o, más bien, una elipse; y, además, podemos definirle como valor, al "shape", sea un círculo o una elipse, un radio o los radios.
+
+        Por ejemplo, si queremos poner para el primer color pasado (que será un rojo) un radio de "100px" y un "shape" equivalente a un "circle" sería así: 
+
+        background-image: radial-gradient(circle 100px, red, blue);
+
+        Sin embargo, acá también se pueden pasar paradas de color; es decir, definir los límites del color mismo para que, después de dicho o dichos límites, se comience a degradar. Tal que así:
+
+        background-image: radial-gradient(circle 100px, red 50%, blue 70%);
+
+        En el anterior ejemplo, se conseguirá un circulo central de color rojo que asumirá el tamaño de 100px de radio; pero que, la solides de su color, termina en el 50% del espacio del elemento afectado. Del resto, entre el 50% al 70% del espacio del elemento, el color rojo comenzará a degradarse hasta que, en el 70%, comience a dibujarse los extremos del elemento con un color azul en vez de rojo. Este ejemplo lo probaremos más adelante para que se entienda mejor el concepto.
+
+        De nuevo, si no establecemos un punto de origen, el punto por defecto será el centro del elemento (tanto para el eje de las X como para el eje de las Y). Para establecer el punto de origen podemos hacerlo en medidas o con palabras claves. 
+        
+        Para cualquier caso, asistiendose de la palabra "at" es que establecemos el punto de origen (sea pasado en medidas o con palabras claves). 
+        
+        Ahora, generalmente, los puntos de origen se establecen con palabras claves. 
+        
+        Los valores que acepta, si es con palabras claves, son:
+
+        at top | at right | at bottom | at left | at center | at closest-side | at closest-corner | at farthest-side | at farthest-corner
+
+        Los último cuatro valores, de las palabras claves, no son muy utilizados; en todo caso, si desea más documentación al respecto, puede visitar el siguiente sitio web:
+
+        Más documentación al respecto: 
+        https://developer.mozilla.org/es/docs/Web/CSS/radial-gradient
+
+        "at top", por ejemplo, significa que la figura se ubicará en la parte superior del elemento manipulado,... una parte superior que, por defecto, es central; esto último es así porque, si establecemos un solo valor (como es el caso de "at top"), el segundo valor por defecto será "center". Evalue este ejemplo si desea:
+
+        background-image: radial-gradient(circle 100px at top, red 50%, blue 50%);
+
+        Otro ejemplo podría ser el siguiente: "at top left"; el cual equivale, en este caso, a ubicar la figura en la esquina superior izquierda del elemento. Por ejemplo, puede probar:
+
+        background-image: radial-gradient(circle 100px at top left, red 50%, blue 50%);  
+
+        -----------------------------------
+
+        Probemos el degradado radial ahora con elipses. 
+
+        A las elipses necesariamente se les pasa dos radios; de lo contrario, no funciona. El 1er radio establecerá la medida de la elipse sobre el eje de las X; es decir, establece su ancho. Y el 2do radio establecerá la medida de la elipse pero sobre el eje de las Y; es decir, establece el largo.
+
+        Acá el "at" funciona exactamente igual. Pruebe.
+
+        background-image: radial-gradient(ellipse 100px 50px, red, blue);
+
+        background-image: radial-gradient(ellipse 200px 50px at bottom, red, blue);
+*/
+
+.box {
+    width: 200px;
+    height: 200px;
+    border: 3px solid black;
+    margin: 2em auto;
+
+    background-image: linear-gradient(red, blue, yellow); 
+
+    /* Acá conseguimos un degragado sencillo, por defecto, de rojo a azul y de azul a amarillo. Es nuestro primer caso de degradado lineal (sin el uso del parametro "direction") y se usaron 3 colores: en el 0% un rojo puro, en el 50% un azul puro, y en el 100% un amarillo puro. */
+
+    /* Ahora, revisemos el caso en el que le pasamos el parametro "direction" a "linear-gradient". */
+
+    background-image: linear-gradient(to top, red, blue); 
+
+    /* Probemos las paradas de color. Por ejemplo, queremos que el degradado del  color rojo comience desde el 10% de la ubicación del elemento manipulado ".box"; y, además, que el degradado del color azul comience desde el 90% de la ubicación del mismo elemento ".box" */
+
+    background-image: linear-gradient(red 10%, blue 90%);
+
+    /* Ahora, probemos las paradas de color con corte solido (sin degradado) */
+
+    background-image: linear-gradient(red 50%, blue 50%);
+
+    /* Veamos este otro caso de parada de color con corte solido, y sin degradado, pero con tres colores. Se fijará que también se pueden establecer dos "sub-parametros" de "parada de color" en cada color; es decir, un inicio y un final para señalar cuál sería el espacio exacto que ocupará, desde un punto A a un punto B, cada color. Esto en contexto se pondrá en práctica con el color "blue"; pues, sólo ocupará el espacio del elemento que va desde el 50% hasta el 75% del mismo */
+
+    background-image: linear-gradient(red 50%, blue 50% 75%, green 75%);
+
+    /* background-image: radial-gradient(ellipse 225px 50px at bottom, transparent 50%, blue 50%); */
+
+    /* Ahora probaremos el primer caso de degradado con radiales (degradado radial) */
+
+    background-image: radial-gradient(red, blue);
+
+    /* Ahora, recuerde este ejercicio: Lo que se quiere conseguir es un circulo central de color rojo que asuma el tamaño de 100px de radio; pero que, la solides de su color, termine en el 50% de todo el espacio que asume el elemento ".box". Del resto, queremos que entre el 50% al 70% del espacio del elemento, el color rojo comience a degradarse hasta que, en el 70% del elemento, comience a dibujarse los extremos del elemento con un color azul en vez de rojo. Probemos. */
+
+    background-image: radial-gradient(circle 100px, red 50%, blue 70%);
+
+    /* Probando "at top" en circulos */
+
+    background-image: radial-gradient(circle 100px at top, red 50%, blue 50%);
+
+    /* Probando ahora "at top left" en el mismo circulo */
+
+    background-image: radial-gradient(circle 100px at top left, red 50%, blue 50%);
+
+    /* Probando ahora las Elipses */
+
+    background-image: radial-gradient(ellipse 200px 50px at bottom, red 50%, blue 50%);
+
+    /* Probando Elipses con el color "transparent" */
+
+    background-image: radial-gradient(ellipse 200px 50px at bottom, transparent 50%, blue 50%);
+}

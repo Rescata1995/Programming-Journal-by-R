@@ -1,0 +1,69 @@
+<!-- Las constantes se declaran con la palabra reservada "const" y haremos uso de ellas cuando necesitamos que una variable no cambie su valor durante el flujo de mi programa; es decir, que conserve de principio a fin su valor siempre.
+
+Detalles a considerar:
+    1. No puede ser reemplazado su valor (en tipos de datos primitivos).
+    2. No puede ser declarada sin un valor. 
+
+En cuanto al punto 1), una acotación.
+    La apreciación sobre que: No puede ser reemplazado el valor inicial con la que es definida una constante, si y solo si, la constante fue declarada para asignar un valor relacionado a un tipo de dato primitivo,... no es en vano.
+
+    Los valores definidos en constantes, en efecto, no pueden ser modificados; sin embargo, este no es el caso para tipos de datos compuestos; es decir, donde no sólo se define un único valor para la variable en cuestión; más precisamente, este no es el caso en "object {}" & "array []", por ejemplo. Dejemos de lado a "function" y a "class" un momento.
+
+    A grandes rasgos, un Objecto (object) es una colección de atributos con la definición de sus respectivos valores. Haciendo un simil con CSS, es similar a una "Regla". Recuerde:
+
+        Regla: Así se le llama al selector, con todas sus declaraciones, en su conjunto.
+
+        selector
+        {
+            propiedad: valor;
+            propiedad2: valor;
+            propiedad3: valor;
+        } 
+    
+    Ahora, un ejemplo de un Objeto de JS así (vaya a las etiquetas de html "script"). Vamos a crear un objeto llamado "persona"; que, justamente, pretende recolectar los datos básicos de una persona, de manera conjunta.
+
+    Posteriormente, pondremos un ejemplo de Arreglo (array) que consiste en definir una variable, no con un solo valor; sino, con varios valores sobre una misma línea de código (sin pasarle atributos o propiedades como sí se ve en los Objetos).
+
+    Todo esto para dejar claro que una constante no funciona, de la misma manera, para valores primitivos como para valores compuestos.
+
+-->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Constantes</title>
+    </head>
+    <body>
+        <script>
+            const persona = {
+                nombre: "Roberto",
+                edad: 25,
+                Sexo: 'M'
+            }
+
+            const hermanosPersona = ["Daniela", "Franco"];
+
+            console.log(persona);
+            console.log(hermanosPersona);
+
+            // Ahora vamos a hacer modificaciones tanto en el Objeto como en el Array (tipos de datos compuestos),... para que se dé cuenta que sí podemos hacer modificaciones, con "const", habiendo pasado antes ya, inicialmente, valores.
+
+            // Ahora, para hacer modificaciones; esta vez, por ejemplo, para agregar un atributo adicional al objeto "persona",... veamos como se hace: se llama al objeto nuevamente y, por medio de un punto en el medio, se nombra un nuevo atributo. El nuevo atributo que incorporaremos al objeto "persona" será "correo". Tal que así:
+
+            persona.correo = "robertovelasquezdean@gmail.com";
+
+            // Ahora, en el caso de los Arreglos, para agregar un nuevo valor,... además de llamar al arreglo en cuestión y, de paso, poner un punto en el medio también, hay que asistirse de una función que se llama "push"; posteriormente, entre parentesis, se pasan los nuevos valores deseados a agregar; en este caso, vamos a pasarle un nuevo valor llamado "Divier" al arreglo "hermanosPersona". Tal que así:
+
+            hermanosPersona.push("Divier");
+
+            // Ahora, si yo vuelvo a imprimir en la consola el Objeto "persona" y el Arreglo "hermanosPersona",... veremos que se adicionaron nuevos valores para ambas.
+
+            console.log(persona);
+            console.log(hermanosPersona);
+
+            // Ahora, algo importante, lo ideal es que igual declares a tus datos compuestos con "let", en vez de "const", si crees que vayas a hacer cambios en ellos a lo largo del flujo del código; de lo contrario, puedes darte el gusto, si deseas, de declararlos con "const".
+        </script>
+    </body>
+    </html>

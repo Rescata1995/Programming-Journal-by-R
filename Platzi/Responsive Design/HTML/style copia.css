@@ -1,0 +1,1065 @@
+*{
+    box-sizing: border-box;
+}
+
+/* ATENCIÓN, ACÁ SE VA A IMPORTAR UN "FONT" (de tipo "icono") */
+
+@font-face {
+    font-family: 'icomoon';
+    src:  url('icomoon/fonts/icomoon.eot?eek5zr');
+    src:  url('icomoon/fonts/icomoon.eot?eek5zr#iefix') format('embedded-opentype'),
+      url('icomoon/fonts/icomoon.ttf?eek5zr') format('truetype'),
+      url('icomoon/fonts/icomoon.woff?eek5zr') format('woff'),
+      url('icomoon/fonts/icomoon.svg?eek5zr#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .icon-menu:before {
+    content: "\e900";
+  }
+
+  /* ATENCIÓN, FUENTE DE ICONO IMPORTADO */
+
+  /* Ahora, vamos a crear un menu de hamburguesa a partir de la anterior fuente de icono importada; esto se hará por medio de un selector que sería una extensión de la clase ya existente, la de la fuente de icono justamente, ".icon-menu". */
+
+  .burguer-button{
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      /* border-radius equivale al 50% a cada uno de los lados del "width" & "height", esa es la medida relativa del "border-radius"; es decir, 50% sería 20px */
+
+      background-color: rgba(0, 0, 0, 0.8);
+      display: none;
+      /* para que me pueda leer las medidas pasadas en el "width" & en el "height"; pues, era un bloque de linea y los bloques de línea sólo se adaptan a su propio contenido. Sin embargo, no nos interesa que se vea ".burguer-button" para pantallas grandes; sino, en pantallas moviles (Desde 767px para abajo). */
+
+      /* Centremos, ahora, nuestro icono de fuente.
+      1ra forma de centrar elementos (con "flex"): */
+
+      /* display: flex;
+      align-items: center;
+      justify-content: center; */
+
+      /* 2da forma de centrar elementos */
+
+      /* "line-height" (alto de línea) será igual al alto "height" que tenga mi elemento; es decir, height = 40px (con esto se logra un centrado vertical) */
+      line-height: 40px;
+
+      /* Centrado horizontal */
+      text-align: center;
+
+      /* Ambas formas de centrado se colocan en el elemento contenedor */
+
+      position: fixed;
+      z-index: 20;
+      left: 5px;
+      top: 5px;
+      color: white;
+
+  }
+
+body {
+    font-family: 'Source Sans Pro', sans-serif, Arial;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-family: 'Raleway', serif;
+    font-weight: normal;
+    /* font-style: italic; */
+}
+
+h1{
+    font-size: 2.32rem;
+    line-height: 1.5em;
+    letter-spacing: -.2px;
+    color: white;
+    margin: 0;
+}
+
+h1 strong{
+    /* color azul, con algo de "celeste" */
+    color: #025fff;
+}
+
+h2 {
+    color: #026fff;
+    text-transform: uppercase;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+
+.hero{
+    height: 300px;
+
+    /* background-image: url('./images/piscina.jpg');
+
+    background-size: 700px 100%;
+
+    background-repeat: no-repeat;
+
+    background-position-x: right; */
+
+    background-color: #1b2127;
+
+    justify-content: space-between;
+
+    /* Las siguientes 2 propiedades pondrán más estatico y "juntado" nuestro ".hero" */
+
+    display: flex;
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    /* object-fit: cover; */
+}
+
+.hero-image{
+    object-fit: cover;
+
+    /* La función de esta propiedad está muy bien explicada en el apartado del curso de CCS de Dorian Designs que se llama: "Object-fit, object-position & filter()" en la carpeta de "6. Listas, tablas, imagenes,..." */
+}
+
+.portfolio {
+    background: #fafafa;
+    padding: 20px;
+    /* background: red; */
+}
+
+.project{
+    border: 1px solid gray;
+    border-radius: 10px;
+
+    display: flex;
+
+    /* Propiedades-valor sacadas propiamente del repositorio de Leonidas en GITHUB, donde se encuentra acabado el proyecto, a continuación: */
+
+    margin-bottom: 15px;
+    padding: 20px;
+    background: white;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 10px 10px 30px -5px black;
+    flex-wrap: wrap;
+}
+
+.project:hover{
+    /* box-shadow: 10px 10px 15px -5px black; */
+}
+
+.project-course,
+.project-date,
+.project-url {
+  margin: 10px 0;
+}
+
+.project-description {
+  font-size: 15px;
+}
+
+.project strong {
+  font-family: 'Fjalla One', sans-serif;
+}
+
+.project-title {
+    font-size: 30px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.project-details{
+    width: 50%;
+    /* display: inline-block; */
+}
+
+.project-imageContainer{
+    width: 50%;
+    object-fit: cover;
+
+    /* display: inline-block; */
+}
+
+.header{
+    background-color: #1b2127;
+    color: white;
+    display: flex;
+    height: 120px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+ol,
+ul{
+    margin: 0px 15px 0px 0px;
+    padding: 0;
+    list-style: none;
+    font-family: 'Raleway', serif;
+    font-size: 0.95rem;
+    /* para que no tengan estilos ni formatos las listas */
+}
+
+.link:active{
+    transform: scale(.95);
+    border: 2px solid gray;
+    box-shadow: 2px 2px 10px -5px gray inset, -1px -1px 10px -5px gray inset;
+}
+
+.link:hover{
+    color: gray;
+}
+
+figure{
+    margin: 0;
+}
+
+.header figure{
+    margin: 5px 10px 5px 15px;
+    /* "figure" por defecto viene con margenes, acá los estamos definiendo manualmente */
+}
+
+.logo{
+    text-align: center;
+}
+
+.header a{
+    color: white;
+    text-decoration: none;
+}
+
+.menu{
+    height: inherit;
+}
+
+.header ol{
+    display: flex;
+    height: inherit;
+    /* Va a heredar el "height" del ".menu", su elemento padre ("inherit" sólo funciona entre padres e hijos directos) */
+}
+
+.header ol li{
+    height: inherit;
+}
+
+.header a{
+    display: flex;
+    align-items: center;
+    height: inherit;
+    padding: 0 10px;
+
+    /* para que el enlace tenga acceso desde todo su alto (no solamente sobre la literalidad de su texto nada más, sino sobre todo su espacio disponible en términos de altura), hay que asignarle el "alto" directamente a él; es decir, al elemento "a" */
+}
+
+.flexbox{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box{
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    border: 1px solid red;
+
+    flex-shrink: 0;
+}
+
+.footer{
+    background-color: #1b2127;
+    color: white;
+
+    display: flex;
+    align-items: center;
+
+    /* el selector ".footer", por medio de "display: flex;" está afectando directamente sobre todas las divisiones "div" que contiene; de tal manera que, todos esos sub-elementos "div" se acoplen de la manera más estatica y mejor ajustada posible sobre todo el ".footer".
+    */
+
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer img{
+    vertical-align: middle;
+
+    /* Cuando tienes un texto (un "div" 1) y lo mezclas, por ejemplo, con otros tipos de elementos como contenido embebido; en este caso, una imagen (un "div" 2), tú puedes preferir el alineado, de la imagen que tienes, dentro de esa disposición vertical (la del texto); entonces, para eso, se llama la propiedad "vertical-align" sobre el elemento al que le deseas copiar su alineado vertical; en este caso, como ya lo dijimos, sobre nuestra imagen actual.
+
+    "vertical-align" puede asumir varios valores: "top", "bottom", "text-bottom", etc. Puede probarlos en tiempo real para percibir sus diferencias visuales.
+
+    Tenga en cuenta que ambos elementos, texto e imagen, son "div" independientes; pero que hacen parte, y son hijos directos, de un mismo selector: ".footer". */
+}
+
+.footer a{
+    color: white;
+    text-decoration: none;
+}
+
+.footer a:hover{
+    text-decoration: underline;
+}
+
+.experience-list-title{
+    margin-left: 20px;
+
+}
+
+.experience-list{
+    display: flex;
+    flex-wrap: wrap;
+    /*  */
+
+    /* ATENCIÓN, en el diseño original esta clase recibió el nombre de "event" y no de "experience" (como fue nuestro caso).
+    */
+}
+
+.experience{
+
+    border: 1px solid #E5E7EA;
+    margin: 1%;
+    width: 48%;
+    border-radius: 8px;
+
+    /* para el desbordamiento de la imagen ante su contenedor (border), usemos la propiedad-valor: "overflow: hidden".
+    */
+
+    overflow: hidden;
+
+    /* con "overflow: hidden" se me alteraron un poco las medidas de mis "experience" de tal manera que ahora se me "encogieron" y caben todas, mis "experience", en la pantalla disponible del navegador; sin embargo, todavía deseo que se me respeten las medidas de ancho pasadas a cada una de ellas; por lo que declararé la propiedad-valor: "flex-shrink: 0".
+    */
+
+    flex-shrink: 0;
+
+    background-color: #f4fbff;
+    /* Color de fondo "celeste" del elemento "experience" */
+}
+
+.experience:hover{
+    box-shadow: 1px 1px 12px -6px black, -1px -1px 12px -6px black;
+    border: none;
+}
+
+.experience img{
+    /* De momento, se nos hizo necesario darle un margen negativo a la izquierda y al "top" de las imagenes debido a que, por defecto, se estaban sobresaliendo por el lado derecho del borde (y por encima hacia falta contenido) */
+
+    width: 490px;
+    height: 200px;
+
+    /* La propiedad-valor "object-fit: cover" nos sirve para cambiar la proporción de la imagen de tal manera que quepa, de la manera más estetica posible, dentro de las mediciones y los tamaños arbitrarios que se le estén pasando (aunque el valor "cover" como tal se come un poco los costados de la imagen). Veamos. */
+
+    object-fit: cover;
+    object-position: 0px -15px;
+
+}
+
+/* Ahora, lo que queremos hacer es darle margenes al contenido textual que está dentro de cada "experience"; es decir, queremos manipular por separada la clase "experience-detail" y darle sus respectivos margenes con respecto a su elemento o selector padre "experience" */
+
+.experience-detail{
+    margin: 20px 40px;
+
+    background-color: rgb(229, 231, 234, .2);
+    /* Color de fondo "blanco" del elemento hijo "experience-detail" */
+
+    /* Ahora, nos interesa que "experience-detail" se sobreponga, sin ningún problema, sobre la imagen de cada "experience"; es decir, que el contenido textual se ubique por encima de nuestra imagen en cada "experience". Lo anterior, lo podríamos hacer, en principio, con un "margin-top" negativo. */
+
+    margin-top: -40px;
+
+    /* Sin embargo, aún así, a veces pasa que la imagen quedaría por encima del contenido textual,... es decir, si bien el contenido textual "experience-detail" sube, existe la posibilidad de que sea opacado por la imagen en su intento (en esta ocasión, por ejemplo, opacó nuestro "background-color: white"). Para asegurarnos de que esto no pasará, podemos hacer uso del recurso que nos brinda la propiedad "position" por medio de su valor "z-index" (en caso de ser necesario dejar un orden de apilamiento que le dé prioridad al selector del contenido textual "experience-detail" sobre su elemento padre "experience", sino defina con "relative" solamente).
+    */
+
+    position: relative;
+
+    /* Ahora, vamos a oxigenar un poco con "pagging" al contenido textual del "experience-detail" para que no quede tan pegado de su propio borde */
+
+    /* padding: 20px; */
+
+    text-align: center;
+
+    /* testing */
+
+    /* border-radius: 6px; */
+    border: 1px solid #E5E7EA;
+    padding: 1px 20px 15px 20px;
+}
+
+.experience-title{
+    font-family: 'Raleway', serif;
+}
+
+.experience-description{
+    text-align: left;
+}
+
+.experience-url{
+    color: #056fff;
+    border: 1px solid;
+
+    /* El "border" en este ocasión asume el color del "content"; es decir, asume el color de la propiedad "color". */
+
+    padding: 5px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.experience-url:hover{
+    /* background-color: #f5f5f5; */
+    background-color: rgb(229, 231, 234, .6);
+}
+.experience-url:active{
+    box-shadow: 2px 2px 10px -5px #111 inset, -1px -1px 10px -5px #111 inset;
+    border: 2px solid #056FFF;
+}
+
+.contact{
+    background-color: #056fff;
+    color: white;
+    height: 150px;
+
+    /* Alineado vertical con "display:flex" */
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.social-link{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+}
+
+.social-link.twitter{
+    /* Importación de imagenes con CSS */
+    background-image: url('./images/twitter.svg');
+
+    /* Asignación de tamaños de imagenes importadas con CSS (hay que asignarles manualmente uno para poder visualizas las imagenes) */
+    background-size: 50px 50px;
+}
+
+.social-link.twitter:active{
+    transform: scale(.90);
+}
+
+.social-link.facebook{
+    background-image: url('./images/facebook.svg');
+    background-size: 50px 50px;
+}
+
+.social-link.facebook:hover{
+    background-color: #35548F;
+    border-radius: 9px;
+}
+
+.social-link.facebook:active{
+    transform: scale(.95);
+}
+
+.social-link.github{
+    background-image: url('./images/github.svg');
+    background-size: 50px 50px;
+}
+
+.social-link.github:hover{
+    background-color: #000000;
+    border-radius: 50px;
+}
+
+.social-link.github:active{
+    transform: scale(.95);
+}
+
+.social-link.instagram{
+    background-image: url('./images/instagram.svg');
+    background-size: 50px 50px;
+}
+
+.social-link.instagram:hover{
+    background-color: #F66041;
+    border-radius: 16px;
+}
+
+.social-link.instagram:active{
+    transform: scale(.95);
+}
+
+.form-email h3{
+    font-family: 'Source Sans Pro', sans-serif, Arial;
+}
+
+.form-email input{
+    font-family: 'Raleway', serif;
+    font-size: 0.7rem;
+
+    /* Demosle un color al borde dibujado sobre el selector propio de la caja de texto */
+
+    border-color: gray;
+
+    /* Ahora, demosle un estilo particular al borde dibujado sobre el selector propio de dicha caja de texto */
+
+    border-style: solid;
+
+    padding: 10px 20px 10px 25px;
+}
+
+/* Vamos a seguir trabajando sobre los "input" hijos del elemento padre "form", que lleva por clase "form-email", pero ahora de forma independiente sobre cada uno de ellos.
+*/
+
+.form-text{
+
+    /* A continuación lo siguiente: viene un sin número de "propiedades-valor" relacionadas a la importación de imagenes directamente de css */
+    background-image: url('./images/envelope.svg');
+    background-size: 15px 15px;
+
+    /*  La propiedad-valor "background-repeat: no-repeat" es para que se me reproduzca una sola vez, sobre el selector seleccionado, la imagen que ha sido importada por medio de CSS */
+    background-repeat: no-repeat;
+
+    /*
+    "background-position" nos permite colocar, sobre el selector seleccionado, la imagen importada en cualquier posición, ya sea sobre el eje de las Xs o sobre el eje de las Ys. Tal que así:
+    */
+
+    background-position-y: center;
+    background-position-x: 5px;
+
+    /* No es casualidad que hayamos querido importar la imagen de la "carta" por medio de CSS; pues, esa carta realmente cumple una mera función estética; es decir, no hace parte defitivamente del DOM (no está dentro del HTML realmente); sólo fue agregada para cumplir la única función de ser un adorno y no interfiera sobre la escritura dentro de HTML ni sobre la manipulación de sus elementos totales (es un fantasma).
+
+    De hecho, si intenta tomar la "cartica" con el mouse, al intentar subrayarlo, no podrá seleccionarla; pues, realmente para la estructura de la página esa "cartica" no está ahí.
+    */
+}
+
+.form-text:hover{
+    background-color: #f5f5f5;
+}
+
+.form-box{
+
+    /* "form-box" es la clase (class) del "input" con atributo y valor de: type="submit"; esto puso ser reemplazado por un elemento de tipo "button", como lo hizo leonidas; es decir, él llamó al selector de la siguiente forma: ".form-email button"
+    */
+
+    display: block;
+
+    /* Le dimos "display: block" para que ocupará todo el ancho en el siguiente "renglón" de la página web y quede libre (que no se ponga al costado del input type="email"; es decir, que no quede al lado de la caja del texto).
+    */
+
+    margin-top: 10px;
+
+    background: transparent;
+
+    /* Le dimos "background: transparent" para quitarle el color de fondo al contenido del selector ".form-box"; es decir, a la caja del botón. */
+
+    color: white;
+    width: 100px;
+
+    border-radius: 5px;
+}
+
+.form-box:active{
+    transform: scale(.95);
+    box-shadow: 2px 2px 10px -5px #111 inset, -1px -1px 10px -5px #111 inset;
+}
+
+.form-box:hover{
+    background-color: #0567FF;
+}
+
+.container{
+    /* El siguiente tipo de border es una gran forma de depuración de estilos, siempre se coloca al inicio del proceso, pero al final se quita */
+
+    /* border: 1px solid red; */
+
+    /* Al poner un contenedor, toca volver a centrar y ampliar (esto por lo general, ya que los elementos dentro del "container" se contraen) */
+
+    max-width: 1020px; /* ampliación */
+    flex: 1;
+    margin: 0 auto; /* centrado */
+
+    /* Hay efectos visuales que se perdieron, como puede ver, al usar un contenedor; pues bien, esos efectos visuales, podemos heredarlos de un elemento padre; es decir, usar las mismas propiedades visuales del elemento padre y definirlas con un valor de "inherit".
+    */
+
+    height: inherit;
+    display: inherit;
+    align-items: inherit;
+    justify-content: inherit;
+
+    flex-wrap: inherit;
+}
+
+.html-video{
+
+    /* La diferencia entre "max-width: 100%" & "width: 100%" es que, si bien "max-width: 100%" se adapta al 100% de su elemento contenedor, tiene un límite (en términos de anchura). El límite tiene que ver con el límite propio, del ancho establecido, que tiene originalmente el elemento en cuestión (el elemento propio, no el elemento padre o contenedor).
+
+    El ancho del elemento nunca será superior al propio ancho pasado o establecido para él. En cambio, con la propiedad-valor: "width: 100%" no se respeta casi nada el ancho que tenga pasado el elemento; pues, no le importa mucho el tamaño que tenga el navegador, en términos de anchura, y querrá seguir ampliandose.
+    */
+
+    /* max-width: 100%; */
+    width: 100%;
+
+    /* Con la propiedad-valor "height: auto" se anularía el alto inicialmente pasado al elemento del video; de tal manera que, el "alto" del elemento, termine adaptadose automaticamente al alto de su elemento padre o contenedor. */
+
+    height: auto;
+
+    /* Acá, en el selector ".html-video", es que le debe pasar unas medidas responsive al video importado; por lo general, si el elemento del video ya está siendo contenido por un elemento padre, sólo es necesario declarar las propiedades-valor: "max-width: 100%" & "height: auto" propiamente dentro del elemento del contenido embebido; es decir, dentro del selector del video (para este caso). */
+}
+
+/* Lo primero que haremos, como responsive, será apilar las cosas en la medida que tengan menos espacio disponible (en la medida que se "achique" la página); mas precisamente, la estrategia que se aplicará, es que los elementos se vayan apilando uno debajo del otro. Se empieza de arriba hacía abajo.
+
+De hecho, la primera muestra de que intentamos "apilar" para ayudar al diseño responsive de nuestro sitio web fue el uso de la propiedad-valor: "flex-wrap: wrap" en el elemento padre, como se debe, del selector "experience". El elemento padre del selector "experience" es el selector "experience-list" (un "section" de HTML),... posteriormente el contenedor, selector ".container", lo heredó. Sin embargo, la propiedad-valor "flex-wrap: wrap" no sólo debe ir en "experience-list", sino en todas las sesiones más importantes que hacen de elementos "padres", principalmente en aquellas donde se nos hace un "scroll" horizontal debido a que su espacio disponible, horizontalmente, ya está agotado para los elementos "hijos" existentes. La idea es que, en vez de hacerse ese "scroll" horizontal, los elementos se apilen más abajo en caso de que no pueda ocupar más espacio para un límite máximo de ancho establecido (cosa que haremos justamente ahora, establecer un límite máximo de ancho para nuestros contenedores ".container").
+*/
+
+/* Ahora queremos que nuestros contenedores, ".container", tenga un tamaño variable; pues, de momento, tienen un tamaño fijo y nos ayudará bastante adaptar las "cajas" contenedoras del sitio web a las medidas variables del "viewport". Vamos allá!
+
+Pero, como mencionamos antes,... primero definamos, para los ".container", un máximo de ancho con la propiedad: "max-width",... para motivar a que los elementos tiendan a ajustarse un poco más siempre y evitar que se extiendan sobre todo lo ancho al tener la flexibilidad de hacerlo. PERO, OJO, el ancho del contenedor debe de ser lo suficientemente grande como para que quepen dentro todos sus elementos hijos,... si no es necesario que se apilen hacia abajo y si no se hace necesario hacer "scroll" horizontal. IMPORTANTE: En términos de anchura, para que quepen todos los elementos hijos del contenedor, dentro del contenedor, sin importar cuanto mida el contenedor ni cuantos elementos hijos tenga, es preferible definir el tamaño de los elementos hijos con porcentajes; pues, el porcentaje es una medida relativa que toma como referencia el tamaño de los elementos padres; es decir, los elementos hijos se adaptarían a su elemento padre de forma definitiva y en cualquiera que sea el contexto. ESTO EN SITUACIÓN: Por ejemplo, para el selector ".project" le tocará hacer que los dos elementos hijos que tiene ahí dentro, "project-imageContainer" & "project-details", quepen completamente dentro del ancho definido para su contenedor "project"; entonces, puede optar por darle un ancho a cada elemento hijo equivalente al 50% (de hecho, esto fue lo que hicimos en cada uno de los selectores de esos elementos hijos); así, en todos los casos que sea, podrá ver que los dos elementos hijos, "project-imageContainer" & "project-details", siempre tendrán espacio dentro del elemento padre, que sería el contenedor del selector ".project".
+
+    Es también lo que debe suceder, por ejemplo, para los elementos hijos del selector ".experience-list"; es decir, lo que debe pasar para el selector ".experience". Tenga en cuenta que, aunque sean cuatro (4) elementos con el selector ".experience", sólo son dos (2) los que se ocupan por todo el ancho del viewport; es decir, debe repartir un 50% como máximo en el "width" del selector ".experience" (considerando también que las medidas adicionales del "box model", como "margin" y "padding", terminan afectando también sobre el "width" total del selector en cuestión). Entonces, quizas, como ya usted tenía un "margin" definido para el selector ".experience", es probable que le quite 1% al "width" para darselo al "margin", quedando los valores así,... "width": 48% y "margin": 1% (se deja 1% libre para no sobre-exigir al selector padre).
+
+
+Retomando los temas anteriores, entonces, de momento nos estamos valiendo de dos herramientas: "max-width" y "flex-wrap: wrap".
+
+"max-width" para ".container" &
+"flex-wrap: wrap" para los elementos "padres": ".header", ".hero", ".project", ".experience-list", ".contact" & ".footer"; que son, justamente, los elementos "padres" donde sus elementos "hijos" se extienden por todo lo ancho y generan "scroll" horizontal. En todo caso, ".container" también está heredando (inherit) la propiedad-valor: "flex-wrap: wrap"..., así lo hemos decidido para que el efecto "flex-wrap: wrap" afecte a los hijos de los hijos de cada elemento "padre" como ".header", ".hero", "experience-list", "contact" & ".footer".
+
+Ahora, vamos a trabajar sesión por sesión por separada,... para nuestra comododidad y enfocarnos sólo en ella, así que vamos a comentar todas las sesiones en el html, menos el ".header" (nuestra primera sesión). De tal manera que, al navegar el sitio web, solo se vea el "header" en sí.
+
+Estando ya solamente de frente con una sesión (section o article importante) debe activar las "media queries" en "Show Media Queries" de la Devtools (inspeccionar elementos).
+
+Estando en "Show Media Queries" visualizamos los tamaños estandar: desde el tamaño full al tamaño más pequeño, tomando uno a uno; de tal manera que, se configure individualmente el diseño responsive para cada Media Querie en CSS. Recuerde:
+
+    @media screen and (max-width: 1024px){
+
+    }
+
+    @media screen and (max-width: 768px){
+
+    }
+
+    @media screen and (max-width: 480px){
+
+    }
+
+    @media screen and (max-width: 320px){
+
+    }
+
+    Se trabajará desde el 2do, pero disminuyendo un pixel,... pasa que, en el tamaño de "iPad"; que va desde, justamente, 768px a 1024px, aún se pueden visualizar los elementos sin necesidad de hacerle un diseño tipo "responsive"; entonces, empezaremos a trabajar el "responsive" justamente después del "viewport" de iPad; es decir, de 767px para abajo,... lo que sería:
+
+    @media screen and (max-width: 767px){
+
+    }
+
+Pero antes, apliquemos un primer truco para que se ajusten los elementos de cada contenedor, lo más posible, al ancho total de la pantalla que tenemos disponible. El ancho total de la pantalla disponible es el que le hemos pasado manualmente, en este caso, con la propiedad-valor: "max-width: 1020px"; entonces, dicho lo anterior, declaremos la propiedad-valor: "flex: 1" en todos los contenedores; es decir, en el selector ".container".
+
+Luego, ahora sí, configure el ".header" para cada Media Queri; posteriormente hará lo propio, recuerde, para cada "section" o "articulo" importante de su proyecto.
+*/
+
+/* Aplicación de Media Queries por medio de "Desktop First". */
+
+@media screen and (max-width: 1024px){
+
+    .hero-image{
+        object-position: 0px -210px;
+
+        /* Con la propiedad "object-position", que se aplica directamente sobre el elemento de interés que se desea afectar; en nuestro caso, sobre el elemento propio de la imagen (y sólo puede afectar a imagenes y videos), lo que hace es determinar qué posición del contenido embebido, una imagen, se podrá visualizar cuando la imagen en cuestión no se puede mostrar de forma completa sobre su propio contenedor; es decir, sobre sus propias medidas en terminos de anchura y altura. */
+    }
+
+    .container{
+        padding: 0 .5em;
+
+        /* Oxigenando un poco el ".container" para medidas de viewport inferiores a 1024px; de tal manera que, los elementos no se apiñen tanto hacia los costados. */
+    }
+
+    .hero{
+
+        /* Anteriormente el "hero" ya venía con un alto (height) fijo equivalente a 300px; ahora, nos interesa que, su alto (height) sea dinámico; más precisamente, que se adapte a lo que el navegador crea que sería lo más "útil" y/o "flexible" (generalmente al adaptarse a las dimensiones de sus propios elementos hijos, los que contiene; en este caso, los que contiene el selector ".hero"); eso lo lograremos con el valor "auto". */
+
+        height: auto;
+        }
+
+    h1{
+        /* Redefinamos tamaño de fuente. */
+
+        /* Siento que lo ideal sería que las medidas relativas, para definir el tamaño de una familia tipografica, deben ser guiadas por las medidas absolutas que hayan en el viewport más grande; de tal manera que, a las pantallas más chicas, se les guarde la misma proporción de tamaño que haya entre una familia tipografica y su contenedor (dentro de pantallas más grandes y que son definidas con medidas absolutas) en las pantallas más pequeñas para ser más precisos, justamente, en la configuración de sus medidas relativas. Es decir, por ejemplo, si en una pantalla 1024 de ancho, hay un tamaño de fuente ya determinada para la familia tipografica; es decir, digamos, de 20px; y, como tenemos que, supongamos, su elemento padre recibio una medida, para pasarle al tamaño de sus propias fuentes, de 40px; entonces, queda constituido que "1em" equivale a 40px; dicho eso, entonces, lo ideal sería pasarle una medida relativa al tamaño de las fuentes de "viewports" más pequeños y que, aca lo importante, guarde la misma proporción en términos del medidas que se vieron en un viewport de ancho de 1024px; es decir, que la proporción entre 20px y 40px se vea también en la definicion de las medidas relativas pasadas en viewports más peques.  Si tenemos, entonces, que se entiende 1em como 40px,... Cuantos "em" serían los necesarios si hablamos de 20px? R/ 0.5em (y esta tamaño sería proporcional y relativo para cualquier medida en el viewport). */
+
+        font-size: 2em;
+    }
+
+    .hero-image{
+
+        /* Position: "Absolute". */
+
+        /* Ahora, para poder mover la imagen a cualquier lado; en este caso, nos interesa que la imagen quede POSICIONADA por debajo del contenido textual que está dentro del selector ".hero"; es decir, que quede por debajo del "h1" de ".hero"; y, adicionalmente, hacer que la imagen pierda sus medidas y su espacio reservado (para que ningun espacio quede vacio y sin ser aprovechado por otros),... tenemos que declarar sobre la imagen misma lo siguiente: Position: "Absolute". Veamos. Esta acción hará que el elemento "rebote" de afuera hacia dentro (es porque ya perderiamos el espacio reservado inicialmente para el elemento en cuestión; y, los demás elementos que le siguen, verticalmente hablando, cubririan esos espacios por defecto). */
+
+        position: absolute;
+
+        /* Ahora, como la idea es que las letras de "h1" queden por encima o sobre la imagen en cuestión, hay que establecer entonces un orden de apilamiento,... eso se logra por medio de la propiedad "z-index". Ahora, el "z-index" superior se sobrepone sobre el inferior. Veamos. */
+
+        z-index: 1;
+
+        /* Ahora, "max-width: 100%" para hacer la imagen responsive. */
+
+        max-width: 100%;
+
+        /* Y para que la imagen se estire hasta más no poder dentro de sus cuatro lados posibles, hagamos así: */
+
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        bottom: 0px;
+
+        /* Nos interesa una imagen "responsive", así que le daremos un "width" del 100%. */
+
+        width: 100%;
+    }
+
+    .hero{
+
+        /* A los selectores posicionados con "absolute"; sus padres, como elementos contenedores, deben estar posicionados también (en este caso, ".hero"); de lo contrario, las posiciones que asuma el selector posicionado con "absolute" serán relativas al DOM del HTML y no precisamente a las dimensiones de su elemento contenedor propio,... por lo que ".hero" toca ser posicionado. Veamos. */
+
+        position: relative;
+
+        /* Ahora, si se fija bien, la imagen se está desbordando de su elemento contenedor; es decir, "se le sale de las manos" a nuestro ".hero", el elemento de tipo "section" que le contiene a la imagen ".hero-image". Una propiedad de CSS que nos ayuda para los desbordamientos es: "overflow", que significa estar "fuera del flujo"; entonces, como no queremos estar "fuera del flujo", le pasaremos un valor "hidden" al elemento padre (OJO, esta propiedad se aplica es sobre el elemento padre); entonces, el valor "hidden" es el que nos va a permitir que no se desborde el elemento hijo de un elemento padre/contenedor. Veamos. */
+
+        overflow: hidden;
+
+        /* Vamos a darle un poco más de respiro, oxigenar un poco más los espacios, al ".hero" al definirle un padding. */
+
+        padding: 2em;
+
+        }
+
+    h1 {
+
+        /* Indispensable usar un "position" para poder trabajar con "z-index". */
+
+        position: relative;
+        z-index: 10;
+    }
+
+    .experience img{
+        object-position: -5px -15px;
+    }
+}
+
+@media screen and (max-width: 767px){
+
+    .burguer-button{
+        display: block;
+        /* Estamos llamando al menu de hamburguesa acá también pero ahora si lo vamos a visualizar al cambiar solamente su propiedad "display" por un valor "block". */
+    }
+
+    .hero-image{
+        object-position: 0px -150px;
+    }
+
+    .experience img{
+        object-position: 0px -15px;
+    }
+
+    .header{
+        padding-top: 4px;
+        display: block;
+        /* Definimos "display: block" porque queremos que todos los elementos se apilen por debajo del otro; pues, recuerdese que con "display: block" cada elemento asume todo el ancho de la pantalla para su respectivo espacio. En el ".header" original teníamos "display: flex", lo cual hace todo lo contrario, que los elementos vayan uno al costado del otro. */
+
+        /* Resulta que ahora no se pueden ver nuestros elementos, eso es porque en el ".header" original de nuestro CCS tiene un alto (height) asignado, es de 120px y no nos permite visualizar los elementos; pongamos, entonces, el "height" en "auto",... una herramienta muy útil en Responsive. */
+
+        height: auto;
+    }
+
+    /* Ahora, tampoco queremos que los items de nuestra lista, del ".header", se pongan al costado del otro; pues, también tienen la propiedad-valor: "display: flex" (en el selector .header ol),... pongamos acá también, entonces, "display: block". */
+
+    .header ol{
+        display: block;
+    }
+
+    /* Ahora bien, llegó el momento de darle estilos a cada item (etiqueta "li") de la lista del ".header",... esto ya va más a nivel personal, pero podemos seguir un estandar y es el siguiente: darles un poco más de alto (con la prop. "height") y centrarlos (con la prop.-valor "justify-content: center;").
+     */
+
+     .header ol li{
+         height: 50px;
+     }
+
+     .header a{
+        justify-content: center;
+        height: 40px;
+        font-size: 2em;
+        margin-bottom: .5em;
+     }
+
+     .header a:hover{
+         text-decoration: underline;
+     }
+
+     /* La configuración de "margin" que le habíamos pasado al selector "ol, ul" para que se viera más centrado, y mejor esteticamente, ya no nos sirve en "viewports" más pequeños, así que le daremos un "margin" equivalente a "0". Lo propio, por las mismas razones, tiene que hacerse con el selector: ".header figure". */
+
+     ol, ul{
+         margin: 0;
+     }
+
+     .header figure{
+        margin: 0;
+     }
+
+     /* Si se da cuenta, es muy útil ir visualizando los cambios a tiempo real que más se adapten esteticamente al sitio web; esto, al ir manipulando directamente al propio "inspector de elementos". */
+
+     /* Ahora vamos a darle al section del "portfolio" */
+
+     /* Acá aplicaremos de entrada algo que ya hicimos antes,... hacer que los elementos hijos, de un contenedor, bajen (se apilen hacia abajo) luego de haber unas dimensiones en el "viewport" inferiores a las dimensiones modo "iPad"; es decir, tampoco queremos que los elementos hijos "project-details" & "project-imageContainer", del selector ".project", se pongan al costado del otro ante dimensiones del "viewport" ya considerablemente disminuidas; pues, también tienen la propiedad-valor: "display: flex" (en el selector .project),... pongamos acá también, entonces, "display: block".  */
+
+     .menu {
+        position: fixed;
+        background: rgb(5, 111, 255, 0.9);
+        z-index: 15;
+        top: 0;
+        left: -100vw;
+        width: 100vw;
+        /* height: 100vh; */
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: .3s;
+    }
+
+    .menu.is-active {
+        left: 0;
+    }
+
+     .project{
+         display: block;
+     }
+
+     /* Ahora nos interesa expandir, a lo largo de todo el ancho, los elementos hijos "project-details" & "project-imageContainer" del selector padre ".project". Esto lo lograremos si le pasamos, a cada uno de ellos, una propiedad-valor: "width: auto". Veamos. */
+
+     .project-details{
+         width: auto;
+     }
+
+     .project-imageContainer{
+         width: auto;
+
+         /* A nivel personal, considerar la opción de usar el recurso de "background" para mejorar la calidad de la imagen en "viewports" más pequeños.  */
+     }
+
+     /* Ahora queremos que el tamaño del texto, aún trabajando dentro del selector padre ".project" (más especificamente en el selector ".project-details", que es quién contiene toda la parte textual), sea proporcional a las dimensiones del viewport; es decir, en la medida que tengamos una pantalla más pequeña para navegar el sitio web, queremos que el tamaño de la tipografía se "achique". Para lograr la anterior finalidad, entonces, tenemos que hacer uso de medidas relativas. Cómo lo hacemos?
+
+     Lo haremos pasandole una medida fija al elemento padre ".project-details"; es decir, realmente las medidas relativas asignadas a los selectores hijos de ".project-details" tomarán como referencia al mismo padre ".project-details"; de tal manera que, la medida relativa con la que trabajaremos será "em". A partir de la medida fija que le pasemos a ".project-details", se definirán todas las medidas relativas de los elementos hijos que éste contenga. Los elementos hijos son, precisamente, los que definen toda la parte textual del elemento padre ".project". Veamos.
+
+     Ahora, si se fija, es una buena práctica que la medida fija sea asignada sobre el contenedor (en este caso, selector ".project-details") que contiene a los elementos (en este caso, sus selectores hijos) que realmente están asignando algo visual dentro de su sitio web,... para que las medidas relativas se pongan solamente sobre éstos últimos en base a una medida fija de su preferencia o elección personal (esto en los casos en los que trabaje con una medida relativa "em"). Ya luego, visualmente, puede ir probando que medida relativa encaja mejor para cada selector hijo. Para que me entienda en contexto, sepa de entrada que el "em" asignado al selector hijo ".project-title" debe ser mayor a los "em" de los demás selectores hijos; pues, ".project-title" es el título de toda la parte textual del selector padre.
+
+     Luego, en viewports más pequeños, lo único que tendría que hacer entonces es cambiar la medida fija pasada al elemento padre, en nuestro caso ".project-details", y asignarle una más pequeña,... y listo!
+     */
+
+     .project-details{
+         font-size: 16px;
+     }
+
+     .project-title{
+         font-size: 1.5em;
+         margin-bottom: .3em;
+     }
+
+     .project-course{
+         font-size: .7em;
+
+     }
+
+     .project-date{
+        font-size: 1em;
+     }
+
+     .project-url{
+        font-size: 1em;
+     }
+
+     .project-description{
+        font-size: .8em;
+     }
+
+     /* También pasaremos a darle margenes relativos a los elementos hijos del selector ".project-details" */
+
+    .project-course,
+    .project-date,
+    .project-url {
+
+        /* Por defecto, "1em" equivale a 16px,... pondremos entonces ".4em" que serían entonces, en medida fija, 6.4px */
+        margin: .3em 0;
+
+        /* Al ".project-title", que sólo tenía margen en el "bottom", se le ha pasado la misma medida de ".3em". */
+    }
+
+    /* Ahora vamos a darle al section de "experiences".
+
+    /* Queremos, de entrada, que todos los elementos hijos del selector ".experience-list"; es decir, los ".experience", asuma cada uno todo el ancho disponible del viewport; es decir, que no quepen ya dos ".experience" por ancho; sino, sólo uno (1). Tal que así: */
+
+    .experience{
+        width: 98%;
+        /* Debe intuir porqué no se coloca un 100% */
+    }
+
+    /* Si se da cuenta, el selector que está dentro del selector ".experience" que contiene propiamente a la imagen del mismo (.experience-image), inicialmente tiene definido el tamaño de la imagen con medidas absolutas (con pixeles para ser más precisos) y no se ve estetico a la hora de hacer responsive... Queremos, entonces, que la imagen tome todo el ancho de su contenedor también; es decir, sería definir un "width" de 100% en el selector ".experience-image"... Sin embargo, tomaremos mejor como selector la siguiente expresión ".experience img"; pues, su especificad es mayor y, anteriormente, habíamos declarado las medidas absolutas de las imagenes de ".experience-image" con dicho selector. */
+
+    .experience img{
+        width: 100%;
+    }
+
+
+/* Ahora, si no quiero que se "amontonen" los elementos entre sí para que puedan caber todos dentro de la anchura disponible de la pantalla del navegador, irrespetandome la anchura definida inicialmente para cada uno de ellos, debo declarar otra propiedad-valor, la cuál es: "flex-shrink: 0", le estaríamos diciendo al navegador con ella que sea "0 encogible"; y que, a falta de espacio, entonces que el navegador me haga un "scroll" por todo lo ancho de la pantalla del navegador. El otro valor que puede asumir sería que sí sea "encogible"; es decir: "flex-shrink: 1"(que es el que viene definido por defecto con "flex"). Si se da cuenta, esto se define es sobre los elementos hijos, los que serán o quiere que sean afectados directamente con la propiedad-valor.
+    */
+
+}
+
+@media screen and (max-width: 480px){
+    .hero-image{
+        object-position: initial;
+    }
+
+    .project-details,
+    .experience-description
+    {
+        font-size: 13px;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    /* Acá pusimos en práctica esto: "... luego, en viewports más pequeños, lo único que tendría que hacer entonces es cambiar la medida fija pasada al elemento padre, en nuestro caso ".project-details", y asignarle una más pequeña,... y listo!" */
+
+    /* Ahora, no tuvimos necesidad de importar todos los elementos hijos de ".project-details" porque, simplemente, han heredado todas las medidas "em" anteriormente asignadas en la Media querie previa de "max-width: 767px".
+    */
+
+    /* Vamos a trabajar acá también el section de "experiences". Más especificamente queremos ajustar las medidas del "margin" de la caja (div) con clase = "experience-detail" (la sub-caja que contiene el contenido textual de las "experience"). Todo esto se hace con el animo de lograr algo visual y esteticamente mejor en viewports más pequeños. Por la misma razón, luego de salir del "margin", haremos algunos cambios en el "padding". */
+
+    .experience-detail{
+        margin: -40px 10px 10px 10px;
+    }
+
+    /* Le hemos pasado medidas absolutas, pero sería ideal que lo trabaje con medidas relativas. Podría considerar la medida relativa "em". Recuerde que si el tamaño de fuente del elemento padre; es decir, ".experience", nunca ha sido cambiado,... "em", entonces, equivale por defecto a 16px para su elemento hijo directo; es decir, para ".experience-detail". Lo mismo pasa con "rem". Veamos. */
+
+    .experience-detail{
+        margin: -2.5em 0.625em 0.625em;
+
+        /* Vamos con el "padding" ahora. El "padding" que se le pasó al selector ".experience-detail", inicialmente, fue de 20px... Cambiemos esto. */
+
+        padding: 1em;
+    }
+
+    /* Ahora, vamos a trabajar acá con el section "contact". Más especificamente, nos interesa redefinir el tamaño del "height" de dicho selector para que quepen bien, al menos lo suficiente (lo estricto), los elementos que contiene; ya que, parcialmente, no cabrían ante medidas de ancho del viewport muy pequeñas. Lo anterior lo lograremos dandole un valor de "auto" al "height" del selector ".contact". Veamos. */
+
+    .contact{
+        height: auto;
+
+        /* Ahora, para oxigenar un poco el espacio entre el "content" y el "border" del selector ".contact", sólo oxigenar hacia arriba y hacia abajo, podemos dar un poco de "padding". Probemos. */
+
+        padding: 1em 0;
+
+        /* Ahora, nos interesa centrar los elementos contenidos por el selector ".content" (elemento de bloque), así que le pasaremos una propiedad-valor "text-align: center" a este elemento padre. */
+
+        text-align: center;
+
+        /* Mas, no está funcionando el centrado; eso puede ser por varios motivos, sin embargo, el motivo de esta ocasión es porque tenemos, anteriomente, declarado para este selector ".contact" la propiedad-valor: "display: flex". Acontece que (y recuerde) la propiedad-valor "text-align: center" sólo funciona estrictamente sobre elementos de bloque o que emulan las caracteristicas de un elemento de bloque, tales como: "display: block" y "display: inline-block", NO "display: flex";
+
+        "display: flex" mientras esté vigente dentro de un selector "padre" no va a permitir centrar los elementos "hijo", de dicho selector, con "text-align: center". */
+
+        display: block;
+    }
+
+    /* Faltaría centrar, de todos los elementos que están dentro del selector ".contact", el botón de "Send me"; es decir, el selector
+    ".form-box". Lo podríamos hacer declarando un "margin" tal que: "1em auto" (forma de hacer centrado como último recurso). */
+
+    .form-box{
+        margin: 1em auto;
+    }
+
+    /* Ahora, para darle un poco más de toque, podemos quitar el "margin-top" que por defecto tiene el título (h3) que está dentro de la clase ".form-email", tal que así: */
+
+    .form-email h3{
+        margin-top: 0;
+    }
+
+    /* Ahora, nos interesa trabajar con el "footer". La estrategia es más o menos la misma: centrar los elementos hijos del "footer"; pero, para eso, recuerde debe asegurarse que su "footer" sea un elemento de bloque; es decir, "display: block" y, posteriomente poder así sí, centrar los elementos hijos con "text-align: center". Veamos esto a ver si nos funciona.
+     */
+
+     .footer{
+         display: block;
+         text-align: center;
+     }
+
+     /* Ahora, se me generó "accidentalmente" un trazo completamente blanco que se me interpusó, horizontalmente, entre el cierre de mi selector ".contact" y el inicio de mi selector ".footer"; esto, generalmente pasa, porque acontece lo que se conoce como: "colapsado de margenes"; es decir, el "margin-botton" de un elemento superior tropieza con el "margin-top" del elemento inmediatamente inferior. De esto dimos una clase con Dorian Design, debe saber qué hacer. Lo ideal es que no le ponga "margin-top" al elemento inferior; sólo trabaje con el "margin-bottom" del elemento superior para empujar hacia abajo al elemento inferior en cuestión.
+
+     Sin embargo, recuerde bien que hay otras alternativas como:
+
+        1. "overflow: hidden;"
+        2. "padding-top: 0.1px;"
+        3. "border-top: 0.1px solid color;" Veamos.
+     */
+
+     .footer{
+         border: 0.1px solid transparent;
+     }
+
+     h1{
+         /* Queremos un tamaño de fuente más proporcional con las dimensiones del viewport en la medida que éste se "achica", así que pasemos medidas relativas. */
+
+         font-size: 1.5em;
+
+        /* Me interesa, por ejemplo, situar más al costado izquierdo e inferior del ".hero" mi contenido textual; es decir, mi "h1" sin que pierda, el "h1", su espacio reservado. */
+
+        position: relative;
+
+        /* Lo mismo que decir 8px: 0.5em */
+        top: 0.5em;
+
+        /* Lo mismo que decir 7.2px: 0.45em */
+        right: 0.45em;
+
+        /*  Si no queriamos personalizar tanto las medidas, sólo con padding hubiera sido necesario "oxigenar" (tal como lo hizo Leonidas, sin necesidad de dar "position: relative" y el resto de medidas). */
+     }
+}
+
+@media screen and (max-width: 320px){
+
+    .hero-image{
+        object-position: 0px -80px;
+    }
+
+    h1{
+        /* Acá también queremos que el tamaño de fuente sea proporcional a las dimensiones del viewport en la medida que éste se "achica", así que se siguen pasando medidas relativas; sin embargo, como nunca se le pasó/definió un tamaño de fuente al elemento que contiene a nuestro "h1"; es decir, al ".hero" (elemento padre), acontece que "em", en cualquiera que sean las medidas del viewport (más precisamente del ".hero"), siempre será 16px si se define así para "h1"; es decir, realmente el tamaño de fuente no disminuye si bajamos el ancho del ".hero" de 480px a 320px: siempre será equivalente a 16px.
+
+        Qué se podría hacer entonces? Lo que se podría hacer es definir la cantidad de "em", para un ancho del ".hero" de 320px, que sea correspondiente con la disminución de anchura de 480px a 320px del mismo ".hero" justamente (tomando como base que "1.5em" en el tamaño de fuente es correspondiente a 480px de anchura del ".hero"). Lo anterior se podría resolver por medio de una regla de tres simple; es decir, si tenemos que para un ancho del ".hero" de 480px el tamaño de fuente es de "1.5em", ¿cuantos "em" serían equivalentes, proporcionalmente hablando, para una anchura del ".hero" de 320px? El resultado da: 1em */
+
+        font-size: 1.15em;
+        /* Antes: 1em */
+
+        /* Config. anterior: Lo mismo que decir 19,2px: 1.2em */
+        top: 1.2em;
+
+        /* Config. anterior: Lo mismo que decir 11.2px: 0,7em */
+        right: .9em;
+    }
+
+    .portfolio {
+        padding: 10px;
+    }
+
+    /* .project{
+        padding: 15px;
+    } */
+}
