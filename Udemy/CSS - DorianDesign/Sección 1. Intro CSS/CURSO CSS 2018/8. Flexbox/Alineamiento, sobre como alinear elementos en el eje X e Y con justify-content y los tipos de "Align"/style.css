@@ -1,0 +1,132 @@
+/* 
+Flexbox.
+
+Alineamiento.
+    
+Las propiedades para alinear se aplican SIEMPRE al flex-container; es decir, al elemento padre que, definido también con un display de "flex", es quien le da la real flexibilidad a sus elementos hijos directos.
+
+Existen propiedades para el main-axis y para el cross-axis.
+
+    main-axis (eje de las X, horizontal):
+
+        1. justify-content.
+
+        "justify-content" es una propiedad para el "main-axis"; es decir, para determinar la manera de cómo se alinean unos elementos hijos sobre el eje de las X (sobre todo el horizonte). Asume 6 valores posibles:  "flex-start" (default) | "center" | "space-between" | space-around | space-evenly & flex-end.
+
+        1.a. justify-content: flex-start;
+
+            "flex-start" es el valor, por defecto, que asume la propiedad: "justify-content", tiene la función de alinear los elementos al principio del main axis; es decir, al costado izquierdo más próximo al primer elemento.
+
+        1.b. justify-content: center;
+
+            "center" es el valor, de la propiedad "justify-content", que centra los elementos en la mitad del main axis (conservandose el mismo espacio a la derecha y a la izquierda de los elementos en cuestión).
+        
+        1.c. justify-content: space-between;
+
+            "space-between" es el valor, de la propiedad "justify-content", que distribuye los items (elementos hijos directos) a la misma distancia; pero, no deja un espacio exterior, ni en el primer flex-item ni en el último; los pega a cada uno, lo más que pueda (y esto depende mucho también del "padding" que tenga el elemento contenedor o el "margin" que tengan sus elementos hijos), a los costados de su elemento padre contenedor.
+            
+        1.d. justify-content: space-around;
+
+            "space-around" es el valor, de la propiedad "justify-content", que distribuye los items a la misma distancia; pero, esta vez sí, deja un espacio exterior en el primero y en el último flex-item; dicho espacio, los del 1er y último flex-item, no corresponden en sus medidas con el espacio que guardan los elementos distribuidos al interior; es decir, no es el mismo "espacio" el que se deja en los bordes que el que se deja entre los elementos; y de hecho, es ésta, precisamente, la gran diferencia que habrá con el valor "space-evenly". 
+
+        1.e. justify-content: space-evenly;
+
+            "space-evenly" es el valor, de la propiedad "justify-content", que distribuye los items, y los espacios exteriores del primer y último flex-item, a una misma distancia entre todos ellos. En concreto, se distribuye todo el espacio que hay entre cada uno de los flex-items en "huecos iguales" (iguales también en los espacios exteriores que deja tanto el 1ro como el último elemento).
+
+        1.f. justify-content: flex-end;
+
+            "flex-end" es el valor, de la propiedad "justify-content", que tiene la función de alinear los elementos al final del main axis; es decir, al costado derecho más próximo al último elemento (es todo lo contrario a "flex-start").
+
+    Recuerde, el alineamiento en "justify-content" es para alinear de manera horizontal; más precisamente, alinea de manera horizontal los elementos hijos directos de un elemento contenedor que ha sido definido con un display de flex.
+
+    Ahora, si en nuestro mismo elemento contenedor se nos da por definir la propiedad "flex-direction" con un valor de "column",... los valores que asume la propiedad "justify-content", que en principio alinean elementos hijos directos de forma horizontal, ahora los alineará de forma vertical. Recuerde que la propiedad-valor "flex-direction: column" cambia el "main-axis" a la dirección de un "cross-axis" (invierte las direcciones). 
+    
+    Ahora revise cómo configuramos todas estas propiedades, con sus respectivos valores, en nuestra primera regla; la cual lleva como selector a ".flex-container".
+
+    cross-axis
+        align-items: Una sola línea.
+            flex-start | center | flex-end | stretch(default) | baseline
+        align-content: varias líneas
+            flex-start | center | flex-end | stretch(default) | baseline
+        align-self: Se aplica al flex-item. Sirve para alinear un elemento en concreto en el cross-axis
+    TRUCO EXTRA: Al utilizar auto con la propiedad margin lo que sucede es que el elemento se va al lado contrario del margen que dimos, si ponemos margin:auto el elemento se centra completamente, tanto vertical como horizontalmente
+*/
+
+/* Reglas de ejemplo para distintos usos de la propiedad "justify-content", propiedad para el "main axis". */
+
+    .flex-container {
+        background-color: #FCA17D;
+        height: 400px;
+        /* width: 200px; */
+        display: flex;
+        flex-wrap: wrap;
+        padding: 5px;
+        justify-content: flex-start;
+        justify-content: center;
+        justify-content: space-between;
+        justify-content: space-around;
+        justify-content: flex-end;
+        flex-direction: column;
+    }
+
+    .flex-item{
+        width: 50px;
+        height: 50px;
+        margin: .5em;
+        color: aliceblue;
+        background-color: #9A348E;
+        text-align: center;
+        line-height: 50px;
+    }
+
+/* Reglas de ejemplo para distintos usos de las propiedades "align-items", "align-content" & "align-self", propiedades para el "cross axis". */
+
+/* .flex-item {
+    width: 50px;
+    height: 50px;
+    margin-bottom: auto;
+    margin-left: auto;
+    color: aliceblue;
+    background-color: #9A348E;
+    text-align: center;
+    line-height: 50px;
+} */
+
+/* .box {
+    border: 1px solid black;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    align-items: center;
+} */
+
+/* .box img {
+    max-width: 50%;
+} */
+
+/* .prices {
+    display: flex;
+    align-items: flex-start;
+    height: 600px;
+    border: 1px solid black;
+}
+.prices__item {
+    width: 25%;
+    height: 300px;
+}
+.prices__item:first-child {
+    background: peru;
+}
+.prices__item:nth-child(2) {
+    background: green;
+    line-height: 20px;
+    align-self: center;
+}
+.prices__item:nth-child(3) {
+    background: indianred;
+    line-height: 15px;
+}
+.prices__item:nth-child(4) {
+    background: lightgreen;
+    line-height: 50px;
+} */
