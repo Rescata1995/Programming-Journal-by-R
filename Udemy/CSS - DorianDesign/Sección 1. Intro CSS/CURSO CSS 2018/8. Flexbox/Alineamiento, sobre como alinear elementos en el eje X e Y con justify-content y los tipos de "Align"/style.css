@@ -7,19 +7,19 @@ Las propiedades para alinear se aplican SIEMPRE al flex-container; es decir, al 
 
 Existen propiedades para el main-axis y para el cross-axis.
 
-    main-axis (eje de las X, horizontal):
+main-axis (eje de las X, horizontal):
 
-        1. justify-content.
+    1. justify-content.
 
-        "justify-content" es una propiedad para el "main-axis"; es decir, para determinar la manera de cómo se alinean unos elementos hijos sobre el eje de las X (sobre todo el horizonte). Asume 6 valores posibles:  "flex-start" (default) | "center" | "space-between" | space-around | space-evenly & flex-end.
+    "justify-content" es una propiedad para el "main-axis"; es decir, para determinar la manera de cómo se alinean unos elementos hijos sobre el eje de las X (sobre todo el horizonte). Asume 6 valores posibles:  "flex-start" (default) | "center" | "space-between" | space-around | space-evenly & flex-end.
 
         1.a. justify-content: flex-start;
 
-            "flex-start" es el valor, por defecto, que asume la propiedad: "justify-content", tiene la función de alinear los elementos al principio del main axis; es decir, al costado izquierdo más próximo al primer elemento.
+            "flex-start" es el valor, por defecto, que asume la propiedad: "justify-content", tiene la función de alinear los elementos al principio del "main-axis"; es decir, al costado izquierdo más próximo al primer elemento (al horizonte).
 
         1.b. justify-content: center;
 
-            "center" es el valor, de la propiedad "justify-content", que centra los elementos en la mitad del main axis (conservandose el mismo espacio a la derecha y a la izquierda de los elementos en cuestión).
+            "center" es el valor, de la propiedad "justify-content", que centra los elementos en la mitad del "main-axis"; es decir, centra horizontalmente (conservandose el mismo espacio a la derecha y a la izquierda de los elementos en cuestión).
         
         1.c. justify-content: space-between;
 
@@ -43,21 +43,68 @@ Existen propiedades para el main-axis y para el cross-axis.
     
     Ahora revise cómo configuramos todas estas propiedades, con sus respectivos valores, en nuestra primera regla; la cual lleva como selector a ".flex-container".
 
-    cross-axis
-        align-items: Una sola línea.
-            flex-start | center | flex-end | stretch(default) | baseline
-        align-content: varias líneas
-            flex-start | center | flex-end | stretch(default) | baseline
-        align-self: Se aplica al flex-item. Sirve para alinear un elemento en concreto en el cross-axis
-    TRUCO EXTRA: Al utilizar auto con la propiedad margin lo que sucede es que el elemento se va al lado contrario del margen que dimos, si ponemos margin:auto el elemento se centra completamente, tanto vertical como horizontalmente
+--------------------------------------------------  
+
+cross-axis (eje de las Y, vertical).
+
+Para el cross-axis, en principio, tenemos dos (2) propiedades para alinear:
+
+    1. align-items: Es utilizado en los casos en que su interés radica en alinear una sola línea de elementos "flex-item" (porque es eso lo que tenemos, no más, dentro del elemento padre directo contenedor). 
+    
+    Asume 5 valores posibles: "flex-start" | "center" | "flex-end" | "stretch" (default) | "baseline".
+
+        1.a. align-items: flex-start;
+
+            "flex-start" es un valor, de la propiedad align-items, que tiene la función de alinear UNA SOLA línea de elementos "flex-item" al principio del "cross-axis"; es decir, se coloca "arriba del todo (top), verticalmente hablando".
+
+        1.b. align-items: center;
+
+            "center" es un valor, de la propiedad "align-items", que centra UNA SOLA línea de los elementos "flex-item" en toda la mitad del "cross-axis"; es decir, centra verticalmente (conservandose el mismo espacio a la derecha y a la izquierda de los elementos en cuestión).
+
+        1.c. align-items: flex-end;
+
+            "flex-end" es un valor, de la propiedad "align-items", que tiene la función de alinear UNA SOLA línea de los elementos "flex-item" al final del "cross-axis"; es decir, se coloca "abajo del todo (bottom), verticalmente hablando" (es todo lo contrario a "flex-start").
+
+        1.d. align-items: stretch (default);
+
+            "stretch" es el valor, por defecto, de la propiedad align-items (NO LO ES "flex-start"). Además de que tiene la función de alinear UNA SOLA línea de elementos "flex-item" al principio del "cross-axis"; es decir, se coloca "arriba del todo (top), verticalmente hablando",... el tamaño del cuerpo de dichos elementos "flex-item", mientras no tengan un "height" declarado (IMPORTANTE ESTO), siempre será equivalente y se adaptará al tamaño, en términos de altura, de su elemento contenedor; es decir, en este caso al ".flex-container". En resumen, los elementos "flex-item", por defecto, asumirían la altura de su propio elemento contenedor, su elemento padre directo, ".flex-container" (sea cuál sea la altura de éste último, se terminan adaptando a él). 
+
+            Por la anterior razón es que, cuando asigna a un contenedor un display de "flex" y, adicionalmente, por dentro del mismo, tiene como elemento hijo directo una imagen,... la imagén, por defecto, siempre tenderá a "estirarse" (se rompe) hasta ocupar el tamaño, en términos de altura, de su elemento contenedor padre (esto mientras no le pase un "height" a la imagen o al selector de la imagen en cuestión); o, bien, cambiando el valor por defecto, que es "stretch", de la propiedad "align-items".
+
+    Recuerde que pueden haber pequeñas variaciones en las medidas de los elementos ".flex-item" mientras haga uso de margenes y de "padding".
+        
+    
+    2. align-content: Es utilizado en los casos en que su interés radica en alinear varias líneas de elementos "flex-item" (porque hay más de una línea dentro de su elemento padre directo contenedor)
+
+    Asume, también, los mismos 5 valores posibles: "flex-start" | "center" | "flex-end" | "stretch" (default) | "baseline".
+    
+        2.a. align-content: flex-start;
+
+            "flex-start" es un valor, de la propiedad align-content, que tiene la función de alinear VARÍAS líneas de elementos "flex-item", al principio del "cross-axis", sobre todo lo alto del elemento padre directo contenedor; es decir, se coloca "arriba del todo (top), verticalmente hablando".
+
+        2.b. align-content: center;
+
+            "center" es un valor, de la propiedad "align-content", que centra VARÍAS líneas de los elementos "flex-item" en toda la mitad del "cross-axis"; es decir, centra verticalmente (conservandose el mismo espacio a la derecha y a la izquierda de los elementos en cuestión).    
+
+        2.c. align-content: flex-end;
+
+            "flex-end" es un valor, de la propiedad "align-content", que tiene la función de alinear VARÍAS líneas de los elementos "flex-item" al final del "cross-axis"; es decir, se coloca "abajo del todo (bottom), verticalmente hablando" (es todo lo contrario a "flex-start").
+
+        2.d. align-content: stretch (default);
+
+            "stretch" es el valor, por defecto también, de la propiedad align-content (NO LO ES "flex-start"). Además de que tiene la función de alinear VARÍAS líneas de elementos "flex-item" al principio del "cross-axis" (una línea debajo de otra); es decir, se colocan "arriba del todo (top), verticalmente hablando",... el tamaño del cuerpo de dichos elementos "flex-item", mientras no tengan un "height" declarado (IMPORTANTE ESTO), siempre será equivalente y se adaptará al tamaño total, en términos de altura, de su elemento padre contenedor; es decir, en este caso al ".flex-container". 
+            
+            Ahora, a diferencia de "align-items", como acá se encarga de alinear varias líneas de elementos "flex-item", toca "dividir" la pantalla para que quepan todas las líneas en cuestión (una debajo de otra) por sobre todo el alto, sí o sí, del elemento padre directo que las contiene,... independientemente de SI se declaró, o NO, un alto en los elementos "flex-item" de cada una de las líneas; en verdad, NO IMPORTA REALMENTE, siempre se llevarían todo el alto del elemento padre contenedor (en esto puntualmente se diferencia del "flex-start" definido para esta misma propiedad: "align-content"); aclaramos también que, el espacio que hay en la mitad, entre una y otra línea, siempre será el mismo (sin importar cuántas líneas de elementos "flex-item" haya),... A pesar de todo... Habitualmente este no es el efecto que queremos conseguir.
+    
+-------------------------------------------------
+
 */
 
-/* Reglas de ejemplo para distintos usos de la propiedad "justify-content", propiedad para el "main axis". */
+/* Reglas de ejemplo para distintos usos de la propiedad "justify-content", propiedad para el "main-axis". */
 
-    .flex-container {
+    /* .flex-container {
         background-color: #FCA17D;
         height: 400px;
-        /* width: 200px; */
         display: flex;
         flex-wrap: wrap;
         padding: 5px;
@@ -77,9 +124,66 @@ Existen propiedades para el main-axis y para el cross-axis.
         background-color: #9A348E;
         text-align: center;
         line-height: 50px;
+    } */
+
+
+
+/* Reglas de ejemplo para distintos usos de la propiedad "align-items", propiedad para el "cross-axis". */
+
+    /* .flex-container {
+        background-color: #FCA17D;
+        height: 400px;
+        display: flex;
+        margin-bottom: 1em;
+        align-items: flex-start;
+        align-items: center;
+        align-items: flex-end;
+        align-items: stretch;
     }
 
-/* Reglas de ejemplo para distintos usos de las propiedades "align-items", "align-content" & "align-self", propiedades para el "cross axis". */
+    .flex-item{
+        width: 50px;
+        margin: .5em;
+        color: aliceblue;
+        background-color: #9A348E;
+        text-align: center;
+        line-height: 50px;
+    } */
+
+
+
+/* Reglas de ejemplo para distintos usos de la propiedad "align-content", propiedad para el "cross-axis". */
+
+.flex-container {
+    background-color: #FCA17D;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1em;
+    align-content: flex-start;
+    align-content: center;
+    align-content: flex-end;
+    align-content: stretch;
+}
+
+.flex-item{
+    width: 50px;
+    height: 50px;
+    margin: .5em;
+    color: aliceblue;
+    background-color: #9A348E;
+    text-align: center;
+    line-height: 50px;
+}
+
+/* 
+
+------------------------------------------------
+
+align-self: Se aplica al flex-item. Sirve para alinear un elemento en concreto en el cross-axis
+    TRUCO EXTRA: Al utilizar auto con la propiedad margin lo que sucede es que el elemento se va al lado contrario del margen que dimos, si ponemos margin:auto el elemento se centra completamente, tanto vertical como horizontalmente
+    
+    */
 
 /* .flex-item {
     width: 50px;
