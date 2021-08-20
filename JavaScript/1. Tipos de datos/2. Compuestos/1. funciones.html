@@ -1,0 +1,101 @@
+<!-- Sobre los fundamentos básicos de una función y las diferentes formas de declarar o expresar una función -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones</title>
+</head>
+<body>
+    <h1>
+        Funciones
+    </h1>
+    <p>
+        Las funciones, además de ser un tipo de objeto, son un bloque de código independiente dentro de un proyecto de programación; dicho bloque de código es "auto-contenido"; es decir, que tiene su propio contenido; con lo cual, lo dicho, se hace o es independiente al ambito global (tiene su propia vida dentro de todo el código JS escrito). 
+    </p>
+    <p>
+        Las funciones se escriben una sola vez, pero pueden ser ejecutadas en cualquier momento (claro, luego de haber escrito la función como tal dicha primera vez); es decir, la función es un fragmento de código que tú vas a declarar una sola vez; sin embargo, después de ahí, la podrás re-utilizar tantas veces como sea necesario (y en toda la vida del código en su conjunto).
+    </p>
+    <p>
+        Las funciones pueden, o no, recibir parámetros; los cuales, son datos particulares que pueden recibir las funciones y están separados por comas (y por lo general dentro de parentesis); además, adicionalmente, las funciones pueden devolver o no, dependiendo sea el caso, valores (return).
+    </p>
+    <p>
+        De interés: Las funciones en JS son tan poderosas que las mismas funciones se pueden pasar como argumentos o paramentros y, adicionalmente, se pueden retornar como valores.
+    </p>
+
+    <script>
+        // Hay dos (2) maneras de crear nuestras funciones: 1. funciones declaradas o 2. funciones expresadas. Hay diferencias de uso en ambas.
+
+        // Función declarada: usan la palabra reservada "function" y llevan parentesis y llaves, tal así:
+
+        function estoEsUnaFuncion(){
+            // Aquí, dentro de las llaves, va el cuerpo de la función (dominio). Ahora, esta función que acabamos de declarar se llama: "estoEsUnaFuncion".
+
+            console.log("Uno");
+            console.log("Dos");
+            console.log("Tres");
+        }
+
+        // Como se ve la función ya está declarada en nuestro proyecto actual o documento JS; mas, para que una función corra, o se ejecute, tiene que "llamarse", ser invocada (Haciendo un simil... las funciones, en principio, cuando son declaradas,... están como en la banca dentro de un partido de futbol a la espera de ser invocadas por el técnico para entrar en juego). Al acto de llamar una función para que ésta pueda ejecutarse dentro de nuestro código JS se llama: "Invocación de función". 
+
+        // Para que se invoque (y se ejecute) una función, sólo hay que llamarla por fuera de su bloque de líneas de código, tal así:
+
+        // Invocación de función.
+        // Los parentesis (a veces con parametros) indican que una función se va a ejecutar.
+        estoEsUnaFuncion();
+
+        // Lo que pasará a continuación es que, al ser invocada la función, ésta ejecutará su bloque de líneas de código al "unísono".
+
+        // Ahora, lo que comentamos, en caso que queramos ejecutar de nuevo la función (o cuantas veces desee) simplemente se llama de nuevo; digamos, supongamos que quiero ejecutar la función otras tres veces más,... simplemente la llamo tres veces y no necesito tener que escribir, tres veces de nuevo, sus líneas de código contenidas en su dominio. Tal que así:
+
+        estoEsUnaFuncion();
+        estoEsUnaFuncion();
+        estoEsUnaFuncion();
+
+        // Se ha ejecutado, hasta ahora, 4 veces nuestra función: "estoEsUnaFuncion".
+
+        // Sin embargo, hasta ahora, nuestra función "estoEsUnaFuncion" es una función muy simple: ni recibe parámetros ni retorna/devuelve valores. 
+
+        // Vamos entonces, ahora, a crear una función que devuelva o retorne un valor.
+
+        function unaFuncionQueDevuelveValor(){
+            // Cuando una función devuelve un valor nosotros tenemos que usar una palabra reservada llamada: "return". La función puede devolver cualquier tipo de dato, ya sea primitivo o compuesto.
+
+            console.log("Cuatro");
+            console.log("Cinco");
+            console.log("Seis");
+
+            return "La función ha retornado una cadena de texto";
+            // Declarado valor para retornar en la función "unaFuncionQueDevuelveValor"
+
+            // Ahora, para que se pueda visualizar el valor retornado (return) de una función, podría ser de dos (2) formas:
+
+            // 1. Ejecutando/corriendo directamente la función dentro de un console.log(); lo cual, en este caso puntual, sería una mala práctica porque estaríamos ejecutando "console.logs" dentro de otro "console.log" directamente (esto no está bien).
+
+            // 2. O, primero, asignar la función a una variable (por fuera del bloque de código de la función misma -está mas decir); y posteriormente imprimir dicha variable, ahora sí, dentro de un console.log() -recuerde, todo esto por fuera del dominio de la función de interés. Veamos.
+        }
+
+        // Vea que estamos por fuera del dominio de la función de interés "unaFuncionQueDevuelveValor"
+
+        let valorDeFuncion = unaFuncionQueDevuelveValor();
+        // Cuando usted le asigna a una variable una función (tal como lo acabamos de hacer),... lo que sea que esté dentro del dominio o bloque de código de la función, que se ejecute como salida por pantalla, lo mostrará; mas, no mostrará así su valor retornado (el que devuelve "return"). 
+
+        // Luego, para ver puntualmente el valor que devuelve la función con "return",... habría que mostrar o correr como salida por pantalla, ahora y directamente, a la variable a la que le fue asignada la función como tal, tal que así:
+
+        console.log(valorDeFuncion);
+
+        // Esto último es lo que realmente nos mostrará el valor devuelto por la función.
+
+
+        
+        // Ahora, definamos ya de una buena forma que carajos es "return" en una función?
+
+        // Pues bien, "return" es el resultado de la tarea que hace (o hizo) la función, un ejemplo:
+
+        // La función "hacerCerealConLeche", pide como parámetros: Cereal, Leche, Plato y Cuchara. La tarea se cumple, y el resultado final es un plato de cereal listo para comer. No siempre una función debe retornar algo, hay veces que solo queremos que haga una tarea y ya.
+        
+    </script>
+</body>
+</html>
