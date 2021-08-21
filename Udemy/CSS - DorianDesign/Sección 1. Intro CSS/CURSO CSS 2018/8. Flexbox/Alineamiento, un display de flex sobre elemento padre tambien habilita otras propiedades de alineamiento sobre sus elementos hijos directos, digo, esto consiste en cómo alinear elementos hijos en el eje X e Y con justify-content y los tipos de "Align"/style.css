@@ -184,8 +184,9 @@ Para el cross-axis, en principio, tenemos dos (2) propiedades para alinear:
 
 ------------------------------------------------
 
-align-self: Se aplica al flex-item. Sirve para alinear un elemento en concreto en el cross-axis
-    TRUCO EXTRA: Al utilizar auto con la propiedad margin lo que sucede es que el elemento se va al lado contrario del margen que dimos, si ponemos margin:auto el elemento se centra completamente, tanto vertical como horizontalmente
+align-self: Propiedad que se aplica a un "flex-item". Sirve para alinear, por individual, un elemento en concreto en el cross-axis; este elemento "flex-item", como bien se imagina, debe estar dentro de su elemento padre contenedor definido con un display de "flex".
+
+TRUCO EXTRA: Al utilizar "auto" con la propiedad "margin" (pero, ojo, un "margin" que haga referencia a alguno de sus lados; es decir, "margin-left", "margin-top", etc,...) y, dentro de un "flex-item", lo que acontecerá es que dicho elemento "flex-item" se iría al lado contrario del margen que dictemos; en cambio, si definimos una propiedad-valor de "margin: auto" (sin pasarle ningún lado en concreto al "margin"),... el elemento "flex-item" se centrará completamente sobre todo el elemento padre directo definido con un display de "flex", el centrado será tanto vertical como horizontalmente.
     
     */
 
