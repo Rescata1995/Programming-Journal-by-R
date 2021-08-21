@@ -58,7 +58,7 @@
 
         // Sin embargo, hasta ahora, nuestra función "estoEsUnaFuncion" es una función muy simple: ni recibe parámetros ni retorna/devuelve valores. 
 
-        // Vamos entonces, ahora, a crear una función que devuelva o retorne un valor.
+    // Vamos entonces, ahora, a crear una función que devuelva o retorne un valor.
 
         function unaFuncionQueDevuelveValor(){
             // Cuando una función devuelve un valor nosotros tenemos que usar una palabra reservada llamada: "return". La función puede devolver cualquier tipo de dato, ya sea primitivo o compuesto.
@@ -89,12 +89,48 @@
         // Esto último es lo que realmente nos mostrará el valor devuelto por la función.
 
 
-        
         // Ahora, definamos ya de una buena forma que carajos es "return" en una función?
 
         // Pues bien, "return" es el resultado de la tarea que hace (o hizo) la función, un ejemplo:
 
         // La función "hacerCerealConLeche", pide como parámetros: Cereal, Leche, Plato y Cuchara. La tarea se cumple, y el resultado final es un plato de cereal listo para comer. No siempre una función debe retornar algo, hay veces que solo queremos que haga una tarea y ya.
+
+        // Ahora, no es ninguna casualidad que "return" se coloque sólo hasta el final del dominio de la función; pues, no queremos ignorar, en absoluto, el contenido de nuestro bloque de código propio a la función. Acontece que, todo lo que esté antes del "return" se ejecuta; y lo que esté después del mismo,"return", se ignora.
+
+    // Vamos, ahora, a crear una función que acepte parámetros.
+        
+        // Vamos a crear una función llamada: "saludar" que reciba dos (2) parámetros: "nombre" & "edad". Los parametros son argumentos/variables que recibe una función al ser declarada; porque, internamente y dentro de la función, servirán para algo (se operarán en alguna tarea). Posteriormente, cuando la función sea invocada; es decir, vaya a ejecutarse,... la función correrá; pero, adicionalmente, trabajará u operará de la mano de los argumentos que le pasemos, ahora, dentro de los parentesis de la función en sí; dichos argumentos van a asumir el papel de las variables que pasó, en un principio cuando declaró su función, como parámetros)... Veamos.
+
+        function saludar(nombre = "Desconocido", edad= 0){
+            console.log(`Hola mi nombre es ${nombre} y tengo ${edad} años.`);
+
+            return "Saludo concretado con exito.";
+        }
+
+        // saludar("Roberto", 25);
+
+        // Paso de argumentos con los que quiero que se ejecute nuestra función al ser invocada: "Roberto" & 25.
+
+        // Hasta aquí, hasta la línea de código 110 (que fue comentada), sólo invocando de manera directa a la función,... no podrá reflejarse su "return" (aunque su contenido o bloque de código sí se ejecute).
+
+        // Ahora, si quisieramos más bien reflejar su "return" también; entonces, a la función "saludar" se le tiene que asignar primeramente una variable (para ser invocada). Tal que así:
+
+        let saludo = saludar("Roberto", 25);
+        // Vea que también acá le pasamos los argumentos, dos, con los que queremos que trabaje u opere nuestra función al ser invocada; dichos argumentos, recuerde, van a asumir el papel de las variables que pasó, en un principio cuando declaró su función, como parámetros; es decir, en este caso, van a asumir el rol de "nombre" & "edad", en su respectivo orden.
+        
+        // Ahora, en el hipotetico caso que no le pasemos argumentos a la función al ser invocada; entonces, estaríamos frente ante valores "undefined"; pues, declaraste variables en un principio, como parametros de una función, y no fueron inicializados en ningún momento al ser invocada dicha función (ni siquiera con un valor "null"). En consecuencia, JS lo entiende, como se supone, como valores "vacíos" y los define como "undefined".
+
+        // Para solucionar ese "pequeño problema" de los valores "undefined" podemos hacer lo siguiente: A la hora de declarar una función con parámetros, a dichos parámetros, les podemos asignar valores por defecto; esto para, justamente, ahorrarnos todo el rollo de tener que fastidiarnos por ver valores de tipo "undefined"; en el caso que, al ser ejecutada una función con parámetros, no se le pase (por cualquier motivo que sea) sus respectivos argumentos... De hecho, fue justamente lo que hicimos con los parámetros "nombre" & "edad" a la hora de ser declarada la función "saludar"; es decir, bajo ningún escenario, si no le pasa argumentos a la función al ser ejecutada, de todas maneras, no se verán los valores de tipo "undefined"; sino, los valores que asignó por defecto, a cada uno de los parámetros, al declarar la función. Probemos esto.
+
+        saludar();
+
+        // Ahora sí, definitivamente, mostremos el "return" de la función.
+
+        console.log(saludo);
+
+        // Luego, ahora sí, imprimimos a la variable que asume a la función en cuestión (ahora sí, entonces, se devolvería el valor "return" de la función).
+
+        // ALGO IMPORTANTE: hasta ahora las funciones, las funciones declaradas, con las que hemos trabajado,... nos permiten invocarlas en cualquier parte de nuestro código, incluso antes de donde está la declaración de la misma (estando ya declarada, obvio): JS lo permite.
         
     </script>
 </body>
