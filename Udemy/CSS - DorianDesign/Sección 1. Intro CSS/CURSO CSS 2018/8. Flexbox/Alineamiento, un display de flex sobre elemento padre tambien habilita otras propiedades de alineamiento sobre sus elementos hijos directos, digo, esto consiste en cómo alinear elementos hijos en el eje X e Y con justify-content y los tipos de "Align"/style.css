@@ -71,6 +71,10 @@ Para el cross-axis, en principio, tenemos dos (2) propiedades para alinear:
 
             Por la anterior razón es que, cuando asigna a un contenedor un display de "flex" y, adicionalmente, por dentro del mismo, tiene como elemento hijo directo una imagen,... la imagén, por defecto, siempre tenderá a "estirarse" (se rompe) hasta ocupar el tamaño, en términos de altura, de su elemento contenedor padre (esto mientras no le pase un "height" a la imagen o al selector de la imagen en cuestión); o, bien, cambiando el valor por defecto, que es "stretch", de la propiedad "align-items".
 
+        1.e. align-items: baseline;
+
+            "baseline" es un valor, de la propiedad "align-items", que tiene la función de alinear de forma homogenea el contenido de todas los elementos "flex-item"; que, recuerde, son elementos hijos directos de un elemento padre contenedor que ha sido definido, como bien sabe, con un display de flex anteriormente; es decir, "baseline" lo que logra es que todo el contenido de ceda una de los elementos ".flex-item" estén a la misma altura.
+
     Recuerde que pueden haber pequeñas variaciones en las medidas de los elementos ".flex-item" mientras haga uso de margenes y de "padding".
         
     
