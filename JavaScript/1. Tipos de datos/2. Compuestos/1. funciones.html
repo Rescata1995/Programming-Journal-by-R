@@ -130,7 +130,24 @@
 
         // Luego, ahora sí, imprimimos a la variable que asume a la función en cuestión (ahora sí, entonces, se devolvería el valor "return" de la función).
 
-        // ALGO IMPORTANTE: hasta ahora las funciones, las funciones declaradas, con las que hemos trabajado,... nos permiten invocarlas en cualquier parte de nuestro código, incluso antes de donde está la declaración de la misma (estando ya declarada, obvio): JS lo permite.
+        // ALGO IMPORTANTE: hasta ahora las funciones, las "funciones declaradas", con las que hemos trabajado,... nos permiten invocarlas en cualquier parte de nuestro código, incluso puede ser antes de donde esté la declaración de la misma (estando ya declarada, obvio): JS lo permite.
+
+        // Sin embargo, también existen las "funciones expresadas". Es simplemente otra manera de declarar las funciones. Consiste en: utilizar las funciones como expresiones; es decir, crear una función y, dinamicamente, asignarla a una variable. Tal que así, por ejemplo:
+
+        const funcionExpresada = function (){
+            // A las funciones expresadas, como ésta, no se les pasa un nombre; pues, ya están representadas por el nombre de una variable; en este caso esa variable es "funcionExpresada"; y, a la cual, se le está asignando esta función como tal; dando como resultado, en consecuencia, una "función expresada".
+
+            // A estas funciones, en los casos en los que no reciban un nombre propio directo, se les conoce también como: "funciones anónimas". Veamos.
+
+            console.log("Esto es una función expresada; es decir, una función que se le ha asignado como valor a una variable. Si invocamos esta función, antes de su declaración, JS nos dirá que no podríamos hacerlo porque está siendo invocada antes de la línea de código de su inicialización o declaración (es justo lo contrario a las 'funciones declaradas')");
+        }
+
+        // Invoquemos a la función expresada: 
+        funcionExpresada();
+        
+        // Lo que más se acostumbra es declarar las funciones expresadas con "const" y no "let".
+
+        // Ahora, independientemente de qué recurso recurrir a la hora de declarar una función, ya sea una "función expresada" o una "función declarada",... Lo realmente importante, como buena práctica, es que siguas el Ordenamiento de código. Con las funciones expresadas tienes el plus de que te obligarás, al menos, a declarar primero una función y luego ejecutarla (es lo ideal).
         
     </script>
 </body>
