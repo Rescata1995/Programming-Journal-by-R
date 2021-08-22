@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arreglos (arrays)</title>
+</head>
+<body>
+    <h1>
+        Arreglos
+    </h1>
+
+    <p>
+        Para el navegador, esto: "[]", representa un arreglo (array). Ahora, usted puede declarar un arreglo ya sea con "let" o con "const" (realmente esto a queda a preferencia del programador). Un arreglo no es más que una colección de elementos; estos elementos pueden ser de diferente tipo de dato; por ejemplo, un arreglo puede contener por dentro un elemento de tipo numérico, un booleano, un string o, incluso, contener un mismo arreglo o un objeto. Observe el arreglo que definimos con el nombre de "b".
+    </p>
+
+    <script>
+        // Nuestro primer arreglo declarado será llamado: "a".
+
+        const a = [];
+        // Mientras el arreglo "a" no tenga elementos definidos, por dentro, se le conocerá como un "Arreglo vacío" (así se les llama).
+
+        const b = [1, true, "Hola", ["A", "B", "C"]]; 
+        // Aquí hemos definido un arreglo de cuatro (4) elementos: 
+
+            // 1, que es un elemento de tipo de dato Numérico. 
+
+            // true, que es un elemento de tipo de dato Booleano.
+
+            // "Hola", que es un elemento de tipo de dato String.
+
+            // ["A", "B", "C"], que es un elemento de tipo de dato Array; que por cierto, dentro de él, tiene 3 elementos.
+
+        // Ahora, algo importante, la enumeración de los arreglos comienza desde el número 0; es decir, el 1er elemento de un arreglo es, realmente, el elemento número 0 (que está ubicado en la POSICIÓN 0 del Array en cuestión).
+
+        console.log(b);
+        console.log(b.length); 
+        // Esto para imprimir la longitud del Array "b", el núumero de elementos que tiene.
+
+        // Ahora, recordemos el concepto de todo tipo de dato o valor "Compuesto". En los tipos de datos compuestos se accede a la referencia del valor de interés; pues, como bien sabe, los tipos de datos compuestos no tienen solamente un valor definido (como sí pasa con los Primitivos).
+
+        // Dicho lo anterior, partamos de nuestro arreglo "b"; si por ejemplo quisieramos acceder, solamente, al 3er elemento de "b" (para imprimirlo); es decir, imprimir "Hola", tendríamos que llegar a él por medio de su referencia (posición): toca averiguar dentro de "b" dónde está la cadena de texto "Hola".
+
+        // "Hola", como ya se dijo, es el 3er elemento; por lo cual, dicho elemento estaría ubicado en la posición número dos (2) del arreglo "b". Entonces, para imprimir en consola solamente el string "Hola", el elemento ubicado en la posición número dos (2)del arreglo "b", sería así:
+
+        console.log(b[2]);
+
+        // Ahora, si quisiera acceder a un elemento dentro de un elemento que ya está dentro de mi array "b"; por ejemplo, acceder a un elemento dentro del Array que ya tengo definido dentro del array "b",... tendría que pasar dos posiciones: la posición equivalente al Arreglo interior y, posteriormente, la posición del elemento que está dentro de dicho Arreglo interior (El arreglo que tengo dentro de mi Arreglo "b"). Es confuso, pero se entiende mucho mejor en práctica.
+
+        // Por ejemplo. Si quisiera imprimir el caracter "C", el 3er elemento del Array que tengo dentro de mi Array "b", sería así:
+
+        console.log(b[3][2])
+
+        // El array interior, que tengo dentro de mi Aray "b" está en la posición 3; ahora, dentro del arreglo interior, el caracter "C" está en la posición 2. Quiere decir entonces que, para acceder a "C", sería así: b[3][2].
+
+        // Bajo la misma lógica anterio, pongamos esto más dificil: imprima el valor "isa" del Array "c".
+
+        const c = [1, true, "Hola", ["A", "B", "C", ["rober", "isa", 3]]]; 
+
+        // Quedaría así:
+        console.log(c[3][3][1]);
+
+        // Ahora, una manera más formal de declarar un Array... asistiendose de la palabra reservada: "Array.of".
+
+        const d = Array.of("X", "Y", "Z", 9, 8, 7);
+        console.log(d);
+
+        // Ahora, a la hora de declarar un Array podemos, también, pasarle a priori la cantidad de elementos que queremos tener dentro de él; es decir, limitar el Arreglo a una cantidad dada y finita de elementos. Supongamos, por ejemplo, que se necesita un Arreglo de 100 posiciones. Tal que así:
+
+        const e = Array(100).fill(false);
+
+        // Hay que precisar algo: lo que realmente está definiendo un Arreglo con 100 posiciones; en el anterior caso, es la palabra reservada "Array()"; la cual, para darnos un Arreglo de 100 elementos estrictamente (no más), tuvo que ser inicializada con un valor de 100 (justamente).
+
+        // Posteriormente, con la propiedad ".fill()", estamos estableciendo con qué valor se ocuparán la totalidad de las 100 posiciones del Arreglo "e" establecidas; esta vez, las 100 posiciones fueron rellenadas, todas, con el valor Booleano: "false". Recuerde, el conteo de las posiciones comienza desde 0. Veamos esto:
+
+        console.log(e);
+
+        // Introducción a Métodos de los Arreglos 
+
+        // 1. ".push()": Hay un método, o acción, que consiste en permitirnos agregar un nuevo elemento a un Arreglo ya existente; este nuevo elemento se situará al final del arreglo mismo, en su última posición. Esto es el método: ".push()". Por ejemplo, vamos a crear un Arreglo con tres (3) elementos, tal así:
+
+        const colores =["Amarillo", "Azul", "Rojo"];
+        console.log(colores);
+
+        // En caso que al Arreglo "colores" le quisieramos agregar otro color, por ejemplo el "Negro"... con el método ".push()" sería así:
+
+        colores.push("Negro");
+        console.log(colores);
+
+        // 2. ".pop()": El método ".pop()" es todo lo contrario a ".push()"; mientras ".push()" agrega un último elemento sobre un arreglo ya existente; ".pop()" elimina, de hecho, el último elemento de un Arreglo. Probemos suprimiendo "Negro", el último elemento del Arreglo "colores".
+
+        colores.pop();
+        // Con esto ya se suprimió el último elemento del Arreglo "colores". Veamos.
+
+        console.log(colores);
+
+        // 3. ".forEach()": Este método nos permitirá ejecutar una función, la misma, por cada uno de los elementos que tenga mi Arreglo seleccionado (en un sólo paso). 
+        
+        // Por ejemplo, si quisiera expresar cada uno de los elementos de un Array como si fueran itens o viñetas de una lista, ordenada o desordenada, del tipo HTML (que vaya cada elemento del Array, ahora, en un "list item"),... podríamos hacerlo por medio del método ".forEach()"; ahora, en este caso puntual, del ejemplo que estamos abordando, nos asistiremos del concepto de "Template Strings" para poder interpolar un párametro en especifico (que ya introduciremos ahora) que acompaña a la función que es ejecutada por ".forEach()".
+
+        // ".forEach()" recibe, como ya se dijo, una función; la cual, se ejecutará sobre cada uno de los elementos que tenga el Array de nuestro interés. Ahora, la función como tal, la que ejecuta ".forEach()",... generalmente se vale de un parámetro, el que comentamos más arriba, que recibe el nombre extendidamente generalizado de "el". Es "el", precisamente, el parámetro que va a permitirnos que la función se ejecute sobre cada uno de los elementos del Array, "el" pasa por cada uno de dichos elementos y les ejecuta una misma función. Es decir, "el" hará el simil de cada uno de los elementos del arreglo manipulado, con el método ".forEach()", en cuestión. Para que quede más claro todavía... "el" asumirá, de forma iterativa, cada uno de los elementos del arreglo para poder afectarlos, separadamente, con una función que usted defina. En este caso, nos valdremos del método ".forEach()" para reflejar cada uno de nuestros elementos del Array "colores" como viñetas o items de una lista. Tal que así: 
+
+        colores.forEach(function(el, index){
+            console.log(`<li id="${index}"> ${el} </li>`);
+        });
+
+        // Con el parámetro "el" estamos asumiendo, uno a uno, todos los elementos del Array "colores"; esto para que, en una sola línea de código, la función afecte a todos los elementos del arreglo por medio de "el". 
+
+        // Ahora por ejemplo, si quisiera que cada "li" (list item) tuviese una referencia de ID única, como "atributo" de las etiquetas "li", podría establecerlo con un 2do parámetro de la función que nos indicaría el índice que cada elemento ocuparía dentro del Arreglo; ese 2do parámetro se llamará: "index". Luego, en la template string, se puede interpolar dicha variable "index" que sería correspondiente al valor de un índice,... el índice que ocupa cada uno de los elementos dentro de las posiciones del Array.
+
+        // Aclaraciones: "el" viene de elemento (element) & "index" viene de índice.
+    </script>
+</body>
+</html>
