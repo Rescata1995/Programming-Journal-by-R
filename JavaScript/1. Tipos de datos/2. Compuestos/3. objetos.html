@@ -39,7 +39,7 @@
                 console.log("Hola :)")
             },
             decirMiNombre: function (){
-                console.log(`Hola me llamo ${this.nombre} ${this.apellidos} y tengo ${this.edad} años.`)
+                console.log(`Hola me llamo ${this.nombre} ${this.apellidos}, tengo ${this.edad} años y me puedes seguir como ${this.contacto.twitter} en Twitter.`)
 
                 // Hemos hecho uso del recurso "this" para dejar claro sobre qué ambito de existencia o alcance estoy trabajando; en este caso, como ya estoy dentro del Objeto "yo", estamos ante un Alcance o ambito de existencia de bloque; dicho lo anterior, con "this", dejo claro que es sobre ESTE, mi objeto "yo", donde voy a trabajar y del cual me voy a referenciar; entonces, de ESTE bloque (porque estoy dentro de él y lo estoy referenciando con THIS) me interesa trabajar con sus valores (atributos) "nombre", "apellidos" y "edad"; en este caso puntual, cuando se quiera hacer uso de una propiedad o atributo que esté dentro de un Objeto (y que se está empleando dentro de dicho Objeto) se debe hacer uso del recurso "this"... para dejar claro que el valor lo estoy tomando de ESTE objeto y no de un ambito de existencia global.
             }
@@ -90,6 +90,26 @@
 
         yo.decirMiNombre();
 
+        // Algunos métodos de los Objetos.
+        
+        // El prototipo "Object", de los Objetos, tiene un par de métodos interesantes que vamos a revisar... Su estructura, para ser invocados, puede en muchos casos ser así: "Object.método(objeto_de_interés)". Veamos algunos haciendo uso de la función "console.log();"
+
+        // 1. "Object.keys()": es un método del prototipo "Object" que consiste en "enlistarnos", por medio de un Arreglo iterable con sus respectivas posiciones, todas las llaves (atributos/propiedades & funciones) por las que se compone un Objeto en sí; en este caso, el objeto de nuestro interés es: "yo". Veamos.
+
+        console.log(Object.keys(yo));
+
+        // 2. "Object.values()": hace exactamente lo mismo que "Object.keys()"; solo que, ahora, lo enlistado serán los valores de las llaves, mas no las llaves en sí. Veamos.
+
+        console.log(Object.values(yo));
+
+        // 3.  es un método que nos permite saber si un Objeto, dentro de él, tiene X o Y propiedad/atributo; es decir, nos permite consultar, por medio del nombre, si dentro de un Objeto existe cierta propiedad. En caso que exista la propiedad pasada, la salida será una respuesta en booleano diciendo: "true"; de lo contrario, si no existe la propiedad, la salida será un "false". Veamos.
+
+        console.log(yo.hasOwnProperty("nombre"));
+        // El resultado es "true" porque el objeto "yo", dentro de sí, tiene efectivamente una propiedad llamada: "nombre".
+
+        // Probemos buscando una propiedad que no exista dentro de mi objeto "yo".
+
+        console.log(yo.hasOwnProperty("pareja"));
     </script>
 </body>
 </html>
