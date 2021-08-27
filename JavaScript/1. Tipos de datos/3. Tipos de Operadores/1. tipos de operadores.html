@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de Operadores</title>
+</head>
+<body>
+    <script>
+        // 1. Operadores Aritmeticos: +, -, *, /, %, (); es decir son: suma, resta, producto, división, modulo & agrupación,...
+
+        let a = 5 + (5 - 10) * 3;
+        // Respuesta: -10.
+
+        console.log(a);
+        
+        let modulo = 5 % 2;
+        // Modulo nos devuelve el residuo de una división; es decir, en este caso, el modulo de 5 % 2 es: 1.
+
+        console.log(modulo);
+
+        // 2. Operadores relacionales: ">", "<", "<=", ">=", "==", "===", "!=" & "!==="; éstos son los operadores que nos permiten comparar ciertos valores.
+
+        console.log(8 > 9);
+        // Resultado: false
+
+        console.log(10 > 9);
+        // Resultado: true
+
+        // Los diferentes usos de "=".
+
+        // "=": Significa Asignación de variable.
+        // "==": Significa Comparación de valores.
+        // "===": Significa Comparación de tipo de dato y de valores (en simultaneo valida, y deben cumplirse ambos, conjuntamente).
+
+        // Ahora,... es una buena práctica que, cuando se quiera hacer una comparación, se utilice siempre "==="; de hecho, ya es una mala práctica comparar con "==".
+
+        // 3. Operadores de incremento/decremento
+
+        // Estos operadores consisten en desarrollar, dentro de una variable, una capacidad de ejercer auto-control sobre el incremento y decremento de sus valores, ya sea en una unidad o en más. Veamos esto más a fondo. 
+
+        let i = 1;
+
+        // esto:
+        // i = i + 2;
+
+        // Es lo mismo que decir esto:
+        i += 2;
+
+        // Resultado: 3, así hemos reflejado un operador de incremento con sumas. Otro operador de incremento podría ser con multiplicaciones.
+
+        console.log(i);
+
+        // Evaluemos ahora un operador de decremento con restas (también los hay con divisiones).
+
+        let j = 1;
+
+        // esto: 
+        // j = j - 3;
+
+        // Es lo mismo que decir esto:
+        j -= 3;
+
+        // Resultado: -2, así hemos reflejado un operador de decremento con restas. Otro operador de decremento podría ser con divisiones.
+
+        console.log(j);
+
+        // También existen operadores de incremento/decremento unarios; es decir, que aumentan o disminuyen de 1 en 1. Tal que así, por ejemplo.
+
+        // Incrementador unario: 
+
+        let s = 1;
+        s++;
+        // o lo que es lo mismo: "++s;"
+
+        console.log(s);
+        // Resultado: 2, aumenta en una unidad la variable "s".
+
+        // Decrementador unario: 
+
+        let r = 1;
+        r--;
+        // o lo que es lo mismo: "--r;"
+
+        console.log(r);
+        // Resultado: 0, disminuye en una unidad la variable "r".
+    </script>
+</body>
+</html>
