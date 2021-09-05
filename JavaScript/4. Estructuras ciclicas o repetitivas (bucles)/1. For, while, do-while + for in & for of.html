@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estructuras Repetitivas</title>
+</head>
+<body>
+    <p>
+        Cuando por medio de pocas líneas de código, y asistiendose generalmente de un incrementador o contador, podemos hacer que se ejecute repetitivamente cierto dominio o bloque de código -propio de un bucle- mientras se mantenga valida o cumpliendo cierta condición... hablamos de: "Estructuras ciclicas" o "repetitivas"; todo esto, aclaremos, sin tener que escribir dos veces el dominio en cuestión que queremos que se ejecute iterativamente.
+    </p>
+
+    <p>
+        Uno habla de "incrementador" o "contador" para no entrar en un ciclo o bucle infinito; es decir, para que una condición pasada no sea siempre valida, pues, es el "contador" quién tiene la capacidad de limitar la validez de dicha condición. En efecto, quién va a controlar que un bucle o ciclo no sea infitivo es precisamente el incremento o decremento, generalmente en una unidad (con incrementadores unarios), que asume el "contador" o "incrementador" con cada iteracción del bucle. Entonces, el "contador" va a incrementar (o decrementar) hasta que la condición deje de ser valida, al comparar ambos. Finalmente el programa, en consecuencia, sale del bucle y deja de ejecutar repetitivamente su dominio o bloque de código.
+    </p>
+
+    <p>
+        Tenemos varios tipos de bucles, por ejemplo: While, do-while, for y un par de nuevos más como: for in & for of. Veamos un ejemplo cada uno.
+    </p>
+    <script>  
+
+    // Ejemplo con "While"
+
+    let contador = 0; 
+
+    while (contador < 10){
+        console.log(contador);
+        contador++; // Uso de incrementador unario.
+    }
+
+    // Nos imprime, desde el 0, hasta el número 9; pues, la condición para que el bucle no dejará de funcionar iterativamente era que 10 fuera mayor que la variable "contador" (contador < 10); entonces, como con cada iteracción se incrementa en una unidad el valor de "contador", que inicialmente era 0, llegará un punto en que "contador" será mayor o igual que 10 (contador >= 10)... apenas eso pase la condición del bucle dejará de ser valida; por lo que, en consecuencia, el programa se saldrá del bucle mismo.
+
+    // -----------------------------------
+
+    // Ejemplo con "Do-while"
+
+    // Hay otra estructura, muy parecida a "While", que es "Do-while". "Do-while" básicamente hace lo mismo que "While"; sin embargo, la diferencia de ambos radica en una sóla cosa y es lo siguiente: La estructura "Do-while" ejecutará, al menos una vez, el dominio o bloque de código del bucle sin importar si es valida o no la condición pasada dentro del mismo. Es decir, en la estructura ciclica o repititiva "do-while" lo que primero se ejecuta es su dominio o bloque de código, el que contiene, sin antes evaluar primeramente la validez de la condición (cosa que sí ocurre con "While"). 
+    
+    // Ahora, que el bucle "Do-while" se comporte de esta forma diferente no es ninguna coincidencia, pues, estructuralmente (y respetando el orden del código) lo que primero se ejecuta, dentro de un "Do-while", es su bloque de código o dominio y posteriormente su condición. Veamos esto.
+
+    // Actualmente tenemos que la variable "contador" asume un valor de 10.
+
+    do {
+        console.log("do while " + contador);
+        contador++;
+    } while (contador < 10);
+
+    // Siempre se ejecutará, al menos una sola vez, el dominio o bloque de código de la estructura repetitiva "Do-while"; esto, incluso, aunque no se cumpla su propia condición (se ejecutará siempre, en todos los casos, una vez).
+
+    </script>
+</body>
+</html>
