@@ -80,6 +80,82 @@
 
     // Ahora, si sabemos que la posición 0 de un arreglo corresponde a su 1er elemento; es decir, en este caso, "numeros[0]" equivale a "10"; y, adicionalmente, hemos inicializado al "index" con un "0" también,... podemos jugar con esto! Por ejemplo, si quisieramos que con cada iteracción se nos mostrarán todos los elementos de un Arreglo, uno por uno, por medio de un bucle "for", podemos hacerlo. Para este caso puntual, para lograr lo anterior... sería imprimiendo cada posición del Arreglo "numeros" con asistencia de la variable "index"; la cual, si recuerda, es la que se incrementará en una unidad cada que itere el bucle; entonces, con cada iteracción se pasa, por medio de "index", por todas las posiciones del Arreglo de interés, en este caso, "numeros". Fue lo que hicimos justamente más arriba.
 
+    // -----------------------------------
+  
+    // Variantes del Bucle For: "For in" & "For of"
+
+    // A. For in
+
+    // El "For in" es un Loop (bucle) que me va a permitir recorrer o iterar las propiedades de un Objeto; es decir, es un "For" diseñado para iterar sobre las llaves valores (propiedades o atributos) que tiene el tipo de dato compuesto que se llama: "Objeto". 
+
+    // Recuerde que las llaves valores de un Objeto hacen referencia a todos los tipos de datos/variables que tiene por dentro (con sus respectivos valores inicializados). Ahora, revisemos la estructura más básica de un bucle de tipo "For in", es así:
+
+    // for (const key in object) {
+        
+    // }
+
+    // Donde en "key" se coloca el nombre que va a recibir (o para referenciar), dentro del bucle, el conjunto de las propiedades del Objeto, de nuestro interés, que va a ser manipulado. Ahora, para hacer referencia propiamente al identificador del Objeto que nos interesa manipular, el nombre del mismo debe colocarse en "object".
+
+    // Veamos todo esto en un ejemplo. Declaremos un Objeto.
+
+    const person = {
+        nombre: "Roberto",
+        apellido: "Velasquez",
+        edad: 25
+    }
+
+    // Ahora, declaremos un "For in" para recorrer todas las 3 propiedades o atributos del Objeto "person". En este caso, particularmente, las vamos a recorrer para mostrarlas (mostrar sus "keys", es decir, sus propiedades). Solamente se verán las propiedades del Objeto "person" porque solamente mostraremos eso; pues, imprimiremos sólo la parte del "key" de dicho bucle "For in"; es decir, la parte que referencia a todas las propiedades y las recorre en cada iteracción; en este caso, estamos hablando de las propiedades del Objeto "person".
+
+    for (const propiedades in person) {
+        console.log(propiedades);
+    }
+
+    // Ahora, si nos interesa también, por ejemplo, imprimir; además de todas las propiedades, sus respectivos valores (del Objeto "person")... Tenemos que llamar de alguna manera, dentro del bucle "For in", la totalidad de los valores para cada una de las propiedades del Objeto "person". Al igual, no dejemos de mostrar a la propiedad en sí.
+
+    // Ahora, para recorrer o iterar sobre todos los valores de las propiedades de un Objeto, en un bucle "For in", se debe llamar al identificador del Objeto en sí y, adicionalmente, ahí pegado, pasarle entre llaves [] el nombre que le dimos a nuestra "key" dentro del bucle "for in" que está manipulando al Objeto de nuestro interés. 
+    
+    // Recuerde, "key" es quien referencia al conjunto de las propiedades del Objeto manipulado; en este caso, al Objeto manipulado "person" le pasamos un "key" con el nombre de "propiedades". Imprimamos ahora los valores para el Objeto "person" (con la impresión de la propiedad o atributo mismo).
+
+    for (const propiedades in person) {
+        console.log(`Yo soy la propiedad: "${propiedades}" y mi valor es: ${person[propiedades]}`);
+    }
+
+    // Hemos impreso, por medio de Template Strings, tanto las propiedades del Objeto "person" como sus respectivos valores. 
+
+    // De momento, entonces, el bucle "For" clásico nos sirve para recorrer elementos de un Array & el Bucle "For in" nos sirve para recorrer, especificamente, propiedades de un Object, de dicho tipo de dato compuesto.
+
+    // Sin embargo "For of", nuestra 2da variante del bucle For, va más allá... nos permite recorrer todos los elementos de cualquier Objeto que sea iterable en JS; es decir, esta vez no nos concentramos solamente en el tipo de dato compuesto que se le llama: "Object" (Objecto), no; sino, en todo lo que se concibe como Objeto en JS, como por ejemplo un String. Recuerde que "Todo en JS es un Objeto".
+
+    // B. For of
+
+    // la estructura más básica de un bucle de tipo "For of", es así:
+
+    // for (const iterator in object) {
+        
+    // }
+
+    // Donde en "iterator" se coloca el nombre que va a recibir (o para referenciar), dentro del bucle, el conjunto de los elementos del Objeto (cualquiera que sea iterable en JS) que será manipulado. Ahora, para hacer referencia propiamente al identificador del Objeto que nos interesa manipular, el nombre del mismo debe colocarse en "object".
+
+    // Pongamos en práctica un bucle "For of" dentro del Array "numeros", con el que ya habíamos trabajado anteriormente, para que se impriman todos sus elementos; es decir, todos sus números al recorrer cada uno de ellos con "For of".
+    
+    // Aclaración: un Array vendría siendo un Objeto también y que, además, cumple con la condición de ser iterable en JS). 
+
+    for (const elementos of numeros) {
+        console.log(elementos);
+    }
+
+    // Sólo fue necesario llamar al "iterator", del bucle "For of", para que hiciera un recorrido por todos los elementos del Objeto de nuestro interés (y los imprimiera con "console.log"); en este caso, el Objeto manipulado es: "numeros" y el nombre pasado al "iterator" fue "elementos".
+
+    // "For of", si se da cuenta, nos facilita todo el trabajo si quisieramos recorrer todos los elementos de un Array, por ejemplo. Sin embargo, también podemos trabajar un String con un bucle "For of". Se sabe que un String, además de ser un Objeto dentro de JS, es también iterable; pues, una cadena de texto se compone por caracteres; en consecuencia, podemos pasar por cada uno de ellos, sus elementos, por medio de iteraciones. Veamos.
+
+    let cadena = "Hola Mundo";
+
+    for (const elementos of cadena) {
+        console.log(elementos);
+    }
+
+    // Cuando hablamos de "iterable" nos referimos a la capacidad que tenemos de partir un Objeto en varios elementos, varios elementos que no dejan de ser propios al Objeto de interés en sí.
+    
     </script>
 </body>
 </html>
