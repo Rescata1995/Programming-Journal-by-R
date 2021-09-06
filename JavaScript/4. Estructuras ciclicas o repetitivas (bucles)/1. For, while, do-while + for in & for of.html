@@ -8,11 +8,11 @@
 </head>
 <body>
     <p>
-        Cuando por medio de pocas líneas de código, y asistiendose generalmente de un incrementador o contador, podemos hacer que se ejecute repetitivamente cierto dominio o bloque de código -propio de un bucle- mientras se mantenga valida o cumpliendo cierta condición... hablamos de: "Estructuras ciclicas" o "repetitivas"; todo esto, aclaremos, sin tener que escribir dos veces el dominio en cuestión que queremos que se ejecute iterativamente.
+        Cuando por medio de pocas líneas de código, y asistiendose generalmente de un "incrementador" o "contador" (en contubernio con una variable índice), podemos hacer que se ejecute repetitivamente cierto dominio o bloque de código -propio de un bucle- mientras se mantenga valida o cumpliendo cierta condición... hablamos de: "Estructuras ciclicas" o "repetitivas"; todo esto, aclaremos, sin tener que escribir dos veces el dominio en cuestión que queremos que se ejecute iterativamente.
     </p>
 
     <p>
-        Uno habla de "incrementador" o "contador" para no entrar en un ciclo o bucle infinito; es decir, para que una condición pasada no sea siempre valida, pues, es el "contador" quién tiene la capacidad de limitar la validez de dicha condición. En efecto, quién va a controlar que un bucle o ciclo no sea infitivo es precisamente el incremento o decremento, generalmente en una unidad (con incrementadores unarios), que asume el "contador" o "incrementador" con cada iteracción del bucle. Entonces, el "contador" va a incrementar (o decrementar) hasta que la condición deje de ser valida, al comparar ambos. Finalmente el programa, en consecuencia, sale del bucle y deja de ejecutar repetitivamente su dominio o bloque de código.
+        Uno habla de "incrementador" o "contador" para no entrar en un ciclo o bucle infinito; es decir, para que una condición pasada no sea siempre valida, pues, es el "contador" quién tiene la capacidad de limitar la validez de dicha condición. En efecto, quién va a controlar que un bucle o ciclo no sea infitivo es precisamente el incremento o decremento, generalmente en una unidad (con incrementadores unarios), que asume la variable afectada por dicho "contador" o "incrementador" en cada iteracción del bucle; a esta variable se le suele llamar "índice". Entonces, la variable "índice" va a incrementar (o decrementar) hasta que la condición deje de ser valida,... al comparar ambas. Finalmente el programa, en consecuencia, sale del bucle y deja de ejecutar repetitivamente su dominio o bloque de código.
     </p>
 
     <p>
@@ -47,6 +47,38 @@
     } while (contador < 10);
 
     // Siempre se ejecutará, al menos una sola vez, el dominio o bloque de código de la estructura repetitiva "Do-while"; esto, incluso, aunque no se cumpla su propia condición (se ejecutará siempre, en todos los casos, una vez).
+
+    // -----------------------------------
+  
+    // Ejemplo con "For"
+
+    // El ciclo o bucle "for", como estructura repetitiva, es el más utilizado y consta de tres partes (Realmente hace lo mismo que "While",... sólo que se representa con otra estructura). 
+    
+    // Ahora, que el bucle "for" sea la estructura repetitiva más utilizada... quizás tenga que ver con la facilidad de agrupar todos sus recursos dentro de una sola línea de código; ojo, con esto no me refiero ni al dominio ni el bloque de código que se pretende ejecutar; sino: 1. A la variable "índice", 2. La condición a evaluar & 3. el "incrementador" o "contador" en sí. La variable índice suele ser declarada con una "i". Acá la estructura modelo:
+
+    // for (let index = 0; index < array.length; index++) {
+    //     const element = array[index];
+    // }
+
+    for (let i = 0; i < 10; i++) {
+        console.log("for " + i);  
+    }
+
+    // Nos imprime, desde "for 0", hasta el "for 9"; pues, la condición para que el bucle no dejará de funcionar iterativamente era que 10 fuera mayor que "i" (i < 10); entonces, como con cada iteracción se incrementa en una unidad el valor de "i", que inicialmente era 0, llegará un punto en que "i" será mayor o igual que 10 (i >= 10)... apenas eso pase la condición del bucle dejará de ser valida; por lo que, en consecuencia, el programa se saldrá del bucle mismo.
+
+    // Ahora, hay una relación de "amor" entre los bucles "for" & los "arrays"; pues, resulta que con un bucle "for" podemos pasar por, y quizás imprimir, todos los valores de las posiciones de un Arreglo. Esto se entiende mucho mejor con un ejemplo.
+
+    let numeros = [10, 20, 30, 40, 50, 60, 70, 80];
+
+    for (let index = 0; index < numeros.length; index++) {
+        console.log(`Este es el número: ${numeros[index]}.`);
+    }
+
+    // La expresión ".length", al final de "numeros", es una propiedad que determina numericamente la cantidad de elementos que tiene un arreglo; en este caso, como estamos hablando de "numeros", serían 8 elementos... lo mismo que decir 7 posiciones (debe saber el porqué). Entonces, si quiero que mi limite de iteracciones sea correspondiente a la totalidad de elementos que tiene mi arreglo, hasta llegar a su último, puedo valerme de dicha propiedad "length" para formular mi condición; dicha condición, cómo máximo, hará que mi bucle itere hasta el último elemento de mi arreglo,... a la última posición del mismo mientras (y aquí mi condición) "index < numeros.length".
+
+    // Con un incrementador unario, entonces, acá también incrementamos en una unidad al "index" y que itere el bucle hasta que "index < numeros.length".
+
+    // Ahora, si sabemos que la posición 0 de un arreglo corresponde a su 1er elemento; es decir, en este caso, "numeros[0]" equivale a "10"; y, adicionalmente, hemos inicializado al "index" con un "0" también,... podemos jugar con esto! Por ejemplo, si quisieramos que con cada iteracción se nos mostrarán todos los elementos de un Arreglo, uno por uno, por medio de un bucle "for", podemos hacerlo. Para este caso puntual, para lograr lo anterior... sería imprimiendo cada posición del Arreglo "numeros" con asistencia de la variable "index"; la cual, si recuerda, es la que se incrementará en una unidad cada que itere el bucle; entonces, con cada iteracción se pasa, por medio de "index", por todas las posiciones del Arreglo de interés, en este caso, "numeros". Fue lo que hicimos justamente más arriba.
 
     </script>
 </body>
