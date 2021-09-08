@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo de Errores</title>
+</head>
+<body>
+    <script>
+
+        // En JS existe una estructura propia para el manejo y detención de errores de sintaxis y/o errores propios de la lógica del programa (como los errores que se arrojan intencionalmente para "testear"); dicha estructura, nos permite evaluar los errores cometidos por nosotros a la hora de codificar o de escribir ciertos fragmentos de código, se conoce como: "try-catch-finally". Una sentencia que, adicionalmente, nos permite asistirnos de un mensaje de alerta o notificación, el cual es de autoria propia, que nos avisa cuando algo anda mal en nuestro código. Sin embargo, la sentencia va más allá: no solo estaremos notificados de cuándo estemos cometiendo un error en nuestro código; sino que, también, podremos saber puntualmente qué error o errores están afectando la trayectoria normal del código evaluado en sí. 
+
+        // Ahora, la estructura "try-catch-finally" se compone de tres (3) partes que son:
+
+            // 1. try: En "try", dentro de su dominio, se escribe el código o fragmento de código que nos interesaría ejecutar, el mismo que será evaluado. 
+
+            // 2. catch: En "catch", dentro de su dominio, se capturan los posibles errores que hayan en "try" (sólo los que estén dentro de ese bloque de código); en caso de haber errores, éstos puede imprimirlos en su consola por medio de un "console.log(error)" en el mismo dominio de "catch". Pero, adicionalmente, si en efecto hay la existencia de un error, o errores, también tiene la opción de dejar un mensaje de alerta predeterminado o de notificación que se muestre en consola y que le sugiera que, en "try", hay errores por corregir. Por el contrario, si no se encuentra evidencia de errores en "try", no se mostrará nada en consola que provenga o haya sido escrito en "catch".
+
+            // 3. finally: En "finally", dentro de su dominio, se escribe lo que sea que desee mostrar en consola, haya existencia o no de errores en "try". Este tercer bloque de código propio de la sentencia "try-catch-finally" es realmente opcional y cada día queda más en desuso.
+
+            // La estructura básica de "try-catch-finally" es la siguiente: 
+
+            // try {
+                
+            // } catch (error) {
+                
+            // }
+
+            // Probemos la estructura: "try-catch-finally" con un error de sintaxis.
+
+            try {
+                console.log("Aquí se agrega el código que se pretende ejecutar y evaluar. Here we add the code that pretends to be executed and evaluated.");
+                
+                EstaVariableNoDeclarada_es_miError;
+
+                console.log("Algo importante para aclarar: Como, justo antes a esta línea de código que me encuentro escribiendo, hay registro de un error (que es de sintaxis en este caso) las demás líneas de código que estén dentro de 'try', inmediatamente despúes del 1er error registrado, sean líneas de código con o sin error, no serán ejecutadas en ningun caso... como la de esta misma línea de código.")
+
+            } catch (error) {
+                console.log("Aquí se captura cualquier error surgido o lanzado en el 'try'. Here we catch any done mistake or eyected on 'try'.");
+
+                console.log(error);
+
+            } finally {
+                console.log("Lo que escriba aquí se ejecutará siempre, al final de un bloque 'try-catch', independientemente de que hayan errores o no. Whatever you write here it will be executed regardless there are or not mistakes in our 'try-catch'.");
+            }
+
+            // Si se quiere ser más ordenado, puedes considerar englobar todo el código de tu proyecto en un "try", de tal manera que los posibles errores  que tenga tu código se gestionen mejor por medio de "catch".
+
+            // Ahora, el mensaje de error propio del "catch" lo podemos personalizar; es decir, configurar de manera personalizada los mensajes de "error" propios a la consola, en este caso, los que arroja el "catch": "catch (error)". Lo anterior lo podemos hacer con las funciones "throw new Error", las cuales, las pondremos en práctica con otro ejemplo de "try-catch-finally".
+
+            // Probemos un "throw new Error", en la estructura: "try-catch-finally", donde pongamos en práctica, por medio de un ejercicio que evalue si una variable es numérica o no, un error propio de la lógica del programa (no un error de sintaxis). Ahora, si el programa no presenta error alguno, queremos que se multiplique por sí misma la variable en cuestión; pues, estamos suponiendo que el programa no tendrá errores si la variable, en efecto, sí es de tipo numérica como para poder multiplicarse por sí misma. Probemos.
+
+            try {
+                let numero = "F";
+
+                if (isNaN(numero)) {
+                    throw new Error("El valor introducido no es de tipo numérico o no es un Número. Línea de código: 55.");
+                    
+                    // Para aclarar, la función "inNan" evalúa si un valor pasado, entre sus parentesis, es numérico o no; en caso de no ser numérico, arroja como resultado un booleano de tipo "True"; de lo contrario, si es el valor sí es de tipo numérico, arroja como resultado un booleano de tipo "False". Explicado lo anterior, debe recordar que, el dominio de un "if" sólo será ejecutado si la condición que está siendo evaluada es "true"; en consecuencia, el dominio de "if" sólo correrá, en este caso, si la variable "numero" resulta ser un valor NO numérico; es decir, cuando "isNaN(numero)" sea "true".
+
+                    // Por el contrario, si el valor de la variable "numero" sí resulta ser un número; quiere decir entonces que la condición "isNaN(numero)" será "false"; es decir, no se ejecutará el bloque del código o dominio del "if" y se lo "vuela"... para proceder así con el código que viene inmediatamente después del "if", como de momento no hay ningun error detectado, "try" puede continuar ejecutandose sin problema alguno. Lo que vendría es esto:  
+
+                    // console.log(numero * numero);
+
+                    // Retomando el punto anterior, lo que se ejecutará, en caso que la variable "numero" no sea un número realmente, es un error; pero no cualquier "error". Lo que se ejecutará es el "error" propio de la consola que, ahora, ha sido personalizado por nosotros mismos por medio de la función "throw new Error". En todo caso, después de detectarse un 1er "error", sea personalizado o no por nosotros, la ejecución del programa se cortará ahí.
+                }
+
+                // Esto es lo que se ejecutará, como se dijo, si "isNaN(numero)" es "false"; es decir, si la variable "numero" sí resulta ser un número:
+
+                console.log(numero * numero);
+
+            } catch (error) {
+                console.log(`Se produjo el siguiente error: ${error}`);
+
+                // Ahora, a lo que vinimos, resulta que si la consola detecta un error dentro del programa... No será el mensaje que por defecto la consola arroja, el que se reflejará, para ser notificados del "error" mismo; sino que, el mensaje que arrojará la consola será el que le personalizamos con "throw new Error". Esta es la novedad: Que podemos configurar un mensaje de error personalizado, ante nuestros errores, si no queremos que se arrojen los mensajes de "error" que por defecto maneja la consola.
+
+                // Es decir, ante un error en "try" en este ejercicio, lo que veremos al llamar e imprimir el "error" de "catch" -con asistencia del Template string que colocamos en el "console.log" del mismo "catch"- es lo siguiente:
+
+                // "Se produjo el siguiente error: Error: El valor introducido no es de tipo numérico o no es un Número. Línea de código: 55."
+
+                // Ahora, si no hay errores, quiere decir que no se anula "try" y que se sigue ejecutando después de saltarse el "if"; pero, además, lo que sea que hayamos invocado en "catch" no se verá reflejado en consola; es decir, lo único que verá en consola será la multiplicación de la variable "numero" por sí misma.
+
+                // console.log(numero * numero);
+            }
+
+    </script>
+</body>
+</html>
