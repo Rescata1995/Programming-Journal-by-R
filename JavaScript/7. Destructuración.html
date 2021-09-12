@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuración</title>
+</head>
+<body>
+    <script>
+        // La destructuración es una nueva forma de asignar valores, sobre todo, al tomarlos de un Arreglo y/o al tomarlos de un Objeto (tipos de datos compuesto). En palabras más simples, podemos almacenar cada uno de los elementos de un Array, o propiedades de un Objeto, en variables independientes; de tal manera que, cada uno de los valores de esos tipos de datos compuestos, Arreglo u Objeto, estén almacenados en una variable única y diferente para cada uno de ellos. 
+
+        // El recurso de la destructuración, o "destructurar", nos permite hacer la anterior tarea de una manera mucho más rápida. Comparemos ambos escenarios, dentro de un Array, haciendo uso de la destructuración y no.
+
+        // Si hace falta recordar... el conteo de las posiciones, en los arreglos, se da desde el número 0; es decir, el primer elemento de un arreglo está ubicado en la posición 0 de dicho arreglo.
+
+        // Ahora sí, vamos a asignar o almacenar los valores de un Array, ya inicializado, en variables independientes:
+
+        const numeros = [1, 2, 3];
+
+        // Sin destructuración:
+
+        let uno = numeros[0],
+            dos = numeros[1],
+            tres = numeros[2];
+
+            console.log(uno, dos, tres);
+
+        // Aquí le hemos asignado, manualmente (sin destructuración), a cada una de las posiciones del Arreglo "numeros" una variable independiente para cada uno de ellas. Es decir, la variable "uno" es igual a 1, la variables "dos" es igual a 2 y la variable "tres" es igual a 3.
+
+        // Si quisieramos hacer lo mismo, con destructuración, se vería así: 
+
+        /* const [uno, dos, tres] = numeros; 
+           (esta es la destructuración, que ya luego explicaremos). */
+
+        // console.log(uno, dos, tres);
+
+
+
+        // Con destructuración:
+
+        const [one, two, three] = numeros; 
+
+        // Luego, aquí ahora, le hemos asignado dinamicamente (con destructuración) variables independientes (las cuales son: "one", "two", "three") a cada una de las posiciones del Arreglo "numeros"; esto, en su mismo orden, sin tener que declarar una por una cada una de las variables independientes para cada una de las posiciones del arreglo en sí. Siendo la variable independiente "one" la que pasaría a definirse con el valor de la posición 0 del Arreglo "numeros"; es decir, "one" es igual a 1. En ese sentido, "two" es igual a 2 y "three" es igual a 3. Comprobemos en consola.
+
+        console.log(one, two, three);
+
+        // Este mismo recurso lo podemos trabajar en Objetos, no sólo en Arreglos... En caso que quiera guardar cada una de las propiedades de un Objeto, sus valores, en variables independientes. Veamos.
+
+        const persona = {
+            nombre: "Roberto",
+            apellido: "Velasquez",
+            edad: 25
+        }
+
+        // A destructurar!
+
+        const {nombre, apellido, edad} = persona;
+
+        // Aqui le hemos definido dinamicamente, a cada una de las propiedades del Objeto "persona", sus variables independientes por medio del recurso de la "Destructuración". 
+        
+        // Importante: las variables independientes que decida crear para cada propiedad de un Objeto, por medio de la destructuración, reciben el mismo nombre que la propiedad dentro del objeto recibió. No es casual que los nombres de las variables independientes declaradas con el recurso de la destructuración, para definir cada una de las propiedades del Objeto "persona", sean iguales a los nombres de las propiedades en sí.
+
+        // Imprimamos el valor de las tres variables independientes "nombre", "apellido" & "edad": 
+
+        console.log(nombre, apellido, edad);
+
+    </script>
+</body>
+</html>
