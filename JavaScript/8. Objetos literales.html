@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos literales</title>
+</head>
+<body>
+    <script>
+        // Los Objetos literales no son más que una nueva forma de escribir atributos y métodos, incluso de asignarlos.
+
+        // Por ejemplo, 
+
+        let nombre = "kEnAi",
+            edad = 7;
+            // Variables primarias, un string y un number.
+
+        const perro = {
+            nombre: nombre,
+            edad: edad,
+            ladrar: function (){
+                console.log("guauu guauu!!");
+            }
+        }
+
+            // Un objeto con dos propiedades (dos variables primarias) y una función o método.
+
+            console.log(perro);
+            perro.ladrar();
+
+            // Si se fija bien, el valor de las dos propiedades del objeto "perro", cada una por separadas, tienen una correspondencia con la propiedad misma que las define; en el sentido de que, se identifican de la misma manera, tienen el mismo identificativo (Por ej.: "nombre: nombre"). Es decir, a las variables primarias que habíamos creado primeramente, ya sea "nombre" o "edad", ahora están siendo tomadas como valores dentro del objeto "perro"; donde, en dicho objeto, cada una de sus propiedades tienen el mismo identificativo de ellas, de las variables primarias iniciales "nombre" & "edad".
+            
+            // Entonces, cuando tenemos que dentro de un Objeto; una propiedad es igual a su valor, más precisamente, son iguales en el identificativo... Podemos simplificar toda esa declaración con un recurso llamado "Objetos literales".
+
+            // Si la variable que tú vas a asignarle, como valor, a una propiedad de un Objeto,... tienen el mismo nombre (identificativo) que la propiedad misma; pues, entonces, con "Objetos literales" simplemente tienes que hacer lo siguiente (observe la siguiente estructura y comparela con la anterior, es decir, compare los dos Objetos "perro"):
+
+            /* const perro = {
+                nombre,
+                edad,
+                ...
+            } */
+
+            // Que quiere decir lo anterior? Pues que JS, valiendose del recurso "Objetos literales", va a interpretar y asignar dinamicamente a la propiedad "nombre" un valor equivalente a una variable llamada "nombre"; es decir, ya debe existir con anterioridad la declaración de una variable llamada "nombre" con su respectivo valor inicializado. Lo propio con la propiedad "edad". Esto nos resume la tarea de tener que escribir: "nombre: nombre" o "edad: edad"; pues, JS puede interpretar uqe ya estás haciendo eso con sólo llamar a la propiedad en solitario en sí. Ahora veamos esto a prueba real.
+
+            const dog = {
+                nombre,
+                edad,
+                ladrar(){
+                    console.log("guauu guauu!!")
+                }
+            }
+
+            console.log(dog);
+            dog.ladrar();
+
+            // Ahora, "console.log(dog);" nos va a mostrar lo mismo que "console.log(perro);". Es decir, un "Objeto literal" lo que hace es agilizarnos todo el proceso de escritura de nuestro Objeto, en este caso, Objeto "dog".
+
+            // Ahora, si se percata, dentro del Objeto "dog"... También hemos simplificado la forma de declarar una función o método!; es decir, un método o función, dentro de un Objeto, puede declararse sin necesidad de hacer uso de la palabra reservada "function" ni de los dos puntos anteriores a ella (:); como, por el contrario, sí se hizo en el Objeto "perro"). 
+
+    </script>
+</body>
+</html>
