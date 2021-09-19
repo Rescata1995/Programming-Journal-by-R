@@ -80,6 +80,40 @@
 
         funcionDeVariasLineas();
 
+        // ---------------------------------------------
+
+        // Ahora, las Arrow Function también podrían ser aplicables a los Arreglos, más especificamente a métodos de los Arreglos. Por ejemplo, podríamos aplicar una Arrow Function sobre el método "forEach" que, si bien recuerda, nos permite iterar sobre cada uno de los elementos de un Arreglo.
+
+        const numeros = [1,2,3,4,5];
+
+        numeros.forEach(function(el, index){
+            console.log(`El elemento ${el} está en la posición ${index}.`);
+        });
+
+        // Recuerde que en el método "forEach" la palabra reservada "el" es quién se encargará de pasar por todos los elementos y emularlos y la palabra reservada "index" es quién se encargará de emular las posiciones de dichos elementos recorridos.
+
+        // Ahora, como el método "forEach" no es más que una función, podríamos aplicar una Arrow Function sobre él. Apliquemos lo dicho sobre el mismo ejercicio anterior, tal que así:
+
+        numeros.forEach((el, index) => {
+            console.log(`El elemento ${el} está en la posición ${index}.`);
+        });
+
+        // Si se fija bien, hemos suprimido la palabra reservada "function" y, adicionalmente, hemos agregado un Arrow (=>).
+
+        // Ahora, lo mismo, como el dominio de nuestro método "forEach", aplicado al Array "numeros", contiene una sola línea de código ejecutable; usted podría, incluso, suprimir u omitir los corchetes y expresar todo el código del método en sí en una única línea, ¿lo recuerda? Veamos.
+
+        numeros.forEach((el, index) => console.log(`El elemento ${el} está en la posición ${index}.`));
+
+        // Se suprime también el punto y coma (;) de la línea de código ejecutable; en este caso, la que está dentro del dominio del método "forEach"; si no se borra, se provocaría un error de sintaxis.  
+
+        // ---------------------------------------------
+
+        // Ahora, aplicar o tratar de aplicar una Arrow Function, dentro de un Objeto, no es una buena práctica. Las Arrow Function, idealmente, las podemos aplicar sobre una función directamente o sobre un método de un Arreglo; sin embargo, no es recomendable hacerlo sobre un Objeto. Es decir, realmente tú no deberías crear, dentro de un Objeto literal, un método a partir de una Arrow Function (o una función misma). 
+        
+        // Acontece que las Arrow Function tienen un alcance goblal y, si las utilizas dentro de un objeto literal, lo que pasará es que se saldrá del Objeto en cuestión; ignorando así, que está dentro del contexto del Objeto (para situarse sobre el contexto global o "Window"). Entonces, cuando trates de manipular los métodos de los objetos, con una Arrow Function, no podrás hacerlo porque, dicho método, realmente no pertenecería al Objeto manipulado.
+
+        // En resumen: ¡MEJOR NO UTILIZAR ARROWS FUNCTIONS EN UN OBJECTO!
+
     </script>
 </body>
 </html>

@@ -38,7 +38,10 @@
             saludar: function (){
                 console.log("Hola :)")
             },
-            decirMiNombre: function (){
+
+            // Ahora, otra forma de declarar una función dentro de un Objeto sería: NO hacer uso de los dos puntos (:) ni de la palabra reservada "function" a la hora de declararla (es una forma más corta). Observe acontinuación cómo se declara la función "decirMiNombre" sin los dos puntos (:) ni la palabra reservada "function".
+
+            decirMiNombre (){
                 console.log(`Hola me llamo ${this.nombre} ${this.apellidos}, tengo ${this.edad} años y me puedes seguir como ${this.contacto.twitter} en Twitter.`)
 
                 // Hemos hecho uso del recurso "this" para dejar claro sobre qué ambito de existencia o alcance estoy trabajando; en este caso, como ya estoy dentro del Objeto "yo", estamos ante un Alcance o ambito de existencia de bloque; dicho lo anterior, con "this", dejo claro que es sobre ESTE, mi objeto "yo", donde voy a trabajar y del cual me voy a referenciar; entonces, de ESTE bloque (porque estoy dentro de él y lo estoy referenciando con THIS) me interesa trabajar con sus valores (atributos) "nombre", "apellidos" y "edad"; en este caso puntual, cuando se quiera hacer uso de una propiedad o atributo que esté dentro de un Objeto (y que se está empleando dentro de dicho Objeto) se debe hacer uso del recurso "this"... para dejar claro que el valor lo estoy tomando de ESTE objeto y no de un ambito de existencia global.
