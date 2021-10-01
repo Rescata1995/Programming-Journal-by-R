@@ -23,7 +23,64 @@
 
     En general, JS es un lenguaje orientado a Objetos pero basado en prototipos, no en clases.
 
+    Y, ¿qué es un Prototipo?
+    Es un mecanismo por el cual un Objeto (hijo) puede heredar atributos y métodos de otro Objeto (padre).
+
         
+    <script>
+        // Veamos un Objeto literal, el prototipo más primitivo y fundamental de JS
+
+        const animal = {
+            nombre: "Snoopy",
+            sonar(){
+                console.log("Hago sonidos porque estoy vivo");
+            }
+        }
+
+        // El prototipo del Objeto literal "animal" es el que sale como "__proto__: Object" al desplazar la flecha hacia abajo de lo que me muestra "console.log(animal);". 
+
+        const animal2 = {
+            nombre: "Lola Bunny",
+            sonar(){
+                console.log("Hago sonidos porque estoy vivo");
+            }
+        }
+
+        console.log(animal);
+        console.log(animal2);
+
+        // Esto que hicimos de "copiar y pegar" el código de un Objeto, textualmente, para crear una replica del mismo y, a partir de ahí, modificar solamente el valor de sus atributos (ni siquiera los atributos mismos; por ejemplo, dejar igual el atributo "nombre" y sólo hacer cambios en su valor: de "Snoopy" a "Lola Bunny"),... es muy mecanico e innecesario; es decir, si se fija, en esencia, el Objeto "animal" es igual al Objeto "animal2" y no es muy funcional que se tenga que ocupar más código en esto (Los Objetos literales sólo tienen cambios muy pequeños muy al interior de su dominio).
+
+        // Entonces para esto, para evitar la replica de código en el anterior punto, es que en la programación orientada a Objetos se usan "Clases". 
+        
+        // Ahora sí tiene más sentido cuando decimos que una Clase es un "modelo a seguir" y un Objeto (o cuantos Objetos hayan) son sólo "copias" de ese modelo a seguir; es decir, según el ejemplo anterior, podríamos entonces tener una Clase de referencia de la cual podamos diseñar tanto los Objetos "animal" & "animal2" (o cuántos "animales" quiera) sin tener la necesidad de duplicar código? Sí, esa es la idea... Pero ya lo hablaremos más adelante.
+
+        // Hablaremos ahora sobre las "Funciones Constructoras".
+
+        // A las funciones "constructoras" se les llama así, constructoras, porque se contruye una sola vez y, a partir de ella, se generan nuevas instancias (o nuevos objetos) que sean de este tipo de función constructora. 
+
+        // Las Funciones Constructoras, al igual que las Clases, idealmente se declaran de la misma manera; es decir, con "UpperCamelCase". Por ejemplo, "class SerHumano" (toda palabra tiene su inicial en Mayusculas). 
+        
+        // Ahora, en caso que se necesite pasar "propiedades" a una función constructora,... éstas se pasan como "parametros" dentro la misma. 
+
+        // Vamos a recrear ahora una función constructora que se llame "Animal" y reciba las propiedades (o parametros): "nombre" & "genero".
+        
+        function Animal (nombre, genero){
+            this.nombre = nombre;
+            this.genero = genero;
+
+            // Las variables que declaremos  dentro de este (this) dominio de la función "Animal", como estamos ante una función constructora,... además de ser los "Atributos" de esta función, debe declararse dichos atributos con un "this." antecedidamente. Lo mismo ocurre con los métodos.
+            
+            // Creemos ahora un método dentro de la función constructora "Animal". Los métodos se declaran de manera muy similar a como se declaran las "Funciones Expresadas".
+
+            this.sonar = function(){
+                console.log("Hago sonidos porque estoy vivo");
+            }
+
+            // Entonces sí, sepalo, tanto los "Atributos" como los "Métodos", dentro de una Función Constructora, deben declararse siempre con la palabra reservada "this." de manera anticipada. 
+        }
+
+    </script>
 
 </body>
 </html>
