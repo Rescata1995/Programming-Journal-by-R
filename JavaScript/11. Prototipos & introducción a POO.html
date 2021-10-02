@@ -55,6 +55,8 @@
         
         // Ahora sí tiene más sentido cuando decimos que una Clase es un "modelo a seguir" y un Objeto (o cuantos Objetos hayan) son sólo "copias" de ese modelo a seguir; es decir, según el ejemplo anterior, podríamos entonces tener una Clase de referencia de la cual podamos diseñar tanto los Objetos "animal" & "animal2" (o cuántos "animales" quiera) sin tener la necesidad de duplicar código? Sí, esa es la idea... Pero ya lo hablaremos más adelante.
 
+// -----
+
         // Hablaremos ahora sobre las "Funciones Constructoras".
 
         // A las funciones "constructoras" se les llama así, constructoras, porque se contruye una sola vez y, a partir de ella, se generan nuevas instancias (o nuevos objetos) que sean de este tipo de función constructora. 
@@ -77,8 +79,49 @@
                 console.log("Hago sonidos porque estoy vivo");
             }
 
+            // Otro método 
+
+            this.saludar = function(){
+                console.log(`Hola mi nombre es ${this.nombre} y mi genero es: ${this.genero}.`)
+            }
+
             // Entonces sí, sepalo, tanto los "Atributos" como los "Métodos", dentro de una Función Constructora, deben declararse siempre con la palabra reservada "this." de manera anticipada. 
+
+            // Ahora bien, ya tenemos la función constructora "Animal". A partir de esta función vamos a crear varias instancias "Animal" (varias instancias de una función constructora). Las instancias que crearemos serán: "Snoopy" & "lolaBunny". Veamos.
+
         }
+        
+        const snoopy = new Animal("Snoopy", "Macho"),
+              lolaBunny = new Animal("Lola Bunny", "Hembra");
+
+                // Qué acabamos de hacer? Hemos creado dos instancias de la función constructora "Animal" que son: "snoopy" & "lolaBunny" &, a ambas, les hemos pasado los dos parámetros correspondientes de la función constructora "Animal". Imprimamos ambas instancias. 
+
+            console.log(snoopy);
+            console.log(lolaBunny);
+
+            // Algo que debe tener en cuenta: Las instancias u objetos que decida crear, a partir de una función constructora, se deben crear por fuera de la función constructora misma. 
+
+            // Y sí, sepa que las instancias son lo mismo que Objetos... puede darse cuenta de eso con la impresión en consola de las instancias "snoopy" & "lolaBunny"; notará que, tanto "snoopy" como "lolaBunny", tienen la misma estructura de Objeto.
+
+            // Ahora, la función constructora "Animal" es, de hecho, un Prototipo.
+
+// Un código más eficiente...
+
+            // Esto aún puede perfeccionarse haciendo el código más eficiente (reduciendo al máximo el uso de los recursos, el espacio de memoria dinamica, en nuestro código). 
+
+            // Si se da cuenta, aunque los atributos de cada instancia del Prototipo "Animal", "nombre" & "genero", están diferenciados (no es el mismo animal ni el mismo genero en ellos); no ocurre lo mismo con el método "sonar", pues, es el mismo método en ambas instancias (y también el mismo dominio).
+
+            // Pues bien, en el anterior caso, cuando un método es igual para todas las instancias creadas (como es el caso del método "sonar" para las intancias "snoopy" & "lolaBunny"),... podemos hacer de nuestro código un código más efciente al crear el método "sonar" por fuera del dominio de la función constructora "Animal"; de tal manera que, el método "sonar", sea asignado propiamente al prototipo de "Animal".
+            
+            // Veamos esto en los dos métodos "sonar" & "saludar". Primero con la instancia "snoopy".
+
+            snoopy.sonar();
+            snoopy.saludar();
+
+            // Ahora con la instancia "lolaBunny".
+
+            lolaBunny.sonar();
+            lolaBunny.saludar();
 
     </script>
 
