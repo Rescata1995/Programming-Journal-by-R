@@ -1,0 +1,60 @@
+Atajos en Excel: 
+
+- Guardar Archivo: ctrl + g
+
+- Abrir archivo: ctrl + a
+
+- Crear un nuevo libro: ctrl + u
+
+- Cerrar archivo: ctrl + r 
+
+- Imprimir: ctrl + p 
+
+- Cerrar excel: alt + F4 
+
+- Selecciona columna: ctrl+espacio
+
+- Seleccionar un renglón: shift + espacio
+
+- Agregar una celda: Ctrl + +
+
+- Agregar una columna: 
+	ctrl + espacio y luego: Ctrl + +
+
+- Eliminar una columna:
+	 ctrl + espacio y luego: Ctrl + -
+
+- Es lo mismo para un renglón
+ 	primero se selecciona y 
+	luego se agrega o elimina
+
+- Cambiar de hoja: Ctrl + AvPag (avanzar) 
+  y para regresar Ctrl + RePag (regresar)
+
+- Seleccionar rango de celda: 
+  ctr+shift+flecha (arr-abj-der-izq)
+
+- Ir al limite derecho o al siguiente valor:
+  ctrl+flecha_der
+
+- Ir al limite inf o al siguiente valor: 
+  ctrl+flecha_abajo
+
+- zoom: ctrl + rueda raton 
+
+- convertir a referencia absoluta, 
+	en la casilla presionar F4
+
+- pasar de un libro a otro: ctrl + F6 
+
+- abrir la caja de formato: ctrl + 1
+
+- ocultar columna: ctrl + 0 (el cero de la parte superior y no del teclado numerico)
+
+- seleccionar todo: ctrl + e, seleccionar todo o un rango segun donde este  
+
+- negrita: ctrl + n
+
+- cursiva: ctrl + k
+
+- subrayado: ctrl + s
