@@ -53,7 +53,7 @@ CREATE DATABASE platzi_operation;
     
 CREATE TABLE IF NOT EXISTS books (
 	book_id INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT, /* Aqui el primer atributo de nuestra tabla "Books": "Book_id" */
-    autor ,
+    autor_id_foreign INTEGER UNSIGNED,
     title  VARCHAR(100) NOT NULL,
     age INTEGER UNSIGNED NOT NULL DEFAULT 1900,
     language VARCHAR(2) NOT NULL DEFAULT 'es' COMMENT 'ISO 639-1 language', 
@@ -76,7 +76,32 @@ CREATE TABLE IF NOT EXISTS books (
     
     /* CON "COMMENT" se le asigna un comentario a la columna o atributo, nadie la va a ver mas que 
        quien este viendo la estructura de la base de datos. No afecta en absoluto sobre el flujo de la DB. */
+       
+	/* Un consejo de buena practica: Escriba los nombres de sus objetos en minusculas (todas sus letras) & 
+	   escriba las palabras reservadas, propias al lenguaje, en mayusculas (todas sus letras). Mantenga en practica. 
+       
+       Ahora, hay un caso extraño que uno idealmente no pretende buscar, sino que simplementa ocurre. Y es que, 
+       a veces, los nombres de los objetos (llamese tabla, columna, vista, etc) corresponden al nombre de 
+       una palabra reservada propia de SQL; por ejemplo, puede darse el caso que una columna se llame 
+       "year" pero la palabra "year" ya es una palabra reservada de SQL... En ese caso, si realmente necesita 
+       llamar a su columna asi, es una buena practica (casi un deber ser) utilizar tildes invertidas para 
+       declarar ese tipo de objetos, tal que asi: `year` (con esto se diferencia la columna de la palabra reservada). */ 
+       
+CREATE TABLE IF NOT EXISTS authors (
+	author_id INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    nationality VARCHAR(3)
+    );
     
-    
-    
-    
+DESCRIBE authors; /* Este comando, DESCRIBE, nos explica con detalles las caracteristicas de los atributos x tabla */
+DESC books; /* "DESCRIBE" tambien se puede expresar con el acronico "DESC" */
+
+/* Para ver mas detalles de las columnas, como por ejemplo mostrar incluso los comentarios insertados en ellas...
+   podemos usar el comando "SHOW FULL COLUMNS FROM -aqui inserte nombre columna-", por ejemplo: */ 
+      
+SHOW FULL COLUMNS FROM books; 
+
+/* Ahora podra ver, por ejemplo, el comentario que insertamos inicialmente en el atributo "language" de la tabla 
+   "books". Este comando nos dice tambien los permisos que tenemos en "Privileges", 
+   como el usuario en el que estamos e, incluso, cual es el tipo de esquema que esta en cada una de las columnas 
+   (Collation). */
