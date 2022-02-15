@@ -89,19 +89,34 @@ CREATE TABLE IF NOT EXISTS books (
        
 CREATE TABLE IF NOT EXISTS authors (
 	author_id INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(100) NOT NULL,
+    name_author VARCHAR(100) NOT NULL,
     nationality VARCHAR(3)
     );
     
 DESCRIBE authors; /* Este comando, DESCRIBE, nos explica con detalles las caracteristicas de los atributos x tabla */
-DESC books; /* "DESCRIBE" tambien se puede expresar con el acronico "DESC" */
+DESC clients; /* "DESCRIBE" tambien se puede expresar con el acronico "DESC" */
 
 /* Para ver mas detalles de las columnas, como por ejemplo mostrar incluso los comentarios insertados en ellas...
    podemos usar el comando "SHOW FULL COLUMNS FROM -aqui inserte nombre columna-", por ejemplo: */ 
       
-SHOW FULL COLUMNS FROM books; 
+SHOW FULL COLUMNS FROM authors; 
 
 /* Ahora podra ver, por ejemplo, el comentario que insertamos inicialmente en el atributo "language" de la tabla 
    "books". Este comando nos dice tambien los permisos que tenemos en "Privileges", 
    como el usuario en el que estamos e, incluso, cual es el tipo de esquema que esta en cada una de las columnas 
    (Collation). */
+   
+CREATE TABLE clients (
+	client_id INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    name_client VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    birthdate DATETIME, 
+    gender ENUM('M', 'F', 'ND') NOT NULL,
+    active TINYINT(1) NOT NULL DEFAULT 1, 
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    
+	updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+
+    /* Estos dos atributos me guardan el registro del cliente en tiempo real, por eso se usa un TIMESTAMP */
+	);
+    
