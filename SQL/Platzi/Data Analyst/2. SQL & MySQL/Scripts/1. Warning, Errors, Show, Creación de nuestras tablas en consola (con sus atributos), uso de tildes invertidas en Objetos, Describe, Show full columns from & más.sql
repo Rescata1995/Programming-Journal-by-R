@@ -99,24 +99,45 @@ DESC clients; /* "DESCRIBE" tambien se puede expresar con el acronico "DESC" */
 /* Para ver mas detalles de las columnas, como por ejemplo mostrar incluso los comentarios insertados en ellas...
    podemos usar el comando "SHOW FULL COLUMNS FROM -aqui inserte nombre columna-", por ejemplo: */ 
       
-SHOW FULL COLUMNS FROM authors; 
+SHOW FULL COLUMNS FROM operations; 
 
 /* Ahora podra ver, por ejemplo, el comentario que insertamos inicialmente en el atributo "language" de la tabla 
    "books". Este comando nos dice tambien los permisos que tenemos en "Privileges", 
    como el usuario en el que estamos e, incluso, cual es el tipo de esquema que esta en cada una de las columnas 
    (Collation). */
    
-CREATE TABLE clients (
+CREATE TABLE IF NOT EXISTS clients (
 	client_id INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     name_client VARCHAR(50) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     birthdate DATETIME, 
     gender ENUM('M', 'F', 'ND') NOT NULL,
     active TINYINT(1) NOT NULL DEFAULT 1, 
-    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     
-	updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 
     /* Estos dos atributos me guardan el registro del cliente en tiempo real, por eso se usa un TIMESTAMP */
 	);
     
+    
+CREATE TABLE IF NOT EXISTS operations (
+	operation_id INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+	book_id_foreign INTEGER UNSIGNED, 			
+    client_id_foreign INTEGER UNSIGNED,
+    type ENUM('B', 'S', 'R') NOT NULL COMMENT 'Where B=Borrowed, S=Sold & R=Returned',
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    finished TINYINT(1) NOT NULL
+    );
+    
+INSERT INTO authors (name_author, nationality)
+VALUES ('Juan Rulfo', 'MEX'),
+ ('Gabriel Garcia Marquez', 'COL'),
+ ('Juan Gabriel Vasquez', 'COL'),
+ ('Julio Cortazar', 'ARG'),
+ ('Isabel Allende', 'CHI'),
+ ('Octavio Paz', 'MEX'),
+ ('Juan Carlos Onetti', 'URU')
+ ;
+
