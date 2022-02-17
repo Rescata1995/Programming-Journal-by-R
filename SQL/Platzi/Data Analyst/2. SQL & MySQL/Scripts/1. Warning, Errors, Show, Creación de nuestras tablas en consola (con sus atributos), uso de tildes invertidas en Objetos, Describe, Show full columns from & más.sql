@@ -140,4 +140,54 @@ VALUES ('Juan Rulfo', 'MEX'),
  ('Octavio Paz', 'MEX'),
  ('Juan Carlos Onetti', 'URU')
  ;
+ 
+SELECT * FROM authors;
+
+ /*CASO ESPECIAL: se probara caso de "duplicate key", con posible resolucion, al pasar un id manualmente. Atencion: */
+ 
+INSERT INTO authors (author_id, name_author)
+VALUES (16, 'Pablo Neruda')
+; 
+
+/* UNA PAUSA, tomaremos otro ejemplo. 
+   Primero, insertemos 4 registros para la tabla "clients" y probaremos sobre esta misma tabla, clients, 
+   que pasaria si intentamos duplicar una entrada, por ejemplo el correo electronico (que es Unique, recuerde)
+   sobre otro registro 
+   
+   R/ Ya usted sabe que, por defecto, la consola no lo dejara proceder)... 
+   
+   Desde luego entonces lo que nos interesa poner en practica ahora es lo siguiente: 
+   Cuales son todas nuestras posibles opciones en caso que tengamos que, si o si,
+   proceder de alguna manera pero sin duplicar nada. Veamos. */
+ 
+INSERT INTO clients (client_id, name_client, email, birthdate, gender, active)
+VALUES (1,'Maria Dolores Gomez','Maria Dolores.95983222J@random.names','1971-06-06','F',1),
+ (2,'Adrian Fernandez','Adrian.55818851J@random.names','1970-04-09','M',1),
+ (3,'Maria Luisa Marin','Maria Luisa.83726282A@random.names','1957-07-30','F',1),
+ (4,'Pedro Sanchez','Pedro.78522059J@random.names','1992-01-31','M',1)
+ ;
+
+SELECT * FROM clients;
+
+/* Tenemos nuestros 4 primeros registros sobre "clients". Intentaremos, porque nos toca (suponiendo que es el deber ser), 
+   crear un nuevo registro usando un correo electronico previamente registrado, tal que asi: */
+
+INSERT INTO clients (name_client, email, birthdate, gender, active)
+VALUES ('Pedro Sanchez','Pedro.78522059J@random.names','1992-01-31','M',0);
+
+/* Note que intentaremos repetir un email en un nuevo registro cuando, evidentemente, esto no se puede (por defecto). 
+   La manera en la que podriamos proseguir seria por medio del recurso: "ON DUPLICATE KEY "... 
+   Sin embargo, hay varias opciones de uso para este recurso. 
+   
+   La ideal: ON DUPLICATE KEY UPDATE active = VALUES(active); 
+   */
+   
+INSERT INTO clients (name_client, email, birthdate, gender, active)
+VALUES ('Pedro Sanchez','Pedro.78522059J@random.names','1992-01-31','M',0)
+ON DUPLICATE KEY UPDATE active = VALUES(active);
+
+   	
+
+   
+
 
