@@ -11,7 +11,7 @@ CREATE TABLE `authors` (
   UNIQUE KEY `uniq_author` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=193 DEFAULT CHARSET=utf8;
 
-INSERT INTO `authors` VALUES (1,'Sam Altman','USA'),
+INSERT INTO authors VALUES (1,'Sam Altman','USA'),
 (2,'Freddy Vega','COL'),
 (3,'Arthur Conan Doyle','GBR'),
 (4,'Chuck Palahniuk','USA'),
@@ -370,7 +370,8 @@ CREATE TABLE `clients` (
   UNIQUE KEY `email` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8;
 
-INSERT INTO `clients` VALUES (1,'Maria Dolores Gomez','Maria Dolores.95983222J@random.names','1971-06-06','F',1,'2018-04-09 16:51:30'),
+INSERT INTO clients (client_id, name_client, email, birthdate, gender, active, created_at) 
+VALUES (1,'Maria Dolores Gomez','Maria Dolores.95983222J@random.names','1971-06-06','F',1,'2018-04-09 16:51:30'),
 (2,'Adrian Fernandez','Adrian.55818851J@random.names','1970-04-09','M',1,'2018-04-09 16:51:30'),
 (3,'Maria Luisa Marin','Maria Luisa.83726282A@random.names','1957-07-30','F',1,'2018-04-09 16:51:30'),
 (4,'Pedro Sanchez','Pedro.78522059J@random.names','1992-01-31','M',1,'2018-04-09 16:51:30'),
@@ -475,9 +476,18 @@ CREATE TABLE `transactions` (
   `transaction_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `book_id` int(10) unsigned NOT NULL,
   `client_id` int(10) unsigned NOT NULL,
-  `type` enum('lend','sell') NOT NULL,
+  `type` enum('lend','sell', 'return') NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `modified_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `finished` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`transaction_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO operations (client_id_foreign, book_id_foreign, type, finished) VALUES
+(34, 12, 'sell', 1), 
+(87, 54, 'lend', 0), 
+(14, 3, 'sell', 1), 
+(54, 1, 'sell', 1), 
+(81, 12, 'lend', 1), 
+(81, 12, 'return', 1), 
+(29, 87, 'sell', 1);

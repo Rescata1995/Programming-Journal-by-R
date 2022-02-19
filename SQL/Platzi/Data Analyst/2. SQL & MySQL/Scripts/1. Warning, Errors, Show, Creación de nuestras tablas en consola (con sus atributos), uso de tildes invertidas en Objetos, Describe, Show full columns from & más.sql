@@ -167,8 +167,6 @@ VALUES (1,'Maria Dolores Gomez','Maria Dolores.95983222J@random.names','1971-06-
  (4,'Pedro Sanchez','Pedro.78522059J@random.names','1992-01-31','M',1)
  ;
 
-SELECT * FROM clients;
-
 /* Tenemos nuestros 4 primeros registros sobre "clients". Intentaremos, porque nos toca (suponiendo que es el deber ser), 
    crear un nuevo registro usando un correo electronico previamente registrado, tal que asi: */
 
@@ -186,7 +184,20 @@ INSERT INTO clients (name_client, email, birthdate, gender, active)
 VALUES ('Pedro Sanchez','Pedro.78522059J@random.names','1992-01-31','M',0)
 ON DUPLICATE KEY UPDATE active = VALUES(active);
 
-   	
+SELECT * FROM clients;
+DESC clients;
+
+/* Practicando comando SELECT */
+
+SELECT name_client FROM clients;
+
+SELECT name_client, email, gender FROM clients;
+
+SELECT name_client, email, gender FROM clients LIMIT 10;
+
+SELECT NOW();
+
+
 
    
 

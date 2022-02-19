@@ -17,4 +17,4 @@ VALUES ('Vuelta al laberinto de la Soledad',
          1960
          );
        
-       
+/* Las queries pertenecen a la base de datos "platzi_operation". */
