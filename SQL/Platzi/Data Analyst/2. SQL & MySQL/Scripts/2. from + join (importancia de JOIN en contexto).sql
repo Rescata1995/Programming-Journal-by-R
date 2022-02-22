@@ -1,3 +1,5 @@
+SHOW ERRORS;
+
 /* Recuerda esto: 
 
 From + Join es el primer puntapié para darle fundamento práctico a la teoría que esconde el 
@@ -69,16 +71,74 @@ SELECT * FROM books WHERE author_id_foreign BETWEEN 1 AND 5;
    Es mas practico, mas explitico, mas parecido a la manera en como nos hacemos entender diariamante. 
    */
 	
-    /* EMPECEMOS CON LOS JOINS */
+   /* EMPECEMOS CON LOS JOINS. 
+      1. COMANDO JOIN or INNER JOIN */
     
-    /* Continuare con el mismo ejercicio antes de introducir JOIN... pero ahora se necesitara de un Join. 
-	   Sigo queriendo saber exactamente que libros que escribieron estos primeros 5 autores, 
-       pero quiero saber los nombres de los autores como los titulos de los libros! */
+   /* Continuare con el mismo ejercicio antes de introducir JOIN... pero ahora se necesitara de un Join. 
+	  Sigo queriendo saber exactamente que libros que escribieron estos primeros 5 autores, 
+	  pero quiero saber los nombres de los autores como los titulos de los libros! */
        
        SELECT book_id, title, name_author, author_id
        FROM books
 	    INNER JOIN authors ON author_id_foreign = author_id
 		WHERE author_id BETWEEN 1 AND 5;
         
-        /* Listo !! Ahora si que la informacion puede ser mas amplia y completa (al unir ambas tablas, 2 son mas que 1) 
-        */
+   /* Listo !! Ahora si que la informacion puede ser mas amplia y completa (al unir ambas tablas, 2 son mas que 1). */
+   
+   /* Echemosle un vistazo ahora a la entidad "Operations". */
+   
+SELECT * FROM operations;  
+
+/* Si bien la tabla esta perfectamente ordenada, la tabla por si sola no se presenta con ningun tipo de conclusion 
+   o informacion. La tabla solo tiene un sin numero de datos que, bajo ningun caso, yo podria presentar como informe 
+   a las partes interesadas en el proyecto; pues, no tendria ningun sentido para ellos estos datos. */
+   
+   /* No podriamos decir, por ejemplo, que el libro con ID 12 fue vendido al cliente con ID 34, NO! De hecho, 
+      es incluso hasta probable que sus stakeholders no sepan interpretar lo que le dice una tabla de SQL. 
+      Entonces, hay que convertir estos datos en informacion y eso, idealmente, se hace uniendo tablas porque
+      tendriamos mas acceso a nuestros datos disponibles. Hagamos eso. Unamos la tabla de operaciones con las 
+      tablas de libros & clientes para generar insights. 
+      
+      Entonces, hagamos un Join uniendo las tres tablas: "books", "operations" & "clients" por medio de varios 
+      (dos para este caso puntual) INNER JOIN. 
+      
+      Query general: Nombre del cliente (clients.name_client) con ID 34 al que le fue vendido (operations.type) 
+                     el libro, su nombre (books.title), con ID 12. */
+      
+SELECT book_id, title AS book, type AS operation, operations.updated_at AS date, client_id, name_client AS client
+FROM books 
+ INNER JOIN operations ON book_id = book_id_foreign
+ INNER JOIN clients ON client_id = client_id_foreign
+ WHERE book_id = 12 AND client_id = 34;
+
+   /* Si se da cuenta, hemos unido las tres tablas para extraer mas informacion al respecto, para responder a 
+       nuestra consulta con nuestro propio lenguaje y hacernos entender, incluso, con gente que no sabe nada de DB.
+   
+       Viendo nuestro Query se entiende que el libro 'El llano en llamas' con ID 12 fue vendido el dia 18 de Febrero 
+       del 2022 a la cliente Maria Teresa Castillo con id 34. */ 
+   
+   
+   /* 2DO EJERCICIO */
+
+   /* Query: Quiero saber quienes son las clientes mujeres a las que se les vendio (operations.type) libros, 
+			 traeme sus nombres (clients.name_client) y cuales libros son (books.title). */
+             
+SELECT name_client AS client_name, title AS book_name, type AS operations
+FROM operations 
+ INNER JOIN clients ON client_id = client_id_foreign
+ INNER JOIN books ON book_id = book_id_foreign
+ WHERE gender = 'F' AND type = 'sell';
+             
+   /* 3ER EJERCICIO, probando INNER JOIN para la union de 4 tablas... */
+   
+   /* Query:  Traeme todos los libros, sus nombres, que hayan sido vendidos o prestados a clientes varones. 
+	          Quiero saber, ademas, quien es el cliente y quien es el autor del libro (vendido o prestado). */
+   
+SELECT name_client, title AS book, name_author, type AS operation
+FROM operations
+ INNER JOIN books ON book_id_foreign = book_id
+ INNER JOIN clients ON client_id_foreign = client_id
+ INNER JOIN authors ON author_id_foreign = author_id
+ WHERE gender = 'M' AND type IN ('sell', 'lend');
+ 
+ 
