@@ -142,3 +142,17 @@ FROM operations
  WHERE gender = 'M' AND type IN ('sell', 'lend');
  
  
+   /* Query, Examen. Interprete la siguiente vista y comprenda su posterior salida. */
+ 
+SELECT author_id, name_author, nationality, COUNT(title)
+FROM authors 
+ LEFT JOIN books ON author_id = author_id_foreign
+ WHERE author_id BETWEEN 1 AND 5
+ GROUP BY author_id
+ ORDER BY author_id;
+ 
+ 
+  
+  
+ 
+ 
