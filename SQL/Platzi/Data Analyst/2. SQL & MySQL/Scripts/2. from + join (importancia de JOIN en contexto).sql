@@ -152,7 +152,55 @@ FROM authors
  ORDER BY author_id;
  
  
-  
-  
  
+ /* Ejercicios de practica.
+ */
+ 
+ 
+ /* 1. Que nacionalidades hay? */ 
+
+SELECT nationality
+FROM authors
+ WHERE nationality IS NOT NULL
+ GROUP BY(nationality);
+ 
+   /* Introduccion a FUNCTION DISTINCT: 
+      
+      La funcion DISTINCT tiene algo de parecido la sentencia GROUP BY. 
+      DISTINCT es una palabra clave de la sentencia SELECT y nos permite seleccionar todos los valores, 
+      de las columnas seleccionadas (con SELECT), sin repetirlos. Trae todos los valores, 
+      de la columna en SELECT (columna de una tabla determinada) sin repetirlos. 
+      
+      Dicho lo anterior, este 1er punto tambien pudo resolverse de la siguiente forma: */
+      
+SELECT DISTINCT nationality
+FROM authors
+ WHERE nationality IS NOT NULL;
+ 
+ /* 2. Cuantos escritores hay de cada nacionalidad? */ 
+ 
+SELECT nationality, COUNT(author_id) AS Q_writers
+FROM authors
+ WHERE nationality IS NOT NULL
+ GROUP BY nationality
+ 
+	/* Ahora ordene los resultados de mayor a menor para la columna de "author_id"
+       (Tenga en cuenta que ORDER BY solo funciona con las columnas incluidas en el SELECT). */
+    
+ ORDER BY Q_writers DESC;
+ 
+ /* 3. Cuantos libros hay en cada nacionalidad? */
+ 
+SELECT title AS thebooks, COUNT(nationality) AS Q_books
+FROM books
+ JOIN authors ON author_id_foreign = author_id
+ WHERE nationality IS NOT NULL
+ 
+    /* Ahora no queremos ver los libros que titulen inicialmente con la palabra "Wallander: " */
+ AND title NOT LIKE "Wallander%" 
+       
+ GROUP BY thebooks;
+
+ /* Se da cuenta que la sentencia WHERE va antes que GROUP BY y que, ademas, WHERE no reconoce alias. */
+
  
