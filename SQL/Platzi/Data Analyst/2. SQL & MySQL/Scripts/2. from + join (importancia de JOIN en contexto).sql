@@ -177,6 +177,8 @@ SELECT DISTINCT nationality
 FROM authors
  WHERE nationality IS NOT NULL;
  
+ 
+ 
  /* 2. Cuantos escritores hay de cada nacionalidad? */ 
  
 SELECT nationality, COUNT(author_id) AS Q_writers
@@ -189,18 +191,77 @@ FROM authors
     
  ORDER BY Q_writers DESC;
  
+ 
+ 
+ /*CRUZEMOS DATOS! (union de tablas) */
+ 
  /* 3. Cuantos libros hay en cada nacionalidad? */
  
-SELECT title AS thebooks, COUNT(nationality) AS Q_books
+SELECT nationality, COUNT(book_id) AS Q_books
 FROM books
  JOIN authors ON author_id_foreign = author_id
  WHERE nationality IS NOT NULL
- 
-    /* Ahora no queremos ver los libros que titulen inicialmente con la palabra "Wallander: " */
- AND title NOT LIKE "Wallander%" 
-       
- GROUP BY thebooks;
+	
+    /* Ahora no queremos ver la cantidad de libros que hay en Rusia, suprima este registro. */
+    AND nationality NOT IN ('RUS')
+    
+ GROUP BY nationality;
 
  /* Se da cuenta que la sentencia WHERE va antes que GROUP BY y que, ademas, WHERE no reconoce alias. */
-
  
+ 
+ 
+ /* 4. Cual es promedio & desviacion standard del precio de libros? */
+ 
+SELECT AVG(price) AS promedio_books, STDDEV(price) AS desv_books
+FROM books;
+    
+    /* Observe bien como hemos aplicado la funcion de promedio & desv sobre la columna "price". 
+	   El tipo de dato de la columna, como bien se imagina, debe ser necesariamente de tipo numerica. 
+       */
+       
+       
+ 
+ /* 5. Cual es promedio & desviacion standard del precio de los libros para cada nacionalidad? 
+    Ordene estos valores de mayor a menor en terminos de Cantidad de libros, promedio, 
+    y luego en terminos de desviacion (cuente los libros que hay para cada nacionalidad de paso). 
+	*/
+ 
+SELECT nationality, 
+ COUNT(book_id) AS Q_books, 
+ AVG(price) AS media_books, 
+ STDDEV(price) AS desv_books
+FROM books
+ JOIN authors ON author_id_foreign = author_id
+ WHERE nationality IS NOT NULL
+ GROUP BY nationality
+ ORDER BY Q_books DESC, media_books DESC, desv_books DESC;
+ 
+ /* 6. Cual es el precio maximo/minimo de los libros por cada nacionalidad? */
+ 
+SELECT nationality, COUNT(book_id) AS Q_books, MAX(price) AS Most_expensive_book, MIN(price) AS Cheapest_book
+FROM books
+ JOIN authors ON author_id = author_id_foreign
+ WHERE nationality IS NOT NULL
+ GROUP BY(nationality);
+ 
+ /* 7. Que clientes concretaron negocios con los libros, cualquiera que sea, que libros 
+    (con sus respectivo autor) y en que fecha? */
+ 
+SELECT name_client AS client, type AS business, title AS book, name_author AS author_book, operations.updated_at AS date
+FROM operations
+ LEFT JOIN books ON book_id_foreign = book_id
+ LEFT JOIN clients ON client_id_foreign = client_id
+ LEFT JOIN authors ON author_id_foreign = author_id;
+ 
+ 
+ /* Extra: funcion CONCAT */ 
+ 
+SELECT CONCAT(name_author, " - ", nationality) AS Author
+FROM authorsupdated_at
+ WHERE nationality IS NOT NULL
+ LIMIT 5;
+ 
+ /* Extra: funcion TO_DAYS */ 
+ 
+SELECT TO_DAYS('0000-01-01'); 
