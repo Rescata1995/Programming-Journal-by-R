@@ -262,9 +262,11 @@ FROM authorsupdated_at
  WHERE nationality IS NOT NULL
  LIMIT 5;
  
+ 
  /* Extra: funcion TO_DAYS */ 
  
 SELECT TO_DAYS('0000-01-01'); 
+
 
  /* Super Queries */
  
@@ -283,6 +285,18 @@ FROM books;
 SELECT COUNT(*) AS books_before1950
 FROM books
  WHERE age < 1950;
+ 
+ 
+SELECT COUNT(book_id) AS total_books,
+ SUM(IF(age < 1950, 1, 0)) AS '<1950',
+ SUM(IF(age >= 1950 AND age < 1990, 1, 0)) AS '<1990',
+ SUM(IF(age >= 1990 AND age < 2000, 1, 0)) AS '<2000',
+ SUM(IF(age >= 2000, 1, 0)) AS '<hoy'
+FROM books;
+
+
+ 
+ 
  
  
  
