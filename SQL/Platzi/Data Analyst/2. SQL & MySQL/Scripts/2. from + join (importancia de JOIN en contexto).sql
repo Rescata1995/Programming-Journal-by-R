@@ -265,3 +265,24 @@ FROM authorsupdated_at
  /* Extra: funcion TO_DAYS */ 
  
 SELECT TO_DAYS('0000-01-01'); 
+
+ /* Super Queries */
+ 
+SELECT COUNT(book_id) AS total_books, SUM(IF(age < 1950, 1, 0)) AS books_before1950
+FROM books;
+
+/* Lo que nos dice la sentencia IF es que se sume una unidad (SUM), con cada iteracion sobre cada registro,
+   si (IF) se encuentra un registro donde el libro haya sido escrito antes de 1950 (age < 1950). 
+   Ahora, se sabe que solo se sumara una unidad por cada registro valido, que cumple con dicha condicion, 
+   porque asi ha sido determinado en nuestro valor booleano de tipo "true": (1). 
+   
+   Ahora, en aquellos registros que no cumplan con la condicion logica no se sumara nada, 
+   asi fue determinado en nuestro valor booleano de tipo "false": (0). 
+   Puede tomar como guia la estructura de sintaxis previamente escrita. */
+
+SELECT COUNT(*) AS books_before1950
+FROM books
+ WHERE age < 1950;
+ 
+ 
+ 
