@@ -287,16 +287,40 @@ FROM books
  WHERE age < 1950;
  
  
-SELECT COUNT(book_id) AS total_books,
+SELECT COUNT(book_id) AS total_books, 
  SUM(IF(age < 1950, 1, 0)) AS '<1950',
  SUM(IF(age >= 1950 AND age < 1990, 1, 0)) AS '<1990',
  SUM(IF(age >= 1990 AND age < 2000, 1, 0)) AS '<2000',
  SUM(IF(age >= 2000, 1, 0)) AS '<hoy'
 FROM books;
 
+/* Ahora, agrupa estas unidades de libros por cada nacionalidad. */ 
+
+SELECT nationality, COUNT(book_id) AS total_books, 
+ SUM(IF(age < 1950, 1, 0)) AS '<1950',
+ SUM(IF(age >= 1950 AND age < 1990, 1, 0)) AS '<1990',
+ SUM(IF(age >= 1990 AND age < 2000, 1, 0)) AS '<2000',
+ SUM(IF(age >= 2000, 1, 0)) AS '<hoy'
+FROM books
+JOIN authors ON author_id_foreign = author_id
+WHERE nationality IS NOT NULL
+GROUP BY nationality;
+
+/* Ahora hagamos el mismo Query haciendo uso de la sentencia Where, en vez de usar una "Super Query". */
+
+SELECT nationality, COUNT(book_id) AS total_books
+FROM books
+JOIN authors ON author_id_foreign = author_id
+ WHERE nationality IS NOT NULL 
+ AND age < 1950 
+ OR age >= 1950 AND age < 1990
+ OR age >= 1990 AND age < 2000
+ OR age >= 2000
+ GROUP BY nationality;
 
  
- 
+/* Entonces, con una Super query realmente si se evidenciaria que podriamos filtrar/dividir tanto por nacionalidad como por intervalos de tiempo, en este caso;
+   en cambio, con un query normal, solo se evidenciarian las divisiones o filtros por nacionalidad. */
  
  
  
