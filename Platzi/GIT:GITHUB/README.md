@@ -1,5 +1,5 @@
-1. Introducción y comandos básicos en GIT, comandos abordados en este apartado:
- 
+**1. Introducción y comandos básicos en GIT, comandos abordados en este apartado:
+** 
 A. **git init**, comando para inicializar GIT; 
 
 B. **git add (+ fichero)**, todo cambio registrado que quiera hacerle un seguimiento en el area temporal (staging area) debe hacerlo con este comando; 
