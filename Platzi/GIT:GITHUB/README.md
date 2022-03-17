@@ -31,7 +31,7 @@ Sobre el uso de nuevos comandos como: **git push**, que se encarga de exportar n
 
 **3. Trabajando con repositorios remotos en Github, GITHUB a fondo & vinculación a GIT:**
 
-Sobre cómo crear una cuenta en GITHUB y cómo hacer una conexión segura de su GIT con su GITHUB por medio de llaves SSH; Tags y Versiones en Git y Github, para saber con todos los detalles la historia de tus "commits"; Manejo de ramas (branches) en Git & Github: sobre cómo exportar las sub-ramas (o ramas de desarrollo) que creemos, a partir de una rama principal, en Git a GitHub; cómo configurar multiples colaboradores en un repositorio de Github por medio del comando **Git clone** y cómo usar apropiadamente **Git clone**.
+Sobre cómo crear una cuenta en GITHUB y cómo hacer una conexión segura de su GIT con su GITHUB por medio de llaves SSH; Tags y Versiones en Git y Github, para saber con todos los detalles la historia de tus "commits"; Manejo de ramas (branches) en Git & Github: sobre cómo exportar las sub-ramas (o ramas de desarrollo) que creemos, a partir de una rama principal, en Git a GitHub; cómo configurar multiples colaboradores en un repositorio de Github por medio del comando **Git clone** y cómo usar apropiadamente **Git clone**. Extra: Sobre cómo eliminar la carpeta GIT inicializada.
 
 
 **4. Flujos de trabajos profesionales en Github, recursos Pull request, fork & más:**
