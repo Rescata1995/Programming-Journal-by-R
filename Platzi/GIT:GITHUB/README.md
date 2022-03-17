@@ -1,5 +1,6 @@
 **1. Introducción y comandos básicos en GIT, comandos abordados en este apartado:**
  
+ 
 A. **git init**, comando para inicializar GIT; 
 
 B. **git add (+ fichero)**, todo cambio registrado que quiera hacerle un seguimiento en el area temporal (staging area) debe hacerlo con este comando; 
@@ -21,3 +22,17 @@ I. **git reset + identificador**, comando que le permite viajar entre commits. H
 J. **git status -s**, comando que le permite saber el estado de todos sus cambios, rastreados o no; 
 
 K. **git checkout**, comando similar a "git reset".
+
+
+**2. Flujo de trabajo básico en GIT, introducción a repositorios remotos (GITHUB)**
+
+Sobre el uso de nuevos comandos como: **git push**, que se encarga de exportar nuestro "Head" a nuestro repositorio remoto vinculado a repo local; pequeña introduccióna a **git clone** & sobre dejar claro las diferencias entre **git fetch**, **git merge** y, el más poderoso, **git pull** a la hora de importar copias de seguridad del repositorio remoto a nuestro repositorio local (luego de ya haber clonado, ojo, al repositorio en sí. Importante esto).
+
+
+**3. Trabajando con repositorios remotos en Github, GITHUB a fondo & vinculación a GIT:**
+
+Sobre cómo crear una cuenta en GITHUB y cómo hacer una conexión segura de su GIT con su GITHUB por medio de llaves SSH; Tags y Versiones en Git y Github, para saber con todos los detalles la historia de tus "commits"; Manejo de ramas (branches) en Github: sobre cómo exportar las sub-ramas (o ramas de desarrollo) que creemos, a partir de una rama principal, en Git a GitHub; cómo configurar multiples colaboradores en un repositorio de Github por medio del comando Git clone.
+
+
+
+
