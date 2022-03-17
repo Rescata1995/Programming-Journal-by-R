@@ -1,4 +1,4 @@
-1. Introducción y comandos básicos en GIT, comandos abordados:
+1. Introducción y comandos básicos en GIT, comandos abordados en este apartado:
  
 A. git init, comando para inicializar GIT; 
 
