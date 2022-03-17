@@ -34,5 +34,12 @@ Sobre el uso de nuevos comandos como: **git push**, que se encarga de exportar n
 Sobre cómo crear una cuenta en GITHUB y cómo hacer una conexión segura de su GIT con su GITHUB por medio de llaves SSH; Tags y Versiones en Git y Github, para saber con todos los detalles la historia de tus "commits"; Manejo de ramas (branches) en Github: sobre cómo exportar las sub-ramas (o ramas de desarrollo) que creemos, a partir de una rama principal, en Git a GitHub; cómo configurar multiples colaboradores en un repositorio de Github por medio del comando **Git clone**.
 
 
+**4. Flujos de trabajos profesionales en Github, recursos Pull request, fork & más:**
+
+Introducción al concepto de servidores en Git (de producción & prueba) y cómo se relacionan con Pull request: proceso que consiste en la revisión que se hace justo antes de fusionar en su totalidad (e individualmente) todas las ramas correspondientes a cada desarrollador (servidores de prueba) con la rama stagind develop (servidor de producción), a todo aquel que se le solicite revisión debe estar de acuerdo para hacer la fusión **(Git merge)**; Definición de la función de un DevOps como persona que coordina todas las revisiones y avala finalmente los cambios y las fusiones entre ramas; Fork e introducción a un proyecto Open-Source, sobre cómo en un proyecto Open-Source cualquier tercero o persona independiente al proyecto en sí, puede clonarlo (en caso que esté cargado en un servidor remoto como GitHub), sin embargo, tenga en cuenta que no se pueden hacer operaciones como: merge, push, crear ramas o tags, etc. Sólo copiar; introducción a **gitignore** y a **README.md**.
+
+
+
+
 
 
