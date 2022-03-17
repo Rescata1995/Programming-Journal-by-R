@@ -39,6 +39,16 @@ Sobre cómo crear una cuenta en GITHUB y cómo hacer una conexión segura de su 
 Introducción al concepto de servidores en Git (de producción & prueba) y cómo se relacionan con Pull request: proceso que consiste en la revisión que se hace justo antes de fusionar en su totalidad (e individualmente) todas las ramas correspondientes a cada desarrollador (servidores de prueba) con la rama stagind develop (servidor de producción), a todo aquel que se le solicite revisión debe estar de acuerdo para hacer la fusión **(Git merge)**; Definición de la función de un DevOps como persona que coordina todas las revisiones y avala finalmente los cambios y las fusiones entre ramas; Fork e introducción a un proyecto Open-Source, sobre cómo en un proyecto Open-Source cualquier tercero o persona independiente al proyecto en sí, puede clonarlo (en caso que esté cargado en un servidor remoto como GitHub), sin embargo, tenga en cuenta que no se pueden hacer operaciones como: merge, push, crear ramas o tags, etc. Sólo copiar; introducción a **gitignore** y a **README.md**.
 
 
+**5. Rebase en Git, Git clean & Git cherry pick:**
+
+Un **rebase** consiste en incorporar el contenido de una rama de desarrollo en la rama master, o viceversa, de manera “silenciosa”; es decir, hacer como que no pasó nada nunca ni que tuvimos que crear una rama de desarrollo nueva para, posteriormente, incorporarle sus cambios en rama master (si éste fuera el caso). Para ser más precisos, la rama realmente no se borraría (la que exportaría sus cambios guardados); sin embargo, el historial de commits de esa rama, por ejemplo la rama de desarrollo, no se exportarían a master al hacer un rebase en master de la rama de desarrollo en cuestión, es decir, al incorporar en master los cambios guardados o commits de la rama de desarrollo; **Git clean** es un comando que nos permite eliminar todo aquello que por error ha sido creado, o bien, porque eso que fue creado, no nos interesa a lo sumo que haga parte de nuestro proyecto... aunque incluso haya sido consecuencia de algún proceso ligado al mismo, más puntualmente nos referimos a archivos, porque este comando no puede eliminar directorios (sólo archivos) y, adicionalmente, archivos que aún no han sido trackeados (porque realmente no te interesa hacerles un seguimiento, antes, desearías eliminarlos). Considere las excepciones de Git clean; Git cherry pick, sobre cómo importar, en su rama de trabajo actual (convengamos que es rama master), un commit de otra rama de desarrollo, pero atención, un commit en particular y no precisamente la última copia de seguridad registrada en dicha rama de desarrollo (es decir, el último commit), no. **Formato: git cherry-pick + el identificador del commit, de la otra rama, de mi interés** (el que deseo importar).
+
+
+
+
+
+
+
 
 
 
