@@ -26,7 +26,7 @@ K. **git checkout**, comando similar a "git reset".
 
 **2. Flujo de trabajo básico en GIT, introducción a repositorios remotos (GITHUB):**
 
-Sobre el uso de nuevos comandos como: **git push**, que se encarga de exportar nuestro "Head" a nuestro repositorio remoto vinculado a repo local; pequeña introduccióna a **git clone** & sobre dejar claro las diferencias entre **git fetch**, **git merge** y, el más poderoso, **git pull** a la hora de importar copias de seguridad del repositorio remoto a nuestro repositorio local (luego de ya haber clonado, ojo, al repositorio en sí. Importante esto).
+Sobre el uso de nuevos comandos como: **git push**, que se encarga de exportar nuestro "Head" a nuestro repositorio remoto vinculado a repo local; pequeña introducción a **git clone** & sobre dejar claro las diferencias entre **git fetch**, **git merge** y, el más poderoso, **git pull** a la hora de importar copias de seguridad del repositorio remoto a nuestro repositorio local (luego de ya haber clonado, ojo, al repositorio en sí. Importante esto); sobre el tratamiento ideal a conflictos con **Git merge**
 
 
 **3. Trabajando con repositorios remotos en Github, GITHUB a fondo & vinculación a GIT:**
