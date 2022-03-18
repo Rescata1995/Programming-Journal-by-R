@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h2>
+            Probando otras etiquetas!
+        </h2>
+    </header>
+
+    <main>
+        <section>
+            <header>
+                <h3>
+                    Etiquetas restantes: "address", "blockquote", "pre", "div".
+                </h3>
+            </header>
+
+            <article>
+                <header>
+                    <h4>Etiqueta "address"</h4>
+                </header>
+                <p>
+                    La etiqueta correcta para mostrar una dirección es: "address".
+                    Se utiliza para aportar información de contacto para el "article" en el que esté trabajando (es decir, en qué lugar se desarrolló el "article" que está trabajando; en este caso, las etiquetas "address" irían dentro de las etiquetas "article" cuando desee dejar claro dicha dirección); o bien, "address" puede ir dentro del "footer" del "body": por lo general se refiere a la dirección de quién está escribiendo el documento HTML, puede ser la dirección de una empresa o de una persona natural; ojo, no es la dirección de dónde, por ejemplo, se desarrollaron los eventos en un "article", no; sino, la dirección de quién está escribiendo el "article" en sí y todo el documento HTML propiamente. En nuestro "footer" verá reflejado con un ejemplo la puesta en práctica de la etiqueta "Address".
+                </p>
+            </article>
+
+            <article>
+                <header>
+                    <h4>Etiqueta "blockquote"</h4>
+                </header>
+                <p>
+                    Se utiliza para marcar las citas a otros autores o documentos. Se puede incluir, además, el atributo "cite" para poner un enlace al documento original o fuente. Queda algo así:
+                </p>
+
+                <blockquote cite="https://developer.mozilla.org/es/docs/Web/HTML/Element/blockquote">
+                    <p>
+                Según MDN Web Docs, blockquote -cita en bloque . Crea citas en bloque, marca las citas a otros autores o documentos. Su etiqueta es: "blockquote".
+                    </p>
+                    <!-- Si se da cuenta, sea lo que sea que vaya a citar, "blockquote" es quien contiene a los párrafos de la cita (p), no al revés. -->
+                </blockquote>
+            </article>
+
+            <article>
+                <header>
+                    <h4>Etiqueta "pre"</h4>
+                </header>
+                <p>
+                    Se utiliza para tener código preformateado que necesite ser representado igual que se escribió dentro de HTML (que los saltos de líneas y la identación, por ejemplo, que le demos a nuestra escritura en HTML se refleje igualmente en nuestro navegador). Este recurso se utiliza mucho cuando estamos escribiendo letras de canciones o algún poema. Veamos esto con el siguiente poema: 
+                </p>
+
+                <header>
+                    <h5>
+                        Aquí (Octavio Paz)
+                    </h5>
+                </header>
+                
+                <pre>
+                    Mis pasos en esta calle
+                    Resuenan
+                    En otra calle
+                    donde
+                    Oigo mis pasos
+                    Pasar en esta calle
+                    donde
+                    Sólo es real la niebla.
+                </pre>
+                <!-- Esta última etiqueta, "pre", va por fuera de las etiquetas "p" (son independientes). -->
+                
+            </article>
+
+            <article>
+                <header>
+                    <h4>Etiqueta "div"</h4>
+                </header>
+                <p>
+                    Se usa como división del documento, semánticamente no significa nada, es un contenedor genérico que se usa generalmente para dar estilos a través de CSS o para usar algo denominado "delegación de eventos" en JS. Se usa para dividir contenido; todo contenido, con "div", debe tener por separado sus propias etiquetas "div"... proximamente tocaremos más a fondo este tema.
+                </p>
+
+            </article>
+
+            <article>
+                <header>
+                    <h4>Etiqueta "hr"</h4>
+                </header>
+                <p>
+                    "Horizontal rule", esta etiqueta se utiliza para decirle al navegador que vamos a cambiar de tema. "hr", visualmente, se ve como una linea recta al horizonte; sin embargo, dejemos algo claro: "hr" no se utiliza para "dibujar lineas", no; sino, para señalarle al navegador que vamos a hablar de un tema completamente diferente en el próximo articulo o en el próximo párrafo. El concepto propio de la documentación plantea que "hr" representa una rotura de tematica a nivel de párrafos; por ejemplo, una escena que cambia de historia o una transición hacia otro tema.
+                </p>
+
+                <!-- Observe esto en su navegador -->
+                <hr> 
+
+            </article>
+
+        </section>
+    </main>
+
+    <footer>
+        <address>
+            Roberto Velasquez <br>
+            13 de Junio, Urb. la India, MI - L7 <br>
+            130001 <br>
+            Cartagena, Colombia.
+        </address>
+        <!-- Las direcciones postales, con "address", se escriben de la anterior forma (idealmente con un salto de línea también para fomentar a la buena experiencia del usuario) -->
+    </footer>
+</body>
+</html>

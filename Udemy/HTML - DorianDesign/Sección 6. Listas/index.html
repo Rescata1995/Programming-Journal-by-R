@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de listas</title>
+</head>
+<body>
+    <header>
+        <h2>
+            Introducción a listas!
+        </h2>
+    </header>
+
+    <main>
+        <section>
+            <header>
+                <h3>
+                    Los tipos de listas son: ordenadas (ordered list), desordenadas (unordered list) & definidas (definition list)
+                </h3>
+            </header>
+
+            <article>
+                <header>
+                    <h4>
+                        Desordenadas (unordered list)
+                    </h4>
+                    Ejemplo con un "Menu de navegación".
+
+                    <!-- Luego de declarar que se hará una lista de tipo desordenada "ul"; es preciso abrir, dentro de ella, las etiquetas necesarias por cada "item" enlistado (list item) o que desee enlistar, esa etiqueta es: "li". 
+                        
+                    Un buen ejemplo de lista desordenada, muy común en Internet, son los menus de navegación. Veamos un ejemplo de ellas. -->
+
+                    <nav>
+                        <ul type= "circle">
+                            <li><a href="#elemento1">Elemento 1 a visitar</a></li>
+                            <li><a href="#elemento2">Elemento 2 a visitar</a></li>
+                            <li><a href="#elemento3">Elemento 3 a visitar</a></li>
+                        </ul>
+                    </nav>
+                    <!-- La anterior forma es la estructura semantica correcta de un menu de navegación y es un tipo de lista "desordenada" muy común en Internet. -->
+                </header>
+                <p>
+                    Se utilizan cuando el orden de los elementos no influye o no es importante; por ejemplo, una lista de compras; o bien, el mismo menu de navegación.
+                </p>
+            </article>
+
+            <article>
+                <header>
+                    <h4>
+                        Ordenadas (ordered list)
+                    </h4>
+                    Ejemplo con "Orden de aprendisaje de desarrollo web".
+
+                    <!-- Luego de declarar que se hará una lista de tipo ordenada "ol"; es preciso abrir, dentro de ella, las etiquetas necesarias por cada "item" enlistado (list item) o que desee enlistar, esa etiqueta es: "li". Veamos esto enlistando, de forma ordenada, los cursos que debe tomar de desarrollo web (en su debido orden). -->
+
+                    <ol type= "A" start= "3">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                    </ol>
+
+                </header>
+                <p>
+                    Se utilizan cuando el orden de los elementos sí es importante (no puede saltarse y debe empezar desde el comienzo establecido); <br>por ejemplo, un listado de top 10; o bien, el mismo orden de aprendisaje de desarrollo web. 
+                </p>
+            </article>
+
+            <article>
+                <header>
+                    <h4>
+                        Definidas (definition list)
+                    </h4>
+                    Continuemos bajo la línea de "Aprendisaje de desarrollo web", como ejemplo.
+
+                    <!-- Tenemos que las listas definidas se aperturan con unas etiquetas "dl". Estas etiquetas "dl" llevan, internamente, 2 etiquetas adicionales: 
+                        "dt" (definition term): El término que vamos a definir.
+                        "dd" (definition description): La descripción del término.
+                    Veamos un ejemplo continuando la misma tematica de "desarrollo web" al definir, en concepto, cada uno de los lenguajes: HTML, CSS & JS (en orden) -->
+
+                    <dl>
+                        <dt>HTML</dt>
+                        <dd>
+                            HyperText Markup Language: Es un lenguaje de marcado que se usa para estructurar datos en una página web.
+                        </dd>
+                        <br>
+
+                        <dt>CSS</dt>
+                        <dd>
+                            Cascade Style Sheets: Es un lenguaje de diseño que se utiliza para dar estilos al HTML.
+                        </dd>
+                        <br>
+
+                        <dt>JavaScript</dt>
+                        <dd>
+                            Es un lenguaje de programación para dar interactividad a un sitio web.
+                        </dd>
+                    </dl>
+
+                </header>
+
+                <p>
+                    Se utilizan para hacer una lista de definiciones (tipo diccionario).              
+                </p>
+            </article>
+        </section>
+    </main>
+
+    <footer> Esto es todo sobre los diferentes tipos de listas.</footer>
+    
+</body>
+</html>
+
+<!-- Para el navegador es importante que precise qué tipo de lista pretende realmente crear: si es una ordenada, desordenada o una definida: es una buena práctica dejarlo claro. -->
+
+<!-- Si se da cuenta, parece ser lo ideal poner las listas en el "header". Primero pone un titulo, dentro del "header", que haga su respectiva introducción; y posteriormente, debajo, introduce su lista (ya sea ordenada, desordenada o definida). -->
+
+<!-- Hay casos muy puntuales en los que se requiere hacer listas anidadas, pero es válido; sí se puede hacer. -->
+
+<!-- Adicionalmente, las etiquetas de las listas también cuentan con atributos. Veamos esto.
+
+Atributos de las listas ordenadas (ol): type & start.
+
+    type: El atributo "type", en listas ordenadadas, nos permite elegir el formato con el cual vamos a ordenar ("enumerar") la lista en cuestión: si con números, letras (tenemos la opción de elegir entre mayusc. y minusc.) o con números romanos (acá también tenemos la opción de elegir entre mayusc. y minusc.); en cualquier caso, el conteo se hará de forma ascendente (como bien debería suponer). Sería algo más o menos así, en su respectivo orden mencionado:
+
+    <ol type= "1"> </ol>
+    <ol type= "A"> </ol>
+    <ol type= "a"> </ol>
+    <ol type= "I"> </ol>
+    <ol type= "1"> </ol>
+
+    start: El atributo "start" nos permite establecer el punto inicial desde donde deseamos, personalizadamente, arrancar con el conteo de la lista ordenada; es decir, hay ocasiones donde no deseamos que el conteo de la lista ordenada se dé desde su principio; sino, desde un "inicio" establecido por nosotros mismos; "start", entonces, nos da la facultad de lograr esa cometido. Veamos con un ejemplo. 
+
+    Si por ejemplo deseo contar una lista ordenada, no desde el número 1, sino desde el número 5; la expresión sería así:
+
+    <ol type= "1" start= "5"> </ol>
+
+    Ahora, si deseo que el conteo de mi lista ordenada sea con letras mayusculas, pero iniciando el conteo con la letra "C" y no con la "A". Sería así:
+
+    <ol type= "A" start= "3"> </ol>
+
+    Como podría darse cuenta, el atributo "start" siempre es definido con un valor de tipo númerico, sin importar si la clasificación de la lista ordenada se hace con letras, números o nñumeros romanos.
+
+Atributos de las listas desordenadas (ul): type.
+
+    type: El atributo "type", en las listas desordenadas, nos permite elegir el formato de la viñeta con la cual se va a "enlistar" cada item de la lista. Los valores que puede tomar este atributo "type" son los siguientes: "disc", que sería el formato de viñeta que tienen por predeterminación las listas desordenadas (una especie de circulo totalmente negro); "square", donde el formato de la viñeta es un cuadrado "vacio"; y, "circle", donde el formato de la viñeta es un circulo "vacio" también. Sería algo más o menos así, en su respectivo orden mencionado: 
+
+    <ul type= "disc"> </ul>
+    <ul type= "square"> </ul>
+    <ul type= "circle"> </ul>,
+
+    podría probarlos cada uno modificando los valores iniciales con los cuales fueron definidos las listas desordenadas (ul).
+
+    En términos de "diferentes tipos de formato de viñetas", éstos son los recursos que nos brinda HTML; sin embargo, si nos asistimos con CSS, podríamos darle un estilo más personalizado a las viñetas en cuestión, al punto de tener la posibilidad de darles un formato con: imagenes, logotipos o iconos, etc (lo que queramos, las opciones son prácticamente infinitas). 
+    -->

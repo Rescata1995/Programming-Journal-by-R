@@ -1,0 +1,92 @@
+/* Veamos en práctica ":root" */
+
+:root{
+    /* ":root" tiene 10 puntos de especificidad... */
+
+    /* Ahora, por lo general, el uso de esta pseudoclase se corresponde con el uso de las variables de CSS; pues, es dentro de esta pseudoclase donde se suelen crear 
+    */
+}
+
+html{
+    /* Mientras "html", directamente desde CSS, sólo tiene 1 punto de especificidad.*/
+}
+
+.p{
+    padding: .5em;
+    background-color: lightblue;
+
+    /* Si te das cuenta al 8vo párrafo, aunque no tenga contenido, también se le ha aplicado un "padding" y un color de fondo; lo cual, esteticamente, se ve feo.
+
+    Para evitar o combatir esto podemos hacer uso del recurso de pseudoclase ":empty" sobre el selector afectado; en este caso, "p". Veamos.
+    */
+}
+
+.p:empty{
+    /* padding: 0; */
+
+    /* Problema resuelto */
+
+    /* Aunque, si quisieramos referirnos a todo el contenido que lleven por dentro absolutamente todos los parrafos, podemos hacer uso de la propiedad: "all". Digo "todos los parrafos" porque justamente estamos empleando dicha propiedad, "all", sobre todos ellos (p), sobre la etiqueta "p" en especifico.
+
+    "all" como propiedad puede asumir tres valores: "unset", "inherit" e "initial".
+
+    El valor de nuestro interés sería "unset"; pues, se trata justamente de reprimirlo (borrar, resetear) absolutamente todo dentro del selector o elemento llamado dentro de CSS (sus estilos y propiedades). 
+    
+    pd. En verdad no borra todo, 
+    las únicas propiedades sobre el selector llamado que no borra son: "direction" y "unicode-bid"
+    Veamos. 
+    */
+
+    all: unset;
+}
+
+.p:first-child{
+    background-color: violet;
+
+    /* La aplicación del color "violet" se dará sobre todos los primeros elementos "p" que haya en HTML (independientemente de que estén contenidos o no por otro elemento tangible, va a funcionar sobre todos los primeros "hijos" de tipo "p" que encuentre en todo el DOM). Incluso afectará sobre un primer "p" que esté solo sin ser contenido visualmente por nada ni por nadie (aparentemente); pues, ese lo contendría directamente HTML.
+    */
+}
+
+.p:last-child{
+    background-color: salmon;
+
+    /* Es practicamente la misma dinamica con ":first-child"; solo que, en este caso, sí se hace necesario que el selector que se quiera ver afectado por la pseudoclase ":last:child" esté contenido tangiblemente por un elemento o etiqueta "padre" en el HTML.
+    */
+}
+
+.p:nth-child(odd)
+{
+    background-color: royalblue;
+    /* fondo azul para los parrafos impares, esto según el conteo propio que se dé desde el elemento contenedor o "padre" que contenga al selector llamado; en este caso, se han llamados a los "p". */
+}
+
+.p:nth-child(even)
+{
+    background-color: slateblue;
+    /* fondo violeta para los parrafos pares, esto según el conteo propio que se dé desde el elemento contenedor o "padre" que contenga al selector llamado; en este caso, se han llamados a los "p". */
+}
+
+.p:nth-child(3)
+{
+    background-color: red;
+    /* fondo rojo para el parrafo indicado; que resulta ser, justamente, el 3er parrafo registrado contando desde del "div" inicial. */
+}
+
+.p:nth-child(5n){
+    background-color: teal;
+
+    /* Bajo la explicación que dimos anteriormente; tenemos acá, entonces, que las posiciones afectadas de los "p" hijos de "div", bajo esta condición "nth-child(5n)", serán la posición 5 (5*1 = 5) y 10 (5*2 = 10); podrían seguir las operaciones, pero los elementos "p" se han agotado. No hay un elemento "p" 15, por ejemplo. 
+    
+    Es decir, a los "p" del "div" ubicados en la posición 5 y 10 se les pondrá como estilo el color "teal". 
+    */
+}
+
+.p:nth-last-child(2){
+    background-color: pink;
+}
+
+.p:not(a){
+    text-decoration: underline;
+
+    /* Si bien todos son de "class" = "p", hay uno de ellos que realmente no es un parrafo; entonces, lo que decimos aquí es que... pongale "underline" a todos los que tengan la clase "p" menos a los de clase "p" que sea etiquetas "a". */
+}

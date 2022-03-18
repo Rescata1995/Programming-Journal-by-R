@@ -1,0 +1,95 @@
+/* Apliquemos una tipografía generica de tipo "sans-serif" a nuestro "title". 
+*/
+
+/* Recomendación de entrada: siempre use fuentes de reserva, siempre. Ahora, siendo más precisos, una buena práctica sería que... cuando se establezca la familia tipográfica (las "propias"), de su sitio web, busca dos o tres que se parezcan; y, como último recurso, coloque una familia tipografica generica (que se sabe que todos los navegadores tienen,... por si acaso el navegador no tiene las dos o tres propias que uso inicialmente).  */
+
+.title{
+    font-family: sans-serif;
+
+    /* Si se da cuenta, las letras del titulo tendrían un corte completamente recto; sin embargo, como buena práctica, se concibe que lo ideal sería seguirse de lo siguiente:
+
+        para textos largos: alguna fuente de tipo "sans-serif" (porque nos permiten la fácil lectura al ver mejor, de una forma más entendible visualmente, las letras).
+        
+        para titulos o relacionados: alguna fuente de tipo "serif" (porque el texto es más grande y nos podemos dar el lujo de "adornarlo"). 
+        */
+
+    /* Explicado lo anterior, usemos entonces en nuestro ".title" alguna "serif" */
+
+    font-family: serif;
+
+    /* Ahora, "fantasy" y "cursive" son más decorativas también (especialmente "fantasy", es muy barroca), pero se usan poco. 
+    
+    "monospace" hace que todos los caracteres tengan el mismo ancho. Es la tipografía que se suele utilizar en todos los editores de código y también se utiliza cuando usamos la etiqueta "pre" para colocar fragmentos de código en nuestra página.
+    */
+
+    font-size: 30px;
+}
+
+/* Veamos el efecto de "monospace" sobre el párrafo (para que se dé cuenta que, en efecto, sí que queda como si fuera un editor de código) 
+*/
+
+.paragraph{
+    font-family: monospace;
+}
+
+.span{
+    font-size: 2em;
+
+    /* La etiqueta "span" es una etiqueta hija directa y más cercana de la etiqueta "h1" con la clase ".title"; entonces, lo que hace "em", como medida relativa, es basar su medida en términos de su etiqueta "padre" directa y/o más cercana; donde "1em" equivaldría, exactamente, la misma medida que tiene dicha etiqueta "padre" o más cercana. En nuestro caso, "2em" de ".span" sería, entonces, el doble de lo que mide ".title"; es decir, si ".title" mide 30px, entonces "2em" para ".span" serían 60px. Esto está más profundizado en las clases de Leonidas, platzi, curso "Responsive Design": sobre las medidas relativas. 
+
+    Ahora, en cuanto a la medida relativa "rem", tenemos que "1rem" siempre será relativo al tamaño de fuente especificada en el "ancestro" más lejano; es decir, entre el "HTML" y el "BODY" (con preferencia al "HTML" por ser, evidentemente, más lejano que "BODY"). A "rem" no le interesa la medida de sus elementos más cercanos o padre, a "rem" sólo le interesa el tamaño del elemento de HTML más lejano. Al igual, esto está más profundizado en las clases de Leonidas, platzi, curso "Responsive Design": sobre las medidas relativas. 
+    */
+
+    /* Ahora, lo ideal es usar "rem" para fuentes y para cajas y/o contenedores usar "em"; especialmente en los casos en los que hay algo directamente que está conteniendo un texto. */
+
+    /* Por otro lado tenemos también al porcentaje (%): Longitud referente al tamaño de los elementos "padre", siendo el 100% el tamaño equivalente al tamaño del elemento "padre" que le contiene; es decir, igualandose en tamaño a él. 
+
+    Ahora, no es buena práctica definir tamaños de fuentes con porcentajes (%), se puede pero no es recomendable.
+    */
+}
+
+/* Ahora, vamos a trabajar con las medidas relativas "vh" y "vw". Con las anteriores medidas lo que hacemos es establecer un porcentaje en relación al ancho o al alto del viewport. Veamos.
+*/
+
+.title{
+    font-size: 1vw;
+
+    /* Lo que estamos diciendo aquí es que el selector ".title", que es un elemento "h1" en HTML, mida en 1% lo que mide todo el ancho del viewport; de ahí vienen los caracteres "vw" de "viewport" y "width". Entonces, en ese sentido, si las medidas del ancho del viewport varian, lo hará en su misma proporción el selector ".title". 
+    */
+
+    font-size: 1vh;
+
+    /* Ahora, acá, lo que estamos diciendo es que el selector ".title" mida ahora 1% lo que mide todo el alto del viewport (ojo, alto, no ancho). de ahí vienen los caracteres "vh" de "viewport" y "height". Entonces, en ese sentido, si las medidas del alto del viewport varian, lo hará en su misma proporción el selector ".title".
+    */
+
+    /* Ambas no son muy comunes en su uso; pero definitivamente "vmin" y "vmax", en diseño responsive, sí. 
+    */
+
+    /* 
+    vmin: medida relativa al valor mínimo del viewport (el menor entre el alto o el ancho del mismo), tomará como medida de referencia el ancho o el alto del viewport dependiendo de cuál de los dos sea el de "menor tamaño".
+
+    vmax: medida relativa al valor máximo del viewport (el mayor entre el alto o el ancho del mismo), tomará como medida de referencia el ancho o el alto del viewport dependiendo de cuál de los dos sea el de "mayor tamaño".
+
+    Es común usar, para el tamaño de las fuentes, el recurso de "vmin".
+    */
+}
+
+.paragraph{
+
+    /* Ahora, vamos a trabajar con "font-weight" & con "font-style". 
+    
+    Recuerde: "font-weight" establece el grosor de la fuente (su valor por defecto es: "normal"), mientras "font-style" establece el estilo de la tipografia (su valor por defecto es: "normal" también).
+    */
+
+    font-weight: bold;
+
+    /* "bold" pone el texto en negrita */
+
+    font-weight: lighter;
+
+    /* "lighter" es básicamente el efecto contrario a negrita, pone el texto más ligero que lo "normal". */
+
+    font-style: italic;
+
+    /* "italic" pone el texto en cursiva, "se dobla". */
+}

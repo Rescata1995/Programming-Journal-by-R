@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Sección 1. Intro CSS/4. Estilos computados (de dónde vienen los estilos determinados, por defecto, en el lenguaje)/normalize.css">
+    <link rel="stylesheet" href="Sección 1. Intro CSS/4. Estilos computados (de dónde vienen los estilos determinados, por defecto, en el lenguaje)/style.css">
+    <title>Estilos computados</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<!-- Sobre el funcionamiento de las herramientas de desarrollo (DevTools), de CSS, en el navegador (inspeccionar elementos)
+    
+    La DevTool se abre, como bien sabe, "inspeccionando". Luego nos interesa ver, en una pantalla independiente, dicha caja de herramientas de desarrollador (DevTools); esto lo logra haciendo click en los tres puntitos que están situados sobre la esquina derecha de la parte superior (más propiamente en "Dock Side").
+
+    En la pestaña "elements" y, posteriormente, en la sub-pestaña "styles"; podrá enterarse propiamente del trabajo que el lenguaje de estilos, CSS, hace desde el navegador.
+    
+    En "styles" se dará cuenta que el navegador trae su propia hoja de estilos incorporada por defecto, y con su propio código, es la llamada: "user agent stylesheet". El código de dicha hoja de estilos se aplica, también, sobre su documento HTML (además de la hoja de estilos que ha sido incorporada manualmente por usted mismo y vinculada directamente al DOM de su documento HTML).
+
+    Estas hojas de estilo "user agent stylesheet", predeterminadas por navegadores, varian según el navegador (sea Chrome, Firefox, etc); es decir, no todos los navegadores usan el mismo código de estilos en "user agent stylesheet",... muy importante tenerlo claro; pues, es preciso decir que esto se puede normalizar al hacer que todos las hojas de estilos, de todos los navegadores, logren ser iguales. De momento, vamos a centrarnos en cómo funcionan las herramientas de desarrollo, eso lo veremos en la sub-pestaña: "Computed"
+
+    En "Computed" podemos ver cada una, por separadas, todas las propiedades que se han aplicado en el documento HTML, más especificamente sobre cada línea de código del mismo: la que le interese revisar porque quizás no sepa el origen del estilo dado a ella (debe "pinchar" sobre y ver su configuración); propiedades que si bien han sido escritas por ti mismo; o, por el contrario, hayan sido escritas por el propio navegador por defecto. Además, al desplegar sobre cada propiedad en "Computed", nos podemos dar cuenta del valor definido para dicha propiedad, qué selector se usó, si fue "heredada" o no; y, también, quién fue el autor de la misma.
+
+    Si dentro del listado de propiedades de "Computed" alguna vez una tachada; significa que, por alguna razón, dicha propiedad ha sido anulada (puede ser por un tema de "especificidad" o por "cascada", si ese es el caso, "Computed" también se lo dice).
+
+    Toda estas herramientas anteriormente mencionadas sirven para depurar nuestro código CSS; saber las razones de, por ejemplo, porqué no se aplica una propiedad que has escrito.
+-->
+
+<!-- 
+    Ahora, hablaremos sobre cómo normalizar o resetear los estilos del navegador (ya que cada navegador tiene su propia configuración de estilos por defecto)... Si desea evitarse lo anterior y estandarizar un formato de estilo para cualquier navegador existente, viene bien revisar el siguiente recurso que sirve de asistencia: https://necolas.github.io/normalize.css/. Del anterior sitio web podemos bajar una hoja de estilos CSS y "linkearla" (importarla), por medio de la etiqueta "link", en nuestro documento HTML de nuestro interés. Algo importante: ese "link", el de la hoja de estilos CSS importada, tiene que estar justamente arriba del "link" que vincula a su propia hoja de estilos que corresponde a su documento HTML (necesario esto).
+
+    Intente siempre vincular la hoja de estilos "normalize.css" a todos sus proyectos; pues, es una buena práctica estandarizar, por defecto y para cualquiera que sea el navegador, una configuración de estilos a su sitio web (de tal manera que lo que ofrece, por medio de una fachada de su sitio web, no sea vulnerable a tener ligeras diferencias de apariencia entre un navegador y otro; esto no es presentable).
+ -->
+
+ <!-- Por último, agregue prefijos CSS a su hoja de estilos. Asistase del siguiente sitio web: https://autoprefixer.github.io/
+
+    Siempre exporte todo su código final CSS formulado, para su documento HTML en cuestión, al sitio web anterior; y, posteriomente, importe el resultado final que le arroje, en código, Autoprefixer CSS online: es este código el que usará en su hoja de estilos CSS acabada, cuando ya no vaya a hacer más cambios. En caso de nuevas modificaciones en su hoja de estilo, puede hacerlas propiamente sobre su hoja de estilos de origen (no sobre la que le arroja Autoprefixer CSS online); y, luego, repetir el proceso de exportar dicho código a Autoprefixer CSS online e importar el nuevo resultado final,... y así sucesivamente.
+
+    Si desea saber más sobre la importancia de los prefijos, puede visitar estas fuentes:
+
+    https://lenguajecss.com/css/introduccion/niveles-y-prefijos-css/
+    
+    https://www.eniun.com/prefijos-css-navegadores-propiedades/#:~:text=Actualmente%20los%20navegadores%20tienen%20implementadas,que%20a%C3%BAn%20no%20son%20estables.
+ -->

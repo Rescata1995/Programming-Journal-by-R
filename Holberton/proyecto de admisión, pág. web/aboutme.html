@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link href="https://www.holbertonschool.com/level2/school.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>Mini-Banco Rescata, About Me</title>
+    <style>
+      body
+      {
+        padding-left:130px; /*espacio libre a la izquierda en pixeles*/
+        padding-right:130px; /*espacio libre a la derecha en pixeles*/
+        color: black;
+      }
+
+      h1
+      {
+        font-size: 35px;
+
+      }
+
+      p
+      {
+        font-size: 15px;
+        font-family: "Seravek Extralight";
+      }
+
+      blockquote
+      {
+        font-size: 15px;
+        font-family: "Seravek Extralight";
+      }
+
+      li
+      {
+        display:inline; /* hace que nuestras listas desordenadas (li) se refleje de forma horizontal */
+        padding-left:10px; /* especificaciones de distancias entre cada item de las listas */
+        padding-right:20px;
+      }
+
+      li a /* especifico de esta manera que sólo quiero los cambios sobre las anclas (a) de las listas desordenadas (li) y no sobre todas las anclas (a) */
+      {
+        font-size: 25px;
+        font-family: "American Typewriter";
+      }
+    </style>
+  </head>
+  <body bgcolor="white"> <!-- definición de color de fondo propiamente desde HTML -->
+    <header>
+
+      <ul>
+
+        <li> <a href= "index.html" > Home </a> </li>
+        <li> <a href= "tweets.html" > Tweets </a> </li>
+        <li> <a href= "cajeroautomatico.html" > ATM </a> </li>
+
+      </ul>
+
+    </header>
+
+    <main>
+      <article>
+        <h1> About Me <h1/>
+        <p style="text-align: justify;"> Hello, my full name is Roberto Velasquez Dean and I am 25 years old. I have finished the academic program of my career in Finance and International Business at the UTB, Cartagena de Indias, Colombia; but now, I would like to do this. I will be honest right away, I don't have enough knowledge about computing and English, but don't get me wrong... I am going to do anything to achieve my goals at Holberton School, even if it is necessary study nine hours or above per day. I am excited about this. That's why I have studied English whole this year at Duolingo and I took several free classes about HTML and JavaScript at Platzi. I really hope study with you.</p>
+        <p style="text-align: justify;"> <strong> Thanks! </strong> </p>
+
+
+
+
+      </article>
+    <hr />
+      <aside>
+        <!-- codigo de insertar cajas de comentarios con Disqus -->
+
+                <div id="disqus_thread"></div>
+          <script>
+              /**
+              *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+              *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+              /*
+              var disqus_config = function () {
+              this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+              this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+              };
+              */
+              (function() { // DON'T EDIT BELOW THIS LINE
+              var d = document, s = d.createElement('script');
+              s.src = 'https://mini-banco-rescata-1.disqus.com/embed.js';
+              s.setAttribute('data-timestamp', +new Date());
+              (d.head || d.body).appendChild(s);
+              })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+        <!-- fin de codigo para insertar cajas de comentarios con Discus -->
+        <script>
+
+        </script>
+      </aside>
+    </main>
+
+    <hr />
+
+    <footer>
+      <p> Made by Roberto Velasquez for <a href="https://www.holbertonschool.com"target="_blank"> Holberton School</a></p>
+    </footer>
+
+
+    <!-- ultimo codigo para insertar cajas de comentarios con disqus -->
+    <script id="dsq-count-scr" src="//mini-banco-rescata-1.disqus.com/count.js" async></script>
+  </body>
+</html>

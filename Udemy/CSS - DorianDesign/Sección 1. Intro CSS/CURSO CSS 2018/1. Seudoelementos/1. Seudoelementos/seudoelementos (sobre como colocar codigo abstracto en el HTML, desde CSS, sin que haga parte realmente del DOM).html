@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="style.css">
+     <title>Pseudoelementos</title>
+</head>
+<body>
+     <header>
+          <h1 class="title">
+               Pseudoelementos
+          </h1>
+     </header>
+
+     <main>
+          <p class="text">
+               Los seudoelementos se usan para dar estilo a partes específicas de un elemento.
+
+               La sintaxis es la siguiente: 
+
+               <strong>
+                    selector::pseudo-element{estilos}
+               </strong>
+
+               <br><br>
+
+               1. El "selector" puede ser una clase, una etiqueta, un id... 
+
+               <br>
+
+               2. En el "pseudo-element" va el nombre del pseudoelemento.
+
+               <br> <br>
+               La estructura de sintaxis que tiene que ver con los dos puntos que se colocan x2 (::) es propia a los "pseudoelementos" y no es casual; se hace así para poder diferenciarse de las pseudoclases que sólo llevan un par de puntos (:).
+          </p>
+
+          <header>
+               <h2>
+                    Existen 5 pseudoelementos
+               </h2>
+          </header>
+
+          <p>
+               <strong>
+                    1. ::first-line (Elementos de bloque).
+               </strong>
+               Sólo se usa en elementos de bloque y sirve para darle estilos a la primera línea (de dicho elemento de bloque).
+          </p>
+
+          <p>
+               <strong>
+                    2. ::first-letter (Elementos de bloque).
+               </strong>
+               Al igual, sólo se usa en elementos de bloque y sirve para darle estilos a la primera letra (no a toda la primera línea) del elemento de bloque seleccionado en cuestión.
+          </p>
+
+          <p>
+               <strong>
+                    3. ::before
+               </strong>
+               Para su uso se requiere de la propiedad "content", el "objeto abstracto" que se desee agregar con "::before" debe ir contenido entre comillas simples, definido como valor, dentro de la propiedad "content".
+               
+               Los pseudoelementos "::before" son, o más bien, tienen la naturaleza de un elemento de línea por defecto (no reciben medidas ni margenes) y, además, deben ser hijos directos del selector que pretende trabajar con ellos. Ahora, tanto "::after" como "::before" realmente son elementos que no existen en el HTML. 
+               
+               Aquí, con "::before", lo que desee agregar a su selector, se reflejará justo antes de dicho elemento. Eso que agregue realmente es un objeto "artificial", no hace parte del DOM en realidad; dicho esto, entonces, lo que se agregue sólo puede ser manipulado dentro del CSS.
+          </p>
+
+          <p>
+               <strong>
+                    4. ::after
+               </strong>
+               Para su uso se requiere de la propiedad "content", el "objeto abstracto" que se desee agregar con "::after" debe ir contenido entre comillas simples, definido como valor, dentro de la propiedad "content". 
+               
+               Los pseudoelementos "::after" son, o más bien, tienen la naturaleza de un elemento de línea por defecto (no reciben medidas ni margenes) y, además, deben ser hijos directos del selector que pretende trabajar con ellos. Ahora, tanto "::after" como "::before" realmente son elementos que no existen en el HTML. 
+               
+               Aquí, con "::after", lo que desee agregar a su selector, se reflejará justo después de dicho elemento. Eso que usted agregue realmente es un objeto "artificial", no hace parte del DOM en realidad; dicho esto, entonces, lo que se agregue sólo puede ser manipulado dentro del CSS.
+          </p>
+
+          <p>
+               <strong>
+                    5 ::selection
+               </strong>
+               Sirve para darle un estilo particular al subrayado que se hace cuando se selecciona algo con el mouse y se "arrastra", por ejemplo, cuando se selecciona un texto o una parte del texto. 
+          </p>
+
+          <p class="dolar">10</p>
+
+          <span class="inline">Soy un elemento de línea</span>
+     </main>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!-- No son todos, pero definitivamente son los más usados.
+
+placeholder: Da una pista de los que el usuario tiene que introducir.
+
+required: Hace que un campo sea obligatorio.
+
+readonly: Hace que un campo sea de solo lectura.
+
+disabled: Desactiva el campo, no se podrá escribir en el autofocus.
+
+selected: Equivale a "checked" en los select, sirve para establecer una opción por defecto.
+
+min - max: Establecen el mínimo y máximo de un campo numérico.
+
+maxlenght - minlenght: Establece el mínimo y máximo de caracteres de un campo de texto.
+
+autofocus: Establece prioridad y toda la atención a un elemento del formulario seleccionado; de tal manera que, al recargar la página, dicho elemento del formulario ya tenga todo el foco de atención.
+
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <!-- El atributo "placeholder" lo que hace es darnos una sugerencia, por medio de un borrador, de lo que debemos escribir dentro del formulario. Al primer momento en que empecemos a escribir se borrará inmediatamente la sugerencia dada. -->
+
+        <!-- En cuanto al atributo "required", si se coloca sobre una etiqueta especifica de tipo "input", quiere decir entonces que no podremos enviar el formulario hasta que el campo no esté rellenado. Con "required" tenemos la obligación de rellenar un elemento del formulario en especifico. Intente mandar el formulario sin colocar nada en la siguiente caja de texto, la que le sugiere "introducir tu nombre", y verá que el navegador bloqueará la petición.
+
+        Sin embargo, "required" se puede desactivar desde el mismo "inspector de elementos" por el mismo usuario que navega en la página: por lo cual, si realmente desea bloquear la petición de "enviar formulario" en caso de que haga falta rellenar un campo, toca establecer más validaciones adicionales a esta de HTML. -->
+
+        <input type="text" placeholder="Introduce tu nombre" required autofocus>
+
+        <!-- Antes de continuar si se dio cuenta que hemos agregado también, sobre la caja de texto anterior (del formulario), el atributo "autofocus"; pues, bien, toda vez que recargue la página, por defecto, sin que presione "click" sobre la caja de texto anterior, podrá escribir sobre ella. -->
+
+        <!-- Ahora, si por ejemplo deseo convertir un campo, que ya vendría evidentemente con un texto incluido; y quiero, en consecuencia, dejar que ese texto escrito se mantenga fijo y no pueda sufrir de alteraciones por parte de cualquier navegante; entonces, podemos hacer uso del atributo "readonly"; que, efectivamente, lo que hace es que un campo solo sea campo de lectura. Tal que así, veamoslo en el siguiente "input" definido con un "value" que dice "hola".
+
+        Ahora, este recurso al igual que "required", se puede eliminar desde el "inspector de elementos".
+
+        "readonly" se diferencia de "disabled" en el sentido de que "disabled" ni siquiera permite enviar la información del campo del formulario que lo contenga (simplemente la información de dicho campo no se envia al enviar el formulario en su conjunto); en cambio, "readonly" sí se lo permite (aunque no te permite hacer alteraciones sobre el campo en cuestión). Ten cuidado, si puntualmente sólo deseas que un campo sea de "sólo lectura", haz uso del atributo "readonly" entonces y no de "disabled".
+
+        -->
+
+        <input type="text" value="Hola" readonly>
+
+        <!-- Ahora, "selected" es un atributo que si lo colocamos sobre una "option", de todas las opciones disponibles de un listado de "select", lo que hará es reflejarnos por defecto, de entrada y como presentación de la lista despegable de "select", dicha "option". Probemos esto con la "option" llamada "Two".
+        -->
+
+        <select name="numbers">
+            <option value="One">One</option>
+            <option value="Two" selected>Two</option>
+        </select>
+
+        <!-- Los atributos "min" & "max" ya los conoce: establecen límites númericos según el tipo de "input". Veamos esto en un campo de tipo númerico (type= "number").
+        -->
+
+        <input type="number" min="5" max="10">
+
+        <!-- Ahora, los atributos "minlenght" & "maxlenght" establecen, como su definición bien dicta, el mínimo y máximo de caracteres que pueden ser escritos en un campo de texto. Pruebe que efectivamente no podría enviar el formulario si la siguiente caja de texto no cumple con los siguientes parametros de "límite de caracteres": -->
+
+        <input type="text" minlength="10" maxlength="20">
+
+        <input type="submit">
+    </form>
+</body>
+</html>
+
+<!-- Atención a lo siguiente: todos los campos que se pretenden enviar dentro de un formulario, los "input", deben tener dentro de sus etiquetas el atributo "name"; porque, si no se coloca, no se estaría enviando información realmente. Pasa que, con el atributo "name", es con lo que el navegador identifica realmente a los campos de un formulario (y a sus respectivos valores que son, idealmente, pasados por tecla por un usuario). -->

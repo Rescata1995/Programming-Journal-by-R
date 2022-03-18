@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parámetros REST & Operador Spread</title>
+</head>
+<body>
+    <script>
+
+        // Sobre los parámetros REST
+
+        // Los parámetros REST son una forma de, virtualmente, ir agregando parámetros infinitos; ya sea dentro de una función o, en términos generales, dentro de una variable. Especialmente este recurso tiene mucha utilidad en datos de tipo Compuestos; es decir, cuando no se sabe a priori cuántos valores se van a recibir dentro de una variable; la cual, por justas razones, tendría que ser de un tipo de dato compuesto: llamese "Objeto", "Arreglo" o "Función".
+
+        // Pues bien, para definir los parámetros REST dentro de una variable, hay que hacer uso de tres puntos suspensivos (...); los cuales, se colocan al final del llamado del conjunto de valores que están dentro de la variable en cuestión. Dichos puntos suspensivos se interpretan como un acto de continuidad, ¿Continuidad de qué? De que existe la posibilidad de seguir agregando, extendidamente, más valores a la variable manipulada en sí (sin alterar su declaración inicial en el intento, ojo); es decir, los "..." nos darán la facultad o la capacidad de hacerle entender a nuestro programa que la variable en cuestión puede seguir recibiendo más valores, infinitamente, incluso después de haber sido declarada. Posteriormente, al final de los tres puntos suspensivos, se llama un último valor. Tal que así, veamos esto en una función (Cuando hablamos de "valores", en términos de una "función", más especificamente hablamos de sus párametros -los que se pasan a la hora de declarar la función en sí).
+
+        function sumar (a, b, ... x) {
+            let resultado = a + b;
+
+            x.forEach(function (n) {
+                resultado += n
+            });
+
+            // "forEach", recuerde, es un método de los Arreglos que nos permite aplicar para todos los elementos, en un sólo paso, una misma acción; es decir, para no tener que aplicar sobre cada uno de los elementos, en este caso parámetros de una función "sumar" (a, b, ... x), una misma acción manualmente y por separado. Entonces, puntualmente en este ejercicio, qué queremos que ocurra con cada uno de los valores que se agreguen, ahora infinitamente por causa de un parámetro REST, en los párametros de la función declarada "sumar"... Pues bien, queremos que se sumen entre sí todos los valores que hayan para esos parámetros de la función "sumar",... sin dejar de sumar los valores que se vayan agregando "infinitamente" por causa del parámetro REST. Valiendose del "forEach" declarado sería:
+
+            // resultado += n (tal como lo hicimos)
+
+            return resultado;
+
+            // Pasemos entonces los valores, con posibilidad de ser ahora "infinitos" por el parámetro REST, que definan los parámetros, ahora también "infinitos", de la función "sumar"; de ahí, los valores se sumarán entre sí, cuantos valores sean a causa del REST, por la función que declaramos con "forEach"; la cual, se vale de un operador de incremento para sumar absolutamente todos los valores que hayan, en función de los parámetros de "sumar", y los que habrán; esto, para recordar, por cada invocación de la función.
+        }
+
+        console.log(sumar(1000, 1000, 1000, 1000, 50, 21));
+
+        // resultado en consola: 4071, exactamente.
+
+        console.log(sumar(1, 2, 3));
+
+        // resultado en consola: 6, exactamente.
+
+        // Los parámetros REST se usan especialmente en funciones.
+
+        // Ahora, hablaremos sobre el operador Spread (Operador de propagación). El operador Spread suelo interpretarlo como una manera más sencilla y sofisticada de lograr concatenaciones entre dos varibles, o más, que conservan un mismo tipo de dato. Su uso especialmente se ve en Arreglos.
+
+        // Supongamos que tengos dos arreglos, arr1 & arr2, y quiero que se unan; de tal manera que, la unión de ambos, me conformen un 3er arreglo (arr3). Tal que así, veamos.
+
+        const arr1 = [1, 2, 3, 4, 5],
+              arr2 = [6, 7, 8, 9, 10];
+
+        console.log(arr1, arr2);
+
+        // El anterior "console.log" me imprimirá en consola ambos arreglos, pero de manera separada.
+
+        // Ahora quiero unir ambos arreglos de tal manera que sean uno y, posteriormente, imprimirlos; es decir, sería un único arreglo que arranque desde el número 1 y finalice con el número 10. Lo podemos hacer, justamente, con un Operador Spread.
+
+        const arr3 = [... arr1, ... arr2];
+
+        // Si se da cuenta, como requisito necesario, toda variable que quiera ser llamada para unirse con otra, debe ser invocada con tres puntos suspensivos (...): representan el Operador Spread. Posteriormente todas las variables, en absoluto, deben estar separadas por comas (,).
+
+        console.log(arr3);
+
+    </script>
+</body>
+</html>

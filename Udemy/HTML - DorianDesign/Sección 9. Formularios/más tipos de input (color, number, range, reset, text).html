@@ -1,0 +1,56 @@
+<!-- 
+Listado de valores: Verá todo tipo de valores que pueden ser asignados al atributo "type" de la etiqueta "input"; es decir, más o menos así se vería: <input type = "...">.
+
+Continuaremos con otros tipos de input. 
+
+color: Se utiliza para especificar un color.
+
+number: Se utiliza para valores numéricos.
+
+range: Se utiliza para establecer un rango.
+
+reset: Se utiliza para resetear el formulario.
+
+text: valor por defecto.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Más tipos de input</title>
+</head>
+<body>
+    <form>
+        <!-- color: Le da un color de fondo a la caja de texto  del formulario -->
+        <input type="color">
+
+        <!-- number: Nos genera una caja de formulario, sí, pero no de texto; sino, de números (sólo sirve para insertar dentro del formulario números y no precisamente fechas; para las fechas está el valor: "date", recuerde). Un dato: las flechas de este formulario, para subir o bajar los números, se les llama: "widgets". -->
+        <input type="number">
+
+        <!-- range: Nos genera una barra que se encarga de evaluar y establecer rangos; adicionalmente y, por lo general, este recurso se complementa con el atributo "step": el valor de "step" lo que hace es definir la intensidad del salto del rango toda vez que éste sea manipulado, su valor es un número entero positivo.
+        
+        También, por ejemplo, se podrían definir junto con "range" otros tipos de atributos como "min" y "max", que son complementarios a "step". Con "min" y "max", por ejemplo, se da la iniciación de un intervalo que establezca los límites del rango de la barra: su inicio y su fin, respectivamente. "min" sería el número menor, entero positivo, de dicho intervalo: su inicio; mientras, "max" sería el número mayor, entero positivo también, de ese mismo intervalo: su fin. "step", entonces, vendría siendo el número de "pasos" que se darán en la barra por cada salto que se dé en ella; pero, claro, entre los límites de ese intervalo ya establecido; es decir, para hacerlo más fácil de entender, si yo establezco que "min" es: 10 y que "max" es 100, y tengo un "step" de 5. Quiere decir que, mi "step" comienza en "10", pero se desplaza de 5 en 5; entonces, tengo que dar 18 "steps" (pasos o saltos) para llegar a 100. (18 steps si recuerda que se empieza desde 10 porque así lo establecimos en "min")
+        Veamos todo esto en uno.
+        -->
+        
+        <input type="range" step="5" min="10" max="100">
+
+        <!-- reset: como su nombre lo dice, nos permite "resetear" el formulario. Es un botón interactivo que nos permite borrar el contenido textual o númerico, de un formulario, antes de ser enviado; más especificamente, de la caja de texto (o númerica) de un formulario. Sin embargo, este recurso va más allá; y lo que hace es restablecer, a su punto de partida, todos los valores predeterminados de todo los elementos del formulario en su conjunto. Reinicia la totalidad del formulario sin necesidad de recargar toda la página web para dicho fin.
+            
+        Por defecto, el valor textual con el se titula dicho botón es "Restablecer", pero puede cambiar eso con el atributo "value". Veamos -->
+
+        <input type="reset" value="Probar de nuevo!">
+
+        <!-- text: El tipo de formulario por defecto: una caja de texto. Veamos. -->
+
+        <input type="text">
+        
+    </form>
+
+
+    
+</body>
+</html>

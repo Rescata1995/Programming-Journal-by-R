@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atributos Globales</title>
+</head>
+
+<!-- Atributos globales importantes que están disponibles para la mayoria de etiquetas HTML:
+
+    class: Éste atributo se usa para dar estilos a través de CSS.
+
+    Si le colocamos, por ejemplo, a la etiqueta "p" un atributo de tipo "class"... A efectos visuales no cambia nada; pero, ahora mismo, podríamos identificar a "p", a través de CSS, para darle algún tipo de estilo. 
+        
+        En el curso de CSS, apartado de Sección 1, carpeta "Selectores" (que es la manera de llamar a los elementos o etiquetas de HTML en CSS) hablamos de esto con más profundidad y con ejemplos incluidos.  
+
+    id: Es un identificador único (que no se repite) que se utiliza para seleccionar un elemento de HTML desde JS (en caso que queramos, por ejemplo, darle interectualidad al elemento o etiqueta en cuestión). En JS avanzará más sobre esto. 
+
+    title: es un atributo que ayuda a la accesibilidad mostrando una descripción del elemento al que pertenece. En resumidas cuentas, sirve para mostrar información de lo que estamos representando. Básicamente nos permite crear un recuadro que nos explica, en una especie de nota amarilla, especificaciones de un elemento. Dicha "nota amarilla" sale a flote cuando nos situamos, por un par de segundos, con el mouse sobre el elemento en cuestión. Ese recuadro se llama: "tooltip". Se hará un ejemplo de esto en el documento actual HTML.
+
+    data- + identificador(palabra): Es un atributo que nos permite guardar algún valor en la etiqueta HTML. En JS nos sacará de muchos lios. Se hará un ejemplo de esto en el documento actual HTML.
+-->
+
+<body>
+    <!-- Ejemplo con atributo "title" -->
+
+    <p title= "Hola, soy una nota. Aquí puede dar más detalles sobre lo que hace este elemento; es decir, sobre lo que se plantea en este párrafo (algo que haga falta precisar)."> Hola, soy un párrafo y no hay más nada que precisar.</p>
+
+    <!-- Cuando usamos el atributo "data-", sobre el mismo, se debe colocar una palabra que sea identificativa a lo que hará el atributo en cuestión (esto es lo ideal). Posteriormente, debe asignarle un valor al atributo. En el siguiente ejemplo, la palabra identificadora del atributo "data-" será: "palabraejemplo". Además, dicho atributo, se inicializará con el texto "Datos de ejemplo". Tal que así -->
+
+    <p id= "parrafo2" data-palabraejemplo="Datos de ejemplo">Datos pasados en la etiqueta.</p>
+
+    <script>
+        // Llamaremos aquí, en JS, al elemento "p" identificado con el nombre de: "parrafo2". A ese llamado le asignaremos el nombre, dentro de JS, de: "p2"... tal que así:
+        p2 = document.getElementById('parrafo2')
+
+        // Posteriormente imprimiremos el valor del atributo, definido con "data-", en la consola del navegador; es decir, se imprimiría la frase: "Datos de ejemplo", tal que así:
+        console.log(p2.dataset.palabraejemplo)
+    </script>
+
+
+</body>
+</html>
+
+
+

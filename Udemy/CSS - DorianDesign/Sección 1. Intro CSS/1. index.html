@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Método 1 para unir HTML con CSS, por medio de la etiqueta "link" y sus atributos "rel" y "href". En principio,
+         el atributo "rel" es el que se encarga de relacionar los documentos, el documento sobre el cual estamos escribiendo y el documento que será llamado; por otro lado, el atributo "href" hace referencia a la ruta donde se encuentra el documento que queremos llamar para vincularlo a este (nuestro documento actual). Por nuestro ejemplo, tenemos que: -->
+    <link rel="stylesheet" href="/Users/robertovelasquezdean/Desktop/Rescata_/Programación/Udemy/CSS - DorianDesign/Sección 1. Intro CSS/1. styles.css">
+    <!-- Esta es la mejor forma de trabajar conjuntamente un documento HTML con CSS, en el 99% de los casos. 
+         Sin embargo, hay otras maneras: 2. por medio de la etiqueta "style". Tal que así -->
+
+    <style>
+         /* Con el método "style" todo el código relacionado al diseño de la página, la página con las etiquetas "style" y que llevan por dentro sólo código en lenguaje CSS; no se haría necesario llamar otro documento, exterior a este, para que configure el diseño y los colores de esta página en cuestión (no es necesario llamar otro documento que contenga a CSS propiamente); es decir, todo el código CSS se escribe sobre su mismo documento con las etiquetas "style"; sin necesidad de crearle, a CSS, un documento de codificación aparte
+         
+         Lo defectuoso de este método es que, en la práctica, un sitio web realmente se compone por varias páginas web; entonces, le tocaría siempre copiar y pegar el extenso código de CSS en cada una de esos documentos HTML; en vez de, mejor, poner todo el código CSS en una página propia y sólo llamar su ruta en cada uno de los documentos HTML en cuestión (en caso que los estilos estén compartidos, que es lo más común); peor aun sería si se le ocurre hacer un cambio el código de CSS: le tocaría entonces ir documento por documento de HTML y hacer los mismos cambios en cada uno para guardar una equivalencia en diseño total. 
+         
+         Hay casos muy puntuales en donde poner en práctica este método con etiquetas "style"; pero, básicamente, 
+         sólo se recomienda usar cuando estamos frente a la definición de estilos y colores de una única página. */
+    </style>
+
+    <!-- Probemos esto: vamos a darle un color de fondo al documento de HTML por medio de CSS -->
+    <title>Conectar HTML con CSS</title>
+</head>
+<body>
+    <h1>Conectar HTML y CSS</h1>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta, consequuntur assumenda impedit tempore dolorem, quibusdam praesentium voluptate labore iusto ex repellat neque vitae quidem velit voluptatum alias, reiciendis incidunt ipsum!</p>
+</body>
+</html>
+
+<!-- Hay otro método, una muy mala práctica de hecho, que consiste en definir los estilos por línea; es decir, por separado, definir el estilo de una única etiqueta de HTML, en particular, que haya sido tomada. Por ejemplo, darle solamente un estilo propio a una etiqueta de tipo "p" (a un párrafo); en vez de apropiarse a un único estilo creado para la página en su conjunto -->

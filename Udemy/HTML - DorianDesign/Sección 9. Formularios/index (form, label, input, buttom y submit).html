@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+</head>
+<body>
+    <!-- Algo muy importante de los formularios es que nos permiten interactuar con los usuarios desde HTML...cosa que no habíamos visto hasta ahora. Hasta ahora sólo nos habíamos dedicado a pintar y crear estructuras. 
+    
+    Por ejemplo, al hacer "login" o al poner tus datos en cualquier tipo de campo, estás haciendo uso de "formularios". Ya no "pintamos" información; sino, que la pedimos al usuario. 
+
+Estructura básica de un formulario se compone de 4 elementos. 
+
+form: Es la etiqueta que engloba nuestro formulario, la que nos da la facultad de poder crearlos.
+
+label: Sirve para escribir el nombre del campo a rellenar (le pone al lado un título o nombre de referencia al formulario estructurado, que sea identificativo al formulario en sí). ATENCIÓN A ESTO: "Label", idealmente, debe verse acompañado por el atributo "for". Este atributo "for" nos sirve para darle un nombre, como valor, con el que se identifique a "label"; pero, atención a esto, con el que se identifique para el navegador! (no es un "nombre" visual para el usuario). Ahora, para permitirnos que la siguiente etiqueta, "input" (de la que ya hablaremos), se asocie a "label"... A "input" se le acompaña con un atributo llamado: "id" (que es, de hecho, un identificador de la etiqueta en cuestión para el navegador); a "input", dentro del atributo "id", se le define con el mismo valor con el que se definio el atributo "for": esto para poder asociar ambos atributos.
+
+input: Es la etiqueta que sirve para crear un campo que permitirá al usuario interactuar. Tengo entendido que va dentro de la etiqueta "form" y nos permite darle diferentes tipos de "estructura" al formulario, como también, definir qué parte del formulario en sí trabajar (los crea): caja de texto, botón, etc. En resumen, es la estructura. Aunque, idealmente, sólo se usan para dar forma a los campos que se dibujan para que el usuario pueda introducir información; es decir, para dibujar solamente las cajas de texto (con sus respectivas caracteristicas o estilos de estructura) y no para dibujar al botón propiamente. ATENCIÓN A ESTO: Los identificadores de "input" nos van a permitir también manipular, desde JS, cada etiqueta una por una (si así lo deseamos); esto para poder darle nuestra propia interactividad al ser llamadas, por medio del "id" justamente, dentro de JS.
+
+buttom: Sirve para crear un botón que permitirá enviar el formulario (elemento que nos permite enviar el formulario). La parte más importante de un formulario, después de rellenarlo, es poder enviarlo; de lo contrario, esa información no serviría para en lo absoluto. Este botón también se puede crear con un atributo de la etiqueta "input": type = "submit"; y, si se le quiere pasar un nombre, por ejemplo, se podría definir con otro atributo de "input", así: value = "aquí va nombre que le dará al botón". En su conjunto se vería algo así: <input type= "submit" value= "Enviar Formulario">; para nuestro caso, le hemos pasado el nombre al botón de: "Enviar Formulario". Sin embargo, no crearemos el botón de la anterior forma, sino, la forma con la etiqueta "button" (que es lo más correcto de momento).
+
+aclaración: la expresión "<input type= "submit" value= "Enviar Formulario">" podría ser igual a esto: "<input type= "button" value= "Enviar Formulario">"; en el sentido de que, ambos, crean un botón de formulario con un nombre visual de referencia sobre encima de él. Sin embargo, no son lo mismo por una gran diferencia; que, en el caso que desees enviar propiamente un formulario; es decir, que se envie lo que escribas en caja de texto... entonces tocaría definir type con "submit". Ambos crean lo mismo, un botón de formulario; mas sólo uno puede enviarlo. 
+    -->
+
+    <form>
+        <label for= "name">Nombre</label>
+        <input id= "name">
+        <button>Enviar Formulario</button>
+    </form>
+</body>
+
+<!-- Lista nuestra estructura básica de formulario. El formulario, al enviar la información, nos refresca la página de paso por predeterminación; sin embargo, esto se puede evitar con el uso de JS. 
+
+El destino de la información enviada o ad portas a enviar es lo que se define dentro del atributo de "form", "action". En "action" se define como valor la ruta destino, a qué servidor queremos que llegue la información que será enviada desde nuestro formulario. O, también, si desea, puedes bloquear el envío del formulario; esto se hace por medio de JS (JS es también el que se encarga de enviar formularios a las rutas destino). 
+
+Gráficamente, la puesta en marcha del atributo "action" de la etiqueta "form" se vería algo más o menos así: 
+
+<form action= "aquí va ruta a donde desea enviar el formulario">
+-->
+
+</html> 
+
+<!-- 
+    Listado de valores: Verá todo tipo de valores que pueden ser asignados al atributo "type" de la etiqueta "input"; es decir, más o menos así se vería: <input type = "...">.
+
+    button: Se comporta igual que un botón (button).
+
+    color: Se utiliza para especificar un color. 
+
+    date: Se utiliza para introducir una fecha.
+
+    datetime-local: fecha y hora, no funciona en firefox.
+
+    email: Se utiliza para introduccir un email.
+
+    hidden: Campo oculto, puede contener valor pero no se mostrará.
+
+    month: Se utiliza para introducir un mes.
+
+    number: Se utiliza para válores numéricos.
+
+    password: Se utiliza para contraseñas.
+
+    range: Se utiliza para establecer un rango.
+
+    reset: Se utiliza para resetear el formulario. 
+
+    Search: Se utiliza para las barras de busqueda
+
+    Submit: "Se utiliza para emviar el formulario"
+
+ -->

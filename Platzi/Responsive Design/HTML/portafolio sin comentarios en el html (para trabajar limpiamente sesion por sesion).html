@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Portafolio web oficial de Roberto Velasquez; desarrollador Front-end, Analista de Sistemas de Información & Analista técnico y Gestor de Mercados Apalancados. Si estás leyendo esto, es una buena señal para mí. Bienvenido!">
+    
+    <meta name="author" content="Roberto Velasquez Dean">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="images2/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images2/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images2/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images2/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images2/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images2/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images2/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images2/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images2/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="images2/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images2/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images2/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images2/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- <link rel="stylesheet" href="media.css" media="screen and (max-width:768px)"> -->
+
+    <!-- aquí se esta llamando, por medio de "link", un tipo de familia tipografica de Google Fonts (Raleway) -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+
+    <!-- Lo propio con "Montserrat", familia de Google Fonts. Font: Regular 400 -->
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <!-- ... y con "Source Sans Pro", font: Regular 400 -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+
+    <!-- Hojas de estilo: -->
+
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style copia.css">
+
+    <title>Rescata_</title>
+</head>
+<body>
+
+    <!-- Pasandole un icono importado a nuestro sitio web: -->
+    <i class="icon-menu burguer-button" id="burguer-menu"></i>
+
+<!-- Introducción al tema "flexbox" -->
+    <!-- <div class="flexbox">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>       
+    </div> -->
+<!-- ... --> 
+
+    <header class="header">
+    <!-- El "header" se queda por fuera del "container" porque necesitamos mantener en vigencia sus propiedades y valores definidos (que posteriormente serán heredados). Esta misma dinámica será empleada con los demás "section" o "header" padres siguientes. -->
+
+        <div class="container">
+            <!-- 1ER CONTENEDOR -->
+            
+            <figure class="logo">
+                <img src ="/HTML/assets/logo/roriginal.jpg" height="100px" alt="logo Rescata_">
+            </figure>
+            
+            <nav class="menu">
+                <ol>
+                    <li>
+                        <a class="link" href="#portafolio" tabindex="1">Portafolio</a>
+                    </li>
+                    <li>
+                        <a class="link" href="#experiencias" tabindex="2">Experiencia</a>
+                    </li>
+                    <li>
+                        <a class="link" href="#contacto" tabindex="3">Trabajemos juntos</a>
+                    </li>
+                    <!-- <li>
+                        <a class="link" href="./aboutme.html" tabindex="4">About Me</a>
+                    </li> -->
+                </ol>
+            </nav> 
+
+        </div>
+
+    </header>
+
+    <main>
+        <section class="hero">
+            
+            <div class="container"> 
+                <header>
+                    <h1>Hola! Soy <strong>Roberto Velasquez</strong>  <br>Desarrollador <strong>Front-end</strong> & <br>Analista de <strong> TI</strong> 
+                    </h1>
+                </header>
+                
+                <img class="hero-image" src="/HTML/assets/images/robe.jpg" width="500" height="300" alt="Debe ponerse imagen de mi persona en el portafolio real">
+            </div>
+            
+        </section> 
+        
+        <section id="portafolio" class="portfolio">
+                
+            <div class="container">
+                <header>
+                    <h2>
+                        Portafolio (Proyectos en curso)
+                    </h2>
+                </header>
+                
+                
+                <article class="project">
+                   
+                    <div class="project-details">
+                        <header>
+                            <h3 class="project-title">
+                                Harvard University
+                            </h3>
+                        </header>
+                        
+                        <h4 class="project-course">CS50: Introduction to Computer Science</h4>
+                        
+                        <p class="project-date">
+                            <small>
+                                <form>
+                                    <label for="fecha">
+                                        <strong>¿Qué día es hoy?</strong>
+                                    </label>
+                                    <input type="date" id="fecha">
+                                </form>
+                            </small>
+                        </p>
+                        
+                        <p class="project-url">
+                            <small>
+                                <strong>Mi avance vinculado a Github: </strong> <a href="https://github.com/Rescata1995/Programming-Journal-by-R/tree/main/Harvard" target="_blank"> Rescata1995/CS50 </a> 
+                            </small>
+                        </p>
+                        
+                        <p class="project-description">
+                            El diplomado consiste en desarrollar un pensamiento algorítmico y de resolver problemas, de manera eficiente, mediante código. Los temas incluyen abstracción, algoritmos, estructuras de datos, encapsulación, admón. de recursos, seguridad, ingeniería de software y programación web. 
+                            Los lenguajes incluyen C, Python y SQL, además de HTML, CSS y JavaScript. Un conjunto de problemas inspirados en las artes, las humanidades, las ciencias sociales y en las ciencias en general (Incluye proyecto final).
+                        </p>
+                    </div>
+                    
+                    <figure class="project-imageContainer">
+
+                        <!-- Aquí vamos a reemplazar una imagen por un video. -->
+
+                        <video src="assets/videos/cs50.mp4" controls muted loop poster="assets/images/harvard.jpg" class="html-video" width="1280" height="720"></video>
+
+                        <!-- Es ideal, para lograr una mayor eficiencia de carga en el DOM; que, aunque al final vayan a variar las medidas en términos de altura y anchura del video, siempre importe el video con sus medidas originales; es decir, declare un ancho y alto equivalentes a las medidas originales del video. -->
+
+                        <!-- <img class="project-image" src="https://www.programmersought.com/images/558/9c42e2c96822fc7dcb500a21ce3faad6.JPEG" width="100%"  height="370" alt="Debe ponerse imagen referente a un proyecto en el portafolio real"> -->
+                        <!-- Con un width="100%" se está asumiendo que la imagen tome todo el ancho disponible de su elemento padre, el cual es: "project-imageContainer". -->
+                    </figure>
+                    
+                </article>
+                
+                <article class="project">
+               
+                    <div class="project-details">
+                        <header>
+                            <h3 class="project-title">
+                                SENA
+                            </h3>
+                        </header>
+                        
+                        <h4 class="project-course">ADSI: Technology</h4>
+                        
+                        <!-- <p class="project-date">
+                            <small>
+                                <form>
+                                    <label for="fecha">
+                                        <strong>¿Qué día es hoy?</strong>
+                                    </label>
+                                    <input type="date" id="fecha">
+                                </form>
+                            </small>
+                        </p> -->
+                        
+                        <p class="project-url">
+                            <small>
+                                <strong>Mi avance vinculado a Github: </strong> <a href="https://github.com/Rescata1995/Programming-Journal-by-R/tree/main/Sena" target="_blank">Rescata1995/ADSI</a>
+                            </small>
+                        </p>
+                        
+                        <p class="project-description">
+                            El programa ADSI se formuló para brindar al sector productivo nacional, en general, un personal de trabajo formado en las tecnologías relacionadas con todo el ciclo de vida del Software; incluyendo las fases de Análisis, Diseño, Desarrollo, Implementación, pruebas y Mantenimiento; adicionalmente, el Aprendiz se forma en competencias relacionadas con los procesos de negociación tecnológica y calidad en el desarrollo de Software, factores muy importantes para la competitividad y el efectivo posicionamiento de esta industria en el país. 
+                        </p>
+                    </div>
+                    
+                    <figure class="project-imageContainer">
+                        <video src="assets/videos/Tecnólogo en Análisis y Desarrollo de Sistemas de Información.mp4" controls muted loop poster="assets/images/adsi.jpg" class="html-video" width="1280" height="720"></video>
+                    </figure>
+                    
+                </article>
+
+            </div>
+            
+        </section>
+            
+        <section id="experiencias" class="experiences">
+
+            <div class="container">
+                <header>
+                    <h2 class="experience-list-title">
+                        Más sobre mi experiencia
+                    </h2>
+                </header>
+                
+                <div class="experience-list">
+                    
+                    <article class="experience">
+
+                        <figure class="experience-imageContainer">
+                            <img class="experience-image" src="assets/images/html udemy.jpg" width="500" height="370" alt="Debe ponerse imagen referente a un evento, al que haya asistido, en el portafolio real">
+                        </figure>
+                       
+                        <div class="experience-detail">
+                            <header>
+                                <h3 class="experience-title">
+                                    HTML 5
+                                </h3>
+                            </header>
+                            
+                            <p class="experience-description">
+                                Obtención de certificado de finalización de Udemy que avala los conocimientos en el manejo de la semántica correcta del estandar actual de HTML 5 (HTML 5.2) según su propia documentación oficial: W3C. Lenguaje de marcado empleado para la elaboración de este sitio web.
+                            </p>
+                            
+                            <a class="experience-url" href="https://www.udemy.com/certificate/UC-c9b70a15-7d5c-461c-b831-02d0f88a9ef7/" target="_blank">Echale un vistazo!</a> 
+                        </div>
+
+                    </article>
+                    
+                    <article class="experience">
+
+                        <figure class="experience-imageContainer">
+                            <img class="experience-image" src="assets/images/css udemy.jpg" width="500" height="370" alt="Debe ponerse imagen referente a un evento, al que haya asistido, en el portafolio real">
+                        </figure>
+                        
+                        <div class="experience-detail">
+                            <header>
+                                <h3 class="experience-title">
+                                    CSS
+                                </h3>
+                            </header>
+                            
+                            <p class="experience-description">
+                                Obtención de certificado de finalización de Udemy que avala los conocimientos en el manejo correcto del lenguaje de diseño CSS 2.2, conocido popularmente como CSS 3, según su propia documentación oficial: W3C. Lenguaje de estilos empleado para la elaboración de este sitio web.
+                            </p>
+                            
+                            <a class="experience-url" href="https://www.udemy.com/certificate/UC-2a48f555-18e5-48ef-a189-f3c1c96cc25d/" target="_blank">Echale un vistazo!</a> 
+                        </div>
+
+                    </article>
+                    
+                    <article class="experience">
+
+                        <figure class="experience-imageContainer">
+                            <img class="experience-image" src="assets/images/Diagrama ER Viorem formato SVG medidas tipo Statement.svg" width="500" height="370" alt="Debe ponerse imagen referente a un evento, al que haya asistido, en el portafolio real">
+                        </figure>
+                        
+                        <div class="experience-detail">
+                            <header>
+                                <h3 class="experience-title">
+                                    Proyecto Viorem en MySQL
+                                </h3>
+                            </header>
+                            
+                            <p class="experience-description">
+                                Elaboración en MySQL de la base de datos y, por extensión, del diagrama físico del modelo Entidad-Relación para el manejo del Inventario y la facturación de la empresa "Vidrieria y Ornamentación Emanuel", ubicada en Bogotá, D.C.
+                            </p>
+                            
+                            <a class="experience-url" href="assets/mysql/Diagrama Físico Viorem en MySQL.mwb" title="Se descarga el proyecto hecho en Workbench (MySQL) en su formato original '.mwb'." download>Descárgalo!</a> 
+                        </div>
+
+                    </article>
+                    
+                    <article class="experience">
+
+                        <figure class="experience-imageContainer">
+                            <img class="experience-image" src="assets/images/Diagrama ER Platziblog formato SVG medidas tipo Statement.svg"500" height="370" alt="Debe ponerse imagen referente a un evento, al que haya asistido, en el portafolio real">
+                        </figure>
+                        
+                        <div class="experience-detail">
+                            <header>
+                                <h3 class="experience-title">
+                                    Proyecto Platziblog en MySQL
+                                </h3>
+                            </header>
+                            
+                            <p class="experience-description">
+                                Elaboración en MySQL de una base de datos simulada y, por extensión, de un diagrama físico del modelo Entidad-Relación  que llevara un registro de artículos publicados por usuarios vinculados a la empresa "Platzi", ubicada en Bogotá, D.C.
+                            </p>
+                            
+                            <a class="experience-url" href="assets/mysql/Diagrama Físico Platziblog en MySQL.mwb" title="Se descarga el proyecto hecho en Workbench (MySQL) en su formato original '.mwb'." download>Descárgalo!</a> 
+                        </div>
+
+                    </article>
+
+                </div>
+                
+            </div>
+            
+        </section>
+        
+        <section id="contacto" class="contact">
+            
+            <div class="container">
+                
+                <form class="form-email">
+                    <h3>
+                        ¿Creamos algo juntos?
+                    </h3>
+                    
+                    <input type="email" placeholder="Déjame tu email" id="email" class="form-text"> 
+                    
+                    <input type="submit" value="Send me!" class="form-box">
+                </form>
+                
+                <div class="social">
+                    <a href="https://twitter.com/Rescata__" class="social-link twitter" target="_blank"></a>
+                    <a href="https://web.facebook.com/louizroberto/" class="social-link facebook" target="_blank"></a>
+                    <a href="https://github.com/Rescata1995" class="social-link github" target="_blank"></a>
+                    <a href="https://www.instagram.com/velasquezdean/?hl=es-la" class="social-link instagram" target="_blank"></a>
+                </div>
+                
+            </div>
+            
+        </section>     
+            
+    </main> 
+
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div>
+                <p>My Portfolio website developed by myself in collaboration with Platzi<img src="images2/logoplatzi.webp" alt="" width="80px" height="auto"></p>
+            </div>
+
+            <div>
+                <p> Design by 
+                    <a href="https://twitter.com/thespianartist" target="_blank">@thespianartist</a>
+                    <br>
+                    Customized by <a href="https://twitter.com/Rescata__" target="_blank">@Rescata__</a> <span title="Te amo Isabella Carla❤️">❤️</span>
+                </p>
+            </div>
+            
+        </div>
+        
+    </footer> 
+
+    <script>
+        
+        const ipad = window.matchMedia('screen and (max-width: 767px)')
+        
+        const menu = document.querySelector('.menu');
+        // console.log(menu);
+        const burguerButton = document.querySelector('#burguer-menu');
+        // console.log(burguerButton);
+
+        ipad.addListener(validation)
+
+        function validation(event) 
+        {
+            if (event.matches)
+            {
+                burguerButton.addEventListener('click', hideShow)
+            }
+
+            else
+            {
+                burguerButton.removeEventListener('click', hideShow)
+            }
+        }
+
+        function hideShow() 
+        {
+            if (menu.classList.contains('is-active')) 
+            {
+                menu.classList.remove('is-active');
+            } 
+
+            else 
+            {
+                menu.classList.add('is-active');
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+<!-- El valor "datetime" del atributo "type" nos permite guardar toda la información que le hemos pasado a nuestro formulario; puntualmente, la información que le hemos pasado a los formularios de tipo "caja de texto" (de hecho, esta es la clase de formularios que se crean con este valor de "datetime").
+ -->
+
+<!-- Sobre la "navegación interna" (dentro de la misma página web del mismo sitio web): cómo se relacionan las etiquetas de enlace "a" acompañadas, como bien sabe, del atributo "href" con el atributo "id" de otra etiqueta o elemento (para lograr una comunicación entre ambas es preciso que los valores definidos en el atributo "href" de la etiqueta "a" y el valor de "id" de la otra etiqueta, sean iguales). El valor pasado al atributo "href" de la etiqueta "a" debe estar acompañado, en su inicio, de un numeral (#); la función del numeral (#) es decirle al navegador que esa navegación, del enlace, será interna,... dentro de la misma página. Puede ver ejemplos de todo esto en nuestro menu de navegación (nav) de este HTML.
+Sobre la navegación hacia otra página web del mismo sitio web: Ahora, si la navegación no es precisamente interna; sino, hacia otra página del mismo sitio web... sólo es necesario que el documento HTML al que desee ir; es decir, a la otra página web perteneciente al mismo sitio web, esté dentro del mismo directorio en el que se encuentra este mismo documento HTML (nuestra página web de origen); y, posteriormente, colocar como valor, dentro del atributo "href" de la etiqueta "a", la ruta relativa a la otra página web, del mismo sitio web, que le interesaría navegar... Bueno, no precisamente la ruta relativa; sino, el nombre del archivo al que le gustaria ir -es decir, la otra página de interés del mismo sitio web- pero, le agrega, en el inicio, esto: "./" (en el 4to item, de la lista ordenada en el menu de navegación, está un ejemplo de esto).
+Sobre la navegación hacia una página web de otro sitio web: Es más sencillo, sólo es colocar, dentro del enlace que conduce a dicho sitio web diferente, la URL del sitio web en cuestión. Es decir, poner como valor, dentro del atributo "href" de la etiqueta "a", el link del sitio web de interés al que deseas ir con el enlace en cuestión.
+ -->
+ 

@@ -1,0 +1,555 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif, Arial;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-family: 'Fjalla One', sans-serif;
+    font-weight: normal;
+    /* font-style: italic; */
+}
+
+h1{
+    font-size: 2.32rem;
+    line-height: 1.5em;
+    letter-spacing: -.2px;
+    color: white;
+    margin: 0;
+}
+
+h1 strong{
+    /* color azul, con algo de "celeste" */
+    color: #025fff;
+}
+
+h2 {
+    color: #026fff;
+    text-transform: uppercase;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+
+.hero{
+    height: 300px;
+
+    /* background-image: url('./images/piscina.jpg');
+
+    background-size: 700px 100%;
+
+    background-repeat: no-repeat;
+
+    background-position-x: right; */
+
+    background-color: #1b2127;
+
+    justify-content: space-between;
+
+    /* Las siguientes 2 propiedades pondrán más estatico y "juntado" nuestro ".hero" */
+
+    display: flex;
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    /* object-fit: cover; */
+}
+
+.hero-image{
+    object-fit: cover;
+
+    /* Lo que hace es arreglar o ponernos las dimensiones originales de nuestra imagen */
+}
+
+.portfolio {
+    background: #fafafa;
+    padding: 20px;
+    /* background: red; */
+}
+
+.project{
+    border: 1px solid gray;
+    border-radius: 10px;
+
+    display: flex;
+
+    /* Propiedades-valor sacadas propiamente del repositorio de Leonidas en GITHUB, donde se encuentra acabado el proyecto, a continuación: */
+
+    margin-bottom: 15px;
+    padding: 20px;
+    background: white;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 10px 10px 30px -5px black;
+    flex-wrap: wrap;
+}
+
+.project:hover{
+    box-shadow: 10px 10px 15px -5px black;
+}
+
+.project-course,
+.project-date,
+.project-url {
+  margin: 10px 0;
+}
+
+.project-description {
+  font-size: 20px;
+}
+
+.project strong {
+  font-family: 'Fjalla One', sans-serif;
+}
+
+.project-title {
+    font-size: 30px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.project-details{
+    width: 500px;
+    /* display: inline-block; */
+}
+
+.project-image{
+    width: 500px;
+    object-fit: cover;
+
+    /* display: inline-block; */
+}
+
+.header{
+    background-color: #1b2127;
+    color: white;
+    display: flex;
+    height: 120px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+ol,
+ul{
+    margin: 0px 15px 0px 0px;
+    padding: 0;
+    list-style: none;
+    font-family: Raleway;
+    font-size: 0.95rem;
+    /* para que no tengan estilos ni formatos las listas */
+}
+
+.link:active{
+    transform: scale(.95);
+    border: 2px solid gray;
+    box-shadow: 2px 2px 10px -5px gray inset, -1px -1px 10px -5px gray inset;
+}
+
+.link:hover{
+    color: gray;
+}
+
+figure{
+    margin: 0;
+}
+
+.header figure{
+    margin: 5px 10px 5px 15px;
+    /* "figure" por defecto viene con margenes, acá los estamos definiendo manualmente */
+}
+
+.logo{
+    text-align: center;
+}
+
+.header a{
+    color: white;
+    text-decoration: none;
+}
+
+.menu{
+    height: inherit;
+}
+
+.header ol{
+    display: flex;
+    height: inherit;
+    /* Va a heredar el "height" del ".menu", su elemento padre ("inherit" sólo funciona entre padres e hijos directos) */
+}
+
+.header ol li{
+    height: inherit;
+}
+
+.header a{
+    display: flex;
+    align-items: center;
+    height: inherit;
+    padding: 0 10px;
+
+    /* para que el enlace tenga acceso desde todo su alto (no solamente sobre la literalidad de su texto nada más, sino sobre todo su espacio disponible en términos de altura), hay que asignarle el "alto" directamente a él; es decir, al elemento "a" */
+}
+
+.flexbox{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box{
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    border: 1px solid red;
+
+    flex-shrink: 0;
+}
+
+.footer{
+    background-color: #1b2127;
+    color: white;
+
+    display: flex;
+    align-items: center;
+
+    /* el selector ".footer", por medio de "display: flex;" está afectando directamente sobre todas las divisiones "div" que contiene; de tal manera que, todos esos sub-elementos "div" se acoplen de la manera más estatica y mejor ajustada posible sobre todo el ".footer".  
+    */
+
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer img{
+    vertical-align: middle;
+
+    /* Cuando tienes un texto (un "div" 1) y lo mezclas, por ejemplo, con otros tipos de elementos como contenido embebido; en este caso, una imagen (un "div" 2), tú puedes preferir el alineado, de la imagen que tienes, dentro de esa disposición vertical (la del texto); entonces, para eso, se llama la propiedad "vertical-align" sobre el elemento al que le deseas copiar su alineado vertical; en este caso, como ya lo dijimos, sobre nuestra imagen actual. 
+
+    "vertical-align" puede asumir varios valores: "top", "bottom", "text-bottom", etc. Puede probarlos en tiempo real para percibir sus diferencias visuales.
+    
+    Tenga en cuenta que ambos elementos, texto e imagen, son "div" independientes; pero que hacen parte, y son hijos directos, de un mismo selector: ".footer". */
+}
+
+.footer a{
+    color: white;
+    text-decoration: none;
+}
+
+.footer a:hover{
+    text-decoration: underline;
+}
+
+.experience-list-title{
+    margin-left: 20px;
+    
+}
+
+.experience-list{
+    display: flex;
+    flex-wrap: wrap;
+    /*  */
+
+    /* ATENCIÓN, en el diseño original esta clase recibió el nombre de "event" y no de "experience" (como fue nuestro caso).
+    */
+}
+
+.experience{
+    
+    margin: 10px;
+    width: 479px;
+    border-radius: 0px;
+
+    /* para el desbordamiento de la imagen ante su contenedor (border), usemos la propiedad-valor: "overflow: hidden".
+    */
+
+    overflow: hidden;
+
+    /* con "overflow: hidden" se me alteraron un poco las medidas de mis "experience" de tal manera que ahora se me "encogieron" y caben todas, mis "experience", en la pantalla disponible del navegador; sin embargo, todavía deseo que se me respeten las medidas de ancho pasadas a cada una de ellas; por lo que declararé la propiedad-valor: "flex-shrink: 0".
+    */
+
+    flex-shrink: 0;
+
+    background-color: #f4fbff;
+    /* Color de fondo "celeste" del elemento "experience" */
+}
+
+.experience:hover{
+    box-shadow: 3px 3px 10px -5px black, -3px -3px 10px -5px black;
+}
+
+.experience img{
+    /* De momento, se nos hizo necesario darle un margen negativo a la izquierda y al "top" de las imagenes debido a que, por defecto, se estaban sobresaliendo por el lado derecho del borde (y por encima hacia falta contenido) */
+
+    width: 480px;
+    height: 200px;
+
+    /* La propiedad-valor "object-fit: cover" nos sirve para cambiar la proporción de la imagen de tal manera que quepa, de la manera más estetica posible, dentro de las mediciones y los tamaños arbitrarios que se le estén pasando (aunque el valor "cover" como tal se come un poco los costados de la imagen). Veamos. */
+
+    object-fit: cover;
+}
+
+/* Ahora, lo que queremos hacer es darle margenes al contenido textual que está dentro de cada "experience"; es decir, queremos manipular por separada la clase "experience-detail" y darle sus respectivos margenes con respecto a su elemento o selector padre "experience" */
+
+.experience-detail{
+    margin: 20px 40px;
+
+    background-color: white;
+    /* Color de fondo "blanco" del elemento hijo "experience-detail" */
+
+    /* Ahora, nos interesa que "experience-detail" se sobreponga, sin ningún problema, sobre la imagen de cada "experience"; es decir, que el contenido textual se ubique por encima de nuestra imagen en cada "experience". Lo anterior, lo podríamos hacer, en principio, con un "margin-top" negativo. */ 
+
+    margin-top: -40px;
+    
+    /* Sin embargo, aún así, a veces pasa que la imagen quedaría por encima del contenido textual,... es decir, si bien el contenido textual "experience-detail" sube, existe la posibilidad de que sea opacado por la imagen en su intento (en esta ocasión, por ejemplo, opacó nuestro "background-color: white"). Para asegurarnos de que esto no pasará, podemos hacer uso del recurso que nos brinda la propiedad "position" por medio de su valor "z-index" (en caso de ser necesario dejar un orden de apilamiento que le dé prioridad al selector del contenido textual "experience-detail" sobre su elemento padre "experience", sino defina con "relative" solamente). 
+    */
+
+    position: relative;
+
+    /* Ahora, vamos a oxigenar un poco con "pagging" al contenido textual del "experience-detail" para que no quede tan pegado de su propio borde */
+
+    padding: 20px;
+
+    text-align: center;
+}
+
+.experience-description{
+    text-align: left;
+}
+
+.experience-url{
+    color: #056fff;
+    border: 1px solid;
+
+    /* El "border" en este ocasión asume el color del "content"; es decir, asume el color de la propiedad "color". */
+
+    padding: 5px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.experience-url:hover{
+    background-color: #f5f5f5;
+}
+.experience-url:active{
+    box-shadow: 2px 2px 10px -5px #111 inset, -1px -1px 10px -5px #111 inset;
+    border: 2px solid #056FFF;
+}
+
+.contact{
+    background-color: #056fff;
+    color: white;
+    height: 150px;
+
+    /* Alineado vertical con "display:flex" */
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.social-link{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+}
+
+.social-link.twitter{
+    /* Importación de imagenes con CSS */
+    background-image: url('./images/twitter.svg');
+
+    /* Asignación de tamaños de imagenes importadas con CSS (hay que asignarles manualmente uno para poder visualizas las imagenes) */
+    background-size: 50px 50px;
+}
+
+.social-link.twitter:active{
+    transform: scale(.90);
+}
+
+.social-link.facebook{
+    background-image: url('./images/facebook.svg');
+    background-size: 50px 50px;
+}
+
+.social-link.facebook:hover{
+    background-color: #35548F;
+    border-radius: 9px;
+}
+
+.social-link.facebook:active{
+    transform: scale(.95);
+}
+
+.social-link.github{
+    background-image: url('./images/github.svg');
+    background-size: 50px 50px;
+}
+
+.social-link.github:hover{
+    background-color: #000000;
+    border-radius: 50px;
+}
+
+.social-link.github:active{
+    transform: scale(.95);
+}
+
+.social-link.instagram{
+    background-image: url('./images/instagram.svg');
+    background-size: 50px 50px;
+}
+
+.social-link.instagram:hover{
+    background-color: #F66041;
+    border-radius: 16px;
+}
+
+.social-link.instagram:active{
+    transform: scale(.95);
+}
+
+.form-email h3{
+    font-family: 'Source Sans Pro', sans-serif, Arial;
+}
+
+.form-email input{
+    font-family: Raleway;
+    font-size: 0.7rem;
+
+    /* Demosle un color al borde dibujado sobre el selector propio de la caja de texto */
+
+    border-color: gray;
+
+    /* Ahora, demosle un estilo particular al borde dibujado sobre el selector propio de dicha caja de texto */
+
+    border-style: solid;
+
+    padding: 10px 20px 10px 25px;
+}
+
+/* Vamos a seguir trabajando sobre los "input" hijos del elemento padre "form", que lleva por clase "form-email", pero ahora de forma independiente sobre cada uno de ellos.
+*/
+
+.form-text{
+
+    /* A continuación lo siguiente: viene un sin número de "propiedades-valor" relacionadas a la importación de imagenes directamente de css */
+    background-image: url('./images/envelope.svg');
+    background-size: 15px 15px;
+
+    /*  La propiedad-valor "background-repeat: no-repeat" es para que se me reproduzca una sola vez, sobre el selector seleccionado, la imagen que ha sido importada por medio de CSS */
+    background-repeat: no-repeat;
+
+    /*  
+    "background-position" nos permite colocar, sobre el selector seleccionado, la imagen importada en cualquier posición, ya sea sobre el eje de las Xs o sobre el eje de las Ys. Tal que así:
+    */
+
+    background-position-y: center;
+    background-position-x: 5px;
+
+    /* No es casualidad que hayamos querido importar la imagen de la "carta" por medio de CSS; pues, esa carta realmente cumple una mera función estética; es decir, no hace parte defitivamente del DOM (no está dentro del HTML realmente); sólo fue agregada para cumplir la única función de ser un adorno y no interfiera sobre la escritura dentro de HTML ni sobre la manipulación de sus elementos totales (es un fantasma). 
+
+    De hecho, si intenta tomar la "cartica" con el mouse, al intentar subrayarlo, no podrá seleccionarla; pues, realmente para la estructura de la página esa "cartica" no está ahí.
+    */
+}
+
+.form-text:hover{
+    background-color: #f5f5f5;
+}
+
+.form-box{
+
+    /* "form-box" es la clase (class) del "input" con atributo y valor de: type="submit"; esto puso ser reemplazado por un elemento de tipo "button", como lo hizo leonidas; es decir, él llamó al selector de la siguiente forma: ".form-email button"
+    */
+
+    display: block;
+
+    /* Le dimos "display: block" para que ocupará todo el ancho en el siguiente "renglón" de la página web y quede libre (que no se ponga al costado del input type="email"; es decir, que no quede al lado de la caja del texto). 
+    */
+
+    margin-top: 10px;
+
+    background: transparent;
+
+    /* Le dimos "background: transparent" para quitarle el color de fondo al contenido del selector ".form-box"; es decir, a la caja del botón. */
+
+    color: white;
+    width: 100px;
+
+    border-radius: 5px;
+}
+
+.form-box:active{
+    transform: scale(.95);
+    box-shadow: 2px 2px 10px -5px #111 inset, -1px -1px 10px -5px #111 inset;
+}
+
+.form-box:hover{
+    background-color: #0567FF;
+}
+
+.container{
+    /* El siguiente tipo de border es una gran forma de depuración de estilos, siempre se coloca al inicio del proceso, pero al final se quita */
+
+    /* border: 1px solid red; */
+
+    /* Al poner un contenedor, toca volver a centrar y ampliar (por lo general, ya que los elementos dentro del "container" se contraen) */
+
+    max-width: 1020px; /* ampliación */
+    margin: 0 auto; /* centrado */
+
+    /* Hay efectos visuales que se perdieron, como puede ver, al usar un contenedor; pues bien, esos efectos visuales, podemos heredarlos de un elemento padre; es decir, usar las mismas propiedades visuales del elemento padre y definirlas con un valor de "inherit".
+    */
+
+    height: inherit;
+    display: inherit;
+    align-items: inherit;
+    justify-content: inherit;
+
+    /* Emulando el "flex-wrap" del elemento padre "experience-list". 
+    */
+    flex-wrap: inherit;
+}
+
+/* Aplicación de Media Queries por medio de "Desktop First". */
+
+@media screen and (max-width: 1024px){
+
+}
+
+@media screen and (max-width: 768px){
+    
+}
+
+@media screen and (max-width: 480px){
+
+}
+
+@media screen and (max-width: 320px){
+
+}
+
+/* Lo primero que haremos, como responsive, será apilar las cosas en la medida que tengan menos espacio disponible (en la medida que se "achique" la página); mas precisamente, la estrategia que se aplicará, es que los elementos se vayan apilando uno debajo del otro. Se empieza de arriba hacía abajo. 
+
+De hecho, la primera muestra de que intentamos "apilar" para ayudar al diseño responsive de nuestro sitio web fue el uso de la propiedad-valor: "flex-wrap: wrap" en el elemento padre, como se debe, del selector "experience". El elemento padre del selector "experience" es el selector "experience-list" (un "section" de HTML),... posteriormente el contenedor, selector ".container", lo heredó. Sin embargo, la propiedad-valor "flex-wrap: wrap" no sólo debe ir en "experience-list", sino en todas las sesiones más importantes que hacen de elementos "padres", principalmente en aquellas donde se nos hace un "scroll" horizontal debido a que su espacio disponible, horizontalmente, ya está agotado para los elementos "hijos" existentes. La idea es que, en vez de hacerse ese "scroll" horizontal, los elementos se apilen más abajo en caso de que no pueda ocupar más espacio para un límite máximo de ancho establecido (cosa que haremos justamente ahora, establecer un límite máximo de ancho para nuestros contenedores ".container").
+*/
+
+/* Ahora queremos que nuestros contenedores, ".container", tenga un tamaño variable; pues, de momento, tienen un tamaño fijo y nos ayudará bastante adaptar las "cajas" contenedoras del sitio web a las medidas variables del "viewport". Vamos allá!
+
+Pero, como mencionamos antes,... primero definamos, para los ".container", un máximo de ancho con la propiedad: "max-width",... para motivar a que los elementos tiendan a ajustarse un poco más siempre y evitar que se extiendan sobre todo lo ancho al tener la flexibilidad de hacerlo. PERO, OJO, el ancho del contenedor debe de ser lo suficientemente grande como para que quepen dentro todos sus elementos hijos,... si no es necesario que se apilen hacia abajo y si no se hace necesario hacer "scroll" horizontal.
+
+Entonces, de momento nos estamos valiendo de dos herramientas: "max-width" y "flex-wrap: wrap".
+
+"max-width" para ".container" &
+"flex-wrap: wrap" para los elementos "padres": ".header", ".hero", ".project", ".experience-list", ".contact" & ".footer"; que son, justamente, los elementos "padres" donde sus elementos "hijos" se extienden por todo lo ancho y generan "scroll" horizontal. En todo caso, ".container" también está heredando (inherit) la propiedad-valor: "flex-wrap: wrap"..., así lo hemos decidido para que el efecto "flex-wrap: wrap" afecte a los hijos de los hijos de cada elemento "padre" como ".header", ".hero", "experience-list", "contact" & ".footer".
+
+Ahora, vamos a trabajar sesión por sesión por separada,... para nuestra comododidad y enfocarnos sólo en ella, así que vamos a comentar todas las sesiones en el html, menos el ".header" (nuestra primera sesión).
+*/

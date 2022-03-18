@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sobre cómo funciona CSS</title>
+</head>
+<body>
+    <header>
+        <h1 id="title" class="title">
+            Fundamentos de CSS (especificidad)
+        </h1>
+    </header>
+
+    <div>
+        <p class="padre">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci repellendus facere est sed velit voluptatibus dolorum ab quis consequatur praesentium error sequi dicta aperiam nemo dolore ex, suscipit mollitia delectus. <a href="hola" class="heredero">Ahora, seré un heredero</a>
+        </p>
+    </div>
+
+    <div>
+        <nav>
+            <ul class="list">
+                <li class="list-item">Item 1</li>
+                <li class="list-item">Item 2</li>
+                <li class="list-item">Item 3</li>
+                <li class="list-item-extra">Item 4</li>
+            </ul>
+        </nav>
+    </div>
+    
+</body>
+</html>
+
+<!-- La palabra "especificidad" viene de lo que resulta ser "especifico": establece cómo de especifico es un selector para saber qué estilos aplicar.
+
+Qué formula sigue el navegador para saber qué estilos aplicar? Responderemos a esa pregunta, mediante un ejemplo, sobre la manipulación que le demos a la etiqueta "h1" (nos asistiremos también de los atributos "id" y "class").
+
+Se dará cuenta que, más allá de la lógica de "cascadas" que ya conocía de CSS, hay un argumento de mayor peso en CSS para aplicar estilos, en caso de conflictos, y es la "especificidad".
+
+En caso de conflictos entre estilos, más allá de la lógica de "cascadas", la selección de estilo "ganadora" se dará o consiste en... Averiguar que "regla" de CSS, entre las conflictivas, tiene "más peso" sobre otra; es decir, a partir de los valores de cada una (de la suma de ellos), saber cuál es más importante o relevante para el navegador de tal manera que, dicha "regla", sea la "victoriosa" para aplicar sus estilos sobre otra u otras. 
+
+El criterio de selección de estilos, según los valores de una "regla" de CSS, es el siguiente: 
+
+Dentro de una hoja independiente de CSS
+
+    Etiquetas o pseudoelementos: 001
+    Clases, atributos y pseudoclases: 010
+    IDs: 100
+
+    Si las tres se aplican sobre una misma regla; el valor total, entonces, sería de: 111; pues, estarías aplicando el valor de una etiqueta o seudoelemento, el de una clase, atributo o seudoclase y, por último, el de un ID,... todo esto al mismo tiempo sobre una misma regla; lo cual, te daría una suma de: 111.
+    
+    Si llegase haber un conflicto entre esta "regla" y otra, el navegador tomará el estilo de la "regla" con mayor valor o puntaje. Quiere decir entonces que, si hay una "regla" que tiene conflictos de estilo con esta; y, la suma de valores de dicha regla, es 110,... el navegador tomará el estilo de la "regla" que vale 111 (la primera).
+    
+    Ahora, en el caso contrario, si la otra "regla" más bien vale 112; entonces, el navegador va a seleccionar el estilo de la "regla" de 112, que es la de mayor valor. Y así con todo... Esto es lo que se concibe como "Especificidad"; y, de hecho, este criterio de "colocación de estilos" no discrimina el orden en el que sean llamadas las "reglas" dentro de CSS; es decir, le importa poco los parametros de "cascada" de CSS para colocar estilos. 
+    
+    En conclusión, antes que la lógica de "Cascadas", el navegador le da más importancia a la especificidad propiamente del selector o la "regla" (sin importarle el orden en el que son llamados).
+
+    La especificidad del selector (y su valor total) puede ser visualizada al pasar el mouse por encima de él.
+
+    Ahora, en caso de "empate" de valores, la "regla" que el navegador seleccionará, para darle estilos al documento, será la última llamada; es decir, en ese caso el parametro de "cascadas" sí tendrá relevancia.
+
+Dentro de la misma hoja de HTML
+
+    Estilos en línea (los estilos que se ponen directamente sobre la etiqueta HTML, no en una "regla" de una hoja independiente de estilos): 1000.
+
+Ahora lo siguiente. Si el valor dado, a la propiedad del selector, se le agrega un "!important" al lado... Eso gana a todo, y ese criterio de estilo se antepondrá ante cualquier conflicto que haya anterior o posteriormente (es una jugada peligrosa, porque se carga la "especificidad" del navegador) No es una buena práctica, no lo use nunca.
+
+    "!important"
+
+consejo: utilice siempre "clases".
+
+-->
+
+<!-- 
+    Concepto nuevo: "Herencia".
+    
+    "Herencia" es la capacidad que tienen algunos elementos (etiquetas) de heredar algunas propiedades de sus elementos contenedores (padres, abuelos, etc).
+
+    Si hablamos de "heredar", quiere decir que, un elemento recibirá algún efecto, de "marcado" o de "estilo", sin siquiera haberlo "tocado" o llevado a cabo una manipulación directa sobre él; esto pasa cuando se está adquiriendo la propiedad de un elemento que lo está conteniendo y que sí ha sido directamente manipulado.
+    
+    Qué cosas se heredan para ser más precisos?
+
+    - La definición de colores
+    - La definición del tipo de fuente
+    - El tamaño de la fuente y su correspondecia: si se trata de un párrafo o un título, por ejemplo.
+
+    Hay una etiqueta en especifica que no "hereda" esas propiedadaes de sus "padres": las etiquetas "enlace" (a). Los enlaces no "heredan" porque necesitan tener un estilo propio para poderlos identificar. Para darle estilo a un enlace (a), hay que manipular directamente sobre él (por medio de la asignación de una clase, por ejemplo).
+
+    Ahora, si por ejemplo, deseo definitivamente forzar la "herencia" a un enlace (a) por parte de su etiqueta "madre" (supongamos que es una "p"); toca valerse y hacer uso del recurso "inherit", ponerlo como valor, en la propiedad de interés de la etiqueta "a"; la cual sería ahora "heredera", a la fuerza, de "p". En resumen, lo que le pase a la "p", en términos de colores o tipo de fuente, le pasará a la "a" de ahora en adelante (porque lo hemos forzado con "inherit"). Tal que así, esta es la regla: 
+
+    .padre{
+    background-color: red;
+    }
+
+    .heredero{
+    background-color: inherit;
+    }
+
+    Por medio del atributo "class" de "a", "heredero", se define como valor, en la propiedad "background-color", la palabra "inherit". Quiere decir entonces que, si hay una etiqueta "madre" ("p") que contiene al "hijo" ("a"), "a" estaría replicando ahora el valor que se tenga definido en la propiedad "background-color" de "p". Ese es sólo un ejemplo, pero así funciona con todo. "inherit" forza a emular los valores de las propiedades de las etiquetas o selectores "padres",... cuando éstos no se emulan, o "heredan", por sí solos (por defecto).
+-->
+
+<!-- 
+    Concepto nuevo: "initial".
+
+    Ahora, en el caso contrario, cuando nosotros queremos evitar que se "hereden" propiedades; o bien, valores de propiedades de un elemento "padre" a un o unos elementos "hijos", también tenemos a nuestra disposición un recurso, que resulta ser también, una palabra clave: "initial". 
+    
+    "initial" significa: "vuelve a tu estado inicial. Todo aquello que estés heredando,... ignoralo, y quedate como deberias estar al principio con tus estilos por defecto". Acá también se puede asistir de "clases" para hacer las distinciones deseades entre un elemento "padre" y sus elementos "hijos". 
+    
+    Dejamos un ejemplo con una lista desordenada (ul) en nuestro documento HTML; las listas ("ul" & "ol"), por defecto, también le "heredan" propiedades de color y tipos de fuente a sus items, los cuales son identificados en etiquetas como: "li". En el caso puntual en el que NO queramos que una lista ("ol" o "ul") le pase propiedades, de color o de tipo de fuente (o cualquiera otra que se "herede" entre etiqueta de "padre" e "hijos" por defecto), a sus items (li) o a algún item en especifico, también podemos evitarlo. Es justo el caso contrario del valor "inherit"; que, recuerde, SÍ le otorga forzadamente propiedades, de una etiqueta "padre" a una o unas etiquetas "hijas", cuando por defecto no lo hace.
+ -->
+

@@ -1,0 +1,90 @@
+<!-- fieldset: Es una etiqueta que se utiliza para agrupar elementos dentro de un formulario (los agrupa dentro de un bloque).
+
+legend: Representa una etiqueta para el contenido del "fieldset"; digamos, le da un nombre con el que se identifique el bloque que está "encerrando" un número de elementos seleccionados de un formulario. Esta etiqueta "legend" va dentro de las etiquetas "fieldset".
+
+file: Es un valor para el atributo "type", de la etiqueta "input", que designa la función de "cargar archivos" dentro de un formulario de una página web. Idealmente este valor debería complementarse mucho más con CSS (para darle más estilo) y con JavaScript (para darle más interactividad & funcionalidad), pero igual mostraremos un ejemplo.
+
+meter: Representa un valor dentro de un rango conocido.
+
+progress: Representa el progreso de una tarea.
+
+textarea: Se utiliza para introducir texto en un formulario.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>
+                Datos personales
+            </legend>
+
+            <!-- primer elemento (o elementos que se complementan) del formulario -->
+            <div>
+                <label for="name">Nombre</label>
+                <input type="text" id= "name">
+            </div>
+
+            <!-- segundo elemento (o elementos que se complementan) del formulario -->
+            <div>
+                <label for="surname">Apellidos</label>
+                <input type="text" id="surname">
+            </div>
+        </fieldset>
+
+        <hr>
+        <!-- Carga de archivos -->
+
+        <input type="file">
+
+        <hr>
+
+        <!-- La proxima etiqueta nos sirve para cualquier cosa que queramos representar con una barra de progreso; probemos esto, por ejemplo, en la modelación de un "contador de gasolina". -->
+
+        <div>
+            <!-- A la barra de combustible que crearemos se le pasará ese mismo nombre, "combustible", por medio de la etiqueta auxiliar label (que ya la conoce) -->
+            <label for="fuel"> Combustible</label>
+
+            <!-- Luego, acá ahora sí, ya entrará en juego la etiqueta "meter".
+
+            Le pasamos un "id" para identificarla, (idealmente que se defina con el mismo valor del atributo "for" de la etiqueta "label")
+
+            Adicionalmente, establecemos límites de intervalos por medio de atributos "min" & "max"; y, de paso, asignamos cuánto "queda de gasolina" por medio del atributo "value" ("value" realmente sería el valor asignado a priori para la barra de progreso que representa la etiqueta "meter"; según, claro, unos parametros de mínimos y máximos ya establecidos, idealmente, con anterioridad).
+
+            Además, podemos darle más estilos al medidor del "value"; es decir, podemos representar con colores los estados de progreso de la barra; por ejemplo, si la barra está muy "baja", entendamos "bajo" como un concepto relativo que depende de nosotros y lo asignamos (por medio de un número) con el atributo "low", se coloca la barra de color amarillo; esto es, cuando el valor númerico de "value" esté por debajo de "low".
+
+            Ahora, si la barra está muy "alta", la dinámica es igual. Definimos qué es "alto" por medio del atributo "high"; entonces, cuando "value" esté por encima de "high", por defecto, la barra pasará a ser de color amarillo también (es preciso decir que este sistema de colores, según unos valores de progreso, podemos personalizarlo por medio de CSS).
+
+            Veamos todo.
+            -->
+            <meter id= "fuel" min="0" max="100" value="30" low="30" high="70" optimum="50"> </meter>
+        </div>
+
+        <!-- Ahora vamos con la etiqueta "progress"      
+            (parecida a la etiqueta "meter")
+            Representaremos, por medio de un ejemplo, el progreso de una "tarea". Al igual que "meter", acá también se establecen los atributos "min" & "max" para establecer los límites mínimos y máximos, respectivamente, de progreso. Ahora, el progreso como tal, tambíen, se define con el atributo "value".
+        -->
+
+        <label for="task">Tarea 1</label>
+        <progress id="task" max="100" min="0" value="20"></progress>
+
+        <!-- Ahora, a modo de reflexión, es posible que tanto "meter" como "progress" no los vayas a utilizar mucho; esto, debido a que, hay otras formas de hacer lo mismo y con algo que nos hace falta: interactividad y dinamismo. Lo ideal es que, de forma "automatica", "value" tome valores dentro de las barras según la evaluación de progreso que haya sobre algo; esto último, ya se lograría propiamente con programación de JS -->
+
+        <hr>
+        <!-- La siguiente etiqueta nos permite crear un campo para insertar texto; es, literalmente, un formulario para introducir texto; pero el aspecto es como de una especie de "nota en blanco" lista para escribir sobre ella. Además, por defecto, nos asigna unos atributos nuevos que son "cols" (número de columnas) y "rows" (número de filas): basicamente establecen las medidas o dimensiones de la caja ampliada de texto. -->
+
+        <label for="message"><em>Deje su mensaje</em></label>
+        <textarea name="" id="message" cols="30" rows="5"></textarea>
+
+    </form>
+</body>
+</html>
+
+<!-- Si se da cuenta hicimos práctica de las etiquetas "hr" y "div" como herramientas que sirven, también, como separadores de contenido. -->

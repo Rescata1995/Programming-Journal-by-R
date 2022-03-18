@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video</title>
+</head>
+<style>
+    video{
+        max-width: 100%;
+    }
+</style>
+<body>
+    <header>
+        <h1>
+            Contenido embebido: Video.
+        </h1>
+    </header>
+
+    <main>
+        <header>
+            <h2>
+                Introducción a clases de Portugues!
+            </h2>
+        </header>
+
+        <video src="assets/video/01_Introdução e boas-vindas copia.mp4" controls muted loop poster="assets/video/platzi.png"></video>
+    </main>
+</body>
+</html>
+
+<!-- La etiqueta "video" es la que nos permite llamar contenido de video (justamente) dentro de HTML; y, al igual que las imagenes, cuenta con un atributo "src" para importar dicho video por medio de su ruta de ubicación, ya sea relativa o absoluta; sin embargo, para que propiamente se refleje un reproductor de video en el navegador, toca adicionar un atributo más: "controls" (sin necesidad de acompañarlo con un valor).
+
+    Ahora, para adaptar el reproductor del video a las dimensiones de la pantalla del navegador, nos podemos asistir un poco de CSS. Tal como lo hicimos en "style": podemos ver le video sin que haya "scroll".
+
+Ahora, existen otros tipos de atributos que le darán mayor personalización al reproductor de video; por ejemplo, que el video se reprodujera de forma automatica e inmediatamente al cargar la página, eso se logra con el atributo: "autoplay". Sin embargo, algunos navegadores actuales están bloqueando este atributo (autoplay) si encuentran que el audio no está silenciado y pueda resultar molesto para los usuarios. 
+
+Ahora, algo todavía más interesante, si en caso deseas que se reproduzca el video, pero en segundo plano y "muteado" (que se reproduzca sin sonido); es decir, dandole la prioridad y la facultad al usuario de que él mismo determine si le interesa escuchar el video en cuestión de lo que se estará reproduciendo, de forma automatica, se debe acompañar al atributo "autoplay" con el atributo "muted". Lo anterior es similar a la tecnologia que maneja "instagram"; que, mientras tú vas haciendo "scroll", él irá reproduciendo en segundo plano, de forma automatica, los videos pero sin audio (a menos que realmente te interese el video en cuestión y tú mismo le quites el "mute").
+
+Adicionalmente, tenemos a nuestra disposición el atributo "loop". "loop" lo que hace, básicamente, es volver a reproducir el contenido de video toda vez que este acabe (y de forma automatica también). Este recurso, al igual, lo cuentan los audios (no sólo los videos).
+
+Ahora, un último atributo de las etiquetas "video", y que no tiene la etiqueta "audio", es el atributo "poster". "poster", como atributo, lo que hace es asignarle una presentación inicial de portada al video como tal; esto se lo logra por medio de la importación de una imagen, también, como contenido embebido. Es decir, "poster" lo que hace es colocarle una imagen de presentación inicial (y deseada), al video, antes empezar a correr la reproducción del video en sí.
+
+Este último atributo, "poster", por lo general no se trabaja con el atributo "autoplay"; pues, no se lograría apreciar nada bien la "presentación inicial" del video, que resulta ser una imagen; esto pasa porque, el video, lo que hace es reproducirse de forma automatica e inmediatamente sin necesidad de presionar "click" sobre él.
+
+-->

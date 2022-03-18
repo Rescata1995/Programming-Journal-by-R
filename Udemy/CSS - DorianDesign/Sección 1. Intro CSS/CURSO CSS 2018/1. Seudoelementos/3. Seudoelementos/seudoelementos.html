@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="style.css">
+     <title>Pseudoclases</title>
+</head>
+<body>
+
+     <p class="p">Hola Mundo</p>
+
+     <div class="container">
+          <p class="p">
+               Parrafo 1
+          </p>
+          
+          <p class="p">
+               Parrafo 2
+          </p>
+          
+          <a class="p">
+               Parrafo 3
+          </a>
+          
+          <p class="p first">
+               Parrafo 4
+          </p>
+          
+          <p class="p">
+               Parrafo 5
+          </p>
+          
+          <p class="p">
+               Parrafo 6
+          </p>
+          
+          <p class="p">
+               Parrafo 7
+          </p>
+          
+          <p class="p"></p>
+          
+          <p class="p">
+               Parrafo 9
+          </p>
+
+          <p class="p">
+               Parrafo 10
+          </p>
+
+     </div>
+
+</body>
+</html>
+
+<!-- De tipo "Structural" 
+     
+     :root -- > Representa exactamente la raiz del documento (html); sin embargo, si hacemos uso de esta pseudoclase, tenemos más especificidad que si usaramos directamente html. En todo caso, para ambos selectores, se está especificando unos parametros de estilo que incluirían todo el DOM del navegador.
+
+     :empty -- > Esta pseudoclase lo que hace es colocar estilos sobre todos los elementos vacios de HTML; es decir, etiquetas que no tengan contenido dentro de ellas.
+
+     Los "child". Para que las pseudoclases de tipo "child" funcionen sin ningún inconveniente alguno, es ideal que, a los elementos o selectores que desee afectar por medio de ellas estén contenidos por una etiqueta "padre"; generalmente, a esta etiqueta se llama, por medio del atributo "class", "container". 
+ 
+     IMPORTANTE: Todos los hijos o "child" de una etiqueta "padre" pueden ser de la etiqueta o selector cualquiera, no necesariamente deben ser etiquetas iguales para ser "child" (o ser de un mismo selector para ser más precisos); por ejemplo, dentro de un "div" (que sería la etiqueta "padre" para nuestro caso) pueden haber, en el siguiente orden, estos elementos: 
+
+     1. "a" class= "clase1"
+     2. "p" class= "clase2"
+     3. "p" class= "clase2"
+     4. "p" class= "clase2"
+     5. "a" class= "clase1"
+
+     Lo que significa que, en consecuencia, el 1er "child" sería "a", el 2do sería "p", el 3ro es "p" también y así sucesivamente. Es decir, los "child" no discriminan por los tipos de etiquetas contenidos dentro del "padre" aunque éstos varien; en el fondo, para ser más precisos, no les importa a que selector pertenecen cada una de ellas,... mientras todas ellas (las etiquetas) estén contenidas por una etiqueta "padre", todas serán consideradas como "child". No discriminan el conteo del "hijo" o "child" a partir del selector que se esté manipulando o a partir del selector al que pertenezcan (le da igual, no le importa el selector realmente), sea el "padre" otra etiqueta o el mismo DOM.
+
+          :first-child -- > Selecciona al primer hijo (independientemente del tipo de etiqueta) de un elemento (el primer elemento que haya sido declarado); para, posteriormente, darle unas especificaciones de estilos propios.
+
+          :last-child -- > Selecciona al último hijo (independientemente del tipo de etiqueta) de un elemento (el último elemento que haya sido declarado); para, posteriormente, darle unas especificaciones de estilos propios.
+
+          :nth-child(n) - Selecciona al hijo "n" (independientemente del tipo de etiqueta); para, posteriormente, darle unas especificaciones de estilos propios (al seleccionado o a los seleccionados).
+ 
+          ":nth-last-child(n)" selecciona al hijo "n" empezando a contar desde el último (independientemente del tipo de etiqueta también); para, posteriormente, darle unas especificaciones de estilos propios (al seleccionado o a los seleccionados).
+
+               A los que se les pasa un valor entre parentesis, de los "child", pueden recibir los siguientes: 
+
+               "odd": selecciona todos los elementos enumarados impares.
+
+               "even": selecciona todos los elementos enumerados pares.
+
+               números enteros: selecciona un elemento en especifico según el orden en el que se ubique (2, 3, 4, etc).
+
+               equaciones (1n, 3n, 4n+1, n+4,... ): funciona más o menos así, "n" aquí realmente vendría siendo un multiplicador que trabaja como un bucle y lo que hace es multiplicar desde 0, en referencia al número pasado que acompaña a "n", que es su límite de incremento, al número pasado en cuestión; dicho 0, que realmente vendría siendo la misma "n" en su punto de inicio, se sigue incrementando en una unidad y por cada unidad que se incremente hace una multiplicación con el número pasado; esto será así hasta que "n" llegue al límite del valor númerico pasado que le acompaña. 
+
+               Los resultados de cada una de las multiplicaciones, por cada paso que hizo el bucle, serán las posiciones que se verán afectadas del selector llamado; es decir, a donde irán los estilos pasados bajo esta modalidad.
+
+               A lo sumo, cualquier operación matematica con la variable "n" es bienvenida; "n" es sólo un incrementador que empieza desde 0, que se opera matematicamente en cada iteracción, y que aumenta en número hasta donde las condiciones de la ecuación o del selector seleccionado se lo permitan (hasta que se quede sin elementos en cuestión el selector evaluado). Por ejemplo, podría poner: "3n + 1", "n + 4", "n - 4", etc.
+
+          Ambas funcionan para elementos o selectores que no están precisamente contenidos por un elemento "padre" tangible, tanto ":nth-last-child(n)" como ":nth-child(n)" pueden funcionar desde el mismo DOM o HTML directo.
+
+          ":only-child" selecciona al hijo único (independientemente del tipo de etiqueta); para, posteriormente, darle unas especificaciones de estilos propios. 
+          
+          Es una pseudoclase realmente limitada porque, para que funcione, el elemento al que se desea afectar debe ser hijo único (no debe haber otra copia de la etiqueta o elemento en cuestión); es decir, sólo debe haber un ejemplar de él (ya sea que esté contenido por otra etiqueta "padre" o contenido por el propio DOM). En el justo momento en que el elemento único al que se desea afectar empieza a tener otro ejemplar igual a él (ya no siendo uno, sino dos), la pseudoclase ":only-child" deja de funcionar.
+-->
+
+<!-- Ahora bien, también existen las pseudoclases de tipo "type". Se componen por: 
+
+     :first-of-type
+     :last-of-type
+     :nth-of-type()
+     :nth-last-of-type()
+     :only-of-type
+
+     Realmente son iguales a las de tipo "child", sólo varian en una cosa: que las "type" sí discriman por el tipo de etiqueta o elemento; más bien, por el selector llamado; es decir, no sólo se es "hijo" de una etiqueta "padre" (por estar contenida dentro de ella) para ser tenida en cuenta y ser enlistada o enumerada como tal posteriormente (como pasa con las "child"); sino que necesariamente, en las "type", las etiquetas deben ser de una misma naturaleza o, para ser más precisos, estar incluidas dentro de un mismo selector; de lo contrario, no serán tomadas en cuenta ni enlistadas como de tipo "type".
+
+     Si en la hoja de estilos, por ejemplo, llamamos a un selector tal que así (supongamos que el selector viene de un atributo "class" valorado como "selector"): 
+     
+     ".selector:nth-of-type(3){
+
+     }"
+
+     Lo que hará la anterior expresión es asignarle estilos al elemento número tres (3) que esté nombrado, obligatoriamente, con la clase "selector". Es decir, no sería precisamente el elemento número tres (3) el elemento que esté fisicamente en la posición 3 dentro del total de los elementos "hijos", NO, sino que será el elemento tercero, del total de los elementos hijos, que tenga la clase "selector" (aunque esté, incluso, se encuentre en la posición seis -o en cualquier otra- del total de los "hijos" sin importar a qué selector pertenezcan). Esta es la gran diferencia con los "child". 
+-->
+
+<!-- Por último, hablaremos de la pseudoclase de tipo "Negation": ":not()".
+
+     :not() - Selecciona al elemento que no cumpla la condición, se puede poner cualquier selector salvo otro ":not". Esto se entiende mejor con ejemplos, vamos a CSS.
+
+     -->

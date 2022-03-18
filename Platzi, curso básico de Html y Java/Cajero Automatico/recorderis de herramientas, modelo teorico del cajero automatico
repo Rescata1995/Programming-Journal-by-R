@@ -1,0 +1,63 @@
+
+En los proyectos de programación, de cualquier índole, se debe desmembrar el problema por varias partes; mientras más lo minimices mejor.
+Por lo general, antes de empezar a hacer código, debes crear un diagrama de flujo que nos revele si realmente lo que pensamos hacer
+para la solución de nuestro proyecto va a funcionar o no (solucionar el problema primero mental y matematicamente para luego codificarlo).
+
+recordemos la lógica de alguna de las tantas herramientas con las que contamos en programación:
+
+herramienta class: si dentro de un proyecto tenemos un conjunto de valores donde cada uno de esos valores se dividen por diferentes elementos;
+se hace necesario crear, por lo general, clases. Por ej.: partamos de que tenemos billetes de valor de 50, 20 y 10 usd, ahora, cuantos billetes tenemos de cada
+nominación? Es en esos casos es cuando se hace necesario crear clases por poner un ejemplo, cuando hay sub-divisiones en divisiones de un objeto.
+Cuando tenemos un objeto con multiples valores; por ejemplo, el objeto Billete (class Billete) con valores de 50, 20 y 10 usd, etc...
+y, además, para cada valor, hay una enumeración diferente (billete de 50: 3 en total;.. billete de 20: 5 en total;.. billete de 10: 20 en total),
+es necesario crear clases. Valor y cantidad son atributos propios de la herramienta Class.
+
+modelo:
+
+class Billete ... (completar con el del modelo real de freddy)
+
+Class es similar al Array, pero la diferencia entre ambos es que, en Array, en el mismo objeto se hacen las divisiones. No es que el objeto se divide
+por divisiones y esas divisiones independientes en sub-divisiones (como si pasa en Class), no. Sino que, en array, del mismo objeto (var = x) se definen
+los valores y a cada uno de esos valores se les asigna un elemento.
+
+modelo:
+
+var Billete = [];
+billete[50] = 3;
+billete[20] = 2;
+billete[10] = 2;
+
+Ahora, los ciclos For o While, sirven para iterar repetitivamente sobre un código y saber la validez de unas condiciones previamente establecidas para ellos
+hasta un limite establecido.
+
+Por ejemplo, si queremos que el cajero nos de una cantidad especifica de billetes que tiene, debe haber una herramienta que evalue uno por uno cada nominacion
+de billete del cajero y cuanta cantidad de cada nominación de los billetes debería darme según lo que yo desee recibir. (y con cada evaluación o iteración ir restandole
+la cantidad de billetes que vaya recibiendo hasta que ya me de todos los q necesito y deje iterar el programa)
+
+antes de crear el bucle for o while, debemos crear una variable donde vayamos a introducir cuanta cantidad de dinero queremos, podría ser:
+var dinero = prompt("cuanto dinero quieres?");
+
+Ya con lo anterior creamos un Array de los billetes que le vamos a entregar al usuario según lo deseado por el, podría ser: entregado []
+(empieza vacío porque es ahí donde vamos a meter una herramienta for o while que nos haga pasar por todos los billetes disponibles, mediante un ciclo que
+tome, billete por billete, de mayor a menor, la cantidad de billetes necesarios de cada nominación hasta entregar la cantidad de billetes solicitados por el mismo usuario:
+eso se hará por medio de una división que sólo tome el numero entero de la misma, dejando por fuera el residuo)
+
+En la medida que, la variable entregado vaya aumentando, vamos restando la variable dinero hasta que dinero sea igual a 0.
+Esa es la condición limite de nuestro bucle for o while.
+
+for b (de billete) of caja
+
+si dinero > 0 sigue las operaciones, sino hasta ahí termina el bucle for (este es nuestro limite)
+
+la división de la que hablamos quedaría así: div = Math.floor(dinero/billete.valor)
+
+Ahora, si la variable dinero (el dinero que uno solicita) es mayor que la cantidad de billete disponible en el banco,
+no podríamos entonces repartir desde el banco a un usuario un dinero que no se tiene. Hay que usar, entonces, una condicional if para solucionar este problema.
+
+Si (if) div > billete.cantidad entonces
+
+var papeles = billete.cantidad
+si no, var papeles = div.
+
+
+ahora, dinero es igual a dinero - (b.valor * papeles) y asi termina el codigo

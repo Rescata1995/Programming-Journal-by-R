@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Functions</title>
+</head>
+<body>
+    <script>
+        // Esto es una nueva forma de definir funciones anonimas; pero no solo eso, las Arrow Functions, al menos en este caso, deben ser también expresadas. 
+        
+        // Ahora, recuerde que las funciones expresadas son aquellas que se generan cuando a una variable, ya declarada con un identificador, le asignas el valor de una función anonima (es anonima porque simplemente no se le pasa un nombre propio a la función; el nombre como tal le pertenece a la variable, su identificador). Veamos.
+
+        const saludar = function(){
+            console.log("Hola");
+        }
+
+        saludar();
+
+        // La anterior estructura, así tal cual de simple que es, se le llama: "Función Expresada".
+
+        // Ahora, para convertir dicha "Función Expresada" a "Arrow Function" es de la siguiente manera (sólo hay que cambiar un par de detalles):
+
+        const saludar1 = () => {
+            console.log("Hola");
+        }
+
+        saludar1();
+
+        // Si se percata, hemos sustituido sólo par de cosas a la estructura original de la Función Expresada: 1. Hemos suprimido la palabra reservada "funcion" y 2. Hemos agregado, entre los dos parentesis y el corchete de apertura, una "flecha" (=>); tenemos, entonces, una Arrow Function declarada que se llama "saludar".
+
+        // Ahora, si suponemos que la Arrow Function, dentro de su dominio o bloque de código, se compone solamente de una línea de código para ser ejecutada; como, casualmente, es nuestro caso actual: el de la función "saludar",... Podemos incluso, todavía más, reducir todo nuestro código para declarar la Arrow Function en cuestión. Más puntualmente, podríamos suprimir u omitir los corchetes de la Arrow Function; de tal manera que, sólo apunte (=>) directamente a la única línea de código que hay dentro del dominio de la función en sí, la que es ejecutable por la función misma. Tal que así:
+
+        const saludar2 = () => console.log("Hola");
+
+        saludar2();
+
+        // Ahora la misma Arrow Function, pero con parametros
+
+        const saludar3 = (nombre) => console.log(`Hola ${nombre}.`);
+
+        saludar3("Isabella");
+
+        // En todo caso, si le sirve, sepa que el parámetro que le pase a una Arrow Function, si desea, lo puede llamar o colocar sin hacer uso de parentesis; es decir, que el parámetro pasado no vaya entre parentesis. Ahora, esto sólo funciona cuando pasa únicamente un parámetro, no varios, Ojo. Veamos:
+
+        const saludar4 = nombre => console.log(`Hola ${nombre}.`);
+
+        saludar4("Isabella");
+
+        // En resumen, la variable "saludar4" es igual a una función flecha que manda un "console.log()" y que recibe un parámetro que se llama "nombre"; y que, posteriormente, dicho parámetro, es llamado dentro del "console.log".
+
+        // ---------------------------------------------
+
+        // Ahora, en las Arrow Functions, en caso que se haga uso de la palabra reservada "return", dentro de su dominio, también se puede suprimir u omitir (así como lo hicimos con la palabra reservada "function" en un principio). 
+        
+        // Primero veamos el caso donde se deje reflejado el uso de un "return".
+
+        const sumar = (a,b) => {
+            return a+b;
+        }
+
+        console.log(sumar(5,5));
+
+        // Ahora, omitamos la palabra reservada "return", también, dentro de nuestra Arrow Function "sumar". Queda algo así:
+
+        const sumar1 = (a,b) => a+b;
+
+        console.log(sumar1(5,5));
+
+        // Observe cómo suprimimos, no sólo el "return"; sino, también, los corchetes. Del resto, es igual a la Arrow Function inicial "sumar".
+
+        // Ahora, tenga en cuenta algo fundamental, nosotros realmente pudimos suprimir los corchetes y el "return" debido a que sólo ejecutaríamos una única línea de código dentro del dominio de "sumar1"; que era, casualmente, la del "return" suprimido. De lo contrario, si hubieramos tenido varias líneas de código ejecutables, sería necesario hacer uso de corchetes dentro de nuestra Arrow Function (haga o no haga uso de un "return"). Por ejemplo:
+        
+        const funcionDeVariasLineas = () => {
+            console.log("Uno");
+            console.log("Dos");
+            console.log("Tres");
+        }
+
+        funcionDeVariasLineas();
+
+        // ---------------------------------------------
+
+        // Ahora, las Arrow Function también podrían ser aplicables a los Arreglos, más especificamente a métodos de los Arreglos. Por ejemplo, podríamos aplicar una Arrow Function sobre el método "forEach" que, si bien recuerda, nos permite iterar sobre cada uno de los elementos de un Arreglo.
+
+        const numeros = [1,2,3,4,5];
+
+        numeros.forEach(function(el, index){
+            console.log(`El elemento ${el} está en la posición ${index}.`);
+        });
+
+        // Recuerde que en el método "forEach" la palabra reservada "el" es quién se encargará de pasar por todos los elementos y emularlos y la palabra reservada "index" es quién se encargará de emular las posiciones de dichos elementos recorridos.
+
+        // Ahora, como el método "forEach" no es más que una función, podríamos aplicar una Arrow Function sobre él. Apliquemos lo dicho sobre el mismo ejercicio anterior, tal que así:
+
+        numeros.forEach((el, index) => {
+            console.log(`El elemento ${el} está en la posición ${index}.`);
+        });
+
+        // Si se fija bien, hemos suprimido la palabra reservada "function" y, adicionalmente, hemos agregado un Arrow (=>).
+
+        // Ahora, lo mismo, como el dominio de nuestro método "forEach", aplicado al Array "numeros", contiene una sola línea de código ejecutable; usted podría, incluso, suprimir u omitir los corchetes y expresar todo el código del método en sí en una única línea, ¿lo recuerda? Veamos.
+
+        numeros.forEach((el, index) => console.log(`El elemento ${el} está en la posición ${index}.`));
+
+        // Se suprime también el punto y coma (;) de la línea de código ejecutable; en este caso, la que está dentro del dominio del método "forEach"; si no se borra, se provocaría un error de sintaxis.  
+
+        // ---------------------------------------------
+
+        // Ahora, aplicar o tratar de aplicar una Arrow Function, dentro de un Objeto, no es una buena práctica. Las Arrow Function, idealmente, las podemos aplicar sobre una función directamente o sobre un método de un Arreglo; sin embargo, no es recomendable hacerlo sobre un Objeto. Es decir, realmente tú no deberías crear, dentro de un Objeto literal, un método a partir de una Arrow Function (o una función misma). 
+        
+        // Acontece que las Arrow Function tienen un alcance goblal y, si las utilizas dentro de un objeto literal, lo que pasará es que se saldrá del Objeto en cuestión; ignorando así, que está dentro del contexto del Objeto (para situarse sobre el contexto global o "Window"). Entonces, cuando trates de manipular los métodos de los objetos, con una Arrow Function, no podrás hacerlo porque, dicho método, realmente no pertenecería al Objeto manipulado.
+
+        // En resumen: ¡MEJOR NO UTILIZAR ARROWS FUNCTIONS EN UN OBJECTO!
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!-- Los "datalist" son similares a los "select"; de hecho, si las comparamos, la estructura de las sub-etiquetas que hay dentro de ellas, de tipo "option", no cambian en nada. La diferencia radica en que, en las "datalist", hay una incorporación de un motor de busqueda con filtros "letra a letra", lo cual permite una busqueda más eficiente de los "items" de la lista en cuestión. Adicionalmente a eso, "datalist" se acompaña con un atributo diferente a "name" para identificar al listado o al grupo en su conjunto, se acompaña con "id": un identificador (el atributo "name" es el que se acompaña con "select", cosa que cambia con "datalist"). 
+    
+    Ahora, a las etiquetas "datalist", se les agrega una novedad antes de ser colocadas (justo después de aperturar la etiqueta "form"), y es:  
+
+<input type= "list" list= "aquí iría un valor o nombre referente a la lista, algo que la identifique en su conjunto">,... va una etiqueta "input" y se acompaña con dos atributos que son: "type" & "list". Este último "list" debería estar definido con el mismo valor con el que se definió "id", idealmente.
+
+Probemos todo lo anterior con el mismo ejemplo que trabajamos en "select".
+    
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datalist</title>
+</head>
+<body>
+    <h1>
+        Elementos seleccionables.
+    </h1>
+
+    <form>
+        <input type="list" list="horarios"> 
+        
+        <datalist id= "horarios">
+            <option value="Dia"> Diurno</option>
+            <option value="Noche"> Nocturno</option>
+            <option value="Mañana"> Matutino
+            </option>
+            <option value="Finde"> Sabados y Domingos
+            </option>
+
+            <!-- Con "datalist" se dará cuenta que se refleja también dentro de la lista despegable, estando ya en el navegador, los valores definidos para el atributo "value" (que son propios e identificativos a cada elemento); por lo que, si desea, puede omitir la definición que va dentro de cada "option". 
+            
+            Ahora, esto es lo realmente interesante de "datalist"; que, con "datalist", podemos ir filtrando, con un motor de busqueda interno que tiene la lista despegable, lo que queremos encontrar. Podemos escribir sobre la barra e ir filtrando información letra a letra que le pasemos. -->
+
+        </datalist>
+    </form>
+</body>
+</html>

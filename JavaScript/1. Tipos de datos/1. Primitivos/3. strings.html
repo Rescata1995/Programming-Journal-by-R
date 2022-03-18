@@ -1,0 +1,124 @@
+<!-- Antes de comenzar, una sugerencia: Cada vez que ustedes tengan alguna duda sobre JS no duden en consultar la documentación no oficial del sitio de Mozilla Developer Network -->
+
+<!-- Hay una frase que se estila mucho en JS que dice: "En JS todo es un Objeto", y pues,... tiene algo de razón. De hecho, un "string" es un Objeto. -->
+
+<!-- Recordemos entonces el concepto de "Objeto". 
+
+ A grandes rasgos, un Objecto (object) es una colección de atributos (o propiedades) con la definición de sus respectivos valores. Haciendo un simil con CSS, es similar a una "Regla". Recuerde:
+
+        Regla: Así se le llama al selector, con todas sus declaraciones, en su conjunto.
+
+        selector
+        {
+            propiedad: valor;
+            propiedad2: valor;
+            propiedad3: valor;
+        } 
+
+    En resumen, los atributos o propiedades de un Objeto son caracteristicas que están describiendo o definiendo algo del objeto (Como se ve exactamente en las reglas de CSS).
+
+Sin embargo, los objetos no sólo se componen de Propiedades; sino, también, de Métodos. Los métodos pasarían a ser acciones, acciones que el Objeto hace. 
+
+Ahora, cuál es la diferencia, al menos escrita, entre una propiedad & un objeto? Veamos esto dentro del mismo objeto "String" como ejemplo.
+    
+    Las propiedades del objeto "String":
+        1. String.prototype
+        2. String.length
+
+    Algunos (porque son muchos) métodos del objeto "String".
+
+        String.fromCharCode()
+        String.fromCodePoint()
+        String.prototype.charAt()
+        String.prototype.fixed(),...
+
+Si se fija, todos los métodos terminan entre parentesis; dentro de los cuales, se pueden recibir ciertos parámetros o datos nuevos para poder trabajar. En cualquiera de los dos casos, hablemos de Objetos o Métodos de un String, cuando hacemos enfasis en la palabra "String." se está refiriendo al identificador con el que se declaró la cadena de texto como tal; es decir, supongamos que creamos la variable "nombres" (let nombres="";)... Entonces, si quisieramos acceder a la longitud de la variable "nombres", sería así: "nombres.length". 
+    -->
+
+<!-- Ahora, vamos al grano: STRINGS 
+
+Una cadena de texto, o string, es un texto que está encerrado entre comillas (simples o dobles, da igual).  Ejemplo: 
+-->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Strings</title>
+    </head>
+    <body>
+        <script>
+            let nombre= "Roberto";
+            let apellido= "Velasquez";
+
+            // Ahora, una manera más formal de declarar cadenas de texto es haciendo uso de su constructor; es decir, declarando directamente su tipo de dato u objeto "string" dentro de la declaración propia de la variable. Tal que así: 
+
+            let Apellido2= new String("Dean");
+
+            // "new" es una palabra reservada que se define por ser un operador; tiene la función de crear un objeto nuevo de un cierto tipo de dato; en este caso, ese tipo de dato fue "string" y, en consecuencia, "new" como operador está asistiendo al constructor "String".
+
+            // Sin embargo, conviene dejar claro que esa manera formal de declarar variables no se usa, no en la mayoria de los casos. Lo bueno de usarlo es que, al imprimir el "string" en la consola haciendo uso del constructor, se imprime también la propiedad ".length" de ella; es decir, podriamos saber instantaneamente también la longitud de la cadena de texto en cuestión sin necesidad de imprimir la longitud por separado con "string.length". Veamos.
+
+            console.log(Apellido2);
+
+            // Por defecto, en la consola se reflejará la longitud de la cadena de texto también. Esto no pasa con las variables que se declaran de la manera informal; entonces, en caso que se desee saber la longitud de las variables que se declaren de manera informal; en este caso, "nombre" & "apellido", tendríamos que asistirnos propiamente de la propiedad "string.length". Tal que así: 
+
+            console.log(nombre, apellido);
+            console.log(nombre.length, apellido.length);
+
+            // Recuerde que los espacios en blanco también se cuentan como caracter.
+
+            // Hablemos ahora sobre los MÉTODOS
+
+            // Como se dijo antes, son acciones o funciones que asumen los objetos; en este caso, estamos hablando de los objetos tipo "String". Por ejemplo, un método podría ser reflejar todos los caracteres de una cadena de texto en mayusculas (aunque la hubieramos escrito en minusculas); o, en el caso contrario, reflejar todos los caracteres en minusculas (incluso aunque alguna letra o caracter, de la cadena de texto en cuestión, haya sido escrita en mayusculas antes).
+
+            // Hagamos que, por ejemplo, el string "nombre" se ha impreso en consola todo en mayusculas con el método ".toUpperCase()", tal que así:
+
+            console.log(
+                nombre.toUpperCase(),
+
+            // Y, también, hagamos que el string "apellido" se ha impreso en consola todo en minusculas con el método ".toLowerCase()", tal que así:
+
+                apellido.toLowerCase()
+            );
+
+            // Revise la consola en el navegador
+            
+            // Ahora otro método que, más que usado para Strings, es usado en textos largos, es el que tiene la capacidad de decirnos si una palabra, dentro de todo el texto, existe o no; ese es el método: "includes". Al método "includes", dentro de sus parentesis, sí es necesario pasarle un parámetro; ese parámetro sería el equivalente a la palabra de la cual queremos saber de su existencia (dentro de todo el texto con el que está siendo definida la variable). Declaremos, por ejemplo, un texto largo con la variable llamada "parrafo" y, por medio del metodo ".includes()", queremos saber si dentro del parrafo hay una palabra que sea "método" y lo vamos a mostrar en consola.
+
+            let parrafo= "     Ahora otro método que, más que usado para Strings, es usado en textos largos, es el que tiene la capacidad de decirnos si una palabra, dentro de todo el texto, existe o no      ; ese es el método: 'includes'. Declaremos, por ejemplo, un texto largo con la variable llamada 'parrafo'.     "
+
+            console.log(
+                parrafo.includes("método"),
+                parrafo.includes("Método"),
+                parrafo.includes("metodos"),
+            );
+
+            // Efectivamente sí existe la palabra "método" (con tilde en la "e" y "m" minuscula -es necesario precisar que el método ".includes" distingue de tildes y de minusculas y mayusculas).
+
+            // Ahora, si te fijas bien, hay unos espacios en blanco "de sobra" al inicio y al final de todo el texto de la variable "parrafo",... pues bien, esos espacios "de sobra", los podemos suprimir con el método ".trim". Veamos.
+
+            console.log(
+                parrafo.trim()
+            );
+
+            // Revise consola. 
+            // Es preciso decir que el método ".trim" no suprime los espacios en blanco "de sobra" que no estén, ya sea, al inicio del texto; o, por el contrario, al final. Ojo con eso.
+
+            // Existe otro método también,... Que convierte, según un parámetro dado pasado entre los parentesis del método en cuestión("y entre comillas"), el texto en valores de un Arreglo; a lo sumo, convierte el texto en un Arreglo con una cantidad de valores (dentro del Arreglo), dicha cantidad de valores es determinada según, o depende de, unos parámetros especificados por nosotros mismos (dentro de los parentesis del método). El método es: ".split("parámetro")".
+
+            // Por ejemplo, hay casos en que necesitamos hacer un formulario con los datos básicos de una persona; pero, cada dato en especifico, realmente, se inserta sobre una misma línea de texto; con suerte, sobre dicha línea de texto, se consigue separar cada dato básico de las personas por medio de comas (,). Entonces, como no hay un formulario tipo "caja de texto" para cada dato básico que las personas inserten, lo que podemos hacer es convertir todo el texto en un Array que nos registre un nuevo valor, para el Array, por cada coma que encuentre (ya que estamos separando cada dato básico de las personas por medio de, justamente, comas). Probemos.
+
+            let persona = "Roberto, Velasquez Dean, 25 años, 3016206459, soltero";
+
+            console.log(
+                persona.split(",")
+            )
+
+            // Observe la consola en el navegador.
+
+            // Ahora, es preciso declarar que cada tipo de dato en JS tiene sus propias propiedades y sus propios métodos.
+        </script>
+    </body>
+    </html>
