@@ -21,7 +21,7 @@ I. **git reset + identificador**, comando que le permite viajar entre commits. H
 
 J. **git status -s**, comando que le permite saber el estado de todos sus cambios, rastreados o no; 
 
-K. **git checkout**, comando similar a "git reset".
+K. **git checkout**, comando que nos permite desplazarnos entre ramas.
 
 
 **2. Flujo de trabajo básico en GIT, introducción a repositorios remotos (GITHUB):**
