@@ -1,3 +1,6 @@
+
+/* IMPORTANTE: LOS EJERCICIOS RESUELTOS AQUÍ SE HACEN SOBRE LA BASE DE LA DB: 'platzi_operation' */
+
 SHOW ERRORS;
 
 /* Recuerda esto: 
