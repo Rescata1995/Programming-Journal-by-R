@@ -204,6 +204,32 @@ FROM authors
 WHERE length(nationality) != 3
 
 /* Parece que todo está bien! */
+
+
+/* EXTRA: Limpieza de cadenas de texto con SUBSTR() (similar a 'MID' en hojas de cálculo) 
+
+Supongamos que tenemos letras extras (o menos) en alguno de los registros para la nacionalidad 'USA' y necesitamos 
+saber los nombres de los autores de libros nacidos en Estados Unidos (name_author), pero queremos asegurarnos que la 
+consulta nos arroje solamente los nombres de dichos autores donde el registro para la columna de la 'nacionalidad' 
+esté bien escrito; es decir, se muestre exactamente 'USA', sin más letras o menos. Para este tipo de casos puntuales, 
+conviene bien hacer uso de la función 'SUBSTR', que es un simil de la función 'MID' (EXTRAE) de las hojas de cálculo. 
+
+'SUBSTR' recibe tres parámetros: A. nombre de la columna, B. letra inicial o de punto de partida y C. número de letras 
+a tener en cuenta desde su punto de partida (letra inicial); para este caso: A. nationality, B. 1 y C. 3, respectivamente. 
+
+Para este ejercicio debe suponer también que esta función será usada dentro de la sentencia WHERE, pues, 
+la función se está usando como filtro... Quiere filtrar solo los autores que nacieron en Estados Unidos. 
+
+Toda la consulta quedaría así: 
+*/
+
+SELECT name_author
+FROM authors
+WHERE substr(nationality,1,3) = 'USA'
+
+/* Resultado: Nombres de los autores donde el primer caracter de su columna 'nationality', para cada uno de sus registros, 
+es: 'U' y le siguen las letras: 'SA'. Letras que deben estar de forma contigua.
+*/
  
  
  /* 2. Cuantos escritores hay de cada nacionalidad? */ 
