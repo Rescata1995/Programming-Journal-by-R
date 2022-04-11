@@ -231,6 +231,11 @@ WHERE SUBSTR(nationality,1,3) = 'USA'
 /* Resultado: Nombres de los autores donde el primer caracter de su columna 'nationality', para cada uno de sus registros, 
 es: 'U' y le siguen las letras: 'SA'. Letras que deben estar de forma contigua.
 */
+
+/* EXTRA: Hay otra función que complementa muy bien a la función LENGTH() para propósitos de limpieza de datos, se trata de TRIM(). 
+TRIM() elimina los espacios extras que puedan haber dentro de una cadena de texto. Más adelante estaremos abordando esta función 
+a profundidad dentro del programa de Análisis de Datos profesional de Google.
+*/
  
  
  /* 2. Cuantos escritores hay de cada nacionalidad? */ 
