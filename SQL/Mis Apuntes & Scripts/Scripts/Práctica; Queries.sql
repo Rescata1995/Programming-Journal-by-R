@@ -194,20 +194,21 @@ que es: 'nationality'.
 
 Si ya sabemos que todos los países deben tener solamente 3 letras. Podemos entonces agregar una sentencia WHERE 
 que nos arroje los resultados de todos los países que no tengan 3 letras; esto para saber directamente qué filas 
-no cumplen con dicha condición y, posteriormente, corregirlas. Sería algo así: WHERE length(nationality) != 3. 
+no cumplen con dicha condición y, posteriormente, corregirlas. Sería algo así: WHERE LENGTH(nationality) != 3. 
 
 Queremos que nuestros datos sean consistentes, veamos.
 */
  
 SELECT nationality
 FROM authors
-WHERE length(nationality) != 3
+WHERE LENGTH(nationality) != 3
 
 /* Parece que todo está bien! */
 
 
 /* EXTRA: Limpieza de cadenas de texto con SUBSTR() (similar a 'MID' en hojas de cálculo) 
 
+Esta función suele complementar a la función LENGTH() cuando la finalidad de su uso se relaciona a la limpieza de datos.  
 Supongamos que tenemos letras extras (o menos) en alguno de los registros para la nacionalidad 'USA' y necesitamos 
 saber los nombres de los autores de libros nacidos en Estados Unidos (name_author), pero queremos asegurarnos que la 
 consulta nos arroje solamente los nombres de dichos autores donde el registro para la columna de la 'nacionalidad' 
@@ -223,9 +224,9 @@ la función se está usando como filtro... Quiere filtrar solo los autores que n
 Toda la consulta quedaría así: 
 */
 
-SELECT name_author
+SELECT DISTINCT name_author
 FROM authors
-WHERE substr(nationality,1,3) = 'USA'
+WHERE SUBSTR(nationality,1,3) = 'USA'
 
 /* Resultado: Nombres de los autores donde el primer caracter de su columna 'nationality', para cada uno de sus registros, 
 es: 'U' y le siguen las letras: 'SA'. Letras que deben estar de forma contigua.
