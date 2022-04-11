@@ -189,9 +189,8 @@ Digamos que estamos trabajando con la tabla 'authors'. Podemos asegurarnos de qu
 países tengan la misma longitud usando LENGTH() en cada una de estas cadenas. Entonces, para escribir 
 nuestra consulta SQL, primero comencemos con SELECT y FROM. Sabemos que nuestros datos provienen 
 de la tabla 'authors' dentro del conjunto de datos 'platzi_operation'. Entonces agregamos 'platzi_operation.authors' 
-después de la cláusula FROM. Luego, en SELECT, escribiremos LENGTH, y luego la columna que queremos verificar, 
-que es: 'nationality'. Para recordarnos qué es esto, podemos etiquetar esta columna en nuestros resultados 
-como letras_en_país. Entonces agregamos AS letras_en_país, después de LENGTH(nationality). 
+después de la cláusula FROM. Luego, en SELECT, escribiremos la columna que queremos verificar, 
+que es: 'nationality'.
 
 Si ya sabemos que todos los países deben tener solamente 3 letras. Podemos entonces agregar una sentencia WHERE 
 que nos arroje los resultados de todos los países que no tengan 3 letras; esto para saber directamente qué filas 
@@ -200,7 +199,7 @@ no cumplen con dicha condición y, posteriormente, corregirlas. Sería algo así
 Queremos que nuestros datos sean consistentes, veamos.
 */
  
-SELECT length(nationality) as letras_en_pais
+SELECT nationality
 FROM authors
 WHERE length(nationality) != 3
 
