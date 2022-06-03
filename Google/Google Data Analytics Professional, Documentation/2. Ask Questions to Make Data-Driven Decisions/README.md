@@ -1,10 +1,10 @@
-Topics that we will cover divided into weeks:
+**Topics that we will cover divided into weeks:**
 
-Week 1. Common problem types, SMART Questions & Things to avoid asking questions
+_**Week 1.**_ Common problem types, SMART Questions & Things to avoid asking questions.
 
-Week 2. How we turn data into information, Qualitative vs Quantitative, Reports vs Dashboards, Big vs Small Data & Mathematical thinking
+_**Week 2.**_ How we turn data into information, Qualitative vs Quantitative, Reports vs Dashboards, Big vs Small Data & Mathematical thinking.
 
-Week 3. Spreadsheet: Formula errors and Function shortcuts & Structured Thinking
+_**Week 3.**_ Spreadsheets: Formula errors & Function shortcuts, and Structured Thinking.
 
-Week 4. Types of Stakeholders, 4 Questions to better communicate with your team & Stakeholders, Tips for communication, Meeting best practices, Speed vs Accuracy & Conflicts vs Collaboration
+_**Week 4.**_ Types of Stakeholders, 4 Questions to better communicate with your team & Stakeholders, Tips for communication, Meeting best practices, Speed vs Accuracy & Conflicts vs Collaboration.
 
