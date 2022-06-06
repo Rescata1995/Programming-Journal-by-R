@@ -52,7 +52,7 @@ _**Week 4.**_
 
 4. Working with Pivot tables (Practicing Data aggregation, SUM, AVERAGE & COUNT functions, Calculated field, Data segmentation -to filter in colums from pivot tables, Testing out Hypothesis & Insights)
 
-5. Calculations in Queries (Basic arithmetic operation in a Query, Modulo Operator in SQL Vs MOD function in Spreadsheets & SUM and AVG functions in SQL) & EXTRA: EXTRACT & GROUP BY command in a Query
+5. Calculations in Queries (Basic arithmetic operation in a Query, Modulo Operator and MOD function in SQL Vs MOD function in Spreadsheets & SUM and AVG functions in SQL) & EXTRA: EXTRACT & GROUP BY command in a Query
 
 6. About Temporary Tables
 
