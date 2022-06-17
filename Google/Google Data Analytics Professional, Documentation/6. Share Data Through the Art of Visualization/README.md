@@ -2,58 +2,20 @@
 
 _**Week 1.**_ 
 
-1. The Analysis Process (Organize data, Format and Adjust data, Get input from others, and Transform data)
+1. Understand Data Visualization (What is Data Visualization, A Rule for creating a visualization, Four Key elements from your Viz)
 
-Questionnaires + EXTRA; SuperQueries Vs Conventional Query
+2. Tips and tricks for creating effective data visualizations by 2 frameworks & Pre-attentive attributes: Marks (Position, Size, Shape, Color) and Channels (Accuracy, Popout, Grouping)
 
-2. In-depth: Format & Adjust data: Sorting vs Filters. Extra: Outliers & Sorting in a pivot table)
+3. Design Principles (Choose the right visual, Optimize the data-ink ratio, Use orientation effectively, color, Numbers of things) & Avoiding misleading or deceptive charts (Cutting off the y-axis, Misleading use of a dual y-axis, Artificially limiting the scope of the data, Problematic choices in how data is binned or grouped, Using part-to-whole visuals when the totals do not sum up appropriately, Hiding trends in cumulative charts, Artificially smoothing trends)
 
-3. In-depth: Sort Data, Sort Sheet vs Sort Range in Spreadsheets
+4. Data Visualizations (Vizzes: Bar Graph, Line Graph, Pie Chart, Maps), Examples and Types of manipulation in Data Visualization (Proportions, Scaling) & Key Concepts
 
-4. In-depth: Sort Data in SQL
+5. More Data Vizzes & Example (Series Charts, Histograms, Ranked/Ordered Bar Charts), Correlation Vs Causation, Dynamic vs Static visualizations and How to decide the proper Viz for your data
 
-_**Week 2.**_ 
+6. Core elements of Art (Line, Shape, Colors, Space, Movement) & Principles of Design in Data Analytics (Balance, Emphasis, Movement, Pattern, Repetition, Proportion, Rhythm, Variety, Unity)
 
-1. Convert & Format Data in Spreadsheets (Converting data type, CONVERT function and CONCAT & CONCATENATE functions)
+7. Refresher: Looking for the right data viz for your data, What makes a Good Viz & Recommendations from Dona Wong to get effective visuals
 
-2. Data Validation and its types & EXTRA: Dropdown Lists + Conditional Formatting
+8. Design thinking & its Phases (Empathize, Define, Ideate, Prototype, Test) and Headlines, Subtitles, Labels & Legends (EXTRA: Guidelines and pro tips)
 
-3. Transforming data in SQL (Common conversions with CAST function: Scope, Syntax & the SAFE_CAST function). Extra: Sneak peek of Coercion & Unix_Date Functions
-
-4. Combine Data in SQL (CONCAT function & its variations). EXTRA: Practicing Count, Round, AVG, Cast Functions and Group by, Order by, Limit Clauses
-
-5. String functions in Spreadsheets for String Queries
-
-6. Sneak peek to R (Programming Language)
-
-_**Week 3.**_ 
-
-1. Data Aggregation & Introduction to Subquery
-
-Questionnaires & EXTRA exercise from 'Hands-On Activity_ Cleaning Data in Spreadsheets & VLOOKUP'
-
-2. Understanding JOINS in SQL
-
-3. AS Command to alias Tables & Columns
-
-4. COUNT & COUNT DISTINCT
-
-5. Subqueries
-
-6. About HAVING, CASE & Subqueries in Data Aggregation
-
-_**Week 4.**_ 
-
-1. Common calculation formulas in Spreadsheets (Practicing SUM, AVG, MIN & MAX functions, Growth Rate & Insights)
-
-2. Functions & Conditions (Practicing COUNTIF, SUMIF & AVERAGEIF functions, Insights, Key Takeaway & Tip)
-
-3. Composite Functions: practicing SUMPRODUCT function
-
-4. Working with Pivot tables (Practicing Data aggregation, SUM, AVERAGE & COUNT functions, Calculated field, Data segmentation -to filter in colums from pivot tables, Testing out Hypothesis & Insights)
-
-5. Calculations in Queries (Basic arithmetic operation in a Query, Modulo Operator and MOD function in SQL Vs MOD function in Spreadsheets & SUM and AVG functions in SQL) & EXTRA: EXTRACT & GROUP BY command in a Query
-
-6. About Temporary Tables
-
-EXTRA; check before any analysis. Types of data validation (Introduction & Importance of Data validation)
+9. About accessible Visualizations: Labeling, Text alternatives, Text-based format, Distinguishing, Simplify (Working on cases: Accessible VS Not accessible)
