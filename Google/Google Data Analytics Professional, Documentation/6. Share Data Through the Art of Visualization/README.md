@@ -19,3 +19,21 @@ _**Week 1.**_
 8. Design thinking & its Phases (Empathize, Define, Ideate, Prototype, Test) and Headlines, Subtitles, Labels & Legends (EXTRA: Guidelines and pro tips)
 
 9. About accessible Visualizations: Labeling, Text alternatives, Text-based format, Distinguishing, Simplify (Working on cases: Accessible VS Not accessible)
+
+_**Week 2.**_ 
+
+1. About Diverging color palette & Things to avoid when visualizing data
+
+EXTRA: Importance & meaning of mark "Detail" (Nivel de detalle) in a simple practice case
+
+EXTRA: How to use analytic options in your data vizzes (Eg. Trend line and so on) and About Dashboards & Dashboard Filters
+
+2. About Data storytelling & Data storytelling Steps (Engage your audience, Create compelling visuals, Tell the story in an interesting way) & EXTRA: About Word Clouds
+
+3. More about "Engage your Audience" & Spotlighting
+
+4. Tableau dashboard basics (Vertical Vs Horizontal layout, Tiled items Vs Floating items, Pros & Cons from Sharing dashboards with others) and Live Vs Static Insights
+
+5. Sharing data stories. PART I. How to prepare an effective data narrative/story & its 5 key parts (characters, a setting, a plot, a big reveal & "aha moment")
+
+6. Sharing data stories. PART II. How to make great slideshows & its 7 elements (theme, text, visuals, reveal & differences between copy/paste, link & embed a visual into a slideshow)
