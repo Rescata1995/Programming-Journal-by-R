@@ -20,7 +20,7 @@ _**Week 1.**_
 
 9. About accessible Visualizations: Labeling, Text alternatives, Text-based format, Distinguishing, Simplify (Working on cases: Accessible VS Not accessible)
 
-_**Week 2.**_ 
+_**Week 2 & 3.**_ 
 
 1. About Diverging color palette & Things to avoid when visualizing data
 
@@ -37,3 +37,23 @@ EXTRA: How to use analytic options in your data vizzes (Eg. Trend line and so on
 5. Sharing data stories. PART I. How to prepare an effective data narrative/story & its 5 key parts (characters, a setting, a plot, a big reveal & "aha moment")
 
 6. Sharing data stories. PART II. How to make great slideshows & its 7 elements (theme, text, visuals, reveal & differences between copy/paste, link & embed a visual into a slideshow)
+
+_**Week 4.**_ 
+
+1. An effective presentation with a framework (What is the fuction of a Framework & A quick reminder about Business Task to relate it with the Frameworks). EXTRA. An example using a Framework for a Data Viz
+
+2. "Hypothesis" concept to prove or disprove with data & Presenting your visualizations effectively with McCandless Method
+
+3. Tips about Presentation Skills (A. Avoid using "Eyesore Charts", B. Make your presentation fun, C. Incorporate Storytelling in your presentations, D. Make sure you have an Ally in the room)
+
+4. Features of a Messy Data presentation Vs Good Data presentation & Messy example of a data presentation Vs Good example of a data presentation
+
+5. General tricks for your presentations (4 tips or strategies to allow the audience to absorb data visualizations & strategies to combat nervousness in presentations: A. The more you practice, the easier, B. Deep & controlled breaths to calm your body down, C. Using the McCandless Method, D. Using the "Five-second Rule")
+
+6. Tips to stay focused on your audience and keep them engaged & some best practices for delivering presentations (EXTRA. Tips for an ideal body language)
+
+7. Tricks & tips to anticipate the questions from your audience (Understanding Stakeholders' expectations early, the "Colleague Test" strategy & Start with zero assumptions)
+
+8. Handling Objections (About Data, Analysis & Findings) and How to respond to objections
+
+9. Q&A best practices (Strategies to respond & ask effectively)
