@@ -30,6 +30,8 @@ Step 3. Cleaning data: rename(), summarize()
 
 Step 4. Visualizing data: ggplot(aes()) + geom_point() + facet_wrap()
 
+Don't forget the useful 'priority column' from the command 'install.packages()'. The priority column tells us what's needed to use functions from the package. If you come across the word "base" in the priority column, then the package is already installed and loaded. You can use all of the functions of that package as soon as you open RStudio. If you find the word "recommended," then the package is installed but not loaded.
+
 
 
 
