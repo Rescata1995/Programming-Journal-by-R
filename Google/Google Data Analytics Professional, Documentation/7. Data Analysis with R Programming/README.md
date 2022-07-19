@@ -17,3 +17,21 @@ _**Week 2.**_
 2. date, time & date-time as Data types in R (Formatting and Converting different types of data into date and date-time using Tidyverse & Lubridate packages: from a String, from an individual date & from an existing datetime object) Extra. now() & today() functions
 
 3. Other common data structure in R: Files, and Basic concepts of R (Function, Argument, Comment, Variable, Data types, Vector & Pipe)
+
+EXTRA. Step by step Getting to know how to use packages, functions and datasets in R from start to finish via diamonds.rmd file. 
+
+**Reminder of basic functions**: 
+
+Step 1. Using R Packages: install.packages(), library(). 
+
+Step 2. Viewing data: head(), str(), glimpse(), colnames().
+
+Step 3. Cleaning data: rename(), summarize()
+
+Step 4. Visualizing data: ggplot(aes()) + geom_point() + facet_wrap()
+
+
+
+
+
+
