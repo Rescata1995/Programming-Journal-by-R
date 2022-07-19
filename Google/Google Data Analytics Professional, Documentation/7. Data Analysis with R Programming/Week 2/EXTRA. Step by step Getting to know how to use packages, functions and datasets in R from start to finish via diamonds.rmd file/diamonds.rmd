@@ -21,6 +21,15 @@ To install the `tidyverse` package, execute the code in the code chunk below by 
 install.packages("tidyverse")
 ```
 
+Note: To check out our packages we'll just run the command installed.packages and there's our list.
+
+The package column gives the name of the package like 'cluster' or 'graphics'. The priority column tells us what's needed to use functions from the package. If you come across the word "base" in the priority column, then the package is already installed and loaded. You can use all of the functions of that package as soon as you open RStudio. If you find the word "recommended," then the package is installed but not loaded.
+
+
+```{r}
+install.packages()
+```
+
 Once a package is installed, you can load it by running the `library()` function with the package name inside the parentheses, like this:
 
 ```{r}
