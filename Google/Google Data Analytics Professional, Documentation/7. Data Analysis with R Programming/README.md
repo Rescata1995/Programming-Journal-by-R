@@ -32,7 +32,11 @@ Step 4. Visualizing data: ggplot(aes()) + geom_point() + facet_wrap()
 
 Don't forget the useful 'priority column' from the command 'install.packages()'. The priority column tells us what's needed to use functions from the package. If you come across the word "base" in the priority column, then the package is already installed and loaded. You can use all of the functions of that package as soon as you open RStudio. If you find the word "recommended," then the package is installed but not loaded.
 
+4. Where we can find packages of R (the best ones) and their packages documentation: An Introduction to Tidyverse. EXTRA. How to interpret the outcome from a loaded Tidyverse (about its packages) & how to deal with the conflicts? As well, How do we update our Tidyverse package whether totally or partially? Introduction to 'tidyverse_update()' function.
 
+5. About packages of Tidyverse (ggplot2, tidyr, readr, dplyr, tibble, purrr, stringr & forcats)
+
+6. Working with Pipes (Introduction to Pipes by testing it on the ToothGrowth dataset. Extra. data(), View(), filter() & arrange() functions) & Methods for working with two or more than two functions or operations in R: from the least efficient method to pipes (most efficient method)
 
 
 
