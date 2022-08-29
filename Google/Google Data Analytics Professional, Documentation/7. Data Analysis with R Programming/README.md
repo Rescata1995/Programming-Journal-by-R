@@ -61,5 +61,17 @@ _**Week 3.**_
 10. Using **bias()** function to quantify bias in our data
 
 11. Using **sample()** function to address biased data with R
- 
 
+_**Week 4.**_ 
+
+1. Practice. Introduction to GGPlot2, we always need to upload the **'ggplot2'** package. Usage of Plus (+) sign to add layers, A glimpse of a Geom function, Adding some Aesthetic: the particular **'linetype' and 'Alpha'** aesthetics & introduction to Mapping. EXTRA. Right steps for making plots in GGPlot2 (Grammar of graphics) & A reusable template for creating plots in ggplot2. As well as, you can find in here a GGPlot2 Cheatsheet
+
+2. About Geoms Functions. Introduction to **geom_smooth() & geom_line()**: using the 'linetype' aesthetic in a geom_smooth(), introduction to **geom_jitter() & geom_bar()** functions: using the 'fill' aesthetic in a geom_bar() & Introduction to a **'Stacked bar chart'**
+
+3. About Facet Functions. About a facet function in general: introduction to **facet_wrap(), faceting your plot by a single variable & facet_grid(), faceting your plot with two variables** functions
+
+4. About Labs & Annotate Function. Importance of annotate & labels for your visuals. A. About the label function, introduction to **labs()** function: usage of **'title', 'subtitle' & 'caption'** arguments. B. About the annotate function, introduction to **annotate()** function: usage of **'x', 'y', 'label', 'color', 'fontface', 'size', 'angle'** arguments
+
+5. Importance of saving your work: Using the **'Export'** option & the **ggsave()** function to save your work
+
+6. 
