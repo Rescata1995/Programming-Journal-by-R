@@ -80,4 +80,18 @@ _**Week 4.**_
 
 _**Week 5.**_ 
 
-1. 
+1. Introduction & Roadmap to R Markdown
+
+2. Why is useful R Markdown, R Markdown Composition and Structure & Introduction to R Notebook
+
+3. Using the R Markdown in RStudio. Introduction to the **'rmarkdown'** package & comparison between a **RMD File Vs a RMD Report** 
+
+4. Structure of Markdown documents: All about **YAML header** section (How to call it out in a RMD file & Ways to modify or create a YAML header section) & **Text area in a RMD file and Formatting with Markdown** (Examples of 'Formatting with Markdown'). EXTRA. Introduction to 'inline code'
+
+5. More formatting with Markdown: **Placing Bullets, Embedding links in a text & Embedding images in our RMD files** 
+
+6. About Code Chunks & Ideal Structure in .RMD files.
+
+7. Exporting Documentation; Your .RMD file in different output types.
+
+EXTRA. R Markdown Cheat Sheet & Reference Guide
