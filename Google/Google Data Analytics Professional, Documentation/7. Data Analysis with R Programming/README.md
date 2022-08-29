@@ -74,4 +74,10 @@ _**Week 4.**_
 
 5. Importance of saving your work: Using the **'Export'** option & the **ggsave()** function to save your work
 
-6. 
+6. EXTRA. Theory about the **'Smoothing'**: What is a Smoothing in GGPlot2 & its two types
+
+7. EXTRA. Filtering & Plots
+
+_**Week 5.**_ 
+
+1. 
